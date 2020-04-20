@@ -31,6 +31,69 @@ public interface ScheduleFactory extends EFactory {
 	Schedule createSchedule();
 
 	/**
+	 * Returns a new object of class '<em>Train Schedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Train Schedule</em>'.
+	 * @generated
+	 */
+	TrainSchedule createTrainSchedule();
+
+	/**
+	 * Returns a new object of class '<em>Date Time</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date Time</em>'.
+	 * @generated
+	 */
+	DateTime createDateTime();
+
+	/**
+	 * Returns a new object of class '<em>Time</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time</em>'.
+	 * @generated
+	 */
+	Time createTime();
+
+	/**
+	 * Returns a new object of class '<em>Route</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Route</em>'.
+	 * @generated
+	 */
+	Route createRoute();
+
+	/**
+	 * Returns a new object of class '<em>Start Spot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Start Spot</em>'.
+	 * @generated
+	 */
+	StartSpot createStartSpot();
+
+	/**
+	 * Returns a new object of class '<em>Middle Spot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Middle Spot</em>'.
+	 * @generated
+	 */
+	MiddleSpot createMiddleSpot();
+
+	/**
+	 * Returns a new object of class '<em>Final Spot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Final Spot</em>'.
+	 * @generated
+	 */
+	FinalSpot createFinalSpot();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
