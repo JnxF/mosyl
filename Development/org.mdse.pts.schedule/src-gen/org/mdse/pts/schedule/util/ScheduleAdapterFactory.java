@@ -72,6 +72,42 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 				return createScheduleAdapter();
 			}
 			@Override
+			public Adapter caseTrainSchedule(TrainSchedule object) {
+				return createTrainScheduleAdapter();
+			}
+			@Override
+			public Adapter caseDateTime(DateTime object) {
+				return createDateTimeAdapter();
+			}
+			@Override
+			public Adapter caseTime(Time object) {
+				return createTimeAdapter();
+			}
+			@Override
+			public Adapter caseRoute(Route object) {
+				return createRouteAdapter();
+			}
+			@Override
+			public Adapter caseSituatedSpot(SituatedSpot object) {
+				return createSituatedSpotAdapter();
+			}
+			@Override
+			public Adapter caseSituatedSpotWithConnection(SituatedSpotWithConnection object) {
+				return createSituatedSpotWithConnectionAdapter();
+			}
+			@Override
+			public Adapter caseStartSpot(StartSpot object) {
+				return createStartSpotAdapter();
+			}
+			@Override
+			public Adapter caseMiddleSpot(MiddleSpot object) {
+				return createMiddleSpotAdapter();
+			}
+			@Override
+			public Adapter caseFinalSpot(FinalSpot object) {
+				return createFinalSpotAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -102,6 +138,132 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScheduleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.TrainSchedule <em>Train Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.TrainSchedule
+	 * @generated
+	 */
+	public Adapter createTrainScheduleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.DateTime <em>Date Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.DateTime
+	 * @generated
+	 */
+	public Adapter createDateTimeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.Time <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.Time
+	 * @generated
+	 */
+	public Adapter createTimeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.Route <em>Route</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.Route
+	 * @generated
+	 */
+	public Adapter createRouteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.SituatedSpot <em>Situated Spot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.SituatedSpot
+	 * @generated
+	 */
+	public Adapter createSituatedSpotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.SituatedSpotWithConnection <em>Situated Spot With Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.SituatedSpotWithConnection
+	 * @generated
+	 */
+	public Adapter createSituatedSpotWithConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.StartSpot <em>Start Spot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.StartSpot
+	 * @generated
+	 */
+	public Adapter createStartSpotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.MiddleSpot <em>Middle Spot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.MiddleSpot
+	 * @generated
+	 */
+	public Adapter createMiddleSpotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.FinalSpot <em>Final Spot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.schedule.FinalSpot
+	 * @generated
+	 */
+	public Adapter createFinalSpotAdapter() {
 		return null;
 	}
 
