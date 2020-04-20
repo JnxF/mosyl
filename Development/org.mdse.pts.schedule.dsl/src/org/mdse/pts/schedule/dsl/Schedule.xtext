@@ -5,11 +5,53 @@ grammar org.mdse.pts.schedule.dsl.Schedule hidden(WS, ML_COMMENT, SL_COMMENT)
 import "http://mdse.org/pts/schedule"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-Schedule:
-	"schedule" {Schedule}
+Schedule returns Schedule:
+	"schedule" "for" network=STRING "with" company=STRING ":"
+	(trainSchedules+=TrainSchedule)*
+; 
+
+TrainSchedule returns TrainSchedule:
+	"train" //TODO: Add train
+	"on" dateTimes+=DateTime (("," dateTimes+=DateTime)* "and" dateTimes+=DateTime)? ":"
+	route=Route
+;
+
+DateTime returns DateTime:
+	weekday+=WeekDays ("," weekday+=WeekDays)*
+	"at" time=Time
+;
+
+Time returns Time:
+	hours=INT ":" minutes=INT
+;
+
+Route returns Route:
+	startSpot=StartSpot
+	(middleSpots+=MiddleSpot)*
+	finalSpot=FinalSpot
+;
+
+StartSpot returns StartSpot:
+	"start" "at" station=STRING ("on" "platform" platform=STRING)?
+	("drive" "via")? //TODO: add leg
+;
+
+MiddleSpot returns MiddleSpot:
+	"stop" "at" station=STRING ("on" "platform" platform=STRING)?
+	("for" waitingTime=INT "min")? (turnStation?="and turn")?
+	("drive" "via")? //TODO: add leg
+;
+
+FinalSpot returns FinalSpot:
+	"terminate" "at" station=STRING ("on" "platform" platform=STRING)?
 ;
 
 //TODO: Define syntax rules
+
+enum WeekDays:
+	MONDAY="Monday" | TUESDAY="Tuesday" | WEDNESDAY="Wednesday" | THURSDAY="Thursday" |
+	FRIDAY="Friday" | SATURDAY="Saturday" | SUNDAY="Sunday"
+;
 
 terminal fragment LETTER:
 	('a'..'z' | 'A'..'Z')

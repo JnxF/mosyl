@@ -5,7 +5,60 @@ import "platform:/resource/org.mdse.pts.network/model/Network.ecore";
 import "platform:/resource/org.mdse.pts.depot/model/Depot.ecore";
 
 class Schedule {
-	
+	attr String[1] network;
+	attr String[1] company;
+	val TrainSchedule[*] trainSchedules;
 }
 
-//TODO: Define metamodel
+class TrainSchedule {
+	// ref depot.Train train;
+	val DateTime[1..*] dateTimes;
+	val Route[1] route;
+}
+	
+class DateTime {		
+	attr WeekDays[1..*] weekday;
+	val Time[1] time;
+}
+	
+enum WeekDays {
+	MONDAY = 1;
+	TUESDAY = 2;
+	WEDNESDAY = 3;
+	THURSDAY = 4;
+	FRIDAY = 5;
+	SATURDAY = 6;
+	SUNDAY = 7;
+}
+
+class Time {
+	attr Integer hours;
+	attr Integer minutes;
+}
+
+class Route {
+	val StartSpot[1] startSpot;
+	val MiddleSpot[*] middleSpots;
+	val FinalSpot[1] finalSpot;
+}
+
+abstract class SituatedSpot {
+	attr String[1] station;
+	attr String[?] platform;
+}
+
+abstract class SituatedSpotWithConnection extends SituatedSpot {
+	ref network.Leg[?] leg;
+}
+
+class StartSpot extends SituatedSpotWithConnection {	
+}
+
+class MiddleSpot extends SituatedSpotWithConnection {
+	attr Integer[?] waitingTime = 0;
+	attr Boolean[?] turnStation = false;
+}
+
+class FinalSpot extends SituatedSpot {
+
+}
