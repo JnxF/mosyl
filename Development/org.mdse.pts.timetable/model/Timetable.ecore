@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="timetable" nsURI="http://mdse.org/pts/timetable" nsPrefix="timetable">
-  <eClassifiers xsi:type="ecore:EClass" name="Timetable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Timetable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stationTrains" upperBound="-1"
+        eType="#//StationTrain"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="station" lowerBound="1"
+        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StationTrain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" lowerBound="1"
+        eType="ecore:EClass ../../org.mdse.pts.schedule/model/Schedule.ecore#//TrainSchedule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrivalTime" eType="ecore:EClass ../../org.mdse.pts.schedule/model/Schedule.ecore#//DateTime"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="departureTime" eType="ecore:EClass ../../org.mdse.pts.schedule/model/Schedule.ecore#//DateTime"/>
+  </eClassifiers>
 </ecore:EPackage>
