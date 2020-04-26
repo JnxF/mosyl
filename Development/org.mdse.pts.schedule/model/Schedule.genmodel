@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/org.mdse.pts.schedule/src-gen" editDirectory="/org.mdse.pts.schedule.edit/src-gen"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.mdse.pts.schedule/src-gen" editDirectory="/org.mdse.pts.schedule.edit/src-gen"
     editorDirectory="/org.mdse.pts.schedule.editor/src-gen" modelPluginID="org.mdse.pts.schedule"
     modelName="Schedule" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.mdse.pts.schedule.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
@@ -8,6 +8,65 @@
   <foreignModel>Schedule.ecore</foreignModel>
   <genPackages prefix="Schedule" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Schedule.ecore#/">
-    <genClasses ecoreClass="Schedule.ecore#//Schedule"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Schedule.ecore#//WeekDays">
+      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/WEDNESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/THURSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/FRIDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/SATURDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/SUNDAY"/>
+    </genEnums>
+    <genClasses ecoreClass="Schedule.ecore#//Schedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Schedule/network"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Schedule/company"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/trainSchedules"/>
+    </genClasses>
+    <genClasses ecoreClass="Schedule.ecore#//TrainSchedule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/dateTimes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/route"/>
+    </genClasses>
+    <genClasses ecoreClass="Schedule.ecore#//DateTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//DateTime/weekday"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//DateTime/time"/>
+    </genClasses>
+    <genClasses ecoreClass="Schedule.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/minutes"/>
+    </genClasses>
+    <genClasses ecoreClass="Schedule.ecore#//Route">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/startSpot"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/middleSpots"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/finalSpot"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Schedule.ecore#//SituatedSpot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//SituatedSpot/station"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//SituatedSpot/platform"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Schedule.ecore#//SituatedSpotWithConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Schedule.ecore#//SituatedSpotWithConnection/leg"/>
+    </genClasses>
+    <genClasses ecoreClass="Schedule.ecore#//StartSpot"/>
+    <genClasses ecoreClass="Schedule.ecore#//MiddleSpot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//MiddleSpot/waitingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//MiddleSpot/turnStation"/>
+    </genClasses>
+    <genClasses ecoreClass="Schedule.ecore#//FinalSpot"/>
+  </genPackages>
+  <genPackages prefix="Network" ecorePackage="../../org.mdse.pts.network/model/Network.ecore#/">
+    <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Network">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Network/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Network/stations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Network/legs"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Station">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Station/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Station/legs"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Leg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Leg/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Leg/distance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Leg/stations"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
