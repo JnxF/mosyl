@@ -2,6 +2,8 @@
  */
 package org.mdse.pts.schedule.impl;
 
+import depot.DepotPackage;
+import depot.impl.DepotPackageImpl;
 import network.NetworkPackage;
 import network.impl.NetworkPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -151,14 +153,18 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(registeredPackage instanceof NetworkPackageImpl ? registeredPackage : NetworkPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DepotPackage.eNS_URI);
+		DepotPackageImpl theDepotPackage = (DepotPackageImpl)(registeredPackage instanceof DepotPackageImpl ? registeredPackage : DepotPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSchedulePackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
+		theDepotPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSchedulePackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
+		theDepotPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSchedulePackage.freeze();
@@ -184,8 +190,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSchedule_Network() {
-		return (EAttribute)scheduleEClass.getEStructuralFeatures().get(0);
+	public EReference getSchedule_Network() {
+		return (EReference)scheduleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -194,8 +200,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSchedule_Company() {
-		return (EAttribute)scheduleEClass.getEStructuralFeatures().get(1);
+	public EReference getSchedule_Depots() {
+		return (EReference)scheduleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -224,7 +230,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getTrainSchedule_DateTimes() {
+	public EReference getTrainSchedule_Train() {
 		return (EReference)trainScheduleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -234,8 +240,18 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getTrainSchedule_Route() {
+	public EReference getTrainSchedule_DateTimes() {
 		return (EReference)trainScheduleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTrainSchedule_Route() {
+		return (EReference)trainScheduleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -478,11 +494,12 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 
 		// Create classes and their features
 		scheduleEClass = createEClass(SCHEDULE);
-		createEAttribute(scheduleEClass, SCHEDULE__NETWORK);
-		createEAttribute(scheduleEClass, SCHEDULE__COMPANY);
+		createEReference(scheduleEClass, SCHEDULE__NETWORK);
+		createEReference(scheduleEClass, SCHEDULE__DEPOTS);
 		createEReference(scheduleEClass, SCHEDULE__TRAIN_SCHEDULES);
 
 		trainScheduleEClass = createEClass(TRAIN_SCHEDULE);
+		createEReference(trainScheduleEClass, TRAIN_SCHEDULE__TRAIN);
 		createEReference(trainScheduleEClass, TRAIN_SCHEDULE__DATE_TIMES);
 		createEReference(trainScheduleEClass, TRAIN_SCHEDULE__ROUTE);
 
@@ -543,6 +560,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 
 		// Obtain other dependent packages
 		NetworkPackage theNetworkPackage = (NetworkPackage)EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
+		DepotPackage theDepotPackage = (DepotPackage)EPackage.Registry.INSTANCE.getEPackage(DepotPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -556,11 +574,12 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scheduleEClass, Schedule.class, "Schedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSchedule_Network(), ecorePackage.getEString(), "network", null, 1, 1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchedule_Company(), ecorePackage.getEString(), "company", null, 1, 1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedule_Network(), theNetworkPackage.getNetwork(), null, "network", null, 1, 1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedule_Depots(), theDepotPackage.getDepot(), null, "depots", null, 1, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchedule_TrainSchedules(), this.getTrainSchedule(), null, "trainSchedules", null, 0, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trainScheduleEClass, TrainSchedule.class, "TrainSchedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTrainSchedule_Train(), theDepotPackage.getTrain(), null, "train", null, 0, 1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrainSchedule_DateTimes(), this.getDateTime(), null, "dateTimes", null, 1, -1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrainSchedule_Route(), this.getRoute(), null, "route", null, 1, 1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

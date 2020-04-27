@@ -22,4 +22,12 @@
             genModel="model/Schedule.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Schedule -->
+      <package
+            uri="http://mdse.org/pts/depot"
+            class="depot.DepotPackage"
+            genModel="model/Schedule.genmodel"/>
+   </extension>
+
 </plugin>

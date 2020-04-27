@@ -5,13 +5,13 @@ import "platform:/resource/org.mdse.pts.network/model/Network.ecore";
 import "platform:/resource/org.mdse.pts.depot/model/Depot.ecore";
 
 class Schedule {
-	attr String[1] network;
-	attr String[1] company;
+	ref network.Network[1] network;
+	ref depot.Depot[1..*] depots;
 	val TrainSchedule[*] trainSchedules;
 }
 
 class TrainSchedule {
-	// ref depot.Train train;
+	ref depot.Train train;
 	val DateTime[1..*] dateTimes;
 	val Route[1] route;
 }

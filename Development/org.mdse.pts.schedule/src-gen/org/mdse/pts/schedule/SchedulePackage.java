@@ -68,7 +68,7 @@ public interface SchedulePackage extends EPackage {
 	int SCHEDULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Network</b></em>' attribute.
+	 * The feature id for the '<em><b>Network</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -77,13 +77,13 @@ public interface SchedulePackage extends EPackage {
 	int SCHEDULE__NETWORK = 0;
 
 	/**
-	 * The feature id for the '<em><b>Company</b></em>' attribute.
+	 * The feature id for the '<em><b>Depots</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE__COMPANY = 1;
+	int SCHEDULE__DEPOTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Train Schedules</b></em>' containment reference list.
@@ -124,13 +124,22 @@ public interface SchedulePackage extends EPackage {
 	int TRAIN_SCHEDULE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAIN_SCHEDULE__TRAIN = 0;
+
+	/**
 	 * The feature id for the '<em><b>Date Times</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_SCHEDULE__DATE_TIMES = 0;
+	int TRAIN_SCHEDULE__DATE_TIMES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Route</b></em>' containment reference.
@@ -139,7 +148,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_SCHEDULE__ROUTE = 1;
+	int TRAIN_SCHEDULE__ROUTE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Train Schedule</em>' class.
@@ -148,7 +157,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_SCHEDULE_FEATURE_COUNT = 2;
+	int TRAIN_SCHEDULE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Train Schedule</em>' class.
@@ -603,26 +612,26 @@ public interface SchedulePackage extends EPackage {
 	EClass getSchedule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Network</em>'.
+	 * @return the meta object for the reference '<em>Network</em>'.
 	 * @see org.mdse.pts.schedule.Schedule#getNetwork()
 	 * @see #getSchedule()
 	 * @generated
 	 */
-	EAttribute getSchedule_Network();
+	EReference getSchedule_Network();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Schedule#getCompany <em>Company</em>}'.
+	 * Returns the meta object for the reference list '{@link org.mdse.pts.schedule.Schedule#getDepots <em>Depots</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Company</em>'.
-	 * @see org.mdse.pts.schedule.Schedule#getCompany()
+	 * @return the meta object for the reference list '<em>Depots</em>'.
+	 * @see org.mdse.pts.schedule.Schedule#getDepots()
 	 * @see #getSchedule()
 	 * @generated
 	 */
-	EAttribute getSchedule_Company();
+	EReference getSchedule_Depots();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.Schedule#getTrainSchedules <em>Train Schedules</em>}'.
@@ -644,6 +653,17 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTrainSchedule();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.TrainSchedule#getTrain <em>Train</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Train</em>'.
+	 * @see org.mdse.pts.schedule.TrainSchedule#getTrain()
+	 * @see #getTrainSchedule()
+	 * @generated
+	 */
+	EReference getTrainSchedule_Train();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.TrainSchedule#getDateTimes <em>Date Times</em>}'.
@@ -922,19 +942,19 @@ public interface SchedulePackage extends EPackage {
 		 */
 		EClass SCHEDULE = eINSTANCE.getSchedule();
 		/**
-		 * The meta object literal for the '<em><b>Network</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Network</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEDULE__NETWORK = eINSTANCE.getSchedule_Network();
+		EReference SCHEDULE__NETWORK = eINSTANCE.getSchedule_Network();
 		/**
-		 * The meta object literal for the '<em><b>Company</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Depots</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEDULE__COMPANY = eINSTANCE.getSchedule_Company();
+		EReference SCHEDULE__DEPOTS = eINSTANCE.getSchedule_Depots();
 		/**
 		 * The meta object literal for the '<em><b>Train Schedules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -951,6 +971,13 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRAIN_SCHEDULE = eINSTANCE.getTrainSchedule();
+		/**
+		 * The meta object literal for the '<em><b>Train</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRAIN_SCHEDULE__TRAIN = eINSTANCE.getTrainSchedule_Train();
 		/**
 		 * The meta object literal for the '<em><b>Date Times</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->

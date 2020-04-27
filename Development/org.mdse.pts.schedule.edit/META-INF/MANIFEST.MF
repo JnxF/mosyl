@@ -9,7 +9,8 @@ Bundle-Activator: org.mdse.pts.schedule.provider.ScheduleEditPlugin$Implementati
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: network.provider,
+Export-Package: depot.provider,
+ network.provider,
  org.mdse.pts.schedule.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.mdse.pts.schedule;visibility:=reexport,
