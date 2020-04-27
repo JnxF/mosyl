@@ -46,7 +46,6 @@ FinalSpot returns FinalSpot:
 	"terminate" "at" station=STRING ("on" "platform" platform=STRING)?
 ;
 
-//TODO: Define syntax rules
 
 enum WeekDays:
 	MONDAY="Monday" | TUESDAY="Tuesday" | WEDNESDAY="Wednesday" | THURSDAY="Thursday" |
