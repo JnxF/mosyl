@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="depot" nsURI="http://mdse.org/pts/depot" nsPrefix="depot">
-  <eClassifiers xsi:type="ecore:EClass" name="Depot"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Depot">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trains" upperBound="-1"
+        eType="#//Train" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Train">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coaches" lowerBound="1"
+        upperBound="-1" eType="#//Coach" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" unique="false" lowerBound="1"
+        eType="#//TrainType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Coach" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InnerCoach" abstract="true" eSuperTypes="#//Coach">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Number" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Locomotive" eSuperTypes="#//Coach"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TrainType">
+    <eLiterals name="REGIONAL"/>
+    <eLiterals name="INTERCITY" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PassengerCoach" eSuperTypes="#//InnerCoach">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Class" ordered="false"
+        unique="false" lowerBound="1" eType="#//PassengerClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DinnerCoach" eSuperTypes="#//InnerCoach"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PassengerClass">
+    <eLiterals name="FIRST"/>
+    <eLiterals name="SECOND" value="1"/>
+  </eClassifiers>
 </ecore:EPackage>

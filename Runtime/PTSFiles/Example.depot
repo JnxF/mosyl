@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<depot:Depot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:depot="http://mdse.org/pts/depot">
+  <trains Name="RE47">
+    <coaches xsi:type="depot:Locomotive"/>
+    <coaches xsi:type="depot:PassengerCoach" Number="14" Class="SECOND"/>
+    <coaches xsi:type="depot:PassengerCoach" Number="15" Class="SECOND"/>
+    <coaches xsi:type="depot:PassengerCoach" Number="16" Class="SECOND"/>
+    <coaches xsi:type="depot:Locomotive"/>
+  </trains>
+  <trains Name="ICE55" Type="INTERCITY">
+    <coaches xsi:type="depot:Locomotive"/>
+    <coaches xsi:type="depot:PassengerCoach" Number="1"/>
+    <coaches xsi:type="depot:DinnerCoach" Number="2"/>
+    <coaches xsi:type="depot:PassengerCoach" Number="3"/>
+  </trains>
+</depot:Depot>
