@@ -72,6 +72,48 @@ public class DepotSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DepotPackage.TRAIN: {
+				Train train = (Train)theEObject;
+				T result = caseTrain(train);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DepotPackage.COACH: {
+				Coach coach = (Coach)theEObject;
+				T result = caseCoach(coach);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DepotPackage.INNER_COACH: {
+				InnerCoach innerCoach = (InnerCoach)theEObject;
+				T result = caseInnerCoach(innerCoach);
+				if (result == null) result = caseCoach(innerCoach);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DepotPackage.LOCOMOTIVE: {
+				Locomotive locomotive = (Locomotive)theEObject;
+				T result = caseLocomotive(locomotive);
+				if (result == null) result = caseCoach(locomotive);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DepotPackage.PASSENGER_COACH: {
+				PassengerCoach passengerCoach = (PassengerCoach)theEObject;
+				T result = casePassengerCoach(passengerCoach);
+				if (result == null) result = caseInnerCoach(passengerCoach);
+				if (result == null) result = caseCoach(passengerCoach);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DepotPackage.DINNER_COACH: {
+				DinnerCoach dinnerCoach = (DinnerCoach)theEObject;
+				T result = caseDinnerCoach(dinnerCoach);
+				if (result == null) result = caseInnerCoach(dinnerCoach);
+				if (result == null) result = caseCoach(dinnerCoach);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -88,6 +130,96 @@ public class DepotSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDepot(Depot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Train</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Train</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrain(Train object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coach</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coach</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoach(Coach object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Inner Coach</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Inner Coach</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInnerCoach(InnerCoach object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Locomotive</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Locomotive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLocomotive(Locomotive object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Passenger Coach</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Passenger Coach</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePassengerCoach(PassengerCoach object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dinner Coach</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dinner Coach</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDinnerCoach(DinnerCoach object) {
 		return null;
 	}
 
