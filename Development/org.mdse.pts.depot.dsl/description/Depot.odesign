@@ -12,6 +12,12 @@
             </style>
             <conditionnalStyles/>
           </subNodeMappings>
+          <subNodeMappings name="Dinner Coach" semanticCandidatesExpression="[coaches/]" domainClass="depot::DinnerCoach">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[Number/]" sizeComputationExpression="-1" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
           <subNodeMappings name="PassengerCoach" semanticCandidatesExpression="[coaches/]" domainClass="depot::PassengerCoach">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[Number/]" sizeComputationExpression="-1" workspacePath="/org.mdse.pts.depot.dsl/symbols/DefaultCoach.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -29,12 +35,6 @@
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
-          </subNodeMappings>
-          <subNodeMappings name="Dinner Coach" semanticCandidatesExpression="[coaches/]" domainClass="depot::DinnerCoach">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[Number/]" sizeComputationExpression="-1" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="feature:Name" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>

@@ -2,7 +2,40 @@
 package depot;
 
 class Depot {
-	
+	val Train[*] trains;
+	!unique !ordered attr String[1] name;
 }
 
-//TODO: Define metamodel
+class Train {
+	!ordered attr String[1] name;
+	val Coach[+] coaches;
+	!unique attr TrainType[1] trainType;
+}
+
+abstract class Coach {
+}
+
+abstract class InnerCoach extends Coach {
+	!unique !ordered id attr int[1] number;
+}
+
+class Locomotive extends Coach {
+}
+
+enum TrainType {
+	REGIONAL = 0;
+	INTERCITY = 1;
+}
+
+class PassengerCoach extends InnerCoach {
+	!unique !ordered attr PassengerClass[1] passengerClass;
+}
+
+class DinnerCoach extends InnerCoach {
+}
+
+enum PassengerClass {
+	FIRST = 0;
+	SECOND = 1;
+}
+
