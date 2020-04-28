@@ -38,7 +38,7 @@ StartSpot returns StartSpot:
 
 MiddleSpot returns MiddleSpot:
 	"stop" "at" station=STRING ("on" "platform" platform=STRING)?
-	("for" waitingTime=INT "min")? (turnStation?="and turn")?
+	("for" waitingTime=INT "min")? ("and" turnStation?="turn")?
 	("drive" "via" leg=[network::Leg])?
 ;
 
