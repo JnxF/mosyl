@@ -26,23 +26,23 @@ Time returns Time:
 ;
 
 Route returns Route:
-	startSpot=StartSpot
-	(middleSpots+=MiddleSpot)*
-	finalSpot=FinalSpot
+	spots+=StartSpot
+	(spots+=MiddleSpot)*
+	spots+=FinalSpot
 ;
 
-StartSpot returns StartSpot:
+StartSpot returns Spot:
 	"start" "at" station=STRING ("on" "platform" platform=STRING)?
 	("drive" "via" leg=[network::Leg])?
 ;
 
-MiddleSpot returns MiddleSpot:
+MiddleSpot returns Spot:
 	"stop" "at" station=STRING ("on" "platform" platform=STRING)?
-	("for" waitingTime=INT "min")? ("and" turnStation?="turn")?
+	"for" waitingTime=INT "min" ("and" turnStation?="turn")?
 	("drive" "via" leg=[network::Leg])?
 ;
 
-FinalSpot returns FinalSpot:
+FinalSpot returns Spot:
 	"terminate" "at" station=STRING ("on" "platform" platform=STRING)?
 ;
 

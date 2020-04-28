@@ -37,28 +37,14 @@ class Time {
 }
 
 class Route {
-	val StartSpot[1] startSpot;
-	val MiddleSpot[*] middleSpots;
-	val FinalSpot[1] finalSpot;
+	val Spot[2..*] spots;
 }
 
-abstract class SituatedSpot {
+
+class Spot {
 	attr String[1] station;
 	attr String[?] platform;
-}
-
-abstract class SituatedSpotWithConnection extends SituatedSpot {
-	ref network.Leg[?] leg;
-}
-
-class StartSpot extends SituatedSpotWithConnection {	
-}
-
-class MiddleSpot extends SituatedSpotWithConnection {
-	attr Integer[?] waitingTime = 0;
-	attr Boolean[?] turnStation = false;
-}
-
-class FinalSpot extends SituatedSpot {
-
+	attr Integer[1] waitingTime;
+	attr Boolean[1] turnStation = false; // TODO: last one cannot have a turn
+	ref network.Leg[?] leg; // TODO: last one cannot have leg
 }

@@ -36,23 +36,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/minutes"/>
     </genClasses>
     <genClasses ecoreClass="Schedule.ecore#//Route">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/startSpot"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/middleSpots"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/finalSpot"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/spots"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Schedule.ecore#//SituatedSpot">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//SituatedSpot/station"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//SituatedSpot/platform"/>
+    <genClasses ecoreClass="Schedule.ecore#//Spot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Spot/station"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Spot/platform"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Spot/waitingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Spot/turnStation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Schedule.ecore#//Spot/leg"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Schedule.ecore#//SituatedSpotWithConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Schedule.ecore#//SituatedSpotWithConnection/leg"/>
-    </genClasses>
-    <genClasses ecoreClass="Schedule.ecore#//StartSpot"/>
-    <genClasses ecoreClass="Schedule.ecore#//MiddleSpot">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//MiddleSpot/waitingTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//MiddleSpot/turnStation"/>
-    </genClasses>
-    <genClasses ecoreClass="Schedule.ecore#//FinalSpot"/>
   </genPackages>
   <genPackages prefix="Network" ecorePackage="../../org.mdse.pts.network/model/Network.ecore#/">
     <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Network">
