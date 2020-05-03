@@ -4,17 +4,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="Depot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="trains" upperBound="-1"
         eType="#//Train" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Train">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="coaches" lowerBound="1"
         upperBound="-1" eType="#//Coach" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" unique="false" lowerBound="1"
-        eType="#//TrainType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trainType" unique="false"
+        lowerBound="1" eType="#//TrainType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Coach" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="InnerCoach" abstract="true" eSuperTypes="#//Coach">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Number" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
         unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         iD="true"/>
   </eClassifiers>
@@ -24,7 +27,7 @@
     <eLiterals name="INTERCITY" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PassengerCoach" eSuperTypes="#//InnerCoach">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Class" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="passengerClass" ordered="false"
         unique="false" lowerBound="1" eType="#//PassengerClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DinnerCoach" eSuperTypes="#//InnerCoach"/>

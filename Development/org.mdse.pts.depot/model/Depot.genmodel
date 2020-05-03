@@ -18,19 +18,20 @@
     </genEnums>
     <genClasses ecoreClass="Depot.ecore#//Depot">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Depot.ecore#//Depot/trains"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//Depot/name"/>
     </genClasses>
     <genClasses ecoreClass="Depot.ecore#//Train">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//Train/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//Train/name"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Depot.ecore#//Train/coaches"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//Train/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//Train/trainType"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Depot.ecore#//Coach"/>
     <genClasses image="false" ecoreClass="Depot.ecore#//InnerCoach">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//InnerCoach/Number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//InnerCoach/number"/>
     </genClasses>
     <genClasses ecoreClass="Depot.ecore#//Locomotive"/>
     <genClasses ecoreClass="Depot.ecore#//PassengerCoach">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//PassengerCoach/Class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//PassengerCoach/passengerClass"/>
     </genClasses>
     <genClasses ecoreClass="Depot.ecore#//DinnerCoach"/>
   </genPackages>
