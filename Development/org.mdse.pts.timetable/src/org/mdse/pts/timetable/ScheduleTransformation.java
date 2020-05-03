@@ -107,7 +107,7 @@ public class ScheduleTransformation {
 		int minutes = time.getTime().getMinutes();
 		int newMinutes = minutes + addedMinutes;
 		int newHours = hours + Math.floorDiv(newMinutes, 60);
-		newMinutes = Math.floorMod(newMinutes, 60);
+		newMinutes = newMinutes % 60;
 		while (newHours > 23) {
 			newHours -= 24;
 			if (day.getValue() == 7) day = DaysOfTheWeek.get(1);
