@@ -69,7 +69,7 @@ public class ScheduleTransformation {
 				
 				arrival = TimetableFactory.eINSTANCE.createTimeAndStation();
 				train.setArrival(arrival);
-				arrival.setArrDepTime(calculateArrival(prevDateTime,prevLeg,null)); // TODO: Add DateTime when they're using the same DateTime type
+				arrival.setArrDepTime(prevDateTime);
 				arrival.setNextPrevStation(prevStation);
 			}
 		}
