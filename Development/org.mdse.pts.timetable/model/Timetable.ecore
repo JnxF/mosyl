@@ -3,21 +3,24 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="timetable" nsURI="http://mdse.org/pts/timetable" nsPrefix="timetable">
   <eClassifiers xsi:type="ecore:EClass" name="Timetable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stationTrains" upperBound="-1"
-        eType="#//StationTrain"/>
+        eType="#//StationTrain" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stationName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StationTrain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trainName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arrival" eType="#//TimeAndStation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="departure" eType="#//TimeAndStation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrival" eType="#//TimeAndStation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="departure" eType="#//TimeAndStation"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeAndStation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arrDepTime" lowerBound="1"
-        eType="ecore:EClass ../../org.mdse.pst.shared/model/shared.ecore#//DateTime"/>
+        eType="ecore:EClass ../../org.mdse.pst.shared/model/shared.ecore#//DateTime"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextPrevStation" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

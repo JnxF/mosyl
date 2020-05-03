@@ -72,6 +72,18 @@ public class TimetableSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TimetablePackage.STATION_TRAIN: {
+				StationTrain stationTrain = (StationTrain)theEObject;
+				T result = caseStationTrain(stationTrain);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TimetablePackage.TIME_AND_STATION: {
+				TimeAndStation timeAndStation = (TimeAndStation)theEObject;
+				T result = caseTimeAndStation(timeAndStation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -88,6 +100,36 @@ public class TimetableSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTimetable(Timetable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Station Train</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Station Train</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStationTrain(StationTrain object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Time And Station</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Time And Station</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimeAndStation(TimeAndStation object) {
 		return null;
 	}
 

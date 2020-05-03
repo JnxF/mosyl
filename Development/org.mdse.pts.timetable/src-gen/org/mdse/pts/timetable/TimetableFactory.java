@@ -31,6 +31,24 @@ public interface TimetableFactory extends EFactory {
 	Timetable createTimetable();
 
 	/**
+	 * Returns a new object of class '<em>Station Train</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Station Train</em>'.
+	 * @generated
+	 */
+	StationTrain createStationTrain();
+
+	/**
+	 * Returns a new object of class '<em>Time And Station</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time And Station</em>'.
+	 * @generated
+	 */
+	TimeAndStation createTimeAndStation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

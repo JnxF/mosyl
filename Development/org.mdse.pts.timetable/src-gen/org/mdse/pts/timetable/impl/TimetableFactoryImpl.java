@@ -57,6 +57,8 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case TimetablePackage.TIMETABLE: return createTimetable();
+			case TimetablePackage.STATION_TRAIN: return createStationTrain();
+			case TimetablePackage.TIME_AND_STATION: return createTimeAndStation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,6 +73,28 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 	public Timetable createTimetable() {
 		TimetableImpl timetable = new TimetableImpl();
 		return timetable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StationTrain createStationTrain() {
+		StationTrainImpl stationTrain = new StationTrainImpl();
+		return stationTrain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TimeAndStation createTimeAndStation() {
+		TimeAndStationImpl timeAndStation = new TimeAndStationImpl();
+		return timeAndStation;
 	}
 
 	/**

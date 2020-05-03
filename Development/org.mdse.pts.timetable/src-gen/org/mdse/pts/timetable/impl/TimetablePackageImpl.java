@@ -2,14 +2,20 @@
  */
 package org.mdse.pts.timetable.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.mdse.pts.timetable.StationTrain;
+import org.mdse.pts.timetable.TimeAndStation;
 import org.mdse.pts.timetable.Timetable;
 import org.mdse.pts.timetable.TimetableFactory;
 import org.mdse.pts.timetable.TimetablePackage;
+import shared.SharedPackage;
+import shared.impl.SharedPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +30,19 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	private EClass timetableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stationTrainEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timeAndStationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -72,11 +91,17 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SharedPackage.eNS_URI);
+		SharedPackageImpl theSharedPackage = (SharedPackageImpl)(registeredPackage instanceof SharedPackageImpl ? registeredPackage : SharedPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theTimetablePackage.createPackageContents();
+		theSharedPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theTimetablePackage.initializePackageContents();
+		theSharedPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theTimetablePackage.freeze();
@@ -94,6 +119,106 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	@Override
 	public EClass getTimetable() {
 		return timetableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTimetable_StationTrains() {
+		return (EReference)timetableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTimetable_StationName() {
+		return (EAttribute)timetableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getStationTrain() {
+		return stationTrainEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStationTrain_TrainName() {
+		return (EAttribute)stationTrainEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStationTrain_Arrival() {
+		return (EReference)stationTrainEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStationTrain_Departure() {
+		return (EReference)stationTrainEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStationTrain_Platform() {
+		return (EAttribute)stationTrainEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTimeAndStation() {
+		return timeAndStationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTimeAndStation_ArrDepTime() {
+		return (EReference)timeAndStationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTimeAndStation_NextPrevStation() {
+		return (EAttribute)timeAndStationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -126,6 +251,18 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 
 		// Create classes and their features
 		timetableEClass = createEClass(TIMETABLE);
+		createEReference(timetableEClass, TIMETABLE__STATION_TRAINS);
+		createEAttribute(timetableEClass, TIMETABLE__STATION_NAME);
+
+		stationTrainEClass = createEClass(STATION_TRAIN);
+		createEAttribute(stationTrainEClass, STATION_TRAIN__TRAIN_NAME);
+		createEReference(stationTrainEClass, STATION_TRAIN__ARRIVAL);
+		createEReference(stationTrainEClass, STATION_TRAIN__DEPARTURE);
+		createEAttribute(stationTrainEClass, STATION_TRAIN__PLATFORM);
+
+		timeAndStationEClass = createEClass(TIME_AND_STATION);
+		createEReference(timeAndStationEClass, TIME_AND_STATION__ARR_DEP_TIME);
+		createEAttribute(timeAndStationEClass, TIME_AND_STATION__NEXT_PREV_STATION);
 	}
 
 	/**
@@ -151,6 +288,9 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		SharedPackage theSharedPackage = (SharedPackage)EPackage.Registry.INSTANCE.getEPackage(SharedPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -159,6 +299,18 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(timetableEClass, Timetable.class, "Timetable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTimetable_StationTrains(), this.getStationTrain(), null, "stationTrains", null, 0, -1, Timetable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimetable_StationName(), ecorePackage.getEString(), "stationName", null, 1, 1, Timetable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stationTrainEClass, StationTrain.class, "StationTrain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStationTrain_TrainName(), ecorePackage.getEString(), "trainName", null, 1, 1, StationTrain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStationTrain_Arrival(), this.getTimeAndStation(), null, "arrival", null, 0, 1, StationTrain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStationTrain_Departure(), this.getTimeAndStation(), null, "departure", null, 0, 1, StationTrain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStationTrain_Platform(), ecorePackage.getEString(), "platform", null, 1, 1, StationTrain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(timeAndStationEClass, TimeAndStation.class, "TimeAndStation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTimeAndStation_ArrDepTime(), theSharedPackage.getDateTime(), null, "arrDepTime", null, 1, 1, TimeAndStation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeAndStation_NextPrevStation(), ecorePackage.getEString(), "nextPrevStation", null, 1, 1, TimeAndStation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
