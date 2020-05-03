@@ -23,6 +23,8 @@ public class ScheduleTransformation {
 			for (DateTime dateTime : new HashSet<DateTime>()) {//trainSchedule.getDateTimes()) { // TODO: Fix use of DateTime to shared.
 				StartSpot startspot = route.getStartSpot();
 				String prevStation = startspot.getStation();
+				Leg prevLeg = (Leg) startspot.getLeg();
+				DateTime prevDateTime = dateTime;
 				
 				Timetable timetable = getTimetable(prevStation);
 				StationTrain train = TimetableFactory.eINSTANCE.createStationTrain();
@@ -31,16 +33,15 @@ public class ScheduleTransformation {
 				
 				TimeAndStation arrival;
 				TimeAndStation departure = TimetableFactory.eINSTANCE.createTimeAndStation();
-				Leg prevLeg = (Leg) startspot.getLeg();
-				DateTime prevDateTime = dateTime;
-				
 				train.setDeparture(departure);
 				departure.setArrDepTime(dateTime);
+				
 				for (MiddleSpot spot : route.getMiddleSpots()) {
 					departure.setNextPrevStation(spot.getStation());
 					
 					timetable = getTimetable(spot.getStation());
 					train = TimetableFactory.eINSTANCE.createStationTrain();
+					timetable.getStationTrains().add(train);
 					train.setTrainName("None"); // TODO: Add train name when available
 					
 					prevDateTime = calculateArrival(prevDateTime,prevLeg,null); //TODO: Add train when available
@@ -63,6 +64,7 @@ public class ScheduleTransformation {
 				
 				timetable = getTimetable(finalSpot.getStation());
 				train = TimetableFactory.eINSTANCE.createStationTrain();
+				timetable.getStationTrains().add(train);
 				train.setTrainName("None"); // TODO: Add train name when available
 
 				prevDateTime = calculateArrival(prevDateTime,prevLeg,null); //TODO: Add train when available
