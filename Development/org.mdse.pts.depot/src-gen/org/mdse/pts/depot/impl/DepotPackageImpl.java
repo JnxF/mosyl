@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.mdse.pts.depot.Coach;
@@ -42,42 +42,49 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	private EClass trainEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass coachEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass innerCoachEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass locomotiveEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass passengerCoachEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass dinnerCoachEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EEnum trainTypeEEnum = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,6 +179,16 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDepot_Name() {
+		return (EAttribute)depotEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTrain() {
 		return trainEClass;
 	}
@@ -202,7 +219,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrain_Type() {
+	public EAttribute getTrain_TrainType() {
 		return (EAttribute)trainEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -262,7 +279,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPassengerCoach_Class() {
+	public EAttribute getPassengerCoach_PassengerClass() {
 		return (EAttribute)passengerCoachEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -327,11 +344,12 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		// Create classes and their features
 		depotEClass = createEClass(DEPOT);
 		createEReference(depotEClass, DEPOT__TRAINS);
+		createEAttribute(depotEClass, DEPOT__NAME);
 
 		trainEClass = createEClass(TRAIN);
 		createEAttribute(trainEClass, TRAIN__NAME);
 		createEReference(trainEClass, TRAIN__COACHES);
-		createEAttribute(trainEClass, TRAIN__TYPE);
+		createEAttribute(trainEClass, TRAIN__TRAIN_TYPE);
 
 		coachEClass = createEClass(COACH);
 
@@ -341,7 +359,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		locomotiveEClass = createEClass(LOCOMOTIVE);
 
 		passengerCoachEClass = createEClass(PASSENGER_COACH);
-		createEAttribute(passengerCoachEClass, PASSENGER_COACH__CLASS);
+		createEAttribute(passengerCoachEClass, PASSENGER_COACH__PASSENGER_CLASS);
 
 		dinnerCoachEClass = createEClass(DINNER_COACH);
 
@@ -386,21 +404,22 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(depotEClass, Depot.class, "Depot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDepot_Trains(), this.getTrain(), null, "trains", null, 0, -1, Depot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDepot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Depot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(trainEClass, Train.class, "Train", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrain_Name(), ecorePackage.getEString(), "Name", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrain_Name(), ecorePackage.getEString(), "name", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTrain_Coaches(), this.getCoach(), null, "coaches", null, 1, -1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrain_Type(), this.getTrainType(), "Type", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrain_TrainType(), this.getTrainType(), "trainType", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coachEClass, Coach.class, "Coach", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(innerCoachEClass, InnerCoach.class, "InnerCoach", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInnerCoach_Number(), ecorePackage.getEInt(), "Number", null, 1, 1, InnerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getInnerCoach_Number(), ecorePackage.getEInt(), "number", null, 1, 1, InnerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(locomotiveEClass, Locomotive.class, "Locomotive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(passengerCoachEClass, PassengerCoach.class, "PassengerCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPassengerCoach_Class(), this.getPassengerClass(), "Class", null, 1, 1, PassengerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPassengerCoach_PassengerClass(), this.getPassengerClass(), "passengerClass", null, 1, 1, PassengerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(dinnerCoachEClass, DinnerCoach.class, "DinnerCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -9,10 +9,6 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="DateTime">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" lowerBound="1" eType="#//DaysOfTheWeek"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="#//Time"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DaysOfTheWeek">
     <eLiterals name="MONDAY" value="1"/>
     <eLiterals name="TUESDAY" value="2"/>

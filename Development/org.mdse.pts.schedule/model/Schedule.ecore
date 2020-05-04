@@ -2,18 +2,23 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="schedule" nsURI="http://mdse.org/pts/schedule" nsPrefix="schedule">
   <eClassifiers xsi:type="ecore:EClass" name="Schedule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="network" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="company" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="network" lowerBound="1"
+        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Network"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="depots" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Depot"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trainSchedules" upperBound="-1"
         eType="#//TrainSchedule" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TrainSchedule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dateTimes" lowerBound="1"
-        upperBound="-1" eType="#//DateTime" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="train" eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Train"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeDescription" lowerBound="1"
+        eType="#//TimeDescription" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="route" lowerBound="1" eType="#//Route"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dateTimes" lowerBound="1"
+        upperBound="-1" eType="#//DateTime" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateTime">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekday" lowerBound="1"
@@ -35,28 +40,19 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Route">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="startSpot" lowerBound="1"
-        eType="#//StartSpot" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="middleSpots" upperBound="-1"
-        eType="#//MiddleSpot" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="finalSpot" lowerBound="1"
-        eType="#//FinalSpot" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spots" lowerBound="2" upperBound="-1"
+        eType="#//Spot" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SituatedSpot" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="station" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Spot">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="station" lowerBound="1"
+        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SituatedSpotWithConnection" abstract="true"
-      eSuperTypes="#//SituatedSpot">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="waitingTime" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="turnStation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="leg" eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Leg"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StartSpot" eSuperTypes="#//SituatedSpotWithConnection"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MiddleSpot" eSuperTypes="#//SituatedSpotWithConnection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="waitingTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
-        defaultValueLiteral="0"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="turnStation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="false"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FinalSpot" eSuperTypes="#//SituatedSpot"/>
 </ecore:EPackage>

@@ -40,6 +40,15 @@ public interface ScheduleFactory extends EFactory {
 	TrainSchedule createTrainSchedule();
 
 	/**
+	 * Returns a new object of class '<em>Time Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time Description</em>'.
+	 * @generated
+	 */
+	TimeDescription createTimeDescription();
+
+	/**
 	 * Returns a new object of class '<em>Date Time</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,31 +76,13 @@ public interface ScheduleFactory extends EFactory {
 	Route createRoute();
 
 	/**
-	 * Returns a new object of class '<em>Start Spot</em>'.
+	 * Returns a new object of class '<em>Spot</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Start Spot</em>'.
+	 * @return a new object of class '<em>Spot</em>'.
 	 * @generated
 	 */
-	StartSpot createStartSpot();
-
-	/**
-	 * Returns a new object of class '<em>Middle Spot</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Middle Spot</em>'.
-	 * @generated
-	 */
-	MiddleSpot createMiddleSpot();
-
-	/**
-	 * Returns a new object of class '<em>Final Spot</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Final Spot</em>'.
-	 * @generated
-	 */
-	FinalSpot createFinalSpot();
+	Spot createSpot();
 
 	/**
 	 * Returns the package supported by this factory.

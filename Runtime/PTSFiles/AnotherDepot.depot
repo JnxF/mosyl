@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<depot:Depot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:depot="http://mdse.org/pts/depot" name="AnotherDepot">
+  <trains name="Oresundtag"/>
+</depot:Depot>

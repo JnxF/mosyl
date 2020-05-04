@@ -68,7 +68,7 @@ public interface SchedulePackage extends EPackage {
 	int SCHEDULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Network</b></em>' attribute.
+	 * The feature id for the '<em><b>Network</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -77,13 +77,13 @@ public interface SchedulePackage extends EPackage {
 	int SCHEDULE__NETWORK = 0;
 
 	/**
-	 * The feature id for the '<em><b>Company</b></em>' attribute.
+	 * The feature id for the '<em><b>Depots</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE__COMPANY = 1;
+	int SCHEDULE__DEPOTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Train Schedules</b></em>' containment reference list.
@@ -112,7 +112,6 @@ public interface SchedulePackage extends EPackage {
 	 */
 	int SCHEDULE_OPERATION_COUNT = 0;
 
-
 	/**
 	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.TrainScheduleImpl <em>Train Schedule</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -124,13 +123,22 @@ public interface SchedulePackage extends EPackage {
 	int TRAIN_SCHEDULE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Date Times</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Train</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_SCHEDULE__DATE_TIMES = 0;
+	int TRAIN_SCHEDULE__TRAIN = 0;
+
+	/**
+	 * The feature id for the '<em><b>Time Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAIN_SCHEDULE__TIME_DESCRIPTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Route</b></em>' containment reference.
@@ -139,7 +147,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_SCHEDULE__ROUTE = 1;
+	int TRAIN_SCHEDULE__ROUTE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Train Schedule</em>' class.
@@ -148,7 +156,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_SCHEDULE_FEATURE_COUNT = 2;
+	int TRAIN_SCHEDULE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Train Schedule</em>' class.
@@ -160,6 +168,43 @@ public interface SchedulePackage extends EPackage {
 	int TRAIN_SCHEDULE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.TimeDescriptionImpl <em>Time Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.schedule.impl.TimeDescriptionImpl
+	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getTimeDescription()
+	 * @generated
+	 */
+	int TIME_DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Date Times</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_DESCRIPTION__DATE_TIMES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Time Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_DESCRIPTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Time Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_DESCRIPTION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.DateTimeImpl <em>Date Time</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,7 +212,7 @@ public interface SchedulePackage extends EPackage {
 	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getDateTime()
 	 * @generated
 	 */
-	int DATE_TIME = 2;
+	int DATE_TIME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Weekday</b></em>' attribute list.
@@ -213,7 +258,7 @@ public interface SchedulePackage extends EPackage {
 	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getTime()
 	 * @generated
 	 */
-	int TIME = 3;
+	int TIME = 4;
 
 	/**
 	 * The feature id for the '<em><b>Hours</b></em>' attribute.
@@ -259,34 +304,16 @@ public interface SchedulePackage extends EPackage {
 	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getRoute()
 	 * @generated
 	 */
-	int ROUTE = 4;
+	int ROUTE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Start Spot</b></em>' containment reference.
+	 * The feature id for the '<em><b>Spots</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE__START_SPOT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Middle Spots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE__MIDDLE_SPOTS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Final Spot</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE__FINAL_SPOT = 2;
+	int ROUTE__SPOTS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Route</em>' class.
@@ -295,7 +322,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE_FEATURE_COUNT = 3;
+	int ROUTE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Route</em>' class.
@@ -307,23 +334,23 @@ public interface SchedulePackage extends EPackage {
 	int ROUTE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.SituatedSpotImpl <em>Situated Spot</em>}' class.
+	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.SpotImpl <em>Spot</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.SituatedSpotImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getSituatedSpot()
+	 * @see org.mdse.pts.schedule.impl.SpotImpl
+	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getSpot()
 	 * @generated
 	 */
-	int SITUATED_SPOT = 5;
+	int SPOT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Station</b></em>' attribute.
+	 * The feature id for the '<em><b>Station</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATED_SPOT__STATION = 0;
+	int SPOT__STATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Platform</b></em>' attribute.
@@ -332,172 +359,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SITUATED_SPOT__PLATFORM = 1;
-
-	/**
-	 * The number of structural features of the '<em>Situated Spot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATED_SPOT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Situated Spot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATED_SPOT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.SituatedSpotWithConnectionImpl <em>Situated Spot With Connection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.SituatedSpotWithConnectionImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getSituatedSpotWithConnection()
-	 * @generated
-	 */
-	int SITUATED_SPOT_WITH_CONNECTION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Station</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATED_SPOT_WITH_CONNECTION__STATION = SITUATED_SPOT__STATION;
-
-	/**
-	 * The feature id for the '<em><b>Platform</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATED_SPOT_WITH_CONNECTION__PLATFORM = SITUATED_SPOT__PLATFORM;
-
-	/**
-	 * The feature id for the '<em><b>Leg</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATED_SPOT_WITH_CONNECTION__LEG = SITUATED_SPOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Situated Spot With Connection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATED_SPOT_WITH_CONNECTION_FEATURE_COUNT = SITUATED_SPOT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Situated Spot With Connection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SITUATED_SPOT_WITH_CONNECTION_OPERATION_COUNT = SITUATED_SPOT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.StartSpotImpl <em>Start Spot</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.StartSpotImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getStartSpot()
-	 * @generated
-	 */
-	int START_SPOT = 7;
-
-	/**
-	 * The feature id for the '<em><b>Station</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int START_SPOT__STATION = SITUATED_SPOT_WITH_CONNECTION__STATION;
-
-	/**
-	 * The feature id for the '<em><b>Platform</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int START_SPOT__PLATFORM = SITUATED_SPOT_WITH_CONNECTION__PLATFORM;
-
-	/**
-	 * The feature id for the '<em><b>Leg</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int START_SPOT__LEG = SITUATED_SPOT_WITH_CONNECTION__LEG;
-
-	/**
-	 * The number of structural features of the '<em>Start Spot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int START_SPOT_FEATURE_COUNT = SITUATED_SPOT_WITH_CONNECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Start Spot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int START_SPOT_OPERATION_COUNT = SITUATED_SPOT_WITH_CONNECTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.MiddleSpotImpl <em>Middle Spot</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.MiddleSpotImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getMiddleSpot()
-	 * @generated
-	 */
-	int MIDDLE_SPOT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Station</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIDDLE_SPOT__STATION = SITUATED_SPOT_WITH_CONNECTION__STATION;
-
-	/**
-	 * The feature id for the '<em><b>Platform</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIDDLE_SPOT__PLATFORM = SITUATED_SPOT_WITH_CONNECTION__PLATFORM;
-
-	/**
-	 * The feature id for the '<em><b>Leg</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIDDLE_SPOT__LEG = SITUATED_SPOT_WITH_CONNECTION__LEG;
+	int SPOT__PLATFORM = 1;
 
 	/**
 	 * The feature id for the '<em><b>Waiting Time</b></em>' attribute.
@@ -506,7 +368,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLE_SPOT__WAITING_TIME = SITUATED_SPOT_WITH_CONNECTION_FEATURE_COUNT + 0;
+	int SPOT__WAITING_TIME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Turn Station</b></em>' attribute.
@@ -515,71 +377,34 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLE_SPOT__TURN_STATION = SITUATED_SPOT_WITH_CONNECTION_FEATURE_COUNT + 1;
+	int SPOT__TURN_STATION = 3;
 
 	/**
-	 * The number of structural features of the '<em>Middle Spot</em>' class.
+	 * The feature id for the '<em><b>Leg</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLE_SPOT_FEATURE_COUNT = SITUATED_SPOT_WITH_CONNECTION_FEATURE_COUNT + 2;
+	int SPOT__LEG = 4;
 
 	/**
-	 * The number of operations of the '<em>Middle Spot</em>' class.
+	 * The number of structural features of the '<em>Spot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIDDLE_SPOT_OPERATION_COUNT = SITUATED_SPOT_WITH_CONNECTION_OPERATION_COUNT + 0;
+	int SPOT_FEATURE_COUNT = 5;
 
 	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.FinalSpotImpl <em>Final Spot</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.FinalSpotImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getFinalSpot()
-	 * @generated
-	 */
-	int FINAL_SPOT = 9;
-
-	/**
-	 * The feature id for the '<em><b>Station</b></em>' attribute.
+	 * The number of operations of the '<em>Spot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FINAL_SPOT__STATION = SITUATED_SPOT__STATION;
-
-	/**
-	 * The feature id for the '<em><b>Platform</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_SPOT__PLATFORM = SITUATED_SPOT__PLATFORM;
-
-	/**
-	 * The number of structural features of the '<em>Final Spot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_SPOT_FEATURE_COUNT = SITUATED_SPOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Final Spot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_SPOT_OPERATION_COUNT = SITUATED_SPOT_OPERATION_COUNT + 0;
+	int SPOT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.mdse.pts.schedule.WeekDays <em>Week Days</em>}' enum.
@@ -589,7 +414,7 @@ public interface SchedulePackage extends EPackage {
 	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getWeekDays()
 	 * @generated
 	 */
-	int WEEK_DAYS = 10;
+	int WEEK_DAYS = 7;
 
 
 	/**
@@ -603,26 +428,26 @@ public interface SchedulePackage extends EPackage {
 	EClass getSchedule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Network</em>'.
+	 * @return the meta object for the reference '<em>Network</em>'.
 	 * @see org.mdse.pts.schedule.Schedule#getNetwork()
 	 * @see #getSchedule()
 	 * @generated
 	 */
-	EAttribute getSchedule_Network();
+	EReference getSchedule_Network();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Schedule#getCompany <em>Company</em>}'.
+	 * Returns the meta object for the reference list '{@link org.mdse.pts.schedule.Schedule#getDepots <em>Depots</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Company</em>'.
-	 * @see org.mdse.pts.schedule.Schedule#getCompany()
+	 * @return the meta object for the reference list '<em>Depots</em>'.
+	 * @see org.mdse.pts.schedule.Schedule#getDepots()
 	 * @see #getSchedule()
 	 * @generated
 	 */
-	EAttribute getSchedule_Company();
+	EReference getSchedule_Depots();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.Schedule#getTrainSchedules <em>Train Schedules</em>}'.
@@ -646,15 +471,26 @@ public interface SchedulePackage extends EPackage {
 	EClass getTrainSchedule();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.TrainSchedule#getDateTimes <em>Date Times</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.TrainSchedule#getTrain <em>Train</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Date Times</em>'.
-	 * @see org.mdse.pts.schedule.TrainSchedule#getDateTimes()
+	 * @return the meta object for the reference '<em>Train</em>'.
+	 * @see org.mdse.pts.schedule.TrainSchedule#getTrain()
 	 * @see #getTrainSchedule()
 	 * @generated
 	 */
-	EReference getTrainSchedule_DateTimes();
+	EReference getTrainSchedule_Train();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.mdse.pts.schedule.TrainSchedule#getTimeDescription <em>Time Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time Description</em>'.
+	 * @see org.mdse.pts.schedule.TrainSchedule#getTimeDescription()
+	 * @see #getTrainSchedule()
+	 * @generated
+	 */
+	EReference getTrainSchedule_TimeDescription();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.mdse.pts.schedule.TrainSchedule#getRoute <em>Route</em>}'.
@@ -666,6 +502,27 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTrainSchedule_Route();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.schedule.TimeDescription <em>Time Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time Description</em>'.
+	 * @see org.mdse.pts.schedule.TimeDescription
+	 * @generated
+	 */
+	EClass getTimeDescription();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.TimeDescription#getDateTimes <em>Date Times</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Date Times</em>'.
+	 * @see org.mdse.pts.schedule.TimeDescription#getDateTimes()
+	 * @see #getTimeDescription()
+	 * @generated
+	 */
+	EReference getTimeDescription_DateTimes();
 
 	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.schedule.DateTime <em>Date Time</em>}'.
@@ -742,142 +599,80 @@ public interface SchedulePackage extends EPackage {
 	EClass getRoute();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.mdse.pts.schedule.Route#getStartSpot <em>Start Spot</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.Route#getSpots <em>Spots</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Start Spot</em>'.
-	 * @see org.mdse.pts.schedule.Route#getStartSpot()
+	 * @return the meta object for the containment reference list '<em>Spots</em>'.
+	 * @see org.mdse.pts.schedule.Route#getSpots()
 	 * @see #getRoute()
 	 * @generated
 	 */
-	EReference getRoute_StartSpot();
+	EReference getRoute_Spots();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.Route#getMiddleSpots <em>Middle Spots</em>}'.
+	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Spot <em>Spot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Middle Spots</em>'.
-	 * @see org.mdse.pts.schedule.Route#getMiddleSpots()
-	 * @see #getRoute()
+	 * @return the meta object for class '<em>Spot</em>'.
+	 * @see org.mdse.pts.schedule.Spot
 	 * @generated
 	 */
-	EReference getRoute_MiddleSpots();
+	EClass getSpot();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.mdse.pts.schedule.Route#getFinalSpot <em>Final Spot</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Spot#getStation <em>Station</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Final Spot</em>'.
-	 * @see org.mdse.pts.schedule.Route#getFinalSpot()
-	 * @see #getRoute()
+	 * @return the meta object for the reference '<em>Station</em>'.
+	 * @see org.mdse.pts.schedule.Spot#getStation()
+	 * @see #getSpot()
 	 * @generated
 	 */
-	EReference getRoute_FinalSpot();
+	EReference getSpot_Station();
 
 	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.SituatedSpot <em>Situated Spot</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Situated Spot</em>'.
-	 * @see org.mdse.pts.schedule.SituatedSpot
-	 * @generated
-	 */
-	EClass getSituatedSpot();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.SituatedSpot#getStation <em>Station</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Station</em>'.
-	 * @see org.mdse.pts.schedule.SituatedSpot#getStation()
-	 * @see #getSituatedSpot()
-	 * @generated
-	 */
-	EAttribute getSituatedSpot_Station();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.SituatedSpot#getPlatform <em>Platform</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Spot#getPlatform <em>Platform</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Platform</em>'.
-	 * @see org.mdse.pts.schedule.SituatedSpot#getPlatform()
-	 * @see #getSituatedSpot()
+	 * @see org.mdse.pts.schedule.Spot#getPlatform()
+	 * @see #getSpot()
 	 * @generated
 	 */
-	EAttribute getSituatedSpot_Platform();
+	EAttribute getSpot_Platform();
 
 	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.SituatedSpotWithConnection <em>Situated Spot With Connection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Situated Spot With Connection</em>'.
-	 * @see org.mdse.pts.schedule.SituatedSpotWithConnection
-	 * @generated
-	 */
-	EClass getSituatedSpotWithConnection();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.SituatedSpotWithConnection#getLeg <em>Leg</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Leg</em>'.
-	 * @see org.mdse.pts.schedule.SituatedSpotWithConnection#getLeg()
-	 * @see #getSituatedSpotWithConnection()
-	 * @generated
-	 */
-	EReference getSituatedSpotWithConnection_Leg();
-
-	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.StartSpot <em>Start Spot</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Start Spot</em>'.
-	 * @see org.mdse.pts.schedule.StartSpot
-	 * @generated
-	 */
-	EClass getStartSpot();
-
-	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.MiddleSpot <em>Middle Spot</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Middle Spot</em>'.
-	 * @see org.mdse.pts.schedule.MiddleSpot
-	 * @generated
-	 */
-	EClass getMiddleSpot();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.MiddleSpot#getWaitingTime <em>Waiting Time</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Spot#getWaitingTime <em>Waiting Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Waiting Time</em>'.
-	 * @see org.mdse.pts.schedule.MiddleSpot#getWaitingTime()
-	 * @see #getMiddleSpot()
+	 * @see org.mdse.pts.schedule.Spot#getWaitingTime()
+	 * @see #getSpot()
 	 * @generated
 	 */
-	EAttribute getMiddleSpot_WaitingTime();
+	EAttribute getSpot_WaitingTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.MiddleSpot#getTurnStation <em>Turn Station</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Spot#getTurnStation <em>Turn Station</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Turn Station</em>'.
-	 * @see org.mdse.pts.schedule.MiddleSpot#getTurnStation()
-	 * @see #getMiddleSpot()
+	 * @see org.mdse.pts.schedule.Spot#getTurnStation()
+	 * @see #getSpot()
 	 * @generated
 	 */
-	EAttribute getMiddleSpot_TurnStation();
+	EAttribute getSpot_TurnStation();
 
 	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.FinalSpot <em>Final Spot</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Spot#getLeg <em>Leg</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Final Spot</em>'.
-	 * @see org.mdse.pts.schedule.FinalSpot
+	 * @return the meta object for the reference '<em>Leg</em>'.
+	 * @see org.mdse.pts.schedule.Spot#getLeg()
+	 * @see #getSpot()
 	 * @generated
 	 */
-	EClass getFinalSpot();
+	EReference getSpot_Leg();
 
 	/**
 	 * Returns the meta object for enum '{@link org.mdse.pts.schedule.WeekDays <em>Week Days</em>}'.
@@ -921,20 +716,23 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SCHEDULE = eINSTANCE.getSchedule();
+
 		/**
-		 * The meta object literal for the '<em><b>Network</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Network</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEDULE__NETWORK = eINSTANCE.getSchedule_Network();
+		EReference SCHEDULE__NETWORK = eINSTANCE.getSchedule_Network();
+
 		/**
-		 * The meta object literal for the '<em><b>Company</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Depots</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEDULE__COMPANY = eINSTANCE.getSchedule_Company();
+		EReference SCHEDULE__DEPOTS = eINSTANCE.getSchedule_Depots();
+
 		/**
 		 * The meta object literal for the '<em><b>Train Schedules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -942,6 +740,7 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCHEDULE__TRAIN_SCHEDULES = eINSTANCE.getSchedule_TrainSchedules();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.TrainScheduleImpl <em>Train Schedule</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -951,13 +750,23 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRAIN_SCHEDULE = eINSTANCE.getTrainSchedule();
+
 		/**
-		 * The meta object literal for the '<em><b>Date Times</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Train</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRAIN_SCHEDULE__DATE_TIMES = eINSTANCE.getTrainSchedule_DateTimes();
+		EReference TRAIN_SCHEDULE__TRAIN = eINSTANCE.getTrainSchedule_Train();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Description</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRAIN_SCHEDULE__TIME_DESCRIPTION = eINSTANCE.getTrainSchedule_TimeDescription();
+
 		/**
 		 * The meta object literal for the '<em><b>Route</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
@@ -965,6 +774,25 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRAIN_SCHEDULE__ROUTE = eINSTANCE.getTrainSchedule_Route();
+
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.TimeDescriptionImpl <em>Time Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.schedule.impl.TimeDescriptionImpl
+		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getTimeDescription()
+		 * @generated
+		 */
+		EClass TIME_DESCRIPTION = eINSTANCE.getTimeDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Date Times</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIME_DESCRIPTION__DATE_TIMES = eINSTANCE.getTimeDescription_DateTimes();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.DateTimeImpl <em>Date Time</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -974,6 +802,7 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATE_TIME = eINSTANCE.getDateTime();
+
 		/**
 		 * The meta object literal for the '<em><b>Weekday</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
@@ -981,6 +810,7 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATE_TIME__WEEKDAY = eINSTANCE.getDateTime_Weekday();
+
 		/**
 		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
@@ -988,6 +818,7 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATE_TIME__TIME = eINSTANCE.getDateTime_Time();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.TimeImpl <em>Time</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -997,6 +828,7 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TIME = eINSTANCE.getTime();
+
 		/**
 		 * The meta object literal for the '<em><b>Hours</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -1004,6 +836,7 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TIME__HOURS = eINSTANCE.getTime_Hours();
+
 		/**
 		 * The meta object literal for the '<em><b>Minutes</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -1011,6 +844,7 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TIME__MINUTES = eINSTANCE.getTime_Minutes();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.RouteImpl <em>Route</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1020,107 +854,65 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROUTE = eINSTANCE.getRoute();
+
 		/**
-		 * The meta object literal for the '<em><b>Start Spot</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Spots</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROUTE__START_SPOT = eINSTANCE.getRoute_StartSpot();
+		EReference ROUTE__SPOTS = eINSTANCE.getRoute_Spots();
+
 		/**
-		 * The meta object literal for the '<em><b>Middle Spots</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.SpotImpl <em>Spot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.schedule.impl.SpotImpl
+		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getSpot()
+		 * @generated
+		 */
+		EClass SPOT = eINSTANCE.getSpot();
+
+		/**
+		 * The meta object literal for the '<em><b>Station</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROUTE__MIDDLE_SPOTS = eINSTANCE.getRoute_MiddleSpots();
-		/**
-		 * The meta object literal for the '<em><b>Final Spot</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROUTE__FINAL_SPOT = eINSTANCE.getRoute_FinalSpot();
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.SituatedSpotImpl <em>Situated Spot</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.SituatedSpotImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getSituatedSpot()
-		 * @generated
-		 */
-		EClass SITUATED_SPOT = eINSTANCE.getSituatedSpot();
-		/**
-		 * The meta object literal for the '<em><b>Station</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SITUATED_SPOT__STATION = eINSTANCE.getSituatedSpot_Station();
+		EReference SPOT__STATION = eINSTANCE.getSpot_Station();
+
 		/**
 		 * The meta object literal for the '<em><b>Platform</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SITUATED_SPOT__PLATFORM = eINSTANCE.getSituatedSpot_Platform();
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.SituatedSpotWithConnectionImpl <em>Situated Spot With Connection</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.SituatedSpotWithConnectionImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getSituatedSpotWithConnection()
-		 * @generated
-		 */
-		EClass SITUATED_SPOT_WITH_CONNECTION = eINSTANCE.getSituatedSpotWithConnection();
-		/**
-		 * The meta object literal for the '<em><b>Leg</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SITUATED_SPOT_WITH_CONNECTION__LEG = eINSTANCE.getSituatedSpotWithConnection_Leg();
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.StartSpotImpl <em>Start Spot</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.StartSpotImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getStartSpot()
-		 * @generated
-		 */
-		EClass START_SPOT = eINSTANCE.getStartSpot();
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.MiddleSpotImpl <em>Middle Spot</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.MiddleSpotImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getMiddleSpot()
-		 * @generated
-		 */
-		EClass MIDDLE_SPOT = eINSTANCE.getMiddleSpot();
+		EAttribute SPOT__PLATFORM = eINSTANCE.getSpot_Platform();
+
 		/**
 		 * The meta object literal for the '<em><b>Waiting Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MIDDLE_SPOT__WAITING_TIME = eINSTANCE.getMiddleSpot_WaitingTime();
+		EAttribute SPOT__WAITING_TIME = eINSTANCE.getSpot_WaitingTime();
+
 		/**
 		 * The meta object literal for the '<em><b>Turn Station</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MIDDLE_SPOT__TURN_STATION = eINSTANCE.getMiddleSpot_TurnStation();
+		EAttribute SPOT__TURN_STATION = eINSTANCE.getSpot_TurnStation();
+
 		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.FinalSpotImpl <em>Final Spot</em>}' class.
+		 * The meta object literal for the '<em><b>Leg</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.FinalSpotImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getFinalSpot()
 		 * @generated
 		 */
-		EClass FINAL_SPOT = eINSTANCE.getFinalSpot();
+		EReference SPOT__LEG = eINSTANCE.getSpot_Leg();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.WeekDays <em>Week Days</em>}' enum.
 		 * <!-- begin-user-doc -->

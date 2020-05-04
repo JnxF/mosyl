@@ -3,6 +3,7 @@
 	<name>org.mdse.pts.schedule.dsl</name>
 	<comment></comment>
 	<projects>
+		<project>org.mdse.pts.common</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

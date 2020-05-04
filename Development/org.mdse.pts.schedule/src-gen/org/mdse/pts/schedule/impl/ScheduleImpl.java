@@ -2,18 +2,27 @@
  */
 package org.mdse.pts.schedule.impl;
 
+import depot.Depot;
+
 import java.util.Collection;
+
+import network.Network;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.TrainSchedule;
@@ -27,7 +36,7 @@ import org.mdse.pts.schedule.TrainSchedule;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getNetwork <em>Network</em>}</li>
- *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getCompany <em>Company</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getDepots <em>Depots</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getTrainSchedules <em>Train Schedules</em>}</li>
  * </ul>
  *
@@ -35,41 +44,25 @@ import org.mdse.pts.schedule.TrainSchedule;
  */
 public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedule {
 	/**
-	 * The default value of the '{@link #getNetwork() <em>Network</em>}' attribute.
+	 * The cached value of the '{@link #getNetwork() <em>Network</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNetwork()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NETWORK_EDEFAULT = null;
+	protected Network network;
+
 	/**
-	 * The cached value of the '{@link #getNetwork() <em>Network</em>}' attribute.
+	 * The cached value of the '{@link #getDepots() <em>Depots</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNetwork()
+	 * @see #getDepots()
 	 * @generated
 	 * @ordered
 	 */
-	protected String network = NETWORK_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCompany() <em>Company</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCompany()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMPANY_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCompany() <em>Company</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCompany()
-	 * @generated
-	 * @ordered
-	 */
-	protected String company = COMPANY_EDEFAULT;
+	protected EList<Depot> depots;
+
 	/**
 	 * The cached value of the '{@link #getTrainSchedules() <em>Train Schedules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -105,7 +98,24 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 */
 	@Override
-	public String getNetwork() {
+	public Network getNetwork() {
+		if (network != null && network.eIsProxy()) {
+			InternalEObject oldNetwork = (InternalEObject)network;
+			network = (Network)eResolveProxy(oldNetwork);
+			if (network != oldNetwork) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.SCHEDULE__NETWORK, oldNetwork, network));
+			}
+		}
+		return network;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Network basicGetNetwork() {
 		return network;
 	}
 
@@ -115,8 +125,8 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 */
 	@Override
-	public void setNetwork(String newNetwork) {
-		String oldNetwork = network;
+	public void setNetwork(Network newNetwork) {
+		Network oldNetwork = network;
 		network = newNetwork;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.SCHEDULE__NETWORK, oldNetwork, network));
@@ -128,21 +138,11 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 */
 	@Override
-	public String getCompany() {
-		return company;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCompany(String newCompany) {
-		String oldCompany = company;
-		company = newCompany;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.SCHEDULE__COMPANY, oldCompany, company));
+	public EList<Depot> getDepots() {
+		if (depots == null) {
+			depots = new EObjectResolvingEList<Depot>(Depot.class, this, SchedulePackage.SCHEDULE__DEPOTS);
+		}
+		return depots;
 	}
 
 	/**
@@ -181,9 +181,10 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SchedulePackage.SCHEDULE__NETWORK:
-				return getNetwork();
-			case SchedulePackage.SCHEDULE__COMPANY:
-				return getCompany();
+				if (resolve) return getNetwork();
+				return basicGetNetwork();
+			case SchedulePackage.SCHEDULE__DEPOTS:
+				return getDepots();
 			case SchedulePackage.SCHEDULE__TRAIN_SCHEDULES:
 				return getTrainSchedules();
 		}
@@ -200,10 +201,11 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SchedulePackage.SCHEDULE__NETWORK:
-				setNetwork((String)newValue);
+				setNetwork((Network)newValue);
 				return;
-			case SchedulePackage.SCHEDULE__COMPANY:
-				setCompany((String)newValue);
+			case SchedulePackage.SCHEDULE__DEPOTS:
+				getDepots().clear();
+				getDepots().addAll((Collection<? extends Depot>)newValue);
 				return;
 			case SchedulePackage.SCHEDULE__TRAIN_SCHEDULES:
 				getTrainSchedules().clear();
@@ -222,10 +224,10 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SchedulePackage.SCHEDULE__NETWORK:
-				setNetwork(NETWORK_EDEFAULT);
+				setNetwork((Network)null);
 				return;
-			case SchedulePackage.SCHEDULE__COMPANY:
-				setCompany(COMPANY_EDEFAULT);
+			case SchedulePackage.SCHEDULE__DEPOTS:
+				getDepots().clear();
 				return;
 			case SchedulePackage.SCHEDULE__TRAIN_SCHEDULES:
 				getTrainSchedules().clear();
@@ -243,31 +245,13 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SchedulePackage.SCHEDULE__NETWORK:
-				return NETWORK_EDEFAULT == null ? network != null : !NETWORK_EDEFAULT.equals(network);
-			case SchedulePackage.SCHEDULE__COMPANY:
-				return COMPANY_EDEFAULT == null ? company != null : !COMPANY_EDEFAULT.equals(company);
+				return network != null;
+			case SchedulePackage.SCHEDULE__DEPOTS:
+				return depots != null && !depots.isEmpty();
 			case SchedulePackage.SCHEDULE__TRAIN_SCHEDULES:
 				return trainSchedules != null && !trainSchedules.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (network: ");
-		result.append(network);
-		result.append(", company: ");
-		result.append(company);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ScheduleImpl

@@ -20,4 +20,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.mdse.pts.depot;visibility:=reexport,
  org.mdse.pts.network;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: org.mdse.pts.schedule
+Import-Package: network,
+ org.mdse.pts.schedule
