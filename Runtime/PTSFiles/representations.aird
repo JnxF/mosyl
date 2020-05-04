@@ -2,6 +2,11 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:depot="http://mdse.org/pts/depot" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_i3escIQfEeqZQKTd91cnVw" selectedViews="_g6pZkIViEeqyBLFM3gcD9Q" version="14.3.0.201909031200">
     <semanticResources>Example.depot</semanticResources>
+    <semanticResources>MySchedule.schedule</semanticResources>
+    <semanticResources>Networkia.network</semanticResources>
+    <semanticResources>Depotia.depot</semanticResources>
+    <semanticResources>Holito.schedule</semanticResources>
+    <semanticResources>AnotherDepot.depot</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_IjLjoIVbEeqnoZDKzwfE6w">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Jev0AIVbEeqnoZDKzwfE6w" name="Example Depot Diagram Representation" repPath="#_Jb9lwIVbEeqnoZDKzwfE6w" changeId="7cf945c6-3831-47c8-ae66-c49d67d1c4b4">

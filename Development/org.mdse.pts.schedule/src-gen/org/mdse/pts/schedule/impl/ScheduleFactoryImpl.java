@@ -59,12 +59,11 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 		switch (eClass.getClassifierID()) {
 			case SchedulePackage.SCHEDULE: return createSchedule();
 			case SchedulePackage.TRAIN_SCHEDULE: return createTrainSchedule();
+			case SchedulePackage.TIME_DESCRIPTION: return createTimeDescription();
 			case SchedulePackage.DATE_TIME: return createDateTime();
 			case SchedulePackage.TIME: return createTime();
 			case SchedulePackage.ROUTE: return createRoute();
-			case SchedulePackage.START_SPOT: return createStartSpot();
-			case SchedulePackage.MIDDLE_SPOT: return createMiddleSpot();
-			case SchedulePackage.FINAL_SPOT: return createFinalSpot();
+			case SchedulePackage.SPOT: return createSpot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -128,6 +127,17 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	 * @generated
 	 */
 	@Override
+	public TimeDescription createTimeDescription() {
+		TimeDescriptionImpl timeDescription = new TimeDescriptionImpl();
+		return timeDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public DateTime createDateTime() {
 		DateTimeImpl dateTime = new DateTimeImpl();
 		return dateTime;
@@ -161,31 +171,9 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	 * @generated
 	 */
 	@Override
-	public StartSpot createStartSpot() {
-		StartSpotImpl startSpot = new StartSpotImpl();
-		return startSpot;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MiddleSpot createMiddleSpot() {
-		MiddleSpotImpl middleSpot = new MiddleSpotImpl();
-		return middleSpot;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public FinalSpot createFinalSpot() {
-		FinalSpotImpl finalSpot = new FinalSpotImpl();
-		return finalSpot;
+	public Spot createSpot() {
+		SpotImpl spot = new SpotImpl();
+		return spot;
 	}
 
 	/**
