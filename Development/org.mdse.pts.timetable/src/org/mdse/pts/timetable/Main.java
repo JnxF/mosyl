@@ -5,7 +5,6 @@ import org.mdse.pts.depot.Train;
 import org.mdse.pts.depot.TrainType;
 import org.mdse.pts.network.Leg;
 import org.mdse.pts.network.NetworkFactory;
-import org.mdse.pts.schedule.ScheduleFactory;
 
 import shared.DaysOfTheWeek;
 import shared.SharedFactory;

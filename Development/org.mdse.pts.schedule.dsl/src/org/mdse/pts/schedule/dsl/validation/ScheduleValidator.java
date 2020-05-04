@@ -3,7 +3,6 @@
  */
 package org.mdse.pts.schedule.dsl.validation;
 
-
 /**
  * This class contains custom validation rules. 
  *

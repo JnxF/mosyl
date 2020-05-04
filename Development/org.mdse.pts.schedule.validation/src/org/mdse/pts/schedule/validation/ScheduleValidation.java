@@ -1,7 +1,6 @@
 package org.mdse.pts.schedule.validation;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,6 +20,7 @@ import org.mdse.pts.schedule.TimeDescription;
 
 import depot.Depot;
 import shared.DaysOfTheWeek;
+import shared.SharedPackage;
 import shared.Time;
 
 public class ScheduleValidation extends EObjectValidator implements IStartup {
@@ -49,7 +49,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 		}
 		
 		// Validate datetime 00:00 - 23:59
-		if (SchedulePackage.eINSTANCE.getTime().equals(eClass)) {
+		if (SharedPackage.eINSTANCE.getTime().equals(eClass)) {
 			Time time = (Time) eObject;
 			modelIsValid &= validateTime(time);
 		}
@@ -73,10 +73,13 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 				if (datetime1.getTime().getHours() == datetime2.getTime().getHours() &&
 					datetime1.getTime().getMinutes() == datetime2.getTime().getMinutes()) {
 					
-					for (DaysOfTheWeek a : datetime1.getWeekdays()) {
-						for (DaysOfTheWeek b : datetime2.getWeekdays()) {
-							if (a.equals(b)) {
-								return constraintViolated(datetime1, "Schedule on " + a.toString() + " at " + datetime1.getTime().toString() + " is repeated");
+					for (DaysOfTheWeek dw1 : datetime1.getWeekdays()) {
+						for (DaysOfTheWeek dw2 : datetime2.getWeekdays()) {
+							if (dw1.equals(dw2)) {
+								return constraintViolated(datetime1, "Schedule on " +
+										dw1.toString() + " at " +
+										datetime1.getTime().getHours().toString() + ":" + datetime1.getTime().getMinutes() +
+										"h  is repeated");
 							}
 						}
 					}
