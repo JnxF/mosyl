@@ -7,7 +7,6 @@ import org.mdse.pts.network.Leg;
 import org.mdse.pts.network.NetworkFactory;
 import org.mdse.pts.schedule.ScheduleFactory;
 
-import shared.DateTime;
 import shared.DaysOfTheWeek;
 import shared.SharedFactory;
 import shared.Time;
@@ -17,7 +16,7 @@ public class Main {
 	public static void main(String[] args) {
 		//dateTimeTest();
 
-		DateTime dateTime = SharedFactory.eINSTANCE.createDateTime();
+		DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
 		Time time = SharedFactory.eINSTANCE.createTime();
 		time.setHours(2);
 		time.setMinutes(35);
@@ -29,7 +28,7 @@ public class Main {
 		leg.setDistance(150);
 		
 		Train train = DepotFactory.eINSTANCE.createTrain();
-		train.setType(TrainType.INTERCITY);
+		train.setTrainType(TrainType.INTERCITY);
 		for (int i = 0; i < 8; i++) {
 			train.getCoaches().add(DepotFactory.eINSTANCE.createPassengerCoach());
 		}
@@ -38,7 +37,7 @@ public class Main {
 	}
 	
 	public static void dateTimeTest() {
-		DateTime dateTime = SharedFactory.eINSTANCE.createDateTime();
+		DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
 		Time time = SharedFactory.eINSTANCE.createTime();
 		time.setHours(2);
 		time.setMinutes(35);

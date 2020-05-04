@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.mdse.pts.timetable.DateTime;
 import org.mdse.pts.timetable.StationTrain;
 import org.mdse.pts.timetable.TimeAndStation;
 import org.mdse.pts.timetable.Timetable;
@@ -37,6 +38,13 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	private EClass stationTrainEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dateTimeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,6 +205,36 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	@Override
+	public EClass getDateTime() {
+		return dateTimeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDateTime_Day() {
+		return (EAttribute)dateTimeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDateTime_Time() {
+		return (EReference)dateTimeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTimeAndStation() {
 		return timeAndStationEClass;
 	}
@@ -260,6 +298,10 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		createEReference(stationTrainEClass, STATION_TRAIN__DEPARTURE);
 		createEAttribute(stationTrainEClass, STATION_TRAIN__PLATFORM);
 
+		dateTimeEClass = createEClass(DATE_TIME);
+		createEAttribute(dateTimeEClass, DATE_TIME__DAY);
+		createEReference(dateTimeEClass, DATE_TIME__TIME);
+
 		timeAndStationEClass = createEClass(TIME_AND_STATION);
 		createEReference(timeAndStationEClass, TIME_AND_STATION__ARR_DEP_TIME);
 		createEAttribute(timeAndStationEClass, TIME_AND_STATION__NEXT_PREV_STATION);
@@ -308,8 +350,12 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		initEReference(getStationTrain_Departure(), this.getTimeAndStation(), null, "departure", null, 0, 1, StationTrain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStationTrain_Platform(), ecorePackage.getEString(), "platform", null, 1, 1, StationTrain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(dateTimeEClass, DateTime.class, "DateTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDateTime_Day(), theSharedPackage.getDaysOfTheWeek(), "day", null, 1, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDateTime_Time(), theSharedPackage.getTime(), null, "time", null, 1, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(timeAndStationEClass, TimeAndStation.class, "TimeAndStation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTimeAndStation_ArrDepTime(), theSharedPackage.getDateTime(), null, "arrDepTime", null, 1, 1, TimeAndStation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimeAndStation_ArrDepTime(), this.getDateTime(), null, "arrDepTime", null, 1, 1, TimeAndStation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeAndStation_NextPrevStation(), ecorePackage.getEString(), "nextPrevStation", null, 1, 1, TimeAndStation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
