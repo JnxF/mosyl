@@ -76,6 +76,10 @@ public class TimetableAdapterFactory extends AdapterFactoryImpl {
 				return createStationTrainAdapter();
 			}
 			@Override
+			public Adapter caseDateTime(DateTime object) {
+				return createDateTimeAdapter();
+			}
+			@Override
 			public Adapter caseTimeAndStation(TimeAndStation object) {
 				return createTimeAndStationAdapter();
 			}
@@ -124,6 +128,20 @@ public class TimetableAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStationTrainAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.timetable.DateTime <em>Date Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mdse.pts.timetable.DateTime
+	 * @generated
+	 */
+	public Adapter createDateTimeAdapter() {
 		return null;
 	}
 

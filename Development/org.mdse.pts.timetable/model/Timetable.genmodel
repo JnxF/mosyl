@@ -18,6 +18,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//StationTrain/departure"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//StationTrain/platform"/>
     </genClasses>
+    <genClasses ecoreClass="Timetable.ecore#//DateTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//DateTime/day"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//DateTime/time"/>
+    </genClasses>
     <genClasses ecoreClass="Timetable.ecore#//TimeAndStation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//TimeAndStation/arrDepTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//TimeAndStation/nextPrevStation"/>
@@ -33,10 +37,6 @@
       <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/shared.ecore#//DaysOfTheWeek/SATURDAY"/>
       <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/shared.ecore#//DaysOfTheWeek/SUNDAY"/>
     </genEnums>
-    <genClasses ecoreClass="../../org.mdse.pst.shared/model/shared.ecore#//DateTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pst.shared/model/shared.ecore#//DateTime/day"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.mdse.pst.shared/model/shared.ecore#//DateTime/time"/>
-    </genClasses>
     <genClasses ecoreClass="../../org.mdse.pst.shared/model/shared.ecore#//Time">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pst.shared/model/shared.ecore#//Time/hours"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pst.shared/model/shared.ecore#//Time/minutes"/>

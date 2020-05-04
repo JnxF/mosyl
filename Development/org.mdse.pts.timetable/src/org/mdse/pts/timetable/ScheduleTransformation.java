@@ -1,21 +1,19 @@
 package org.mdse.pts.timetable;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 import org.mdse.pts.depot.Train;
-import org.mdse.pts.depot.TrainType;
 import org.mdse.pts.network.Leg;
 
-import org.mdse.pts.schedule.DateTime;
 import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TrainSchedule;
 
-import network.Station;
 import shared.DaysOfTheWeek;
 import shared.SharedFactory;
 import shared.Time;
@@ -26,59 +24,59 @@ public class ScheduleTransformation {
 	public Set<Timetable> interpret(Schedule schedule) {
 		for (TrainSchedule trainSchedule : schedule.getTrainSchedules()) {
 			Route route = trainSchedule.getRoute();
-			for (DateTime dateTime : trainSchedule.getTimeDescription().getDateTimes()) {
-				Spot startspot = route.getSpots().get(0);
-				Station prevStation = startspot.getStation();
-				Leg prevLeg = (Leg) startspot.getLeg();
-				DateTime prevDateTime = dateTime;
+			Train train = (Train) trainSchedule.getTrain();
+			for (org.mdse.pts.schedule.DateTime scheduleDateTime : trainSchedule.getTimeDescription().getDateTimes()) {
+				for (DaysOfTheWeek day : scheduleDateTime.getWeekdays()) {
+					DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
+					dateTime.setTime(scheduleDateTime.getTime());
+					dateTime.setDay(day);
+					
+					String prevStationName = null;
+					Leg prevLeg = null;
+					DateTime prevDateTime = dateTime;
+					
+					Timetable timetable = null;
+					StationTrain stationTrain = null;
 
-				Timetable timetable = getTimetable(prevStation);
-				StationTrain train = TimetableFactory.eINSTANCE.createStationTrain();
-				timetable.getStationTrains().add(train);
-				train.setTrainName("None"); // TODO: Add train name when available
+					TimeAndStation arrival = null;
+					TimeAndStation departure = null;
 
-				TimeAndStation arrival;
-				TimeAndStation departure = TimetableFactory.eINSTANCE.createTimeAndStation();
-				train.setDeparture(departure);
-				departure.setArrDepTime(dateTime);
+					List<Spot> spots = route.getSpots();
+					for (int i = 0; i < spots.size(); i++) {
+						Spot spot = spots.get(i);
+						String currentStationName = spot.getStation().getName();
+						if (i != 0) {
+							departure.setNextPrevStation(currentStationName);
+						}
 
-				for (MiddleSpot spot : route.getMiddleSpots()) {
-					departure.setNextPrevStation(spot.getStation());
+						timetable = getTimetable(currentStationName);
+						stationTrain = TimetableFactory.eINSTANCE.createStationTrain();
+						timetable.getStationTrains().add(stationTrain);
+						stationTrain.setTrainName(train.getName());
 
-					timetable = getTimetable(spot.getStation());
-					train = TimetableFactory.eINSTANCE.createStationTrain();
-					timetable.getStationTrains().add(train);
-					train.setTrainName("None"); // TODO: Add train name when available
-
-					prevDateTime = calculateArrival(prevDateTime, prevLeg, null); // TODO: Add train when available
-
-					arrival = TimetableFactory.eINSTANCE.createTimeAndStation();
-					train.setArrival(arrival);
-					arrival.setArrDepTime(prevDateTime);
-					arrival.setNextPrevStation(prevStation);
-
-					prevStation = spot.getStation();
-					prevLeg = (Leg) spot.getLeg();
-					prevDateTime = calculateDateTime(prevDateTime, spot.getWaitingTime());
-
-					departure = TimetableFactory.eINSTANCE.createTimeAndStation();
-					train.setDeparture(departure);
-					departure.setArrDepTime(prevDateTime);
+						if (i != 0) {
+							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
+							
+							arrival = TimetableFactory.eINSTANCE.createTimeAndStation();
+							stationTrain.setArrival(arrival);
+							arrival.setArrDepTime(prevDateTime);
+							arrival.setNextPrevStation(prevStationName);
+						}
+						if (i != spots.size()-1) {
+							prevStationName = currentStationName;
+							prevLeg = (Leg) spot.getLeg();
+							if (i == 0) {
+								prevDateTime = dateTime;
+							} else {
+								prevDateTime = calculateDateTime(prevDateTime, spot.getWaitingTime());
+							}
+	
+							departure = TimetableFactory.eINSTANCE.createTimeAndStation();
+							stationTrain.setDeparture(departure);
+							departure.setArrDepTime(prevDateTime);
+						}
+					}
 				}
-				FinalSpot finalSpot = route.getFinalSpot();
-				departure.setNextPrevStation(finalSpot.getStation());
-
-				timetable = getTimetable(finalSpot.getStation());
-				train = TimetableFactory.eINSTANCE.createStationTrain();
-				timetable.getStationTrains().add(train);
-				train.setTrainName("None"); // TODO: Add train name when available
-
-				prevDateTime = calculateArrival(prevDateTime, prevLeg, null); // TODO: Add train when available
-
-				arrival = TimetableFactory.eINSTANCE.createTimeAndStation();
-				train.setArrival(arrival);
-				arrival.setArrDepTime(prevDateTime);
-				arrival.setNextPrevStation(prevStation);
 			}
 		}
 		Set<Timetable> set = new HashSet<Timetable>();
@@ -116,7 +114,7 @@ public class ScheduleTransformation {
 		int minutes = time.getTime().getMinutes();
 		int newMinutes = minutes + addedMinutes;
 		int newHours = hours + Math.floorDiv(newMinutes, 60);
-		newMinutes = Math.floorMod(newMinutes, 60);
+		newMinutes = newMinutes % 60;
 		while (newHours > 23) {
 			newHours -= 24;
 			if (day.getValue() == 7)
@@ -127,8 +125,9 @@ public class ScheduleTransformation {
 		Time newTime = SharedFactory.eINSTANCE.createTime();
 		newTime.setHours(newHours);
 		newTime.setMinutes(newMinutes);
-		DateTime newDateTime = SharedFactory.eINSTANCE.createDateTime();
+		DateTime newDateTime = TimetableFactory.eINSTANCE.createDateTime();
 		newDateTime.setDay(day);
+		newDateTime.setTime(newTime);
 		return newDateTime;
 	}
 

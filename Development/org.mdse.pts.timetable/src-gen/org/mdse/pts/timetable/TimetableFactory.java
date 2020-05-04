@@ -40,6 +40,15 @@ public interface TimetableFactory extends EFactory {
 	StationTrain createStationTrain();
 
 	/**
+	 * Returns a new object of class '<em>Date Time</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date Time</em>'.
+	 * @generated
+	 */
+	DateTime createDateTime();
+
+	/**
 	 * Returns a new object of class '<em>Time And Station</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

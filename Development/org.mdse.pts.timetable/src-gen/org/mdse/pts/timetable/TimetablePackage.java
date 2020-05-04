@@ -168,6 +168,52 @@ public interface TimetablePackage extends EPackage {
 	int STATION_TRAIN_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.DateTimeImpl <em>Date Time</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.DateTimeImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getDateTime()
+	 * @generated
+	 */
+	int DATE_TIME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Day</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TIME__DAY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TIME__TIME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Date Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TIME_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Date Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TIME_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.TimeAndStationImpl <em>Time And Station</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,7 +221,7 @@ public interface TimetablePackage extends EPackage {
 	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTimeAndStation()
 	 * @generated
 	 */
-	int TIME_AND_STATION = 2;
+	int TIME_AND_STATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Arr Dep Time</b></em>' containment reference.
@@ -301,6 +347,38 @@ public interface TimetablePackage extends EPackage {
 	EAttribute getStationTrain_Platform();
 
 	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.DateTime <em>Date Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Date Time</em>'.
+	 * @see org.mdse.pts.timetable.DateTime
+	 * @generated
+	 */
+	EClass getDateTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.timetable.DateTime#getDay <em>Day</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Day</em>'.
+	 * @see org.mdse.pts.timetable.DateTime#getDay()
+	 * @see #getDateTime()
+	 * @generated
+	 */
+	EAttribute getDateTime_Day();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.DateTime#getTime <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Time</em>'.
+	 * @see org.mdse.pts.timetable.DateTime#getTime()
+	 * @see #getDateTime()
+	 * @generated
+	 */
+	EReference getDateTime_Time();
+
+	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.timetable.TimeAndStation <em>Time And Station</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,6 +493,29 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STATION_TRAIN__PLATFORM = eINSTANCE.getStationTrain_Platform();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.DateTimeImpl <em>Date Time</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.DateTimeImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getDateTime()
+		 * @generated
+		 */
+		EClass DATE_TIME = eINSTANCE.getDateTime();
+		/**
+		 * The meta object literal for the '<em><b>Day</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_TIME__DAY = eINSTANCE.getDateTime_Day();
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATE_TIME__TIME = eINSTANCE.getDateTime_Time();
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TimeAndStationImpl <em>Time And Station</em>}' class.
 		 * <!-- begin-user-doc -->
