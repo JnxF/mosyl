@@ -17,11 +17,11 @@ import org.eclipse.ui.IStartup;
 import org.mdse.pts.schedule.DateTime;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;
-import org.mdse.pts.schedule.Time;
 import org.mdse.pts.schedule.TimeDescription;
-import org.mdse.pts.schedule.WeekDays;
 
 import depot.Depot;
+import shared.DaysOfTheWeek;
+import shared.Time;
 
 public class ScheduleValidation extends EObjectValidator implements IStartup {
 	private DiagnosticChain diagnostics;
@@ -73,8 +73,8 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 				if (datetime1.getTime().getHours() == datetime2.getTime().getHours() &&
 					datetime1.getTime().getMinutes() == datetime2.getTime().getMinutes()) {
 					
-					for (WeekDays a : datetime1.getWeekday()) {
-						for (WeekDays b : datetime2.getWeekday()) {
+					for (DaysOfTheWeek a : datetime1.getWeekdays()) {
+						for (DaysOfTheWeek b : datetime2.getWeekdays()) {
 							if (a.equals(b)) {
 								return constraintViolated(datetime1, "Schedule on " + a.toString() + " at " + datetime1.getTime().toString() + " is repeated");
 							}

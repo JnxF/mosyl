@@ -8,15 +8,6 @@
   <foreignModel>Schedule.ecore</foreignModel>
   <genPackages prefix="Schedule" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Schedule.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Schedule.ecore#//WeekDays">
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/MONDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/TUESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/WEDNESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/THURSDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/FRIDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/SATURDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//WeekDays/SUNDAY"/>
-    </genEnums>
     <genClasses ecoreClass="Schedule.ecore#//Schedule">
       <genFeatures createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/network"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/depots"/>
@@ -31,12 +22,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//TimeDescription/dateTimes"/>
     </genClasses>
     <genClasses ecoreClass="Schedule.ecore#//DateTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//DateTime/weekday"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//DateTime/weekdays"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//DateTime/time"/>
-    </genClasses>
-    <genClasses ecoreClass="Schedule.ecore#//Time">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/hours"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/minutes"/>
     </genClasses>
     <genClasses ecoreClass="Schedule.ecore#//Route">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/spots"/>
@@ -92,5 +79,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//PassengerCoach/passengerClass"/>
     </genClasses>
     <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//DinnerCoach"/>
+  </genPackages>
+  <genPackages prefix="Shared" ecorePackage="../../org.mdse.pst.shared/model/Shared.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek">
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek/WEDNESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek/THURSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek/FRIDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek/SATURDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek/SUNDAY"/>
+    </genEnums>
+    <genClasses ecoreClass="../../org.mdse.pst.shared/model/Shared.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pst.shared/model/Shared.ecore#//Time/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pst.shared/model/Shared.ecore#//Time/minutes"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

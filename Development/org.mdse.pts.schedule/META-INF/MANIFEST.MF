@@ -16,7 +16,10 @@ Export-Package: depot,
  network.util,
  org.mdse.pts.schedule,
  org.mdse.pts.schedule.impl,
- org.mdse.pts.schedule.util
+ org.mdse.pts.schedule.util,
+ shared,
+ shared.impl,
+ shared.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.mdse.pts.common;visibility:=reexport,

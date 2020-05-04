@@ -11,7 +11,8 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: depot.presentation,
  network.presentation,
- org.mdse.pts.schedule.presentation
+ org.mdse.pts.schedule.presentation,
+ shared.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.mdse.pts.schedule.edit;visibility:=reexport,

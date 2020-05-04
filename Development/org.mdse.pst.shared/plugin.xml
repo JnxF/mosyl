@@ -11,7 +11,7 @@
       <package
             uri="http://mdse.org/pts/shared"
             class="org.mdse.pts.shared.SharedPackage"
-            genModel="model/shared.genmodel"/>
+            genModel="model/Shared.genmodel"/>
    </extension>
 
 </plugin>

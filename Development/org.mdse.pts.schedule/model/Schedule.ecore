@@ -21,23 +21,10 @@
         upperBound="-1" eType="#//DateTime" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateTime">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekday" lowerBound="1"
-        upperBound="-1" eType="#//WeekDays"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="#//Time"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekdays" lowerBound="1"
+        upperBound="-1" eType="ecore:EEnum ../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="ecore:EClass ../../org.mdse.pst.shared/model/Shared.ecore#//Time"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="WeekDays">
-    <eLiterals name="MONDAY" value="1"/>
-    <eLiterals name="TUESDAY" value="2"/>
-    <eLiterals name="WEDNESDAY" value="3"/>
-    <eLiterals name="THURSDAY" value="4"/>
-    <eLiterals name="FRIDAY" value="5"/>
-    <eLiterals name="SATURDAY" value="6"/>
-    <eLiterals name="SUNDAY" value="7"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Time">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hours" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Route">
     <eStructuralFeatures xsi:type="ecore:EReference" name="spots" lowerBound="2" upperBound="-1"

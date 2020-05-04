@@ -4,14 +4,7 @@ This is the Public Transport System project for the Modelling Systems and
 Languages course at the MSc Master in Computer Science at the IT University
 of Copenhagen.
 
-
-## Installation
-
-TBD
-
-## Usage
-
-TBD
+<center><img src="AdditionalFiles/visual_dsl.png"></center>
 
 ## Authors
 - Rebecca Melanie Heegaard Nielsen
