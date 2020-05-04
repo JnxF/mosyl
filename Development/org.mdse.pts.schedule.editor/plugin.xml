@@ -90,4 +90,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Schedule -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="shared.presentation.SharedModelWizardID"
+            name="%_UI_SharedModelWizard_label"
+            class="shared.presentation.SharedModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SharedModelFile.gif">
+         <description>%_UI_SharedModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Schedule -->
+      <editor
+            id="shared.presentation.SharedEditorID"
+            name="%_UI_SharedEditor_label"
+            icon="icons/full/obj16/SharedModelFile.gif"
+            extensions="shared"
+            class="shared.presentation.SharedEditor"
+            contributorClass="shared.presentation.SharedActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

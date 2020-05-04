@@ -1,19 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.mdse.pts.schedule.edit;singleton:=true
-Automatic-Module-Name: org.mdse.pts.schedule.edit
+Bundle-SymbolicName: org.mdse.pst.shared.edit;singleton:=true
+Automatic-Module-Name: org.mdse.pst.shared.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.mdse.pts.schedule.provider.ScheduleEditPlugin$Implementation
+Bundle-Activator: org.mdse.pts.shared.provider.SharedEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: depot.provider,
- network.provider,
- org.mdse.pts.schedule.provider,
- shared.provider
+Export-Package: org.mdse.pts.shared.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.mdse.pts.schedule;visibility:=reexport,
+ org.mdse.pst.shared;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

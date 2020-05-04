@@ -1,12 +1,13 @@
 @namespace(uri="http://mdse.org/pts/schedule", prefix="schedule")
 package schedule;
 
-import "platform:/resource/org.mdse.pts.network/model/Network.ecore";
 import "platform:/resource/org.mdse.pts.depot/model/Depot.ecore";
+import "platform:/resource/org.mdse.pts.network/model/Network.ecore";
+import "platform:/resource/org.mdse.pst.shared/model/Shared.ecore";
 
 class Schedule {
 	ref network.Network[1] network;
-	ref depot.Depot[1..*] depots;
+	ref depot.Depot[+] depots;
 	val TrainSchedule[*] trainSchedules;
 }
 
@@ -17,38 +18,23 @@ class TrainSchedule {
 }
 
 class TimeDescription {
-	val DateTime[1..*] dateTimes;
-}
-	
-class DateTime {		
-	attr WeekDays[1..*] weekday;
-	val Time[1] time;
-}
-	
-enum WeekDays {
-	MONDAY = 1;
-	TUESDAY = 2;
-	WEDNESDAY = 3;
-	THURSDAY = 4;
-	FRIDAY = 5;
-	SATURDAY = 6;
-	SUNDAY = 7;
+	val DateTime[+] dateTimes;
 }
 
-class Time {
-	attr Integer hours;
-	attr Integer minutes;
+class DateTime {
+	attr shared.DaysOfTheWeek[+] weekdays;
+	val shared.Time[1] time;
 }
 
 class Route {
 	val Spot[2..*] spots;
 }
 
-
 class Spot {
 	ref network.Station[1] station;
-	attr String[?] platform;
-	attr Integer[1] waitingTime = 0;
-	attr Boolean[1] turnStation = false; // TODO: last one cannot have a turn
-	ref network.Leg[?] leg; // TODO: last one cannot have leg
+	attr String platform;
+	attr Integer[1] waitingTime = "0";
+	attr Boolean[1] turnStation = "false";
+	ref network.Leg leg;
 }
+
