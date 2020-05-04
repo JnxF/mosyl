@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.depot.Depot#getTrains <em>Trains</em>}</li>
+ *   <li>{@link org.mdse.pts.depot.Depot#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.mdse.pts.depot.DepotPackage#getDepot()
@@ -34,4 +35,26 @@ public interface Depot extends EObject {
 	 * @generated
 	 */
 	EList<Train> getTrains();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.mdse.pts.depot.DepotPackage#getDepot_Name()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link org.mdse.pts.depot.Depot#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 } // Depot

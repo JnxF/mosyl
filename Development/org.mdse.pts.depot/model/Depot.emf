@@ -31,7 +31,7 @@ class PassengerCoach extends InnerCoach {
 	!unique !ordered attr PassengerClass[1] passengerClass;
 }
 
-class DinnerCoach extends InnerCoach {
+class DiningCoach extends InnerCoach {
 }
 
 enum PassengerClass {

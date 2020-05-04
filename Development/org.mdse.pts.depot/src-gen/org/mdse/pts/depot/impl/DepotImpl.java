@@ -3,11 +3,13 @@
 package org.mdse.pts.depot.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -25,6 +27,7 @@ import org.mdse.pts.depot.Train;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.depot.impl.DepotImpl#getTrains <em>Trains</em>}</li>
+ *   <li>{@link org.mdse.pts.depot.impl.DepotImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +42,25 @@ public class DepotImpl extends MinimalEObjectImpl.Container implements Depot {
 	 * @ordered
 	 */
 	protected EList<Train> trains;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,6 +100,29 @@ public class DepotImpl extends MinimalEObjectImpl.Container implements Depot {
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DepotPackage.DEPOT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DepotPackage.DEPOT__TRAINS:
@@ -96,6 +141,8 @@ public class DepotImpl extends MinimalEObjectImpl.Container implements Depot {
 		switch (featureID) {
 			case DepotPackage.DEPOT__TRAINS:
 				return getTrains();
+			case DepotPackage.DEPOT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +160,9 @@ public class DepotImpl extends MinimalEObjectImpl.Container implements Depot {
 				getTrains().clear();
 				getTrains().addAll((Collection<? extends Train>)newValue);
 				return;
+			case DepotPackage.DEPOT__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -128,6 +178,9 @@ public class DepotImpl extends MinimalEObjectImpl.Container implements Depot {
 			case DepotPackage.DEPOT__TRAINS:
 				getTrains().clear();
 				return;
+			case DepotPackage.DEPOT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,8 +195,26 @@ public class DepotImpl extends MinimalEObjectImpl.Container implements Depot {
 		switch (featureID) {
 			case DepotPackage.DEPOT__TRAINS:
 				return trains != null && !trains.isEmpty();
+			case DepotPackage.DEPOT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DepotImpl

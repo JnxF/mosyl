@@ -8,19 +8,21 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.mdse.pts.depot.Coach;
 import org.mdse.pts.depot.Depot;
 import org.mdse.pts.depot.DepotFactory;
 import org.mdse.pts.depot.DepotPackage;
-import org.mdse.pts.depot.DinnerCoach;
+import org.mdse.pts.depot.DiningCoach;
 import org.mdse.pts.depot.InnerCoach;
 import org.mdse.pts.depot.Locomotive;
 import org.mdse.pts.depot.PassengerClass;
 import org.mdse.pts.depot.PassengerCoach;
 import org.mdse.pts.depot.Train;
 import org.mdse.pts.depot.TrainType;
+import org.mdse.pts.depot.util.DepotValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +73,8 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dinnerCoachEClass = null;
+	private EClass diningCoachEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +141,16 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		// Initialize created meta-data
 		theDepotPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theDepotPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return DepotValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theDepotPackage.freeze();
 
@@ -164,6 +177,16 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	@Override
 	public EReference getDepot_Trains() {
 		return (EReference)depotEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDepot_Name() {
+		return (EAttribute)depotEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -202,7 +225,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrain_Type() {
+	public EAttribute getTrain_TrainType() {
 		return (EAttribute)trainEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -262,7 +285,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPassengerCoach_Class() {
+	public EAttribute getPassengerCoach_PassengerClass() {
 		return (EAttribute)passengerCoachEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -272,8 +295,8 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getDinnerCoach() {
-		return dinnerCoachEClass;
+	public EClass getDiningCoach() {
+		return diningCoachEClass;
 	}
 
 	/**
@@ -327,11 +350,12 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		// Create classes and their features
 		depotEClass = createEClass(DEPOT);
 		createEReference(depotEClass, DEPOT__TRAINS);
+		createEAttribute(depotEClass, DEPOT__NAME);
 
 		trainEClass = createEClass(TRAIN);
 		createEAttribute(trainEClass, TRAIN__NAME);
 		createEReference(trainEClass, TRAIN__COACHES);
-		createEAttribute(trainEClass, TRAIN__TYPE);
+		createEAttribute(trainEClass, TRAIN__TRAIN_TYPE);
 
 		coachEClass = createEClass(COACH);
 
@@ -341,9 +365,9 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		locomotiveEClass = createEClass(LOCOMOTIVE);
 
 		passengerCoachEClass = createEClass(PASSENGER_COACH);
-		createEAttribute(passengerCoachEClass, PASSENGER_COACH__CLASS);
+		createEAttribute(passengerCoachEClass, PASSENGER_COACH__PASSENGER_CLASS);
 
-		dinnerCoachEClass = createEClass(DINNER_COACH);
+		diningCoachEClass = createEClass(DINING_COACH);
 
 		// Create enums
 		trainTypeEEnum = createEEnum(TRAIN_TYPE);
@@ -381,28 +405,29 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		innerCoachEClass.getESuperTypes().add(this.getCoach());
 		locomotiveEClass.getESuperTypes().add(this.getCoach());
 		passengerCoachEClass.getESuperTypes().add(this.getInnerCoach());
-		dinnerCoachEClass.getESuperTypes().add(this.getInnerCoach());
+		diningCoachEClass.getESuperTypes().add(this.getInnerCoach());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(depotEClass, Depot.class, "Depot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDepot_Trains(), this.getTrain(), null, "trains", null, 0, -1, Depot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDepot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Depot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trainEClass, Train.class, "Train", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrain_Name(), ecorePackage.getEString(), "Name", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrain_Name(), ecorePackage.getEString(), "name", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrain_Coaches(), this.getCoach(), null, "coaches", null, 1, -1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrain_Type(), this.getTrainType(), "Type", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrain_TrainType(), this.getTrainType(), "trainType", null, 1, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coachEClass, Coach.class, "Coach", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(innerCoachEClass, InnerCoach.class, "InnerCoach", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInnerCoach_Number(), ecorePackage.getEInt(), "Number", null, 1, 1, InnerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getInnerCoach_Number(), ecorePackage.getEInt(), "number", null, 1, 1, InnerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locomotiveEClass, Locomotive.class, "Locomotive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(passengerCoachEClass, PassengerCoach.class, "PassengerCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPassengerCoach_Class(), this.getPassengerClass(), "Class", null, 1, 1, PassengerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPassengerCoach_PassengerClass(), this.getPassengerClass(), "passengerClass", null, 1, 1, PassengerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dinnerCoachEClass, DinnerCoach.class, "DinnerCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(diningCoachEClass, DiningCoach.class, "DiningCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(trainTypeEEnum, TrainType.class, "TrainType");
@@ -415,6 +440,70 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "ecore", "http://www.eclipse.org/emf/2002/Ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });
+		addAnnotation
+		  (locomotiveEClass,
+		   source,
+		   new String[] {
+			   "constraints", "MustBeFirstOrLast"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation
+		  (locomotiveEClass,
+		   source,
+		   new String[] {
+			   "MustBeFirstOrLast", "Tuple {\n\tmessage : String = \'Locotmotive has to be first or last coach in the train\',\n\tstatus : Boolean = self.oclContainer().oclAsType(Train).coaches->first() = self\n\t\t\t\tor self.oclContainer().oclAsType(Train).coaches->last() = self\n}.status"
+		   });
 	}
 
 } //DepotPackageImpl
