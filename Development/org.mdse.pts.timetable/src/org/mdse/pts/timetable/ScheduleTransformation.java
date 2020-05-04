@@ -118,6 +118,7 @@ public class ScheduleTransformation {
 		newTime.setMinutes(newMinutes);
 		DateTime newDateTime = SharedFactory.eINSTANCE.createDateTime();
 		newDateTime.setDay(day);
+		newDateTime.setTime(newTime);
 		return newDateTime;
 	}
 	
