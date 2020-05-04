@@ -2,7 +2,12 @@
  */
 package org.mdse.pts.schedule;
 
+import depot.Depot;
+
+import network.Network;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}</li>
- *   <li>{@link org.mdse.pts.schedule.Schedule#getCompany <em>Company</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.Schedule#getDepots <em>Depots</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.Schedule#getTrainSchedules <em>Train Schedules</em>}</li>
  * </ul>
  *
@@ -24,50 +29,39 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Schedule extends EObject {
-
 	/**
-	 * Returns the value of the '<em><b>Network</b></em>' attribute.
+	 * Returns the value of the '<em><b>Network</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Network</em>' attribute.
-	 * @see #setNetwork(String)
+	 * @return the value of the '<em>Network</em>' reference.
+	 * @see #setNetwork(Network)
 	 * @see org.mdse.pts.schedule.SchedulePackage#getSchedule_Network()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getNetwork();
+	Network getNetwork();
 
 	/**
-	 * Sets the value of the '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}' attribute.
+	 * Sets the value of the '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Network</em>' attribute.
+	 * @param value the new value of the '<em>Network</em>' reference.
 	 * @see #getNetwork()
 	 * @generated
 	 */
-	void setNetwork(String value);
+	void setNetwork(Network value);
 
 	/**
-	 * Returns the value of the '<em><b>Company</b></em>' attribute.
+	 * Returns the value of the '<em><b>Depots</b></em>' reference list.
+	 * The list contents are of type {@link depot.Depot}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Company</em>' attribute.
-	 * @see #setCompany(String)
-	 * @see org.mdse.pts.schedule.SchedulePackage#getSchedule_Company()
+	 * @return the value of the '<em>Depots</em>' reference list.
+	 * @see org.mdse.pts.schedule.SchedulePackage#getSchedule_Depots()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getCompany();
-
-	/**
-	 * Sets the value of the '{@link org.mdse.pts.schedule.Schedule#getCompany <em>Company</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Company</em>' attribute.
-	 * @see #getCompany()
-	 * @generated
-	 */
-	void setCompany(String value);
+	EList<Depot> getDepots();
 
 	/**
 	 * Returns the value of the '<em><b>Train Schedules</b></em>' containment reference list.
@@ -80,4 +74,5 @@ public interface Schedule extends EObject {
 	 * @generated
 	 */
 	EList<TrainSchedule> getTrainSchedules();
+
 } // Schedule

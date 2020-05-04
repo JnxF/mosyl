@@ -78,6 +78,12 @@ public class ScheduleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SchedulePackage.TIME_DESCRIPTION: {
+				TimeDescription timeDescription = (TimeDescription)theEObject;
+				T result = caseTimeDescription(timeDescription);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SchedulePackage.DATE_TIME: {
 				DateTime dateTime = (DateTime)theEObject;
 				T result = caseDateTime(dateTime);
@@ -96,39 +102,9 @@ public class ScheduleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SchedulePackage.SITUATED_SPOT: {
-				SituatedSpot situatedSpot = (SituatedSpot)theEObject;
-				T result = caseSituatedSpot(situatedSpot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SchedulePackage.SITUATED_SPOT_WITH_CONNECTION: {
-				SituatedSpotWithConnection situatedSpotWithConnection = (SituatedSpotWithConnection)theEObject;
-				T result = caseSituatedSpotWithConnection(situatedSpotWithConnection);
-				if (result == null) result = caseSituatedSpot(situatedSpotWithConnection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SchedulePackage.START_SPOT: {
-				StartSpot startSpot = (StartSpot)theEObject;
-				T result = caseStartSpot(startSpot);
-				if (result == null) result = caseSituatedSpotWithConnection(startSpot);
-				if (result == null) result = caseSituatedSpot(startSpot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SchedulePackage.MIDDLE_SPOT: {
-				MiddleSpot middleSpot = (MiddleSpot)theEObject;
-				T result = caseMiddleSpot(middleSpot);
-				if (result == null) result = caseSituatedSpotWithConnection(middleSpot);
-				if (result == null) result = caseSituatedSpot(middleSpot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SchedulePackage.FINAL_SPOT: {
-				FinalSpot finalSpot = (FinalSpot)theEObject;
-				T result = caseFinalSpot(finalSpot);
-				if (result == null) result = caseSituatedSpot(finalSpot);
+			case SchedulePackage.SPOT: {
+				Spot spot = (Spot)theEObject;
+				T result = caseSpot(spot);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -163,6 +139,21 @@ public class ScheduleSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTrainSchedule(TrainSchedule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Time Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Time Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimeDescription(TimeDescription object) {
 		return null;
 	}
 
@@ -212,77 +203,17 @@ public class ScheduleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Situated Spot</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Spot</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Situated Spot</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Spot</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSituatedSpot(SituatedSpot object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Situated Spot With Connection</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Situated Spot With Connection</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSituatedSpotWithConnection(SituatedSpotWithConnection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Start Spot</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Start Spot</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStartSpot(StartSpot object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Middle Spot</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Middle Spot</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMiddleSpot(MiddleSpot object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Final Spot</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Final Spot</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFinalSpot(FinalSpot object) {
+	public T caseSpot(Spot object) {
 		return null;
 	}
 
