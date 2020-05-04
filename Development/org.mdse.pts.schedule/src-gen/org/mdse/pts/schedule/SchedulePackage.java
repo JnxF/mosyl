@@ -4,7 +4,6 @@ package org.mdse.pts.schedule;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -215,13 +214,13 @@ public interface SchedulePackage extends EPackage {
 	int DATE_TIME = 3;
 
 	/**
-	 * The feature id for the '<em><b>Weekday</b></em>' attribute list.
+	 * The feature id for the '<em><b>Weekdays</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_TIME__WEEKDAY = 0;
+	int DATE_TIME__WEEKDAYS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -251,52 +250,6 @@ public interface SchedulePackage extends EPackage {
 	int DATE_TIME_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.TimeImpl <em>Time</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.TimeImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getTime()
-	 * @generated
-	 */
-	int TIME = 4;
-
-	/**
-	 * The feature id for the '<em><b>Hours</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME__HOURS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Minutes</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME__MINUTES = 1;
-
-	/**
-	 * The number of structural features of the '<em>Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.RouteImpl <em>Route</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -304,7 +257,7 @@ public interface SchedulePackage extends EPackage {
 	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getRoute()
 	 * @generated
 	 */
-	int ROUTE = 5;
+	int ROUTE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Spots</b></em>' containment reference list.
@@ -341,7 +294,7 @@ public interface SchedulePackage extends EPackage {
 	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getSpot()
 	 * @generated
 	 */
-	int SPOT = 6;
+	int SPOT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Station</b></em>' reference.
@@ -405,16 +358,6 @@ public interface SchedulePackage extends EPackage {
 	 * @ordered
 	 */
 	int SPOT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.WeekDays <em>Week Days</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.WeekDays
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getWeekDays()
-	 * @generated
-	 */
-	int WEEK_DAYS = 7;
 
 
 	/**
@@ -535,15 +478,15 @@ public interface SchedulePackage extends EPackage {
 	EClass getDateTime();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.mdse.pts.schedule.DateTime#getWeekday <em>Weekday</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.mdse.pts.schedule.DateTime#getWeekdays <em>Weekdays</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Weekday</em>'.
-	 * @see org.mdse.pts.schedule.DateTime#getWeekday()
+	 * @return the meta object for the attribute list '<em>Weekdays</em>'.
+	 * @see org.mdse.pts.schedule.DateTime#getWeekdays()
 	 * @see #getDateTime()
 	 * @generated
 	 */
-	EAttribute getDateTime_Weekday();
+	EAttribute getDateTime_Weekdays();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.mdse.pts.schedule.DateTime#getTime <em>Time</em>}'.
@@ -555,38 +498,6 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDateTime_Time();
-
-	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Time <em>Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Time</em>'.
-	 * @see org.mdse.pts.schedule.Time
-	 * @generated
-	 */
-	EClass getTime();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Time#getHours <em>Hours</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Hours</em>'.
-	 * @see org.mdse.pts.schedule.Time#getHours()
-	 * @see #getTime()
-	 * @generated
-	 */
-	EAttribute getTime_Hours();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Time#getMinutes <em>Minutes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Minutes</em>'.
-	 * @see org.mdse.pts.schedule.Time#getMinutes()
-	 * @see #getTime()
-	 * @generated
-	 */
-	EAttribute getTime_Minutes();
 
 	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Route <em>Route</em>}'.
@@ -673,16 +584,6 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpot_Leg();
-
-	/**
-	 * Returns the meta object for enum '{@link org.mdse.pts.schedule.WeekDays <em>Week Days</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Week Days</em>'.
-	 * @see org.mdse.pts.schedule.WeekDays
-	 * @generated
-	 */
-	EEnum getWeekDays();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -804,12 +705,12 @@ public interface SchedulePackage extends EPackage {
 		EClass DATE_TIME = eINSTANCE.getDateTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Weekday</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Weekdays</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATE_TIME__WEEKDAY = eINSTANCE.getDateTime_Weekday();
+		EAttribute DATE_TIME__WEEKDAYS = eINSTANCE.getDateTime_Weekdays();
 
 		/**
 		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
@@ -818,32 +719,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATE_TIME__TIME = eINSTANCE.getDateTime_Time();
-
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.TimeImpl <em>Time</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.TimeImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getTime()
-		 * @generated
-		 */
-		EClass TIME = eINSTANCE.getTime();
-
-		/**
-		 * The meta object literal for the '<em><b>Hours</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME__HOURS = eINSTANCE.getTime_Hours();
-
-		/**
-		 * The meta object literal for the '<em><b>Minutes</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME__MINUTES = eINSTANCE.getTime_Minutes();
 
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.RouteImpl <em>Route</em>}' class.
@@ -912,16 +787,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SPOT__LEG = eINSTANCE.getSpot_Leg();
-
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.WeekDays <em>Week Days</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.WeekDays
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getWeekDays()
-		 * @generated
-		 */
-		EEnum WEEK_DAYS = eINSTANCE.getWeekDays();
 
 	}
 

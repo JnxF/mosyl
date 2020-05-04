@@ -7,16 +7,13 @@ import java.util.Map;
 import java.util.Set;
 
 import org.mdse.pts.depot.Train;
-import org.mdse.pts.depot.TrainType;
 import org.mdse.pts.network.Leg;
 
 import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TrainSchedule;
-import org.mdse.pts.schedule.WeekDays;
 
-import network.Station;
 import shared.DaysOfTheWeek;
 import shared.SharedFactory;
 import shared.Time;
@@ -29,20 +26,20 @@ public class ScheduleTransformation {
 			Route route = trainSchedule.getRoute();
 			Train train = (Train) trainSchedule.getTrain();
 			for (org.mdse.pts.schedule.DateTime scheduleDateTime : trainSchedule.getTimeDescription().getDateTimes()) {
-				for (DaysOfTheWeek day : scheduleDateTime.getWeekday()) {
+				for (DaysOfTheWeek day : scheduleDateTime.getWeekdays()) {
 					DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
 					dateTime.setTime(scheduleDateTime.getTime());
 					dateTime.setDay(day);
 					
-					String prevStationName;
-					Leg prevLeg;
+					String prevStationName = null;
+					Leg prevLeg = null;
 					DateTime prevDateTime = dateTime;
 					
-					Timetable timetable;
-					StationTrain stationTrain;
+					Timetable timetable = null;
+					StationTrain stationTrain = null;
 
-					TimeAndStation arrival;
-					TimeAndStation departure;
+					TimeAndStation arrival = null;
+					TimeAndStation departure = null;
 
 					List<Spot> spots = route.getSpots();
 					for (int i = 0; i < spots.size(); i++) {

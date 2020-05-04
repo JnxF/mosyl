@@ -3,7 +3,6 @@
 package org.mdse.pts.schedule.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -61,41 +60,10 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 			case SchedulePackage.TRAIN_SCHEDULE: return createTrainSchedule();
 			case SchedulePackage.TIME_DESCRIPTION: return createTimeDescription();
 			case SchedulePackage.DATE_TIME: return createDateTime();
-			case SchedulePackage.TIME: return createTime();
 			case SchedulePackage.ROUTE: return createRoute();
 			case SchedulePackage.SPOT: return createSpot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case SchedulePackage.WEEK_DAYS:
-				return createWeekDaysFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case SchedulePackage.WEEK_DAYS:
-				return convertWeekDaysToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -149,17 +117,6 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	 * @generated
 	 */
 	@Override
-	public Time createTime() {
-		TimeImpl time = new TimeImpl();
-		return time;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Route createRoute() {
 		RouteImpl route = new RouteImpl();
 		return route;
@@ -174,26 +131,6 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	public Spot createSpot() {
 		SpotImpl spot = new SpotImpl();
 		return spot;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WeekDays createWeekDaysFromString(EDataType eDataType, String initialValue) {
-		WeekDays result = WeekDays.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertWeekDaysToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

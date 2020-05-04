@@ -12,7 +12,6 @@ import network.impl.NetworkPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -24,10 +23,12 @@ import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.Spot;
-import org.mdse.pts.schedule.Time;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
-import org.mdse.pts.schedule.WeekDays;
+
+import shared.SharedPackage;
+
+import shared.impl.SharedPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,13 +70,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass timeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass routeEClass = null;
 
 	/**
@@ -84,13 +78,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	private EClass spotEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum weekDaysEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -144,16 +131,20 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(registeredPackage instanceof NetworkPackageImpl ? registeredPackage : NetworkPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DepotPackage.eNS_URI);
 		DepotPackageImpl theDepotPackage = (DepotPackageImpl)(registeredPackage instanceof DepotPackageImpl ? registeredPackage : DepotPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SharedPackage.eNS_URI);
+		SharedPackageImpl theSharedPackage = (SharedPackageImpl)(registeredPackage instanceof SharedPackageImpl ? registeredPackage : SharedPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSchedulePackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
 		theDepotPackage.createPackageContents();
+		theSharedPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSchedulePackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
 		theDepotPackage.initializePackageContents();
+		theSharedPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSchedulePackage.freeze();
@@ -279,7 +270,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDateTime_Weekday() {
+	public EAttribute getDateTime_Weekdays() {
 		return (EAttribute)dateTimeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -291,36 +282,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	@Override
 	public EReference getDateTime_Time() {
 		return (EReference)dateTimeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTime() {
-		return timeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTime_Hours() {
-		return (EAttribute)timeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTime_Minutes() {
-		return (EAttribute)timeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -409,16 +370,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getWeekDays() {
-		return weekDaysEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ScheduleFactory getScheduleFactory() {
 		return (ScheduleFactory)getEFactoryInstance();
 	}
@@ -456,12 +407,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEReference(timeDescriptionEClass, TIME_DESCRIPTION__DATE_TIMES);
 
 		dateTimeEClass = createEClass(DATE_TIME);
-		createEAttribute(dateTimeEClass, DATE_TIME__WEEKDAY);
+		createEAttribute(dateTimeEClass, DATE_TIME__WEEKDAYS);
 		createEReference(dateTimeEClass, DATE_TIME__TIME);
-
-		timeEClass = createEClass(TIME);
-		createEAttribute(timeEClass, TIME__HOURS);
-		createEAttribute(timeEClass, TIME__MINUTES);
 
 		routeEClass = createEClass(ROUTE);
 		createEReference(routeEClass, ROUTE__SPOTS);
@@ -472,9 +419,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEAttribute(spotEClass, SPOT__WAITING_TIME);
 		createEAttribute(spotEClass, SPOT__TURN_STATION);
 		createEReference(spotEClass, SPOT__LEG);
-
-		// Create enums
-		weekDaysEEnum = createEEnum(WEEK_DAYS);
 	}
 
 	/**
@@ -503,6 +447,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		// Obtain other dependent packages
 		NetworkPackage theNetworkPackage = (NetworkPackage)EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
 		DepotPackage theDepotPackage = (DepotPackage)EPackage.Registry.INSTANCE.getEPackage(DepotPackage.eNS_URI);
+		SharedPackage theSharedPackage = (SharedPackage)EPackage.Registry.INSTANCE.getEPackage(SharedPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -525,12 +470,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEReference(getTimeDescription_DateTimes(), this.getDateTime(), null, "dateTimes", null, 1, -1, TimeDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dateTimeEClass, DateTime.class, "DateTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDateTime_Weekday(), this.getWeekDays(), "weekday", null, 1, -1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDateTime_Time(), this.getTime(), null, "time", null, 1, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTime_Hours(), ecorePackage.getEIntegerObject(), "hours", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTime_Minutes(), ecorePackage.getEIntegerObject(), "minutes", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDateTime_Weekdays(), theSharedPackage.getDaysOfTheWeek(), "weekdays", null, 1, -1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDateTime_Time(), theSharedPackage.getTime(), null, "time", null, 1, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(routeEClass, Route.class, "Route", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoute_Spots(), this.getSpot(), null, "spots", null, 2, -1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -541,16 +482,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEAttribute(getSpot_WaitingTime(), ecorePackage.getEIntegerObject(), "waitingTime", "0", 1, 1, Spot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpot_TurnStation(), ecorePackage.getEBooleanObject(), "turnStation", "false", 1, 1, Spot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpot_Leg(), theNetworkPackage.getLeg(), null, "leg", null, 0, 1, Spot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(weekDaysEEnum, WeekDays.class, "WeekDays");
-		addEEnumLiteral(weekDaysEEnum, WeekDays.MONDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.TUESDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.WEDNESDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.THURSDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.FRIDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.SATURDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.SUNDAY);
 
 		// Create resource
 		createResource(eNS_URI);
