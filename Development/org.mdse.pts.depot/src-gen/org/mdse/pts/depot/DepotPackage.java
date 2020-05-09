@@ -572,14 +572,6 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEPOT__NAME = eINSTANCE.getDepot_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEPOT__NAME = eINSTANCE.getDepot_Name();
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.TrainImpl <em>Train</em>}' class.
 		 * <!-- begin-user-doc -->

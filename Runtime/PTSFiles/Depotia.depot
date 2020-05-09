@@ -4,6 +4,6 @@
     <coaches xsi:type="depot:Locomotive"/>
     <coaches xsi:type="depot:PassengerCoach" number="3"/>
     <coaches xsi:type="depot:PassengerCoach" number="1"/>
-    <coaches xsi:type="depot:DinnerCoach" number="3"/>
+    <coaches xsi:type="depot:DiningCoach" number="3"/>
   </trains>
 </depot:Depot>
