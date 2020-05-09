@@ -32,7 +32,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Coach" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="InnerCoach" abstract="true" eSuperTypes="#//Coach">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" iD="true"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Locomotive" eSuperTypes="#//Coach">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

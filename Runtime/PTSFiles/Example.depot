@@ -15,7 +15,7 @@
   </trains>
   <trains name="ICE67" trainType="INTERCITY">
     <coaches xsi:type="depot:Locomotive"/>
-    <coaches xsi:type="depot:PassengerCoach" number="1" passengerClass="SECOND"/>
-    <coaches xsi:type="depot:DiningCoach" number="4"/>
+    <coaches xsi:type="depot:DiningCoach" number="1"/>
+    <coaches xsi:type="depot:PassengerCoach" number="1"/>
   </trains>
 </depot:Depot>
