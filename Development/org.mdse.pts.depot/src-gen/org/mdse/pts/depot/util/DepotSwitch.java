@@ -106,11 +106,11 @@ public class DepotSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DepotPackage.DINNER_COACH: {
-				DinnerCoach dinnerCoach = (DinnerCoach)theEObject;
-				T result = caseDinnerCoach(dinnerCoach);
-				if (result == null) result = caseInnerCoach(dinnerCoach);
-				if (result == null) result = caseCoach(dinnerCoach);
+			case DepotPackage.DINING_COACH: {
+				DiningCoach diningCoach = (DiningCoach)theEObject;
+				T result = caseDiningCoach(diningCoach);
+				if (result == null) result = caseInnerCoach(diningCoach);
+				if (result == null) result = caseCoach(diningCoach);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -209,17 +209,17 @@ public class DepotSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dinner Coach</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Dining Coach</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dinner Coach</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Dining Coach</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDinnerCoach(DinnerCoach object) {
+	public T caseDiningCoach(DiningCoach object) {
 		return null;
 	}
 

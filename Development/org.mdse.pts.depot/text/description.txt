@@ -9,23 +9,24 @@ Package depot <http://mdse.org/pts/depot>
 
   Class Depot
     Reference trains : Train<<0..*>>
+    Attribute name : EString<<1..1>>
 
   Class Train
-    Attribute Name : EString<<1..1>>
+    Attribute name : EString<<1..1>>
     Reference coaches : Coach<<1..*>>
-    Attribute Type : TrainType<<1..1>>
+    Attribute trainType : TrainType<<1..1>>
 
   Class Coach
 
   Class InnerCoach -> Coach
-    Attribute Number : EInt<<1..1>>
+    Attribute number : EInt<<1..1>>
 
   Class Locomotive -> Coach
 
   Class PassengerCoach -> InnerCoach
-    Attribute Class : PassengerClass<<1..1>>
+    Attribute passengerClass : PassengerClass<<1..1>>
 
-  Class DinnerCoach -> InnerCoach
+  Class DiningCoach -> InnerCoach
 
   Enum TrainType
     Literal REGIONAL = 0

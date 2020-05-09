@@ -61,7 +61,7 @@ public class DepotFactoryImpl extends EFactoryImpl implements DepotFactory {
 			case DepotPackage.TRAIN: return createTrain();
 			case DepotPackage.LOCOMOTIVE: return createLocomotive();
 			case DepotPackage.PASSENGER_COACH: return createPassengerCoach();
-			case DepotPackage.DINNER_COACH: return createDinnerCoach();
+			case DepotPackage.DINING_COACH: return createDiningCoach();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -151,9 +151,9 @@ public class DepotFactoryImpl extends EFactoryImpl implements DepotFactory {
 	 * @generated
 	 */
 	@Override
-	public DinnerCoach createDinnerCoach() {
-		DinnerCoachImpl dinnerCoach = new DinnerCoachImpl();
-		return dinnerCoach;
+	public DiningCoach createDiningCoach() {
+		DiningCoachImpl diningCoach = new DiningCoachImpl();
+		return diningCoach;
 	}
 
 	/**

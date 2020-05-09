@@ -58,13 +58,13 @@ public interface DepotFactory extends EFactory {
 	PassengerCoach createPassengerCoach();
 
 	/**
-	 * Returns a new object of class '<em>Dinner Coach</em>'.
+	 * Returns a new object of class '<em>Dining Coach</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dinner Coach</em>'.
+	 * @return a new object of class '<em>Dining Coach</em>'.
 	 * @generated
 	 */
-	DinnerCoach createDinnerCoach();
+	DiningCoach createDiningCoach();
 
 	/**
 	 * Returns the package supported by this factory.
