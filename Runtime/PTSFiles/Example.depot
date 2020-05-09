@@ -11,13 +11,11 @@
     <coaches xsi:type="depot:Locomotive"/>
     <coaches xsi:type="depot:PassengerCoach" number="1"/>
     <coaches xsi:type="depot:DiningCoach" number="2"/>
-    <coaches xsi:type="depot:PassengerCoach" number="3" passengerClass="SECOND"/>
+    <coaches xsi:type="depot:PassengerCoach" passengerClass="SECOND"/>
   </trains>
   <trains name="ICE67" trainType="INTERCITY">
-    <coaches xsi:type="depot:PassengerCoach"/>
     <coaches xsi:type="depot:Locomotive"/>
-    <coaches xsi:type="depot:PassengerCoach"/>
-    <coaches xsi:type="depot:PassengerCoach" passengerClass="SECOND"/>
-    <coaches xsi:type="depot:DiningCoach"/>
+    <coaches xsi:type="depot:PassengerCoach" number="1" passengerClass="SECOND"/>
+    <coaches xsi:type="depot:DiningCoach" number="4"/>
   </trains>
 </depot:Depot>
