@@ -33,6 +33,6 @@
     <genClasses ecoreClass="Depot.ecore#//PassengerCoach">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Depot.ecore#//PassengerCoach/passengerClass"/>
     </genClasses>
-    <genClasses ecoreClass="Depot.ecore#//DinnerCoach"/>
+    <genClasses ecoreClass="Depot.ecore#//DiningCoach"/>
   </genPackages>
 </genmodel:GenModel>

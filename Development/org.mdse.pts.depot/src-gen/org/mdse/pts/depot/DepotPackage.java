@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.mdse.pts.depot.DepotFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface DepotPackage extends EPackage {
@@ -298,14 +300,14 @@ public interface DepotPackage extends EPackage {
 	int PASSENGER_COACH_OPERATION_COUNT = INNER_COACH_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.mdse.pts.depot.impl.DinnerCoachImpl <em>Dinner Coach</em>}' class.
+	 * The meta object id for the '{@link org.mdse.pts.depot.impl.DiningCoachImpl <em>Dining Coach</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.depot.impl.DinnerCoachImpl
-	 * @see org.mdse.pts.depot.impl.DepotPackageImpl#getDinnerCoach()
+	 * @see org.mdse.pts.depot.impl.DiningCoachImpl
+	 * @see org.mdse.pts.depot.impl.DepotPackageImpl#getDiningCoach()
 	 * @generated
 	 */
-	int DINNER_COACH = 6;
+	int DINING_COACH = 6;
 
 	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -314,25 +316,25 @@ public interface DepotPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DINNER_COACH__NUMBER = INNER_COACH__NUMBER;
+	int DINING_COACH__NUMBER = INNER_COACH__NUMBER;
 
 	/**
-	 * The number of structural features of the '<em>Dinner Coach</em>' class.
+	 * The number of structural features of the '<em>Dining Coach</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DINNER_COACH_FEATURE_COUNT = INNER_COACH_FEATURE_COUNT + 0;
+	int DINING_COACH_FEATURE_COUNT = INNER_COACH_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Dinner Coach</em>' class.
+	 * The number of operations of the '<em>Dining Coach</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DINNER_COACH_OPERATION_COUNT = INNER_COACH_OPERATION_COUNT + 0;
+	int DINING_COACH_OPERATION_COUNT = INNER_COACH_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mdse.pts.depot.TrainType <em>Train Type</em>}' enum.
@@ -493,14 +495,14 @@ public interface DepotPackage extends EPackage {
 	EAttribute getPassengerCoach_PassengerClass();
 
 	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.depot.DinnerCoach <em>Dinner Coach</em>}'.
+	 * Returns the meta object for class '{@link org.mdse.pts.depot.DiningCoach <em>Dining Coach</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dinner Coach</em>'.
-	 * @see org.mdse.pts.depot.DinnerCoach
+	 * @return the meta object for class '<em>Dining Coach</em>'.
+	 * @see org.mdse.pts.depot.DiningCoach
 	 * @generated
 	 */
-	EClass getDinnerCoach();
+	EClass getDiningCoach();
 
 	/**
 	 * Returns the meta object for enum '{@link org.mdse.pts.depot.TrainType <em>Train Type</em>}'.
@@ -572,6 +574,13 @@ public interface DepotPackage extends EPackage {
 		EAttribute DEPOT__NAME = eINSTANCE.getDepot_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEPOT__NAME = eINSTANCE.getDepot_Name();
+		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.TrainImpl <em>Train</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -604,7 +613,6 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRAIN__TRAIN_TYPE = eINSTANCE.getTrain_TrainType();
-
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.CoachImpl <em>Coach</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -660,17 +668,15 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PASSENGER_COACH__PASSENGER_CLASS = eINSTANCE.getPassengerCoach_PassengerClass();
-
 		/**
-		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.DinnerCoachImpl <em>Dinner Coach</em>}' class.
+		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.DiningCoachImpl <em>Dining Coach</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.depot.impl.DinnerCoachImpl
-		 * @see org.mdse.pts.depot.impl.DepotPackageImpl#getDinnerCoach()
+		 * @see org.mdse.pts.depot.impl.DiningCoachImpl
+		 * @see org.mdse.pts.depot.impl.DepotPackageImpl#getDiningCoach()
 		 * @generated
 		 */
-		EClass DINNER_COACH = eINSTANCE.getDinnerCoach();
-
+		EClass DINING_COACH = eINSTANCE.getDiningCoach();
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.TrainType <em>Train Type</em>}' enum.
 		 * <!-- begin-user-doc -->

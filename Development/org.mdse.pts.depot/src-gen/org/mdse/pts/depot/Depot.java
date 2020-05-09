@@ -43,7 +43,7 @@ public interface Depot extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdse.pts.depot.DepotPackage#getDepot_Name()
-	 * @model unique="false" required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -57,5 +57,4 @@ public interface Depot extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
 } // Depot
