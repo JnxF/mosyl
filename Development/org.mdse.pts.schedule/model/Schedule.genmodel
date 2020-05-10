@@ -78,7 +78,7 @@
     <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//PassengerCoach">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//PassengerCoach/passengerClass"/>
     </genClasses>
-    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//DinnerCoach"/>
+    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//DiningCoach"/>
   </genPackages>
   <genPackages prefix="Shared" ecorePackage="../../org.mdse.pst.shared/model/Shared.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pst.shared/model/Shared.ecore#//DaysOfTheWeek">

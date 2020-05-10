@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.mdse.pts.shared/src-gen" editDirectory="/org.mdse.pts.shared.edit/src-gen"
+    editorDirectory="/org.mdse.pts.shared.editor/src-gen" modelPluginID="org.mdse.pts.shared"
+    modelName="Shared" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.mdse.pts.shared.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Shared.ecore</foreignModel>
+  <genPackages prefix="Shared" basePackage="org.mdse.pts" disposableProviderFactory="true"
+      ecorePackage="Shared.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Shared.ecore#//DaysOfTheWeek">
+      <genEnumLiterals ecoreEnumLiteral="Shared.ecore#//DaysOfTheWeek/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Shared.ecore#//DaysOfTheWeek/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Shared.ecore#//DaysOfTheWeek/WEDNESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Shared.ecore#//DaysOfTheWeek/THURSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Shared.ecore#//DaysOfTheWeek/FRIDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Shared.ecore#//DaysOfTheWeek/SATURDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Shared.ecore#//DaysOfTheWeek/SUNDAY"/>
+    </genEnums>
+    <genClasses ecoreClass="Shared.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Shared.ecore#//Time/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Shared.ecore#//Time/minutes"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
