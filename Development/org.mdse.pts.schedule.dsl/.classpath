@@ -9,6 +9,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.mdse.pst.shared"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.mdse.pts.shared"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

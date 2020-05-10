@@ -31,7 +31,7 @@ public class ScheduleParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ScheduleGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getWeekDaysAccess().getAlternatives(), "rule__WeekDays__Alternatives");
+			builder.put(grammarAccess.getWeekDayAccess().getAlternatives(), "rule__WeekDay__Alternatives");
 			builder.put(grammarAccess.getScheduleAccess().getGroup(), "rule__Schedule__Group__0");
 			builder.put(grammarAccess.getScheduleAccess().getGroup_5(), "rule__Schedule__Group_5__0");
 			builder.put(grammarAccess.getTrainScheduleAccess().getGroup(), "rule__TrainSchedule__Group__0");
@@ -61,8 +61,8 @@ public class ScheduleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTimeDescriptionAccess().getDateTimesAssignment_0(), "rule__TimeDescription__DateTimesAssignment_0");
 			builder.put(grammarAccess.getTimeDescriptionAccess().getDateTimesAssignment_1_0_1(), "rule__TimeDescription__DateTimesAssignment_1_0_1");
 			builder.put(grammarAccess.getTimeDescriptionAccess().getDateTimesAssignment_1_2(), "rule__TimeDescription__DateTimesAssignment_1_2");
-			builder.put(grammarAccess.getDateTimeAccess().getWeekdayAssignment_0(), "rule__DateTime__WeekdayAssignment_0");
-			builder.put(grammarAccess.getDateTimeAccess().getWeekdayAssignment_1_1(), "rule__DateTime__WeekdayAssignment_1_1");
+			builder.put(grammarAccess.getDateTimeAccess().getWeekdaysAssignment_0(), "rule__DateTime__WeekdaysAssignment_0");
+			builder.put(grammarAccess.getDateTimeAccess().getWeekdaysAssignment_1_1(), "rule__DateTime__WeekdaysAssignment_1_1");
 			builder.put(grammarAccess.getDateTimeAccess().getTimeAssignment_3(), "rule__DateTime__TimeAssignment_3");
 			builder.put(grammarAccess.getTimeAccess().getHoursAssignment_0(), "rule__Time__HoursAssignment_0");
 			builder.put(grammarAccess.getTimeAccess().getMinutesAssignment_2(), "rule__Time__MinutesAssignment_2");

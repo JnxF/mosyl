@@ -11,10 +11,28 @@ import shared.SharedFactory;
 import shared.Time;
 
 public class Main {
-
 	public static void main(String[] args) {
 		//dateTimeTest();
+		//trainTest();
+	}
+	
+	public static void dateTimeTest() {
+		DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
+		Time time = SharedFactory.eINSTANCE.createTime();
+		time.setHours(2);
+		time.setMinutes(35);
+		dateTime.setTime(time);
+		dateTime.setDay(DaysOfTheWeek.get(7));
+		ScheduleTransformation transform = new ScheduleTransformation();
 
+		printDateTime(dateTime);
+		
+		DateTime newDateTime = transform.calculateDateTime(dateTime, 75);
+		
+		printDateTime(newDateTime);
+	}
+	
+	public static void trainTest() {
 		DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
 		Time time = SharedFactory.eINSTANCE.createTime();
 		time.setHours(2);
@@ -33,22 +51,6 @@ public class Main {
 		}
 		printDateTime(dateTime);
 		printDateTime(transform.calculateArrival(dateTime, leg, train));
-	}
-	
-	public static void dateTimeTest() {
-		DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
-		Time time = SharedFactory.eINSTANCE.createTime();
-		time.setHours(2);
-		time.setMinutes(35);
-		dateTime.setTime(time);
-		dateTime.setDay(DaysOfTheWeek.get(7));
-		ScheduleTransformation transform = new ScheduleTransformation();
-
-		printDateTime(dateTime);
-		
-		DateTime newDateTime = transform.calculateDateTime(dateTime, 75);
-		
-		printDateTime(newDateTime);
 	}
 	
 	public static void printDateTime(DateTime dateTime) {

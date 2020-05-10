@@ -14,6 +14,7 @@ public abstract class AbstractScheduleValidator extends AbstractDeclarativeValid
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>();
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://mdse.org/pts/schedule"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://mdse.org/pts/shared"));
 		return result;
 	}
 }

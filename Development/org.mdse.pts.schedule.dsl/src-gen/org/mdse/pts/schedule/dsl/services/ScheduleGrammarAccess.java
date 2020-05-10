@@ -213,41 +213,41 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	public class DateTimeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.DateTime");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cWeekdayAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cWeekdayWeekDaysEnumRuleCall_0_0 = (RuleCall)cWeekdayAssignment_0.eContents().get(0);
+		private final Assignment cWeekdaysAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cWeekdaysWeekDayEnumRuleCall_0_0 = (RuleCall)cWeekdaysAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cWeekdayAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cWeekdayWeekDaysEnumRuleCall_1_1_0 = (RuleCall)cWeekdayAssignment_1_1.eContents().get(0);
+		private final Assignment cWeekdaysAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cWeekdaysWeekDayEnumRuleCall_1_1_0 = (RuleCall)cWeekdaysAssignment_1_1.eContents().get(0);
 		private final Keyword cAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTimeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTimeTimeParserRuleCall_3_0 = (RuleCall)cTimeAssignment_3.eContents().get(0);
 		
 		//DateTime:
-		//	weekday+=WeekDays ("," weekday+=WeekDays)*
+		//	weekdays+=WeekDay ("," weekdays+=WeekDay)*
 		//	"at" time=Time;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//weekday+=WeekDays ("," weekday+=WeekDays)* "at" time=Time
+		//weekdays+=WeekDay ("," weekdays+=WeekDay)* "at" time=Time
 		public Group getGroup() { return cGroup; }
 		
-		//weekday+=WeekDays
-		public Assignment getWeekdayAssignment_0() { return cWeekdayAssignment_0; }
+		//weekdays+=WeekDay
+		public Assignment getWeekdaysAssignment_0() { return cWeekdaysAssignment_0; }
 		
-		//WeekDays
-		public RuleCall getWeekdayWeekDaysEnumRuleCall_0_0() { return cWeekdayWeekDaysEnumRuleCall_0_0; }
+		//WeekDay
+		public RuleCall getWeekdaysWeekDayEnumRuleCall_0_0() { return cWeekdaysWeekDayEnumRuleCall_0_0; }
 		
-		//("," weekday+=WeekDays)*
+		//("," weekdays+=WeekDay)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//","
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//weekday+=WeekDays
-		public Assignment getWeekdayAssignment_1_1() { return cWeekdayAssignment_1_1; }
+		//weekdays+=WeekDay
+		public Assignment getWeekdaysAssignment_1_1() { return cWeekdaysAssignment_1_1; }
 		
-		//WeekDays
-		public RuleCall getWeekdayWeekDaysEnumRuleCall_1_1_0() { return cWeekdayWeekDaysEnumRuleCall_1_1_0; }
+		//WeekDay
+		public RuleCall getWeekdaysWeekDayEnumRuleCall_1_1_0() { return cWeekdaysWeekDayEnumRuleCall_1_1_0; }
 		
 		//"at"
 		public Keyword getAtKeyword_2() { return cAtKeyword_2; }
@@ -267,7 +267,7 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMinutesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cMinutesINTTerminalRuleCall_2_0 = (RuleCall)cMinutesAssignment_2.eContents().get(0);
 		
-		//Time:
+		//Time shared::Time:
 		//	hours=INT ":" minutes=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -562,8 +562,8 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getPlatformSTRINGTerminalRuleCall_3_2_0() { return cPlatformSTRINGTerminalRuleCall_3_2_0; }
 	}
 	
-	public class WeekDaysElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.WeekDays");
+	public class WeekDayElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.WeekDay");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cMONDAYEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cMONDAYMondayKeyword_0_0 = (Keyword)cMONDAYEnumLiteralDeclaration_0.eContents().get(0);
@@ -580,7 +580,7 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cSUNDAYEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
 		private final Keyword cSUNDAYSundayKeyword_6_0 = (Keyword)cSUNDAYEnumLiteralDeclaration_6.eContents().get(0);
 		
-		//enum WeekDays:
+		//enum WeekDay returns shared::DaysOfTheWeek:
 		//	MONDAY="Monday" | TUESDAY="Tuesday" | WEDNESDAY="Wednesday" | THURSDAY="Thursday" |
 		//	FRIDAY="Friday" | SATURDAY="Saturday" | SUNDAY="Sunday";
 		public EnumRule getRule() { return rule; }
@@ -641,7 +641,7 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	private final StartSpotElements pStartSpot;
 	private final MiddleSpotElements pMiddleSpot;
 	private final FinalSpotElements pFinalSpot;
-	private final WeekDaysElements eWeekDays;
+	private final WeekDayElements eWeekDay;
 	private final TerminalRule tLETTER;
 	private final TerminalRule tDIGIT;
 	private final TerminalRule tID;
@@ -665,7 +665,7 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStartSpot = new StartSpotElements();
 		this.pMiddleSpot = new MiddleSpotElements();
 		this.pFinalSpot = new FinalSpotElements();
-		this.eWeekDays = new WeekDaysElements();
+		this.eWeekDay = new WeekDayElements();
 		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.LETTER");
 		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.DIGIT");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.ID");
@@ -733,7 +733,7 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DateTime:
-	//	weekday+=WeekDays ("," weekday+=WeekDays)*
+	//	weekdays+=WeekDay ("," weekdays+=WeekDay)*
 	//	"at" time=Time;
 	public DateTimeElements getDateTimeAccess() {
 		return pDateTime;
@@ -743,7 +743,7 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		return getDateTimeAccess().getRule();
 	}
 	
-	//Time:
+	//Time shared::Time:
 	//	hours=INT ":" minutes=INT;
 	public TimeElements getTimeAccess() {
 		return pTime;
@@ -796,15 +796,15 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		return getFinalSpotAccess().getRule();
 	}
 	
-	//enum WeekDays:
+	//enum WeekDay returns shared::DaysOfTheWeek:
 	//	MONDAY="Monday" | TUESDAY="Tuesday" | WEDNESDAY="Wednesday" | THURSDAY="Thursday" |
 	//	FRIDAY="Friday" | SATURDAY="Saturday" | SUNDAY="Sunday";
-	public WeekDaysElements getWeekDaysAccess() {
-		return eWeekDays;
+	public WeekDayElements getWeekDayAccess() {
+		return eWeekDay;
 	}
 	
-	public EnumRule getWeekDaysRule() {
-		return getWeekDaysAccess().getRule();
+	public EnumRule getWeekDayRule() {
+		return getWeekDayAccess().getRule();
 	}
 	
 	//terminal fragment LETTER:

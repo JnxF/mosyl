@@ -786,32 +786,32 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleFinalSpot"
 
 
-    // $ANTLR start "ruleWeekDays"
-    // InternalSchedule.g:278:1: ruleWeekDays : ( ( rule__WeekDays__Alternatives ) ) ;
-    public final void ruleWeekDays() throws RecognitionException {
+    // $ANTLR start "ruleWeekDay"
+    // InternalSchedule.g:278:1: ruleWeekDay : ( ( rule__WeekDay__Alternatives ) ) ;
+    public final void ruleWeekDay() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:282:1: ( ( ( rule__WeekDays__Alternatives ) ) )
-            // InternalSchedule.g:283:2: ( ( rule__WeekDays__Alternatives ) )
+            // InternalSchedule.g:282:1: ( ( ( rule__WeekDay__Alternatives ) ) )
+            // InternalSchedule.g:283:2: ( ( rule__WeekDay__Alternatives ) )
             {
-            // InternalSchedule.g:283:2: ( ( rule__WeekDays__Alternatives ) )
-            // InternalSchedule.g:284:3: ( rule__WeekDays__Alternatives )
+            // InternalSchedule.g:283:2: ( ( rule__WeekDay__Alternatives ) )
+            // InternalSchedule.g:284:3: ( rule__WeekDay__Alternatives )
             {
-             before(grammarAccess.getWeekDaysAccess().getAlternatives()); 
-            // InternalSchedule.g:285:3: ( rule__WeekDays__Alternatives )
-            // InternalSchedule.g:285:4: rule__WeekDays__Alternatives
+             before(grammarAccess.getWeekDayAccess().getAlternatives()); 
+            // InternalSchedule.g:285:3: ( rule__WeekDay__Alternatives )
+            // InternalSchedule.g:285:4: rule__WeekDay__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__WeekDays__Alternatives();
+            rule__WeekDay__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getWeekDaysAccess().getAlternatives()); 
+             after(grammarAccess.getWeekDayAccess().getAlternatives()); 
 
             }
 
@@ -830,12 +830,12 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "ruleWeekDays"
+    // $ANTLR end "ruleWeekDay"
 
 
-    // $ANTLR start "rule__WeekDays__Alternatives"
-    // InternalSchedule.g:293:1: rule__WeekDays__Alternatives : ( ( ( 'Monday' ) ) | ( ( 'Tuesday' ) ) | ( ( 'Wednesday' ) ) | ( ( 'Thursday' ) ) | ( ( 'Friday' ) ) | ( ( 'Saturday' ) ) | ( ( 'Sunday' ) ) );
-    public final void rule__WeekDays__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__WeekDay__Alternatives"
+    // InternalSchedule.g:293:1: rule__WeekDay__Alternatives : ( ( ( 'Monday' ) ) | ( ( 'Tuesday' ) ) | ( ( 'Wednesday' ) ) | ( ( 'Thursday' ) ) | ( ( 'Friday' ) ) | ( ( 'Saturday' ) ) | ( ( 'Sunday' ) ) );
+    public final void rule__WeekDay__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -892,7 +892,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:298:2: ( ( 'Monday' ) )
                     // InternalSchedule.g:299:3: ( 'Monday' )
                     {
-                     before(grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0()); 
+                     before(grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_0()); 
                     // InternalSchedule.g:300:3: ( 'Monday' )
                     // InternalSchedule.g:300:4: 'Monday'
                     {
@@ -900,7 +900,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0()); 
+                     after(grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_0()); 
 
                     }
 
@@ -913,7 +913,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:304:2: ( ( 'Tuesday' ) )
                     // InternalSchedule.g:305:3: ( 'Tuesday' )
                     {
-                     before(grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1()); 
+                     before(grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_1()); 
                     // InternalSchedule.g:306:3: ( 'Tuesday' )
                     // InternalSchedule.g:306:4: 'Tuesday'
                     {
@@ -921,7 +921,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1()); 
+                     after(grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_1()); 
 
                     }
 
@@ -934,7 +934,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:310:2: ( ( 'Wednesday' ) )
                     // InternalSchedule.g:311:3: ( 'Wednesday' )
                     {
-                     before(grammarAccess.getWeekDaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
+                     before(grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
                     // InternalSchedule.g:312:3: ( 'Wednesday' )
                     // InternalSchedule.g:312:4: 'Wednesday'
                     {
@@ -942,7 +942,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekDaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
+                     after(grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
 
                     }
 
@@ -955,7 +955,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:316:2: ( ( 'Thursday' ) )
                     // InternalSchedule.g:317:3: ( 'Thursday' )
                     {
-                     before(grammarAccess.getWeekDaysAccess().getTHURSDAYEnumLiteralDeclaration_3()); 
+                     before(grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_3()); 
                     // InternalSchedule.g:318:3: ( 'Thursday' )
                     // InternalSchedule.g:318:4: 'Thursday'
                     {
@@ -963,7 +963,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekDaysAccess().getTHURSDAYEnumLiteralDeclaration_3()); 
+                     after(grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_3()); 
 
                     }
 
@@ -976,7 +976,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:322:2: ( ( 'Friday' ) )
                     // InternalSchedule.g:323:3: ( 'Friday' )
                     {
-                     before(grammarAccess.getWeekDaysAccess().getFRIDAYEnumLiteralDeclaration_4()); 
+                     before(grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_4()); 
                     // InternalSchedule.g:324:3: ( 'Friday' )
                     // InternalSchedule.g:324:4: 'Friday'
                     {
@@ -984,7 +984,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekDaysAccess().getFRIDAYEnumLiteralDeclaration_4()); 
+                     after(grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_4()); 
 
                     }
 
@@ -997,7 +997,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:328:2: ( ( 'Saturday' ) )
                     // InternalSchedule.g:329:3: ( 'Saturday' )
                     {
-                     before(grammarAccess.getWeekDaysAccess().getSATURDAYEnumLiteralDeclaration_5()); 
+                     before(grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_5()); 
                     // InternalSchedule.g:330:3: ( 'Saturday' )
                     // InternalSchedule.g:330:4: 'Saturday'
                     {
@@ -1005,7 +1005,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekDaysAccess().getSATURDAYEnumLiteralDeclaration_5()); 
+                     after(grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_5()); 
 
                     }
 
@@ -1018,7 +1018,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:334:2: ( ( 'Sunday' ) )
                     // InternalSchedule.g:335:3: ( 'Sunday' )
                     {
-                     before(grammarAccess.getWeekDaysAccess().getSUNDAYEnumLiteralDeclaration_6()); 
+                     before(grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_6()); 
                     // InternalSchedule.g:336:3: ( 'Sunday' )
                     // InternalSchedule.g:336:4: 'Sunday'
                     {
@@ -1026,7 +1026,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekDaysAccess().getSUNDAYEnumLiteralDeclaration_6()); 
+                     after(grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_6()); 
 
                     }
 
@@ -1047,7 +1047,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__WeekDays__Alternatives"
+    // $ANTLR end "rule__WeekDay__Alternatives"
 
 
     // $ANTLR start "rule__Schedule__Group__0"
@@ -2979,31 +2979,31 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DateTime__Group__0__Impl"
-    // InternalSchedule.g:977:1: rule__DateTime__Group__0__Impl : ( ( rule__DateTime__WeekdayAssignment_0 ) ) ;
+    // InternalSchedule.g:977:1: rule__DateTime__Group__0__Impl : ( ( rule__DateTime__WeekdaysAssignment_0 ) ) ;
     public final void rule__DateTime__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:981:1: ( ( ( rule__DateTime__WeekdayAssignment_0 ) ) )
-            // InternalSchedule.g:982:1: ( ( rule__DateTime__WeekdayAssignment_0 ) )
+            // InternalSchedule.g:981:1: ( ( ( rule__DateTime__WeekdaysAssignment_0 ) ) )
+            // InternalSchedule.g:982:1: ( ( rule__DateTime__WeekdaysAssignment_0 ) )
             {
-            // InternalSchedule.g:982:1: ( ( rule__DateTime__WeekdayAssignment_0 ) )
-            // InternalSchedule.g:983:2: ( rule__DateTime__WeekdayAssignment_0 )
+            // InternalSchedule.g:982:1: ( ( rule__DateTime__WeekdaysAssignment_0 ) )
+            // InternalSchedule.g:983:2: ( rule__DateTime__WeekdaysAssignment_0 )
             {
-             before(grammarAccess.getDateTimeAccess().getWeekdayAssignment_0()); 
-            // InternalSchedule.g:984:2: ( rule__DateTime__WeekdayAssignment_0 )
-            // InternalSchedule.g:984:3: rule__DateTime__WeekdayAssignment_0
+             before(grammarAccess.getDateTimeAccess().getWeekdaysAssignment_0()); 
+            // InternalSchedule.g:984:2: ( rule__DateTime__WeekdaysAssignment_0 )
+            // InternalSchedule.g:984:3: rule__DateTime__WeekdaysAssignment_0
             {
             pushFollow(FOLLOW_2);
-            rule__DateTime__WeekdayAssignment_0();
+            rule__DateTime__WeekdaysAssignment_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDateTimeAccess().getWeekdayAssignment_0()); 
+             after(grammarAccess.getDateTimeAccess().getWeekdaysAssignment_0()); 
 
             }
 
@@ -3392,31 +3392,31 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DateTime__Group_1__1__Impl"
-    // InternalSchedule.g:1111:1: rule__DateTime__Group_1__1__Impl : ( ( rule__DateTime__WeekdayAssignment_1_1 ) ) ;
+    // InternalSchedule.g:1111:1: rule__DateTime__Group_1__1__Impl : ( ( rule__DateTime__WeekdaysAssignment_1_1 ) ) ;
     public final void rule__DateTime__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:1115:1: ( ( ( rule__DateTime__WeekdayAssignment_1_1 ) ) )
-            // InternalSchedule.g:1116:1: ( ( rule__DateTime__WeekdayAssignment_1_1 ) )
+            // InternalSchedule.g:1115:1: ( ( ( rule__DateTime__WeekdaysAssignment_1_1 ) ) )
+            // InternalSchedule.g:1116:1: ( ( rule__DateTime__WeekdaysAssignment_1_1 ) )
             {
-            // InternalSchedule.g:1116:1: ( ( rule__DateTime__WeekdayAssignment_1_1 ) )
-            // InternalSchedule.g:1117:2: ( rule__DateTime__WeekdayAssignment_1_1 )
+            // InternalSchedule.g:1116:1: ( ( rule__DateTime__WeekdaysAssignment_1_1 ) )
+            // InternalSchedule.g:1117:2: ( rule__DateTime__WeekdaysAssignment_1_1 )
             {
-             before(grammarAccess.getDateTimeAccess().getWeekdayAssignment_1_1()); 
-            // InternalSchedule.g:1118:2: ( rule__DateTime__WeekdayAssignment_1_1 )
-            // InternalSchedule.g:1118:3: rule__DateTime__WeekdayAssignment_1_1
+             before(grammarAccess.getDateTimeAccess().getWeekdaysAssignment_1_1()); 
+            // InternalSchedule.g:1118:2: ( rule__DateTime__WeekdaysAssignment_1_1 )
+            // InternalSchedule.g:1118:3: rule__DateTime__WeekdaysAssignment_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__DateTime__WeekdayAssignment_1_1();
+            rule__DateTime__WeekdaysAssignment_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDateTimeAccess().getWeekdayAssignment_1_1()); 
+             after(grammarAccess.getDateTimeAccess().getWeekdaysAssignment_1_1()); 
 
             }
 
@@ -7178,26 +7178,26 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__TimeDescription__DateTimesAssignment_1_2"
 
 
-    // $ANTLR start "rule__DateTime__WeekdayAssignment_0"
-    // InternalSchedule.g:2400:1: rule__DateTime__WeekdayAssignment_0 : ( ruleWeekDays ) ;
-    public final void rule__DateTime__WeekdayAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__DateTime__WeekdaysAssignment_0"
+    // InternalSchedule.g:2400:1: rule__DateTime__WeekdaysAssignment_0 : ( ruleWeekDay ) ;
+    public final void rule__DateTime__WeekdaysAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2404:1: ( ( ruleWeekDays ) )
-            // InternalSchedule.g:2405:2: ( ruleWeekDays )
+            // InternalSchedule.g:2404:1: ( ( ruleWeekDay ) )
+            // InternalSchedule.g:2405:2: ( ruleWeekDay )
             {
-            // InternalSchedule.g:2405:2: ( ruleWeekDays )
-            // InternalSchedule.g:2406:3: ruleWeekDays
+            // InternalSchedule.g:2405:2: ( ruleWeekDay )
+            // InternalSchedule.g:2406:3: ruleWeekDay
             {
-             before(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_0_0()); 
+             before(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
-            ruleWeekDays();
+            ruleWeekDay();
 
             state._fsp--;
 
-             after(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_0_0()); 
+             after(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_0_0()); 
 
             }
 
@@ -7216,29 +7216,29 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__DateTime__WeekdayAssignment_0"
+    // $ANTLR end "rule__DateTime__WeekdaysAssignment_0"
 
 
-    // $ANTLR start "rule__DateTime__WeekdayAssignment_1_1"
-    // InternalSchedule.g:2415:1: rule__DateTime__WeekdayAssignment_1_1 : ( ruleWeekDays ) ;
-    public final void rule__DateTime__WeekdayAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__DateTime__WeekdaysAssignment_1_1"
+    // InternalSchedule.g:2415:1: rule__DateTime__WeekdaysAssignment_1_1 : ( ruleWeekDay ) ;
+    public final void rule__DateTime__WeekdaysAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2419:1: ( ( ruleWeekDays ) )
-            // InternalSchedule.g:2420:2: ( ruleWeekDays )
+            // InternalSchedule.g:2419:1: ( ( ruleWeekDay ) )
+            // InternalSchedule.g:2420:2: ( ruleWeekDay )
             {
-            // InternalSchedule.g:2420:2: ( ruleWeekDays )
-            // InternalSchedule.g:2421:3: ruleWeekDays
+            // InternalSchedule.g:2420:2: ( ruleWeekDay )
+            // InternalSchedule.g:2421:3: ruleWeekDay
             {
-             before(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_1_1_0()); 
+             before(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleWeekDays();
+            ruleWeekDay();
 
             state._fsp--;
 
-             after(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_1_1_0()); 
+             after(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_1_1_0()); 
 
             }
 
@@ -7257,7 +7257,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__DateTime__WeekdayAssignment_1_1"
+    // $ANTLR end "rule__DateTime__WeekdaysAssignment_1_1"
 
 
     // $ANTLR start "rule__DateTime__TimeAssignment_3"

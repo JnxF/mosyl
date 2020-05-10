@@ -3,7 +3,7 @@ package schedule;
 
 import "platform:/resource/org.mdse.pts.depot/model/Depot.ecore";
 import "platform:/resource/org.mdse.pts.network/model/Network.ecore";
-import "platform:/resource/org.mdse.pst.shared/model/Shared.ecore";
+import "platform:/resource/org.mdse.pts.shared/model/Shared.ecore";
 
 class Schedule {
 	ref network.Network[1] network;

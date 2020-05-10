@@ -349,18 +349,18 @@ ruleDateTime returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_0_0());
+					newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_0_0());
 				}
-				lv_weekday_0_0=ruleWeekDays
+				lv_weekdays_0_0=ruleWeekDay
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDateTimeRule());
 					}
 					add(
 						$current,
-						"weekday",
-						lv_weekday_0_0,
-						"org.mdse.pts.schedule.dsl.Schedule.WeekDays");
+						"weekdays",
+						lv_weekdays_0_0,
+						"org.mdse.pts.schedule.dsl.Schedule.WeekDay");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -373,18 +373,18 @@ ruleDateTime returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_1_1_0());
 					}
-					lv_weekday_2_0=ruleWeekDays
+					lv_weekdays_2_0=ruleWeekDay
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDateTimeRule());
 						}
 						add(
 							$current,
-							"weekday",
-							lv_weekday_2_0,
-							"org.mdse.pts.schedule.dsl.Schedule.WeekDays");
+							"weekdays",
+							lv_weekdays_2_0,
+							"org.mdse.pts.schedule.dsl.Schedule.WeekDay");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -847,8 +847,8 @@ ruleFinalSpot returns [EObject current=null]
 	)
 ;
 
-// Rule WeekDays
-ruleWeekDays returns [Enumerator current=null]
+// Rule WeekDay
+ruleWeekDay returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -859,56 +859,56 @@ ruleWeekDays returns [Enumerator current=null]
 		(
 			enumLiteral_0='Monday'
 			{
-				$current = grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0());
+				$current = grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='Tuesday'
 			{
-				$current = grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1());
+				$current = grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='Wednesday'
 			{
-				$current = grammarAccess.getWeekDaysAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getWeekDaysAccess().getWEDNESDAYEnumLiteralDeclaration_2());
+				$current = grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_2());
 			}
 		)
 		    |
 		(
 			enumLiteral_3='Thursday'
 			{
-				$current = grammarAccess.getWeekDaysAccess().getTHURSDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getWeekDaysAccess().getTHURSDAYEnumLiteralDeclaration_3());
+				$current = grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_3());
 			}
 		)
 		    |
 		(
 			enumLiteral_4='Friday'
 			{
-				$current = grammarAccess.getWeekDaysAccess().getFRIDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getWeekDaysAccess().getFRIDAYEnumLiteralDeclaration_4());
+				$current = grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_4());
 			}
 		)
 		    |
 		(
 			enumLiteral_5='Saturday'
 			{
-				$current = grammarAccess.getWeekDaysAccess().getSATURDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getWeekDaysAccess().getSATURDAYEnumLiteralDeclaration_5());
+				$current = grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_5());
 			}
 		)
 		    |
 		(
 			enumLiteral_6='Sunday'
 			{
-				$current = grammarAccess.getWeekDaysAccess().getSUNDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_6, grammarAccess.getWeekDaysAccess().getSUNDAYEnumLiteralDeclaration_6());
+				$current = grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_6());
 			}
 		)
 	)

@@ -18,8 +18,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateTime">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" lowerBound="1" eType="ecore:EEnum ../../org.mdse.pst.shared/model/shared.ecore#//DaysOfTheWeek"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="ecore:EClass ../../org.mdse.pst.shared/model/shared.ecore#//Time"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" lowerBound="1" eType="ecore:EEnum ../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="ecore:EClass ../../org.mdse.pts.shared/model/Shared.ecore#//Time"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeAndStation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arrDepTime" lowerBound="1"

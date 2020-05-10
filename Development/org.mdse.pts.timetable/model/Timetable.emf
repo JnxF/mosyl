@@ -1,27 +1,11 @@
 @namespace(uri="http://mdse.org/pts/timetable", prefix="timetable")
 package timetable;
 
-import "platform:/resource/org.mdse.pst.shared/model/shared.ecore";
+import "platform:/resource/org.mdse.pts.network/model/Network.ecore";
+import "platform:/resource/org.mdse.pts.depot/model/Depot.ecore";
 
 class Timetable {
-	val StationTrain[*] stationTrains;
-	attr String[1] stationName;
+	
 }
 
-class StationTrain {
-	attr String[1] trainName;
-	val TimeAndStation arrival;
-	val TimeAndStation departure;
-	attr String[1] platform;
-}
-
-class DateTime {
-	attr shared.DaysOfTheWeek[1] day;
-	ref shared.Time[1] time;
-}
-
-class TimeAndStation {
-	val DateTime[1] arrDepTime;
-	attr String[1] nextPrevStation;
-}
-
+//TODO: Define metamodel

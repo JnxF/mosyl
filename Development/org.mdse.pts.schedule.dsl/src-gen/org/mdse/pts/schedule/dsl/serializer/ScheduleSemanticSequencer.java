@@ -19,10 +19,11 @@ import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.Spot;
-import org.mdse.pts.schedule.Time;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
 import org.mdse.pts.schedule.dsl.services.ScheduleGrammarAccess;
+import shared.SharedPackage;
+import shared.Time;
 
 @SuppressWarnings("all")
 public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -61,14 +62,17 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 					return; 
 				}
 				else break;
-			case SchedulePackage.TIME:
-				sequence_Time(context, (Time) semanticObject); 
-				return; 
 			case SchedulePackage.TIME_DESCRIPTION:
 				sequence_TimeDescription(context, (TimeDescription) semanticObject); 
 				return; 
 			case SchedulePackage.TRAIN_SCHEDULE:
 				sequence_TrainSchedule(context, (TrainSchedule) semanticObject); 
+				return; 
+			}
+		else if (epackage == SharedPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case SharedPackage.TIME:
+				sequence_Time(context, (Time) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -80,7 +84,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     DateTime returns DateTime
 	 *
 	 * Constraint:
-	 *     (weekday+=WeekDays weekday+=WeekDays* time=Time)
+	 *     (weekdays+=WeekDay weekdays+=WeekDay* time=Time)
 	 */
 	protected void sequence_DateTime(ISerializationContext context, DateTime semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -168,10 +172,10 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Time(ISerializationContext context, Time semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.TIME__HOURS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.TIME__HOURS));
-			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.TIME__MINUTES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.TIME__MINUTES));
+			if (transientValues.isValueTransient(semanticObject, SharedPackage.Literals.TIME__HOURS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SharedPackage.Literals.TIME__HOURS));
+			if (transientValues.isValueTransient(semanticObject, SharedPackage.Literals.TIME__MINUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SharedPackage.Literals.TIME__MINUTES));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTimeAccess().getHoursINTTerminalRuleCall_0_0(), semanticObject.getHours());

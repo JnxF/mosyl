@@ -775,15 +775,15 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDateTime"
-    // InternalSchedule.g:341:1: ruleDateTime returns [EObject current=null] : ( ( (lv_weekday_0_0= ruleWeekDays ) ) (otherlv_1= ',' ( (lv_weekday_2_0= ruleWeekDays ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) ) ;
+    // InternalSchedule.g:341:1: ruleDateTime returns [EObject current=null] : ( ( (lv_weekdays_0_0= ruleWeekDay ) ) (otherlv_1= ',' ( (lv_weekdays_2_0= ruleWeekDay ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) ) ;
     public final EObject ruleDateTime() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Enumerator lv_weekday_0_0 = null;
+        Enumerator lv_weekdays_0_0 = null;
 
-        Enumerator lv_weekday_2_0 = null;
+        Enumerator lv_weekdays_2_0 = null;
 
         EObject lv_time_4_0 = null;
 
@@ -792,23 +792,23 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSchedule.g:347:2: ( ( ( (lv_weekday_0_0= ruleWeekDays ) ) (otherlv_1= ',' ( (lv_weekday_2_0= ruleWeekDays ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) ) )
-            // InternalSchedule.g:348:2: ( ( (lv_weekday_0_0= ruleWeekDays ) ) (otherlv_1= ',' ( (lv_weekday_2_0= ruleWeekDays ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) )
+            // InternalSchedule.g:347:2: ( ( ( (lv_weekdays_0_0= ruleWeekDay ) ) (otherlv_1= ',' ( (lv_weekdays_2_0= ruleWeekDay ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) ) )
+            // InternalSchedule.g:348:2: ( ( (lv_weekdays_0_0= ruleWeekDay ) ) (otherlv_1= ',' ( (lv_weekdays_2_0= ruleWeekDay ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) )
             {
-            // InternalSchedule.g:348:2: ( ( (lv_weekday_0_0= ruleWeekDays ) ) (otherlv_1= ',' ( (lv_weekday_2_0= ruleWeekDays ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) )
-            // InternalSchedule.g:349:3: ( (lv_weekday_0_0= ruleWeekDays ) ) (otherlv_1= ',' ( (lv_weekday_2_0= ruleWeekDays ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) )
+            // InternalSchedule.g:348:2: ( ( (lv_weekdays_0_0= ruleWeekDay ) ) (otherlv_1= ',' ( (lv_weekdays_2_0= ruleWeekDay ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) ) )
+            // InternalSchedule.g:349:3: ( (lv_weekdays_0_0= ruleWeekDay ) ) (otherlv_1= ',' ( (lv_weekdays_2_0= ruleWeekDay ) ) )* otherlv_3= 'at' ( (lv_time_4_0= ruleTime ) )
             {
-            // InternalSchedule.g:349:3: ( (lv_weekday_0_0= ruleWeekDays ) )
-            // InternalSchedule.g:350:4: (lv_weekday_0_0= ruleWeekDays )
+            // InternalSchedule.g:349:3: ( (lv_weekdays_0_0= ruleWeekDay ) )
+            // InternalSchedule.g:350:4: (lv_weekdays_0_0= ruleWeekDay )
             {
-            // InternalSchedule.g:350:4: (lv_weekday_0_0= ruleWeekDays )
-            // InternalSchedule.g:351:5: lv_weekday_0_0= ruleWeekDays
+            // InternalSchedule.g:350:4: (lv_weekdays_0_0= ruleWeekDay )
+            // InternalSchedule.g:351:5: lv_weekdays_0_0= ruleWeekDay
             {
 
-            					newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_0_0());
+            					newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_0_0());
             				
             pushFollow(FOLLOW_14);
-            lv_weekday_0_0=ruleWeekDays();
+            lv_weekdays_0_0=ruleWeekDay();
 
             state._fsp--;
 
@@ -818,9 +818,9 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
             					}
             					add(
             						current,
-            						"weekday",
-            						lv_weekday_0_0,
-            						"org.mdse.pts.schedule.dsl.Schedule.WeekDays");
+            						"weekdays",
+            						lv_weekdays_0_0,
+            						"org.mdse.pts.schedule.dsl.Schedule.WeekDay");
             					afterParserOrEnumRuleCall();
             				
 
@@ -829,7 +829,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSchedule.g:368:3: (otherlv_1= ',' ( (lv_weekday_2_0= ruleWeekDays ) ) )*
+            // InternalSchedule.g:368:3: (otherlv_1= ',' ( (lv_weekdays_2_0= ruleWeekDay ) ) )*
             loop5:
             do {
                 int alt5=2;
@@ -842,23 +842,23 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalSchedule.g:369:4: otherlv_1= ',' ( (lv_weekday_2_0= ruleWeekDays ) )
+            	    // InternalSchedule.g:369:4: otherlv_1= ',' ( (lv_weekdays_2_0= ruleWeekDay ) )
             	    {
             	    otherlv_1=(Token)match(input,15,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getDateTimeAccess().getCommaKeyword_1_0());
             	    			
-            	    // InternalSchedule.g:373:4: ( (lv_weekday_2_0= ruleWeekDays ) )
-            	    // InternalSchedule.g:374:5: (lv_weekday_2_0= ruleWeekDays )
+            	    // InternalSchedule.g:373:4: ( (lv_weekdays_2_0= ruleWeekDay ) )
+            	    // InternalSchedule.g:374:5: (lv_weekdays_2_0= ruleWeekDay )
             	    {
-            	    // InternalSchedule.g:374:5: (lv_weekday_2_0= ruleWeekDays )
-            	    // InternalSchedule.g:375:6: lv_weekday_2_0= ruleWeekDays
+            	    // InternalSchedule.g:374:5: (lv_weekdays_2_0= ruleWeekDay )
+            	    // InternalSchedule.g:375:6: lv_weekdays_2_0= ruleWeekDay
             	    {
 
-            	    						newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdayWeekDaysEnumRuleCall_1_1_0());
+            	    						newCompositeNode(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_1_1_0());
             	    					
             	    pushFollow(FOLLOW_14);
-            	    lv_weekday_2_0=ruleWeekDays();
+            	    lv_weekdays_2_0=ruleWeekDay();
 
             	    state._fsp--;
 
@@ -868,9 +868,9 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
             	    						}
             	    						add(
             	    							current,
-            	    							"weekday",
-            	    							lv_weekday_2_0,
-            	    							"org.mdse.pts.schedule.dsl.Schedule.WeekDays");
+            	    							"weekdays",
+            	    							lv_weekdays_2_0,
+            	    							"org.mdse.pts.schedule.dsl.Schedule.WeekDay");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -1929,9 +1929,9 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleFinalSpot"
 
 
-    // $ANTLR start "ruleWeekDays"
-    // InternalSchedule.g:851:1: ruleWeekDays returns [Enumerator current=null] : ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) ) ;
-    public final Enumerator ruleWeekDays() throws RecognitionException {
+    // $ANTLR start "ruleWeekDay"
+    // InternalSchedule.g:851:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) ) ;
+    public final Enumerator ruleWeekDay() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
@@ -2003,8 +2003,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_0=(Token)match(input,29,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -2020,8 +2020,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_1=(Token)match(input,30,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -2037,8 +2037,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_2=(Token)match(input,31,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getWeekDaysAccess().getWEDNESDAYEnumLiteralDeclaration_2());
+                    				current = grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_2());
                     			
 
                     }
@@ -2054,8 +2054,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_3=(Token)match(input,32,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getTHURSDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_3, grammarAccess.getWeekDaysAccess().getTHURSDAYEnumLiteralDeclaration_3());
+                    				current = grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_3());
                     			
 
                     }
@@ -2071,8 +2071,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_4=(Token)match(input,33,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getFRIDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_4, grammarAccess.getWeekDaysAccess().getFRIDAYEnumLiteralDeclaration_4());
+                    				current = grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_4, grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_4());
                     			
 
                     }
@@ -2088,8 +2088,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_5=(Token)match(input,34,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getSATURDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_5, grammarAccess.getWeekDaysAccess().getSATURDAYEnumLiteralDeclaration_5());
+                    				current = grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_5, grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_5());
                     			
 
                     }
@@ -2105,8 +2105,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_6=(Token)match(input,35,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getSUNDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_6, grammarAccess.getWeekDaysAccess().getSUNDAYEnumLiteralDeclaration_6());
+                    				current = grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_6, grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_6());
                     			
 
                     }
@@ -2133,7 +2133,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleWeekDays"
+    // $ANTLR end "ruleWeekDay"
 
     // Delegated rules
 
