@@ -1,12 +1,26 @@
 package org.mdse.pts.timetable;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
 import org.mdse.pts.common.util.EcoreIOUtil;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Module;
+
 import depot.Depot;
 import depot.DepotFactory;
 import depot.DepotPackage;
@@ -22,7 +36,8 @@ import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
-
+import org.mdse.pts.schedule.dsl.ScheduleRuntimeModule;
+import org.mdse.pts.schedule.dsl.ScheduleStandaloneSetup;
 import network.Station;
 import shared.DaysOfTheWeek;
 import shared.SharedFactory;
@@ -45,8 +60,19 @@ public class Main {
 		URI depotURI = URI.createFileURI("D:/User files/eclipse-workspace/mosyl/Runtime/PTSFiles/Depotia.depot");
 		Network network = EcoreIOUtil.loadModel(networkURI,rs);
 		Depot depot = EcoreIOUtil.loadModel(depotURI,rs);
+
+		Injector injector = new ScheduleStandaloneSetup().createInjectorAndDoEMFRegistration();
+		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		Resource resource = resourceSet.createResource(URI.createURI("test.schedule")); 
+		try {
+			resource.load(new ByteArrayInputStream("schedule for Networkia with Depotia:\r\n	train Regionalido on Monday, Wednesday at 15:30\r\n	and Monday at 15:30:\r\n	start at CityAA  \r\n	drive via Connectia  \r\n	terminate at CityB".getBytes("UTF-8")), new HashMap<>());
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		Schedule schedule = (Schedule) resource.getContents().get(0);
 		
-		Schedule schedule = ScheduleFactory.eINSTANCE.createSchedule();
+		/*Schedule schedule = ScheduleFactory.eINSTANCE.createSchedule();
 		schedule.setNetwork((network.Network) network);
 		schedule.getDepots().add((depot.Depot) depot);
 		
@@ -88,7 +114,7 @@ public class Main {
 		ts.getTimeDescription().getDateTimes().add(dt1);
 		ts.getTimeDescription().getDateTimes().add(dt2);
 		
-		schedule.getTrainSchedules().add(ts);
+		schedule.getTrainSchedules().add(ts);*/
 		
 		ScheduleTransformation transform = new ScheduleTransformation();
 		

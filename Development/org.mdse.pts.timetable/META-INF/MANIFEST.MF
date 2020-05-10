@@ -20,9 +20,12 @@ Require-Bundle: org.eclipse.core.runtime,
  org.mdse.pts.depot;visibility:=reexport,
  org.mdse.pts.network;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: depot,
+Import-Package: com.google.inject;version="1.3.0",
+ depot,
  network,
+ org.eclipse.xtext.resource,
  org.mdse.pts.schedule,
+ org.mdse.pts.schedule.dsl,
  org.mdse.pts.schedule.dsl.generator,
  org.mdse.pts.schedule.dsl.parser.antlr,
  org.mdse.pts.schedule.impl
