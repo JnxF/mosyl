@@ -426,7 +426,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		initEClass(coachEClass, Coach.class, "Coach", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(innerCoachEClass, InnerCoach.class, "InnerCoach", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInnerCoach_Number(), ecorePackage.getEInt(), "number", null, 1, 1, InnerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInnerCoach_Number(), ecorePackage.getEInt(), "number", null, 1, 1, InnerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locomotiveEClass, Locomotive.class, "Locomotive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -489,12 +489,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });
 		addAnnotation
-		  (trainEClass,
-		   source,
-		   new String[] {
-			   "constraints", "IntercityRequiresFirstClassPassengerCoach OtherConstraintTest SecondClassesAreOrdered"
-		   });
-		addAnnotation
 		  (locomotiveEClass,
 		   source,
 		   new String[] {
@@ -510,14 +504,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation
-		  (trainEClass,
-		   source,
-		   new String[] {
-			   "IntercityRequiresFirstClassPassengerCoach", "Tuple {\n\tmessage : String = \'A intercity train needs at least one first class passenger coach\',\n\tstatus : Boolean = \n\t\t\t\t(trainType = TrainType::INTERCITY) \n\t\t\t\t\timplies \n\t\t\t\t\t\tcoaches->exists(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)\n}.status",
-			   "OtherConstraintTest", "Tuple {\n\tmessage : String = \'Whoa\',\n\tstatus : Boolean = \n\t\t\t\tcoaches->select(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)->size() > 1\n\t\t\t\t\timplies coaches->forAll(c | \n\t\t\t\t\t\tnot (c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)\n\t\t\t\t\t\t\tor (coaches->at(coaches->indexOf(c)+1).oclIsTypeOf(PassengerCoach) \n\t\t\t\t\t\t\t\tand coaches->at(coaches->indexOf(c)+1).oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST\n\t\t\t\t\t\t\t)\n\t\t\t\t\t)\n}.status",
-			   "SecondClassesAreOrdered", "Tuple {\n\tmessage : String = \'Whoa\',\n\tstatus : Boolean = \n\t\t\t\tcoaches->select(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND)->size() > 1\n\t\t\t\t\timplies coaches->forAll(c | \n\t\t\t\t\t\tnot (c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND)\n\t\t\t\t\t\t\tor (coaches->at(coaches->indexOf(c)+1).oclIsUndefined() \n\t\t\t\t\t\t\t\tor (coaches->at(coaches->indexOf(c)+1).oclIsTypeOf(PassengerCoach) \n\t\t\t\t\t\t\t\t\tand coaches->at(coaches->indexOf(c)+1).oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t)\n\t\t\t\t\t)\n}.status"
-		   });
 		addAnnotation
 		  (locomotiveEClass,
 		   source,

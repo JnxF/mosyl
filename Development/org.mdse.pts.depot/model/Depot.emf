@@ -48,7 +48,7 @@ abstract class Coach {
 }
 
 abstract class InnerCoach extends Coach {
-	id attr int[1] number;
+	attr int[1] number;
 }
 
 @Ecore(constraints="MustBeFirstOrLast")

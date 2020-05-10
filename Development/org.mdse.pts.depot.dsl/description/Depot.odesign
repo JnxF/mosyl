@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Depot" version="12.0.0.2017041100">
   <ownedViewpoints name="Depot Viewpoint" modelFileExtension="depot">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Depot Diagram Representation" domainClass="depot.Depot" preconditionExpression="[trains/]" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Depot Diagram Representation" domainClass="depot::Depot" enablePopupBars="true">
       <metamodel href="file:/C:/Users/jroyg/MOSCode/mosyl/Development/org.mdse.pts.depot/model/Depot.ecore#/"/>
       <defaultLayer name="Default">
         <containerMappings name="Train" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Train%20Name%20Label%20Tool']" semanticCandidatesExpression="[trains/]" domainClass="depot::Train" dropDescriptions="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Coach']" childrenPresentation="HorizontalStack">
@@ -54,11 +54,11 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="depot.Train" referenceName="trains"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="depot::Train" referenceName="trains"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Locomotive" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/LocomotiveIcon.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Locomotive Creation" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/LocomotiveIcon.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -109,7 +109,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Coach Number Tool" precondition="aql:self.oclIsKindOf(depot::InnerCoach)">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Coach Number Tool" precondition="aql:self.oclIsKindOf(depot::InnerCoach)" forceRefresh="true">
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="number" valueExpression="var:0"/>
