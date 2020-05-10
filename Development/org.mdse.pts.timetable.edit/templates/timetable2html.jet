@@ -1,0 +1,41 @@
+<%@ jet package="org.mdse.pts.timetable.edit" imports="org.mdse.pts.timetable.* java.util.* java.util.stream.*" class="Timetable2HTML" %>
+
+ <% Timetable timetable = (Timetable) argument;
+ 	StationTrainComparator arrivalComparator = new StationTrainComparator(true);
+ 	StationTrainComparator departureComparator = new StationTrainComparator(false);
+	List<StationTrain> trainArrivalList = timetable.getStationTrains().stream().filter(x -> x.getArrival() != null).sorted(arrivalComparator).collect(Collectors.toList());
+	List<StationTrain> trainDepartureList = timetable.getStationTrains().stream().filter(x -> x.getDeparture() != null).sorted(departureComparator).collect(Collectors.toList());
+%>
+ 
+ <!-- ... -->
+ <h1><%= timetable.getStationName() %></h1>
+ <table>
+ <tr>
+ <td width="50%"><h2>Arrivals</h2></td>
+ <td width="50%"><h2>Departures</h2></td>
+ </tr>
+ <tr>
+ <td>
+ <% int previousDay = 0;
+ 	for (StationTrain st : trainArrivalList) {
+ 		DateTime dt = st.getArrival().getArrDepTime();
+ 		if (previousDay < dt.getDay().getValue()) {
+ 			previousDay = dt.getDay().getValue();%>
+ <h3><%= dt.getDay().getName().charAt(0)%><%= dt.getDay().getName().toLowerCase().substring(1) %></h3>
+ 		<%}%>
+ <%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getArrival().getNextPrevStation()%> on platform <%= st.getPlatform()%>
+ 	<%}%>
+ </td>
+ <td>
+ <% previousDay = 0;
+ 	for (StationTrain st : trainDepartureList) {
+ 		DateTime dt = st.getDeparture().getArrDepTime();
+ 		if (previousDay < dt.getDay().getValue()) {
+ 			previousDay = dt.getDay().getValue();%>
+ <h3><%= dt.getDay().getName().charAt(0)%><%= dt.getDay().getName().toLowerCase().substring(1) %></h3>
+ 		<%}%>
+ <%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getDeparture().getNextPrevStation()%> on platform <%= st.getPlatform()%>
+ 	<%}%>
+ </td>
+ </tr>
+ </table>

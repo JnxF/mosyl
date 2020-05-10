@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.mdse.pts.depot.Train;
-import org.mdse.pts.network.Leg;
+import depot.Train;
+import network.Leg;
 
 import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
@@ -53,6 +53,7 @@ public class ScheduleTransformation {
 						stationTrain = TimetableFactory.eINSTANCE.createStationTrain();
 						timetable.getStationTrains().add(stationTrain);
 						stationTrain.setTrainName(train.getName());
+						stationTrain.setPlatform(spot.getPlatform());
 
 						if (i != 0) {
 							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
