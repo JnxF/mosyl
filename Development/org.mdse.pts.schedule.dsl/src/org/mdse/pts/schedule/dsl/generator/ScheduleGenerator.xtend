@@ -17,5 +17,8 @@ class ScheduleGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		//TODO: Generate
+		var schedule = resource.contents.get(0);
+		//TODO: Use interpreter
+		//TODO: Add timetables to HTML files
 	}
 }
