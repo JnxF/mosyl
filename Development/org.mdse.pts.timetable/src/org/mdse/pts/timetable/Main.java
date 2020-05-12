@@ -61,7 +61,7 @@ public class Main {
 		Network network = EcoreIOUtil.loadModel(networkURI,rs);
 		Depot depot = EcoreIOUtil.loadModel(depotURI,rs);
 
-		Injector injector = new ScheduleStandaloneSetup().createInjectorAndDoEMFRegistration();
+		/*Injector injector = new ScheduleStandaloneSetup().createInjectorAndDoEMFRegistration();
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		Resource resource = resourceSet.createResource(URI.createURI("test.schedule")); 
@@ -70,9 +70,9 @@ public class Main {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		Schedule schedule = (Schedule) resource.getContents().get(0);
+		Schedule schedule = (Schedule) resource.getContents().get(0);*/
 		
-		/*Schedule schedule = ScheduleFactory.eINSTANCE.createSchedule();
+		Schedule schedule = ScheduleFactory.eINSTANCE.createSchedule();
 		schedule.setNetwork((network.Network) network);
 		schedule.getDepots().add((depot.Depot) depot);
 		
@@ -114,7 +114,7 @@ public class Main {
 		ts.getTimeDescription().getDateTimes().add(dt1);
 		ts.getTimeDescription().getDateTimes().add(dt2);
 		
-		schedule.getTrainSchedules().add(ts);*/
+		schedule.getTrainSchedules().add(ts);
 		
 		ScheduleTransformation transform = new ScheduleTransformation();
 		
