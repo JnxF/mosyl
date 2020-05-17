@@ -3,31 +3,9 @@
  */
 package org.mdse.pts.schedule.dsl.scoping;
 
-import java.util.ArrayList;
-
-import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.Scopes;
-import org.mdse.pts.common.util.EcoreIOUtil;
-import org.mdse.pts.schedule.Schedule;
-import org.mdse.pts.schedule.SchedulePackage;
-import org.mdse.pts.schedule.Spot;
-import org.mdse.pts.schedule.TrainSchedule;
-
-import depot.Depot;
-import depot.Train;
-import network.Station;
 
 
 /**
@@ -37,112 +15,8 @@ import network.Station;
  * on how and when to use it.
  */
 public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
-
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
-		// Network in Schedule
-		if (context instanceof Schedule && reference == SchedulePackage.eINSTANCE.getSchedule_Network()) {
-			return getNetworkScope((Schedule) context);
-		}
-		
-		// Depots in Schedule
-		if (context instanceof Schedule && reference == SchedulePackage.eINSTANCE.getSchedule_Depots()) {
-			return getDepotsScope((Schedule) context);
-		}
-		
-		// Train reference
-		if (context instanceof TrainSchedule && reference == SchedulePackage.eINSTANCE.getTrainSchedule_Train()) {
-			return getTrainScope((TrainSchedule) context);
-		}
-		
-		// Station reference on Spots
-		if (context instanceof Spot && reference == SchedulePackage.eINSTANCE.getSpot_Station()) {
-			return getStationScope((Spot) context);
-		}
-	
 		return super.getScope(context, reference);
-	}
-
-	private IScope getStationScope(Spot spot) {
-		EObject root = EcoreUtil.getRootContainer(spot);
-		
-		if (!(root instanceof Schedule)) {
-			System.err.println("Root element is not a Schedule");
-			return null;
-		}
-		
-		Schedule schedule = (Schedule) root;
-		ArrayList<EObject> result = new ArrayList<>();
-		for (Station s : schedule.getNetwork().getStations()) {
-			result.add(s);
-		}
-		
-		return Scopes.scopeFor(result);
-	}
-
-	private IScope getTrainScope(TrainSchedule trainSchedule) {
-		EObject root = EcoreUtil.getRootContainer(trainSchedule);
-		
-		if (!(root instanceof Schedule)) {
-			System.err.println("Root element is not a Schedule");
-			return null;
-		}
-		
-		EList<Depot> depots = ((Schedule) root).getDepots();
-		ArrayList<EObject> result = new ArrayList<>();
-		
-		for (Depot d : depots) {
-			for (Train t : d.getTrains()) {
-				result.add(t);
-			}
-		}
-		
-		return Scopes.scopeFor(result);
-	}
-
-	private IScope getDepotsScope(Schedule schedule) {
-		ArrayList<EObject> objects = new ArrayList<>();
-		try {
-			for (IResource resource : getSiblingFiles(schedule)) {
-				if (resource.getType() == IResource.FILE) {
-					IFile file = (IFile) resource;
-					if (file.getFileExtension().equalsIgnoreCase("depot")) {
-						EObject depot = EcoreIOUtil.loadModel(file);
-						objects.add(depot);
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return Scopes.scopeFor(objects);
-	}
-
-	private IScope getNetworkScope(Schedule schedule) {
-		ArrayList<EObject> objects = new ArrayList<>();
-		try {
-			for (IResource resource : getSiblingFiles(schedule)) {
-				if (resource.getType() == IResource.FILE) {
-					IFile file = (IFile) resource;
-					if (file.getFileExtension().equalsIgnoreCase("network")) {
-						EObject net = EcoreIOUtil.loadModel(file);
-						objects.add(net);
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return Scopes.scopeFor(objects);
-	}
-	
-	private static IResource[] getSiblingFiles(EObject obj) throws CoreException {
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IWorkspaceRoot workspaceRoot = workspace.getRoot();
-		IFile myFile = workspaceRoot.getFile(new Path(obj.eResource().getURI().toPlatformString(true)));
-		IContainer folder = myFile.getParent();
-		return folder.members();
 	}
 }
