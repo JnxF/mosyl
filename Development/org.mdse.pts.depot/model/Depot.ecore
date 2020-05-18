@@ -4,11 +4,6 @@
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
   </eAnnotations>
-  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Depot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="trains" upperBound="-1"
         eType="#//Train" containment="true"/>
@@ -26,14 +21,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Locomotive" eSuperTypes="#//Coach">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="MustBeFirstOrLast"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="MustBeFirstOrLast" value="Tuple {&#xA;&#x9;message : String = 'Locotmotive has to be first or last coach in the train',&#xA;&#x9;status : Boolean = self.oclContainer().oclAsType(Train).coaches->first() = self&#xA;&#x9;&#x9;&#x9;&#x9;or self.oclContainer().oclAsType(Train).coaches->last() = self&#xA;}.status"/>
-    </eAnnotations>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Locomotive" eSuperTypes="#//Coach"/>
   <eClassifiers xsi:type="ecore:EEnum" name="TrainType">
     <eLiterals name="REGIONAL"/>
     <eLiterals name="INTERCITY" value="1"/>

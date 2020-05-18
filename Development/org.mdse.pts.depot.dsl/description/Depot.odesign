@@ -4,42 +4,50 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Depot Diagram Representation" domainClass="depot::Depot" enablePopupBars="true">
       <metamodel href="file:/C:/Users/jroyg/MOSCode/mosyl/Development/org.mdse.pts.depot/model/Depot.ecore#/"/>
       <defaultLayer name="Default">
-        <containerMappings name="Train" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Train%20Name%20Label%20Tool']" semanticCandidatesExpression="[trains/]" domainClass="depot::Train" dropDescriptions="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Coach']" childrenPresentation="HorizontalStack">
-          <subContainerMappings name="CoachContainer" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Coach%20Number%20Tool']" semanticCandidatesExpression="[coaches/]" domainClass="depot::Coach">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="[''/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/DefaultCoach.png">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        <containerMappings name="DepotContainer" semanticCandidatesExpression="var:self" domainClass="depot::Depot" childrenPresentation="VerticalStack">
+          <subContainerMappings name="Train" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Train%20Name%20Label%20Tool']" semanticCandidatesExpression="feature:trains" domainClass="depot::Train" dropDescriptions="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Coach']" childrenPresentation="HorizontalStack">
+            <subContainerMappings name="CoachContainer" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Coach%20Number%20Tool']" semanticCandidatesExpression="feature:coaches" domainClass="depot::Coach">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="[''/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/DefaultCoach.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+              <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Locomotive) and self.eContainer(Train).coaches->last()=self/]">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[''/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Locomotive)/]">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[''/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveLeading.png">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="[self.oclIsTypeOf(depot::PassengerCoach) and self.oclAsType(PassengerCoach).passengerClass=PassengerClass::FIRST/]">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[self.oclAsType(InnerCoach).number/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="[self.oclIsTypeOf(depot::PassengerCoach) and self.oclAsType(PassengerCoach).passengerClass=PassengerClass::SECOND/]">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[self.oclAsType(InnerCoach).number/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="[self.oclIsTypeOf(depot::DiningCoach)/]">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[self.oclAsType(InnerCoach).number/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelAlignment="LEFT" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Locomotive) and self.eContainer(Train).coaches->last()=self/]">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[''/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </conditionnalStyles>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Locomotive)/]">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[''/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveLeading.png">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </conditionnalStyles>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(depot::PassengerCoach) and self.oclAsType(PassengerCoach).passengerClass=PassengerClass::FIRST/]">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[self.oclAsType(InnerCoach).number/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </conditionnalStyles>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(depot::PassengerCoach) and self.oclAsType(PassengerCoach).passengerClass=PassengerClass::SECOND/]">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[self.oclAsType(InnerCoach).number/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </conditionnalStyles>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(depot::DiningCoach)/]">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="[self.oclAsType(InnerCoach).number/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </conditionnalStyles>
           </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelAlignment="LEFT" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -49,7 +57,7 @@
           </style>
         </containerMappings>
         <toolSections name="General">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Train" label="Train" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']" iconPath="/org.mdse.pts.depot.dsl/icons/TrainIcon.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Train" label="Train" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']" iconPath="/org.mdse.pts.depot.dsl/icons/TrainIcon.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -58,7 +66,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Locomotive Creation" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/LocomotiveIcon.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Locomotive Creation" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/LocomotiveIcon.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -67,7 +75,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="1st Class Coach" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/PassengerCoachFirstClassIcon.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="1st Class Coach" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/PassengerCoachFirstClassIcon.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -78,7 +86,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="2nd Class Coach" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/PassengerCoachSecondClassIcon.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="2nd Class Coach" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/PassengerCoachSecondClassIcon.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -89,7 +97,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Dining Coach" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/DiningCoachIcon.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Dining Coach" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']" iconPath="/org.mdse.pts.depot.dsl/icons/DiningCoachIcon.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -98,7 +106,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerDropDescription" name="Coach" forceRefresh="true" mappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']">
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="Coach" forceRefresh="true" mappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>
@@ -122,6 +130,18 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.oclIsTypeOf(depot::Train) and self.oclAsType(depot::Train).trainType=TrainType::INTERCITY/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.oclIsTypeOf(depot::Train) and self.oclAsType(depot::Train).trainType=TrainType::REGIONAL/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.mdse.pts.depot.dsl.Services"/>

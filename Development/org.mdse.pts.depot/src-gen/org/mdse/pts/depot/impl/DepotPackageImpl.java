@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.mdse.pts.depot.Coach;
@@ -22,7 +21,6 @@ import org.mdse.pts.depot.PassengerClass;
 import org.mdse.pts.depot.PassengerCoach;
 import org.mdse.pts.depot.Train;
 import org.mdse.pts.depot.TrainType;
-import org.mdse.pts.depot.util.DepotValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,16 +144,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 
 		// Initialize created meta-data
 		theDepotPackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theDepotPackage,
-			 new EValidator.Descriptor() {
-				 @Override
-				 public EValidator getEValidator() {
-					 return DepotValidator.INSTANCE;
-				 }
-			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theDepotPackage.freeze();
@@ -450,10 +438,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		// Create annotations
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore
-		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
-		createPivotAnnotations();
 	}
 
 	/**
@@ -469,46 +453,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		   source,
 		   new String[] {
 			   "ecore", "http://www.eclipse.org/emf/2002/Ecore"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation
-		  (this,
-		   source,
-		   new String[] {
-			   "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			   "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-		   });
-		addAnnotation
-		  (locomotiveEClass,
-		   source,
-		   new String[] {
-			   "constraints", "MustBeFirstOrLast"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation
-		  (locomotiveEClass,
-		   source,
-		   new String[] {
-			   "MustBeFirstOrLast", "Tuple {\n\tmessage : String = \'Locotmotive has to be first or last coach in the train\',\n\tstatus : Boolean = self.oclContainer().oclAsType(Train).coaches->first() = self\n\t\t\t\tor self.oclContainer().oclAsType(Train).coaches->last() = self\n}.status"
 		   });
 	}
 

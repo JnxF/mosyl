@@ -71,7 +71,9 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 			trainNames.add(t.getName());
 		}
 		
-		isValid &= trainNames.size() == depot.getTrains().size();
+		if (trainNames.size() != depot.getTrains().size()) {
+			isValid &= constraintViolated(depot, "Train names has to be unique inside depot");
+		}
 		
 		return isValid;
 	}
@@ -79,24 +81,23 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	private boolean validateTrain(Train train) {
 		
 		boolean isValid = true;
+
+		
+		Predicate<Coach> isFirstClass =
+					c -> c instanceof PassengerCoach && ((PassengerCoach)c).getPassengerClass() == PassengerClass.FIRST;
+		Predicate<Coach> isSecondClass =
+					c -> c instanceof PassengerCoach && ((PassengerCoach)c).getPassengerClass() == PassengerClass.SECOND;
+ 		
+		int firstClassCount = count(train.getCoaches(),	isFirstClass);
+		int secondClassCount = count(train.getCoaches(), isSecondClass);
 		
 		// Intercity requires first class passenger coaches
-		if (train.getTrainType() == TrainType.INTERCITY) {
-			Predicate<Coach> leastOneFirstClass =
-					c -> c instanceof PassengerCoach && ((PassengerCoach)c).getPassengerClass() == PassengerClass.FIRST;
-
-			if (Any(train.getCoaches(), leastOneFirstClass)) {
-				isValid &= constraintViolated(train, "INTERCITY train has no first class passenger coach.");
-			}
+		if (train.getTrainType() == TrainType.INTERCITY && firstClassCount == 0) {
+			isValid &= constraintViolated(train, "INTERCITY requires at least one first class passenger coach.");
 		}
 		
 		// Intercity train requires dining coach
-		int diningCoachCount = 0;
-		for (Coach c : train.getCoaches()) {
-			if (c instanceof DiningCoach) {
-				diningCoachCount++;
-			}
-		}
+		int diningCoachCount = count(train.getCoaches(), c -> c instanceof DiningCoach);
 		
 		if (diningCoachCount > 1) {
 			isValid &= constraintViolated(train, "Train has too many dining coaches, at most one can be attached");
@@ -106,23 +107,43 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 			isValid &= constraintViolated(train, "Intercity train requies 1 dining coach");
 		}
 		
-		// PassengerCoaches in trains should be sequential
-		int lastIndex = Integer.MIN_VALUE;
-		for (Coach c : train.getCoaches()) {
-			if (c instanceof PassengerCoach) {
-				PassengerCoach pc = (PassengerCoach) c;
-				if (pc.getPassengerClass() == PassengerClass.FIRST) {
-					if (lastIndex == Integer.MIN_VALUE) {
-						lastIndex = train.getCoaches().indexOf(pc);
-					} else {
-						int curIndex = train.getCoaches().indexOf(pc);
-						if (curIndex - lastIndex > 1) {
-							isValid &= constraintViolated(train, "Passenger class sequence is wrong");
-						}
-					}
+		if (firstClassCount > 0 && secondClassCount > 0) {
+			boolean notValid = false;
+			int diningCoachIndex = 0;
+			for (Coach c : train.getCoaches()) {
+				if (c instanceof DiningCoach) {
+					diningCoachIndex = train.getCoaches().indexOf(c);
+					break;
 				}
 			}
+			
+			if (diningCoachIndex == 0 || diningCoachIndex == train.getCoaches().size()-1) {
+				notValid = true;
+			} else {
+				Coach prevCoach = train.getCoaches().get(diningCoachIndex-1); 
+				Coach nextCoach = train.getCoaches().get(diningCoachIndex+1);
+				
+				if (prevCoach instanceof PassengerCoach && nextCoach instanceof PassengerCoach) {
+					PassengerCoach prevPC = (PassengerCoach) prevCoach;
+					PassengerCoach nextPC = (PassengerCoach) nextCoach;
+					
+					if (!((prevPC.getPassengerClass() == PassengerClass.FIRST && nextPC.getPassengerClass() == PassengerClass.SECOND) 
+							|| (prevPC.getPassengerClass() == PassengerClass.SECOND && nextPC.getPassengerClass() == PassengerClass.FIRST))) {
+						notValid = true;
+					}
+				} else {
+					notValid = true;
+				}
+			}
+			
+			if (notValid)
+				isValid &= constraintViolated(train, "The Dining coach should be in the middle of first and second class");
+			
 		}
+		
+		// PassengerCoaches in trains should be sequential
+		isValid &= checkIfInSequence(train, PassengerClass.FIRST);
+		isValid &= checkIfInSequence(train, PassengerClass.SECOND);
 		
 		// Check all number identifiers for coaches are distinct inside train
 		int nonNumberedCount = 0;
@@ -137,7 +158,7 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		}
 		
 		if (numbers.size()+nonNumberedCount != train.getCoaches().size()) {
-			isValid &= constraintViolated(train, "Not all numbers in the coaches of train are unique");
+			isValid &= constraintViolated(train, "All coach numbers in of a train should be unique");
 		}
 		
 		return isValid;
@@ -150,20 +171,43 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 			Train curTrain = (Train) locomotive.eContainer();
 			if (!curTrain.getCoaches().get(0).equals(locomotive) 
 					&& !curTrain.getCoaches().get(curTrain.getCoaches().size()-1).equals(locomotive)) {
-				isValid &= constraintViolated(locomotive, "Locomotive is not first or last coach in the train");
+				isValid &= constraintViolated(locomotive, "A Locomotive coach should be either first or last in the train");
 			}
 		}
 		
 		return isValid;
 	}
-	
-	private <T> boolean Any(EList<T> objects, Predicate<T> pred) {
+		
+	private <T> int count(EList<T> objects, Predicate<T> pred) {
+		int count = 0;
 		for (T object : objects) {
 			if (pred.test(object)) {
-				return true;
+				count++;
 			}
 		}
-		return false;
+		return count;
+	}
+	
+	private boolean checkIfInSequence(Train train, PassengerClass ps) {
+		int lastIndex = Integer.MIN_VALUE;
+		for (Coach c : train.getCoaches()) {
+			if (c instanceof PassengerCoach) {
+				PassengerCoach pc = (PassengerCoach) c;
+				if (pc.getPassengerClass() == ps) {
+					if (lastIndex == Integer.MIN_VALUE) {
+						lastIndex = train.getCoaches().indexOf(pc);
+					} else {
+						int curIndex = train.getCoaches().indexOf(pc);
+						if (curIndex - lastIndex > 1) {
+							return constraintViolated(train, ps.toString() + " Passenger class coaches must be in a sequence");
+						}
+						lastIndex = curIndex;
+					}
+				}
+			}
+		}
+		
+		return true;
 	}
 	
 	protected boolean constraintViolated(EObject object, String message) {

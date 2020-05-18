@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Validation
-Bundle-SymbolicName: org.mdse.pts.depot.validation
+Bundle-SymbolicName: org.mdse.pts.depot.validation;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: org.mdse.pts.depot.validation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

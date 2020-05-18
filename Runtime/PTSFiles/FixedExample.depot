@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<depot:Depot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:depot="http://mdse.org/pts/depot" name="Fixed trains">
+<depot:Depot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:depot="http://mdse.org/pts/depot" name="PTS Train">
   <trains name="RE47">
     <coaches xsi:type="depot:Locomotive"/>
-    <coaches xsi:type="depot:DiningCoach"/>
-    <coaches xsi:type="depot:PassengerCoach" passengerClass="SECOND"/>
-    <coaches xsi:type="depot:PassengerCoach"/>
-    <coaches xsi:type="depot:PassengerCoach" passengerClass="SECOND"/>
-    <coaches xsi:type="depot:Locomotive"/>
+    <coaches xsi:type="depot:PassengerCoach" number="1"/>
+    <coaches xsi:type="depot:PassengerCoach" number="3" passengerClass="SECOND"/>
+    <coaches xsi:type="depot:PassengerCoach" number="4" passengerClass="SECOND"/>
   </trains>
-  <trains>
+  <trains name="IC204" trainType="INTERCITY">
     <coaches xsi:type="depot:Locomotive"/>
-    <coaches xsi:type="depot:PassengerCoach"/>
+    <coaches xsi:type="depot:PassengerCoach" number="11"/>
+    <coaches xsi:type="depot:DiningCoach" number="12"/>
+    <coaches xsi:type="depot:PassengerCoach" number="13" passengerClass="SECOND"/>
+  </trains>
+  <trains trainType="INTERCITY">
+    <coaches xsi:type="depot:Locomotive"/>
   </trains>
 </depot:Depot>
