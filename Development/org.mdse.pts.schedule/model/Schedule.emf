@@ -33,8 +33,8 @@ class Route {
 class Spot {
 	ref network.Station[1] station;
 	attr String platform;
-	attr Integer[1] waitingTime = "0";
-	attr Boolean[1] turnStation = "false";
+	attr Integer[1] waitingTime = 0;
+	attr Boolean[1] turnStation = false;
 	ref network.Leg leg;
 }
 

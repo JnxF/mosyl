@@ -142,4 +142,9 @@ public class ScheduleTransformation {
 			return timetables.get(station);
 		}
 	}
+	
+	public static Set<Timetable> staticScheduleToTimetables(Schedule schedule) {
+		ScheduleTransformation st = new ScheduleTransformation();
+		return st.interpret(schedule);
+	}
 }

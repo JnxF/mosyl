@@ -1,12 +1,26 @@
 package org.mdse.pts.timetable;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
 import org.mdse.pts.common.util.EcoreIOUtil;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Module;
+
 import depot.Depot;
 import depot.DepotFactory;
 import depot.DepotPackage;
@@ -22,7 +36,6 @@ import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
-
 import network.Station;
 import shared.DaysOfTheWeek;
 import shared.SharedFactory;
@@ -41,8 +54,8 @@ public class Main {
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("network", new XMIResourceFactoryImpl());
 		EPackage.Registry.INSTANCE.put(DepotPackage.eNS_URI, DepotPackage.eINSTANCE);
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("depot", new XMIResourceFactoryImpl());
-		URI networkURI = URI.createFileURI("D:/User files/eclipse-workspace/mosyl/Runtime/PTSFiles/Networkia.network");
-		URI depotURI = URI.createFileURI("D:/User files/eclipse-workspace/mosyl/Runtime/PTSFiles/Depotia.depot");
+		URI networkURI = URI.createFileURI("../../Runtime/PTSFiles/Networkia.network");
+		URI depotURI = URI.createFileURI("../../Runtime/PTSFiles/Depotia.depot");
 		Network network = EcoreIOUtil.loadModel(networkURI,rs);
 		Depot depot = EcoreIOUtil.loadModel(depotURI,rs);
 		

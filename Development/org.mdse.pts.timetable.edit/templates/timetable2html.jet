@@ -6,10 +6,13 @@
 	List<StationTrain> trainArrivalList = timetable.getStationTrains().stream().filter(x -> x.getArrival() != null).sorted(arrivalComparator).collect(Collectors.toList());
 	List<StationTrain> trainDepartureList = timetable.getStationTrains().stream().filter(x -> x.getDeparture() != null).sorted(departureComparator).collect(Collectors.toList());
 %>
- 
- <!-- ... -->
+ <head>
+ <title>Timetable for <%= timetable.getStationName() %></title>
+ <link rel="stylesheet" type="text/css" href="timetable.css">
+ </head>
+ <body>
  <h1><%= timetable.getStationName() %></h1>
- <table>
+ <table width="100%">
  <tr>
  <td width="50%"><h2>Arrivals</h2></td>
  <td width="50%"><h2>Departures</h2></td>
@@ -39,3 +42,4 @@
  </td>
  </tr>
  </table>
+ </body>
