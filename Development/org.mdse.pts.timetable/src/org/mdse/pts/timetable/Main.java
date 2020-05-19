@@ -1,45 +1,31 @@
 package org.mdse.pts.timetable;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
 import org.mdse.pts.common.util.EcoreIOUtil;
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import com.google.inject.Module;
-
-import depot.Depot;
-import depot.DepotFactory;
-import depot.DepotPackage;
-import depot.Train;
-import depot.TrainType;
-import network.Leg;
-import network.Network;
-import network.NetworkFactory;
-import network.NetworkPackage;
+import org.mdse.pts.depot.Depot;
+import org.mdse.pts.depot.DepotFactory;
+import org.mdse.pts.depot.DepotPackage;
+import org.mdse.pts.depot.Train;
+import org.mdse.pts.depot.TrainType;
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Network;
+import org.mdse.pts.network.NetworkFactory;
+import org.mdse.pts.network.NetworkPackage;
+import org.mdse.pts.network.Station;
 import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
-import network.Station;
-import shared.DaysOfTheWeek;
-import shared.SharedFactory;
-import shared.Time;
+import org.mdse.pts.shared.DaysOfTheWeek;
+import org.mdse.pts.shared.SharedFactory;
+import org.mdse.pts.shared.Time;
 
 public class Main {
 	public static void main(String[] args) {
@@ -60,11 +46,11 @@ public class Main {
 		Depot depot = EcoreIOUtil.loadModel(depotURI,rs);
 		
 		Schedule schedule = ScheduleFactory.eINSTANCE.createSchedule();
-		schedule.setNetwork((network.Network) network);
-		schedule.getDepots().add((depot.Depot) depot);
+		schedule.setNetwork((Network) network);
+		schedule.getDepots().add((Depot) depot);
 		
 		TrainSchedule ts = ScheduleFactory.eINSTANCE.createTrainSchedule();
-		ts.setTrain((depot.Train) depot.getTrains().get(0));
+		ts.setTrain((Train) depot.getTrains().get(0));
 		
 		Route r = ScheduleFactory.eINSTANCE.createRoute();
 		Spot s1 = ScheduleFactory.eINSTANCE.createSpot();
