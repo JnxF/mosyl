@@ -10,5 +10,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.mdse.pts.shared"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.mdse.pts.timetable"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.mdse.pts.timetable.edit"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

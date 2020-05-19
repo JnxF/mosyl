@@ -36,8 +36,6 @@ import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
-import org.mdse.pts.schedule.dsl.ScheduleRuntimeModule;
-import org.mdse.pts.schedule.dsl.ScheduleStandaloneSetup;
 import network.Station;
 import shared.DaysOfTheWeek;
 import shared.SharedFactory;
@@ -56,21 +54,10 @@ public class Main {
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("network", new XMIResourceFactoryImpl());
 		EPackage.Registry.INSTANCE.put(DepotPackage.eNS_URI, DepotPackage.eINSTANCE);
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("depot", new XMIResourceFactoryImpl());
-		URI networkURI = URI.createFileURI("D:/User files/eclipse-workspace/mosyl/Runtime/PTSFiles/Networkia.network");
-		URI depotURI = URI.createFileURI("D:/User files/eclipse-workspace/mosyl/Runtime/PTSFiles/Depotia.depot");
+		URI networkURI = URI.createFileURI("../../Runtime/PTSFiles/Networkia.network");
+		URI depotURI = URI.createFileURI("../../Runtime/PTSFiles/Depotia.depot");
 		Network network = EcoreIOUtil.loadModel(networkURI,rs);
 		Depot depot = EcoreIOUtil.loadModel(depotURI,rs);
-
-		/*Injector injector = new ScheduleStandaloneSetup().createInjectorAndDoEMFRegistration();
-		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
-		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-		Resource resource = resourceSet.createResource(URI.createURI("test.schedule")); 
-		try {
-			resource.load(new ByteArrayInputStream("schedule for Networkia with Depotia:\r\n	train Regionalido on Monday, Wednesday at 15:30\r\n	and Monday at 15:30:\r\n	start at CityAA  \r\n	drive via Connectia  \r\n	terminate at CityB".getBytes("UTF-8")), new HashMap<>());
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		Schedule schedule = (Schedule) resource.getContents().get(0);*/
 		
 		Schedule schedule = ScheduleFactory.eINSTANCE.createSchedule();
 		schedule.setNetwork((network.Network) network);
