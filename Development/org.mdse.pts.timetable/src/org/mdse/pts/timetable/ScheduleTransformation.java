@@ -54,7 +54,7 @@ public class ScheduleTransformation {
 						stationTrain.setPlatform(spot.getPlatform());
 
 						if (i != 0) {
-							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
+ 							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
 							
 							arrival = TimetableFactory.eINSTANCE.createTimeAndStation();
 							stationTrain.setArrival(arrival);
@@ -64,6 +64,9 @@ public class ScheduleTransformation {
 						if (i != spots.size()-1) {
 							prevStationName = currentStationName;
 							prevLeg = (Leg) spot.getLeg();
+							if (prevLeg== null) {
+								// go to the network to grab it
+							}
 							if (i == 0) {
 								prevDateTime = dateTime;
 							} else {

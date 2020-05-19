@@ -49,12 +49,6 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 			modelIsValid &= validateSchedule(schedule);
 		}
 		
-		// Validate datetime 00:00 - 23:59
-		if (org.mdse.pts.shared.SharedPackage.eINSTANCE.getTime().equals(eClass)) {
-			org.mdse.pts.shared.Time time = (org.mdse.pts.shared.Time) eObject;
-			modelIsValid &= validateTime(time);
-		}
-		
 		// Not repeated time description
 		if (SchedulePackage.eINSTANCE.getTimeDescription().equals(eClass)) {
 			TimeDescription timeDescription = (TimeDescription) eObject;
@@ -69,7 +63,6 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 		
 		return modelIsValid;
 	}
-	
 	
 	private boolean validateRoute(Route route) {
 		EObject root = EcoreUtil.getRootContainer(route);
@@ -131,19 +124,6 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 		return true;
 	}
 
-	private boolean validateTime(org.mdse.pts.shared.Time time) {
-		boolean ok = true;
-		
-		ok &= 0 <= time.getHours() && time.getHours() <= 23;
-		ok &= 0 <= time.getMinutes() && time.getMinutes() <= 59;
-	
-		if (!ok) {
-			constraintViolated(time, "Time should go from 00:00 to 23:59");
-		}
-		
-		return false;
-	}
-
 	private boolean validateSchedule(Schedule schedule) {		
 		// Non repeated 
 		Set<String> uniqueNames = new HashSet<>();
@@ -158,7 +138,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 		return true;
 	}
 
-	//Utility method
+	// Utility method
 	protected boolean constraintViolated(EObject object, String message) {
 		Diagnostic diagnostic = new BasicDiagnostic(Diagnostic.ERROR, object.toString(), 0, message, new Object[] { object });
 		diagnostics.add(diagnostic);

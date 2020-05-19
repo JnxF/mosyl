@@ -15,6 +15,7 @@ import org.eclipse.xtext.linking.impl.IllegalNodeException;
 import org.eclipse.xtext.nodemodel.INode;
 import org.mdse.pts.common.util.EcoreIOUtil;
 import org.mdse.pts.depot.Train;
+import org.mdse.pts.network.Leg;
 import org.mdse.pts.network.Network;
 import org.mdse.pts.network.Station;
 import org.mdse.pts.schedule.Schedule;
@@ -25,9 +26,10 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 
 	@Override
 	public List<EObject> getLinkedObjects(EObject context, EReference reference, INode node) throws IllegalNodeException {
+		final String crossRefNode = getCrossRefNodeAsString(node);
+
 		// Network
 		if (reference.equals(SchedulePackage.eINSTANCE.getSchedule_Network())) {
-			final String crossRefNode = getCrossRefNodeAsString(node);
 			Network network = loadModelFromSameFolder(context, crossRefNode + ".network");
 			if (network != null) {
 				return Collections.singletonList(network);
@@ -36,7 +38,6 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 		
 		// Depot
 		if (reference.equals(SchedulePackage.eINSTANCE.getSchedule_Depots())) {
-			final String crossRefNode = getCrossRefNodeAsString(node);
 			org.mdse.pts.depot.Depot depot = loadModelFromSameFolder(context, crossRefNode + ".depot");
 			if (depot != null) {
 				return Collections.singletonList(depot);
@@ -52,7 +53,7 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 			}
 			for (org.mdse.pts.depot.Depot d : ((Schedule) root).getDepots()) {
 				for (Train t : d.getTrains()) {
-					if (t.getName().equalsIgnoreCase(getCrossRefNodeAsString(node))) {
+					if (t.getName().equalsIgnoreCase(crossRefNode)) {
 						return Collections.singletonList(t);
 					}
 				}
@@ -68,8 +69,23 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 			}
 			Network network = ((Schedule) root).getNetwork();
 			for (Station station : network.getStations()) {
-				if (station.getName().equalsIgnoreCase(getCrossRefNodeAsString(node))) {
+				if (station.getName().equalsIgnoreCase(crossRefNode)) {
 					return Collections.singletonList(station);
+				}
+			}
+		}
+		
+		// Leg
+		if (reference.equals(SchedulePackage.eINSTANCE.getSpot_Leg())) {
+			EObject root = EcoreUtil.getRootContainer(context);
+			if (!(root instanceof Schedule)) {
+				System.err.println("Root element is not a Schedule");
+				return null;
+			}
+			Network network = ((Schedule) root).getNetwork();
+			for (Leg leg : network.getLegs()) {
+				if (leg.getName().equalsIgnoreCase(crossRefNode)) {
+					return Collections.singletonList(leg);
 				}
 			}
 		}
