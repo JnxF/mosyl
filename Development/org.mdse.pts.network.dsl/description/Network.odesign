@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" name="Network" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Network" version="12.0.0.2017041100">
   <ownedViewpoints name="Network Viewpoint" modelFileExtension="network">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Network Diagram Description" domainClass="network.Network" enablePopupBars="true">
-      <defaultLayer name="Default"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Station" domainClass="network.Station">
+          <style xsi:type="style:DotDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelAlignment="LEFT">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Leg" sourceMapping="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']" targetMapping="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']" targetFinderExpression="[self.stations->last()/]" sourceFinderExpression="[self.stations->first()/]" domainClass="network.Leg" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" centeredSourceMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']" centeredTargetMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="[self.name+': '+self.distance.toString()+' km'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="General Tool Section" label="General">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Station Creation Tool" label="Station" nodeMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']" iconPath="/org.mdse.pts.network.dsl/icons/Station.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="network.Station" referenceName="stations">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New Station"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Leg Creation Tool" label="Leg" edgeMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']" iconPath="/org.mdse.pts.network.dsl/icons/Leg.gif">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[eContainer(network::Network)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="network.Leg" referenceName="legs">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="legs" valueExpression="var:instance"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="legs" valueExpression="var:instance"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="-1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New Leg"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription">
+            <element name="Station"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:legs">
+                <subModelOperations xsi:type="tool_1:DeleteView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.mdse.pts.network.dsl.Services"/>
   </ownedViewpoints>

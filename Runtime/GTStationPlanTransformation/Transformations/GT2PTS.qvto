@@ -1,0 +1,29 @@
+modeltype PTSnetwork uses "http://mdse.org/pts/network";
+modeltype GTstationPlan uses "http://mdse.org/gt/stationplan";
+	
+transformation GT2PTS(in source: GTstationPlan, out target: PTSnetwork);
+
+main() {
+	source.rootObjects()[StationPlan]->map StationPlan2network();
+}
+
+mapping GTstationPlan::StationPlan::StationPlan2network() : PTSnetwork::Network {
+	name := "Imported Network" + if self.identifier = null then "" else ": " + self.identifier endif;
+	stations := self.trainStations->map TrainStation2Station();
+	legs += source.objectsOfType(Connection)->map Connection2Leg();
+}
+
+mapping GTstationPlan::TrainStation::TrainStation2Station() : PTSnetwork::Station {
+	name := self.identifier;
+}
+
+mapping GTstationPlan::Connection::Connection2Leg() : PTSnetwork::Leg {
+	name := self.identifier;
+	distance := self.getDistanceInKm();
+	stations += self.targetStation.resolve(Station);
+	stations += self.sourceStation.resolve(Station);
+}
+
+helper GTstationPlan::Connection::getDistanceInKm() : 
+	Integer{return self.distanceInMeters.div(1000)}
+	

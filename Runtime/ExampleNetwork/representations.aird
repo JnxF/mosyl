@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:network="http://mdse.org/pts/network" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_C0Yh4JjwEeq4TKN6wNbJww" selectedViews="_i6x2kJjwEeq4TKN6wNbJww" version="14.3.0.201909031200">
+    <semanticResources>Example.network</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_i6x2kJjwEeq4TKN6wNbJww">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_kTNpIJjwEeq4TKN6wNbJww" name="Example Network Diagram" repPath="#_kOIU0JjwEeq4TKN6wNbJww" changeId="3a8ffb8c-f967-4391-b2c6-24f91cd75bda">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']"/>
+        <target xmi:type="network:Network" href="Example.network#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_kOIU0JjwEeq4TKN6wNbJww">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_kTJXsJjwEeq4TKN6wNbJww" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_kTJ-wJjwEeq4TKN6wNbJww"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_kXvj0JjwEeq4TKN6wNbJww" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_kXvj0ZjwEeq4TKN6wNbJww" type="Sirius" element="_kOIU0JjwEeq4TKN6wNbJww" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_kYJzgJjwEeq4TKN6wNbJww" type="2001" element="_kOikgJjwEeq4TKN6wNbJww">
+          <children xmi:type="notation:Node" xmi:id="_kYWn0JjwEeq4TKN6wNbJww" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_kYWn0ZjwEeq4TKN6wNbJww" x="31" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_kY9EwJjwEeq4TKN6wNbJww" type="3002" element="_kOmO4JjwEeq4TKN6wNbJww">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_kY9EwZjwEeq4TKN6wNbJww" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kY9EwpjwEeq4TKN6wNbJww"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_kYJzgZjwEeq4TKN6wNbJww" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kYJzgpjwEeq4TKN6wNbJww" x="312" y="108" width="30" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_kY6BcJjwEeq4TKN6wNbJww" type="2001" element="_kOqgUJjwEeq4TKN6wNbJww">
+          <children xmi:type="notation:Node" xmi:id="_kY6ogJjwEeq4TKN6wNbJww" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_kY6ogZjwEeq4TKN6wNbJww" x="31" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_kY-S4JjwEeq4TKN6wNbJww" type="3002" element="_kOqgUZjwEeq4TKN6wNbJww">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_kY-S4ZjwEeq4TKN6wNbJww" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kY-S4pjwEeq4TKN6wNbJww"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_kY6BcZjwEeq4TKN6wNbJww" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kY6BcpjwEeq4TKN6wNbJww" x="720" y="319" width="30" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_kY7PkJjwEeq4TKN6wNbJww" type="2001" element="_kOqgU5jwEeq4TKN6wNbJww">
+          <children xmi:type="notation:Node" xmi:id="_kY72oJjwEeq4TKN6wNbJww" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_kY72oZjwEeq4TKN6wNbJww" x="29" y="31"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_kY-S45jwEeq4TKN6wNbJww" type="3002" element="_kOqgVJjwEeq4TKN6wNbJww">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_kY-S5JjwEeq4TKN6wNbJww" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kY-S5ZjwEeq4TKN6wNbJww"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_kY7PkZjwEeq4TKN6wNbJww" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kY7PkpjwEeq4TKN6wNbJww" x="252" y="348" width="30" height="30"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_kXvj0pjwEeq4TKN6wNbJww"/>
+        <edges xmi:type="notation:Edge" xmi:id="_kZTqEJjwEeq4TKN6wNbJww" type="4001" element="_kS45AJjwEeq4TKN6wNbJww" source="_kY7PkJjwEeq4TKN6wNbJww" target="_kYJzgJjwEeq4TKN6wNbJww">
+          <children xmi:type="notation:Node" xmi:id="_kZU4MJjwEeq4TKN6wNbJww" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kZU4MZjwEeq4TKN6wNbJww" x="-3" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_kZVfQJjwEeq4TKN6wNbJww" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kZVfQZjwEeq4TKN6wNbJww" x="3" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_kZWtYJjwEeq4TKN6wNbJww" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kZWtYZjwEeq4TKN6wNbJww" x="4" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_kZTqEZjwEeq4TKN6wNbJww"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_kZTqEpjwEeq4TKN6wNbJww" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kZTqE5jwEeq4TKN6wNbJww" points="[3, -15, -57, 225]$[56, -225, -4, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kZhsgJjwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kZhsgZjwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_nnBjQJjwEeq4TKN6wNbJww" type="4001" element="_nm19EJjwEeq4TKN6wNbJww" source="_kY7PkJjwEeq4TKN6wNbJww" target="_kY6BcJjwEeq4TKN6wNbJww">
+          <children xmi:type="notation:Node" xmi:id="_nnCKUJjwEeq4TKN6wNbJww" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nnCKUZjwEeq4TKN6wNbJww" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_nnCxYJjwEeq4TKN6wNbJww" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nnCxYZjwEeq4TKN6wNbJww" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_nnCxYpjwEeq4TKN6wNbJww" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nnCxY5jwEeq4TKN6wNbJww" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_nnBjQZjwEeq4TKN6wNbJww"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_nnBjQpjwEeq4TKN6wNbJww" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nnBjQ5jwEeq4TKN6wNbJww" points="[15, -1, -453, 28]$[453, -29, -15, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nnCxZJjwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nnDYcJjwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_qG8iUJjwEeq4TKN6wNbJww" type="4001" element="_qGz_cJjwEeq4TKN6wNbJww" source="_kY6BcJjwEeq4TKN6wNbJww" target="_kYJzgJjwEeq4TKN6wNbJww">
+          <children xmi:type="notation:Node" xmi:id="_qG8iVJjwEeq4TKN6wNbJww" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qG8iVZjwEeq4TKN6wNbJww" x="3" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qG9JYJjwEeq4TKN6wNbJww" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qG9JYZjwEeq4TKN6wNbJww" x="-6" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qG9JYpjwEeq4TKN6wNbJww" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qG9JY5jwEeq4TKN6wNbJww" x="-3" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_qG8iUZjwEeq4TKN6wNbJww"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_qG8iUpjwEeq4TKN6wNbJww" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qG8iU5jwEeq4TKN6wNbJww" points="[-15, -12, 393, 199]$[-183, -142, 225, 69]$[-393, -207, 15, 4]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qG9JZJjwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qG9JZZjwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_soJ60JjwEeq4TKN6wNbJww" type="4001" element="_soBX9JjwEeq4TKN6wNbJww" source="_kY6BcJjwEeq4TKN6wNbJww" target="_kYJzgJjwEeq4TKN6wNbJww">
+          <children xmi:type="notation:Node" xmi:id="_soJ61JjwEeq4TKN6wNbJww" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soJ61ZjwEeq4TKN6wNbJww" x="2" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_soJ61pjwEeq4TKN6wNbJww" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soJ615jwEeq4TKN6wNbJww" x="-2" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_soJ62JjwEeq4TKN6wNbJww" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soJ62ZjwEeq4TKN6wNbJww" x="-8" y="-6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_soJ60ZjwEeq4TKN6wNbJww"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_soJ60pjwEeq4TKN6wNbJww" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_soJ605jwEeq4TKN6wNbJww" points="[-15, -4, 393, 207]$[-291, -70, 117, 141]$[-396, -196, 12, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_soJ62pjwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_soJ625jwEeq4TKN6wNbJww" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_kOikgJjwEeq4TKN6wNbJww" name="Aarhus Central" incomingEdges="_kS45AJjwEeq4TKN6wNbJww _qGz_cJjwEeq4TKN6wNbJww _soBX9JjwEeq4TKN6wNbJww" width="3" height="3">
+      <target xmi:type="network:Station" href="Example.network#//@stations.0"/>
+      <semanticElements xmi:type="network:Station" href="Example.network#//@stations.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_kOmO4JjwEeq4TKN6wNbJww" labelSize="12" showIcon="false" labelAlignment="LEFT" borderSize="2" borderSizeComputationExpression="2" backgroundColor="194,239,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:DotDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_kOqgUJjwEeq4TKN6wNbJww" name="Copenhagen Central" outgoingEdges="_qGz_cJjwEeq4TKN6wNbJww _soBX9JjwEeq4TKN6wNbJww" incomingEdges="_nm19EJjwEeq4TKN6wNbJww" width="3" height="3">
+      <target xmi:type="network:Station" href="Example.network#//@stations.1"/>
+      <semanticElements xmi:type="network:Station" href="Example.network#//@stations.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_kOqgUZjwEeq4TKN6wNbJww" labelSize="12" showIcon="false" labelAlignment="LEFT" borderSize="2" borderSizeComputationExpression="2" backgroundColor="194,239,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:DotDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_kOqgU5jwEeq4TKN6wNbJww" name="Odense Central" outgoingEdges="_kS45AJjwEeq4TKN6wNbJww _nm19EJjwEeq4TKN6wNbJww" width="3" height="3">
+      <target xmi:type="network:Station" href="Example.network#//@stations.2"/>
+      <semanticElements xmi:type="network:Station" href="Example.network#//@stations.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_kOqgVJjwEeq4TKN6wNbJww" labelSize="12" showIcon="false" labelAlignment="LEFT" borderSize="2" borderSizeComputationExpression="2" backgroundColor="194,239,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:DotDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@nodeMappings[name='Station']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kS45AJjwEeq4TKN6wNbJww" name="E45: 146 km" sourceNode="_kOqgU5jwEeq4TKN6wNbJww" targetNode="_kOikgJjwEeq4TKN6wNbJww">
+      <target xmi:type="network:Leg" href="Example.network#//@legs.0"/>
+      <semanticElements xmi:type="network:Leg" href="Example.network#//@legs.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kS7VQJjwEeq4TKN6wNbJww" targetArrow="NoDecoration" size="2" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_kS7VQZjwEeq4TKN6wNbJww" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_nm19EJjwEeq4TKN6wNbJww" name="E20: 168 km" sourceNode="_kOqgU5jwEeq4TKN6wNbJww" targetNode="_kOqgUJjwEeq4TKN6wNbJww">
+      <target xmi:type="network:Leg" href="Example.network#//@legs.1"/>
+      <semanticElements xmi:type="network:Leg" href="Example.network#//@legs.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_nm2kIJjwEeq4TKN6wNbJww" targetArrow="NoDecoration" size="2" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_nm2kIZjwEeq4TKN6wNbJww" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_qGz_cJjwEeq4TKN6wNbJww" name="S21: 187 km" sourceNode="_kOqgUJjwEeq4TKN6wNbJww" targetNode="_kOikgJjwEeq4TKN6wNbJww">
+      <target xmi:type="network:Leg" href="Example.network#//@legs.2"/>
+      <semanticElements xmi:type="network:Leg" href="Example.network#//@legs.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_qG0mgJjwEeq4TKN6wNbJww" targetArrow="NoDecoration" size="2" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_qG0mgZjwEeq4TKN6wNbJww" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_soBX9JjwEeq4TKN6wNbJww" name="E501: 307 km" sourceNode="_kOqgUJjwEeq4TKN6wNbJww" targetNode="_kOikgJjwEeq4TKN6wNbJww">
+      <target xmi:type="network:Leg" href="Example.network#//@legs.3"/>
+      <semanticElements xmi:type="network:Leg" href="Example.network#//@legs.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_soB_AJjwEeq4TKN6wNbJww" targetArrow="NoDecoration" size="2" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_soB_AZjwEeq4TKN6wNbJww" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer/@edgeMappings[name='Leg']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_kOSF0JjwEeq4TKN6wNbJww"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer"/>
+    <target xmi:type="network:Network" href="Example.network#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
