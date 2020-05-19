@@ -1,4 +1,4 @@
-<%@ jet package="org.mdse.pts.timetable.edit" imports="org.mdse.pts.timetable.* java.util.* java.util.stream.*" class="Timetable2HTML" %>
+<%@ jet package="org.mdse.pts.timetable" imports="org.mdse.pts.timetable.* java.util.* java.util.stream.*" class="Timetable2HTML" %>
 
  <% Timetable timetable = (Timetable) argument;
  	StationTrainComparator arrivalComparator = new StationTrainComparator(true);
@@ -11,7 +11,7 @@
  <link rel="stylesheet" type="text/css" href="timetable.css">
  </head>
  <body>
- <h1><%= timetable.getStationName() %></h1>
+ <h1><%= timetable.getStationName() %></h1> 
  <table width="100%">
  <tr>
  <td width="50%"><h2>Arrivals</h2></td>

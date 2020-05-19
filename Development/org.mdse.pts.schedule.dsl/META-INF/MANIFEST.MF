@@ -25,4 +25,5 @@ Export-Package: org.mdse.pts.schedule.dsl,
  org.mdse.pts.schedule.dsl.validation,
  org.mdse.pts.schedule.dsl.parser.antlr.internal
 Import-Package: com.google.common.graph;version="21.0.0",
- org.apache.log4j
+ org.apache.log4j,
+ org.mdse.pts.timetable
