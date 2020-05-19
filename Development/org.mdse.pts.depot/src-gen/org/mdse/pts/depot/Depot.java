@@ -57,4 +57,5 @@ public interface Depot extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
 } // Depot

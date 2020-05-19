@@ -5,9 +5,11 @@ package org.mdse.pts.timetable.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.mdse.pts.shared.SharedPackage;
 
 import org.mdse.pts.timetable.DateTime;
 import org.mdse.pts.timetable.StationTrain;
@@ -15,8 +17,6 @@ import org.mdse.pts.timetable.TimeAndStation;
 import org.mdse.pts.timetable.Timetable;
 import org.mdse.pts.timetable.TimetableFactory;
 import org.mdse.pts.timetable.TimetablePackage;
-import shared.SharedPackage;
-import shared.impl.SharedPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,12 +38,14 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	private EClass stationTrainEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass dateTimeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,17 +100,14 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SharedPackage.eNS_URI);
-		SharedPackageImpl theSharedPackage = (SharedPackageImpl)(registeredPackage instanceof SharedPackageImpl ? registeredPackage : SharedPackage.eINSTANCE);
+		// Initialize simple dependencies
+		SharedPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTimetablePackage.createPackageContents();
-		theSharedPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theTimetablePackage.initializePackageContents();
-		theSharedPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theTimetablePackage.freeze();

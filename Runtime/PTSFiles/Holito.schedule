@@ -1,4 +1,4 @@
-schedule for Networkia with Depotia:
-	train Regionalido on Monday, Wednesday at 15:30:
-	start at CityAA  
-	terminate at CityB
+schedule for Networkia with Depotia, FixedExample:
+train Regionalido on Friday at 13:30:
+start at CityAA
+terminate at CityB

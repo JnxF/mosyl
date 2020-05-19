@@ -12,16 +12,17 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.ui.IStartup;
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Network;
+import org.mdse.pts.network.Station;
 import org.mdse.pts.schedule.DateTime;
+import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;
+import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TimeDescription;
-
-import depot.Depot;
-import shared.DaysOfTheWeek;
-import shared.SharedPackage;
-import shared.Time;
 
 public class ScheduleValidation extends EObjectValidator implements IStartup {
 	private DiagnosticChain diagnostics;
@@ -49,19 +50,60 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 		}
 		
 		// Validate datetime 00:00 - 23:59
-		if (SharedPackage.eINSTANCE.getTime().equals(eClass)) {
-			Time time = (Time) eObject;
+		if (org.mdse.pts.shared.SharedPackage.eINSTANCE.getTime().equals(eClass)) {
+			org.mdse.pts.shared.Time time = (org.mdse.pts.shared.Time) eObject;
 			modelIsValid &= validateTime(time);
 		}
 		
+		// Not repeated time description
 		if (SchedulePackage.eINSTANCE.getTimeDescription().equals(eClass)) {
 			TimeDescription timeDescription = (TimeDescription) eObject;
 			modelIsValid &= validateTimeDescription(timeDescription);
 		}
+		
+		// Validate Route
+		if (SchedulePackage.eINSTANCE.getRoute().equals(eClass)) {
+			Route route = (Route) eObject;
+			modelIsValid &= validateRoute(route);
+		}
+		
 		return modelIsValid;
 	}
 	
 	
+	private boolean validateRoute(Route route) {
+		EObject root = EcoreUtil.getRootContainer(route);
+		if (!(root instanceof Schedule)) {
+			System.err.println("Root element is not a Schedule");
+			return false;
+		}
+		Network network = ((Schedule) root).getNetwork();
+		EList<Leg> legs = network.getLegs();
+		
+		boolean first = true;
+		Station previous = null;
+		for (Spot spot : route.getSpots()) {
+			if (first) {
+				first = false;
+			} else {
+				Station current = spot.getStation();
+				// Check that previous--current exists
+				// in the existing legs
+				for (Leg a : legs) {
+					Station s1 = a.getStations().get(0);
+					Station s2 = a.getStations().get(1);
+					
+					if (!(s1.equals(current) && s2.equals(previous)) &&
+						!(s1.equals(previous) && s2.equals(current))) {
+						return constraintViolated(spot, "This leg doesn't exist in the provided network");
+					}
+				}
+			}
+			previous = spot.getStation();
+		}
+		return false;
+	}
+
 	private boolean validateTimeDescription(TimeDescription timeDescription) {
 		EList<DateTime> dateTimes = timeDescription.getDateTimes();
 		for (int i = 0; i < dateTimes.size(); i++) {
@@ -73,8 +115,8 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 				if (datetime1.getTime().getHours() == datetime2.getTime().getHours() &&
 					datetime1.getTime().getMinutes() == datetime2.getTime().getMinutes()) {
 					
-					for (DaysOfTheWeek dw1 : datetime1.getWeekdays()) {
-						for (DaysOfTheWeek dw2 : datetime2.getWeekdays()) {
+					for (org.mdse.pts.shared.DaysOfTheWeek dw1 : datetime1.getWeekdays()) {
+						for (org.mdse.pts.shared.DaysOfTheWeek dw2 : datetime2.getWeekdays()) {
 							if (dw1.equals(dw2)) {
 								return constraintViolated(datetime1, "Schedule on " +
 										dw1.toString() + " at " +
@@ -83,15 +125,13 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 							}
 						}
 					}
-					
 				}
-				
 			}
 		}
 		return true;
 	}
 
-	private boolean validateTime(Time time) {
+	private boolean validateTime(org.mdse.pts.shared.Time time) {
 		boolean ok = true;
 		
 		ok &= 0 <= time.getHours() && time.getHours() <= 23;
@@ -107,7 +147,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 	private boolean validateSchedule(Schedule schedule) {		
 		// Non repeated 
 		Set<String> uniqueNames = new HashSet<>();
-		for (Depot d : schedule.getDepots()) {
+		for (org.mdse.pts.depot.Depot d : schedule.getDepots()) {
 			uniqueNames.add(d.getName());
 		}
 		
