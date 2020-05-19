@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.mdse.pts.depot.Coach;
@@ -21,6 +21,7 @@ import org.mdse.pts.depot.PassengerClass;
 import org.mdse.pts.depot.PassengerCoach;
 import org.mdse.pts.depot.Train;
 import org.mdse.pts.depot.TrainType;
+import org.mdse.pts.depot.util.DepotValidator;
 
 /**
  * <!-- begin-user-doc -->

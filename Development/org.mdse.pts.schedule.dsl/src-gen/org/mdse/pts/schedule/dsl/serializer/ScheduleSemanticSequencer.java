@@ -22,8 +22,8 @@ import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
 import org.mdse.pts.schedule.dsl.services.ScheduleGrammarAccess;
-import shared.SharedPackage;
-import shared.Time;
+import org.mdse.pts.shared.SharedPackage;
+import org.mdse.pts.shared.Time;
 
 @SuppressWarnings("all")
 public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequencer {

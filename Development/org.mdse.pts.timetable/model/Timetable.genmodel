@@ -4,7 +4,8 @@
     editorDirectory="/org.mdse.pts.timetable.editor/src-gen" modelPluginID="org.mdse.pts.timetable"
     modelName="Timetable" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.mdse.pts.timetable.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.mdse.pts.shared/model/Shared.genmodel#//shared"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>Timetable.ecore</foreignModel>
   <genPackages prefix="Timetable" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Timetable.ecore#/">
@@ -25,21 +26,6 @@
     <genClasses ecoreClass="Timetable.ecore#//TimeAndStation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//TimeAndStation/arrDepTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//TimeAndStation/nextPrevStation"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Shared" ecorePackage="../../org.mdse.pts.shared/model/Shared.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek">
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek/MONDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek/TUESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek/WEDNESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek/THURSDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek/FRIDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek/SATURDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek/SUNDAY"/>
-    </genEnums>
-    <genClasses ecoreClass="../../org.mdse.pts.shared/model/Shared.ecore#//Time">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.shared/model/Shared.ecore#//Time/hours"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.shared/model/Shared.ecore#//Time/minutes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

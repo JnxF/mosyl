@@ -102,7 +102,6 @@ public interface TimetablePackage extends EPackage {
 	 */
 	int TIMETABLE_OPERATION_COUNT = 0;
 
-
 	/**
 	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.StationTrainImpl <em>Station Train</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -442,6 +441,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TIMETABLE = eINSTANCE.getTimetable();
+
 		/**
 		 * The meta object literal for the '<em><b>Station Trains</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -449,6 +449,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TIMETABLE__STATION_TRAINS = eINSTANCE.getTimetable_StationTrains();
+
 		/**
 		 * The meta object literal for the '<em><b>Station Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -456,6 +457,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TIMETABLE__STATION_NAME = eINSTANCE.getTimetable_StationName();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.StationTrainImpl <em>Station Train</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -465,6 +467,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EClass STATION_TRAIN = eINSTANCE.getStationTrain();
+
 		/**
 		 * The meta object literal for the '<em><b>Train Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -472,6 +475,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STATION_TRAIN__TRAIN_NAME = eINSTANCE.getStationTrain_TrainName();
+
 		/**
 		 * The meta object literal for the '<em><b>Arrival</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
@@ -479,6 +483,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATION_TRAIN__ARRIVAL = eINSTANCE.getStationTrain_Arrival();
+
 		/**
 		 * The meta object literal for the '<em><b>Departure</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
@@ -486,6 +491,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATION_TRAIN__DEPARTURE = eINSTANCE.getStationTrain_Departure();
+
 		/**
 		 * The meta object literal for the '<em><b>Platform</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -493,6 +499,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STATION_TRAIN__PLATFORM = eINSTANCE.getStationTrain_Platform();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.DateTimeImpl <em>Date Time</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -502,6 +509,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATE_TIME = eINSTANCE.getDateTime();
+
 		/**
 		 * The meta object literal for the '<em><b>Day</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -509,6 +517,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATE_TIME__DAY = eINSTANCE.getDateTime_Day();
+
 		/**
 		 * The meta object literal for the '<em><b>Time</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
@@ -516,6 +525,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATE_TIME__TIME = eINSTANCE.getDateTime_Time();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TimeAndStationImpl <em>Time And Station</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -525,6 +535,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TIME_AND_STATION = eINSTANCE.getTimeAndStation();
+
 		/**
 		 * The meta object literal for the '<em><b>Arr Dep Time</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
@@ -532,6 +543,7 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TIME_AND_STATION__ARR_DEP_TIME = eINSTANCE.getTimeAndStation_ArrDepTime();
+
 		/**
 		 * The meta object literal for the '<em><b>Next Prev Station</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->

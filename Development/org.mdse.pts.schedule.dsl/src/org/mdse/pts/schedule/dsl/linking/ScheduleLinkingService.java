@@ -7,7 +7,6 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -15,13 +14,12 @@ import org.eclipse.xtext.linking.impl.DefaultLinkingService;
 import org.eclipse.xtext.linking.impl.IllegalNodeException;
 import org.eclipse.xtext.nodemodel.INode;
 import org.mdse.pts.common.util.EcoreIOUtil;
+import org.mdse.pts.depot.Train;
 import org.mdse.pts.network.Network;
+import org.mdse.pts.network.Station;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;
 
-import depot.Depot;
-import depot.Train;
-import network.Station;
 
 public class ScheduleLinkingService extends DefaultLinkingService {
 
@@ -30,16 +28,16 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 		// Network
 		if (reference.equals(SchedulePackage.eINSTANCE.getSchedule_Network())) {
 			final String crossRefNode = getCrossRefNodeAsString(node);
-			EObject network = loadModelFromSameFolder(context, crossRefNode + ".network");
+			Network network = loadModelFromSameFolder(context, crossRefNode + ".network");
 			if (network != null) {
-				return Collections.singletonList((Network) network);
+				return Collections.singletonList(network);
 			} 
 		} 
 		
 		// Depot
 		if (reference.equals(SchedulePackage.eINSTANCE.getSchedule_Depots())) {
 			final String crossRefNode = getCrossRefNodeAsString(node);
-			EObject depot = loadModelFromSameFolder(context, crossRefNode + ".depot");
+			org.mdse.pts.depot.Depot depot = loadModelFromSameFolder(context, crossRefNode + ".depot");
 			if (depot != null) {
 				return Collections.singletonList(depot);
 			}
@@ -52,10 +50,9 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 				System.err.println("Root element is not a Schedule");
 				return null;
 			}
-			EList<Depot> depots = ((Schedule) root).getDepots();
-			for (Depot d : depots) {
+			for (org.mdse.pts.depot.Depot d : ((Schedule) root).getDepots()) {
 				for (Train t : d.getTrains()) {
-					if (t.getName().equals(getCrossRefNodeAsString(node))) {
+					if (t.getName().equalsIgnoreCase(getCrossRefNodeAsString(node))) {
 						return Collections.singletonList(t);
 					}
 				}
@@ -69,7 +66,7 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 				System.err.println("Root element is not a Schedule");
 				return null;
 			}
-			network.Network network = ((Schedule) root).getNetwork();
+			Network network = ((Schedule) root).getNetwork();
 			for (Station station : network.getStations()) {
 				if (station.getName().equalsIgnoreCase(getCrossRefNodeAsString(node))) {
 					return Collections.singletonList(station);
@@ -80,7 +77,7 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 		return super.getLinkedObjects(context, reference, node);
 	}
 
-	protected static <T> T loadModelFromSameFolder(EObject modelElement, String fileName) {
+	protected <T> T loadModelFromSameFolder(EObject modelElement, String fileName) {
 		IFile originalFile = EcoreIOUtil.resolveRelativeFileFromEObject(modelElement);
 		IFile accompanyingFile = getFileInSameFolder(originalFile, fileName);
 		
@@ -91,7 +88,7 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 		return EcoreIOUtil.loadModel(accompanyingFile);
 	}
 
-	protected static IFile getFileInSameFolder(IFile originalFile, String filename) {
+	protected IFile getFileInSameFolder(IFile originalFile, String filename) {
 		IContainer parent = originalFile.getParent();
 		IPath path = new Path(filename);
 		return parent.getFile(path);

@@ -3,17 +3,21 @@
 package org.mdse.pts.timetable.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.mdse.pts.timetable.StationTrain;
 import org.mdse.pts.timetable.Timetable;
 import org.mdse.pts.timetable.TimetablePackage;
@@ -42,6 +46,7 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 	 * @ordered
 	 */
 	protected EList<StationTrain> stationTrains;
+
 	/**
 	 * The default value of the '{@link #getStationName() <em>Station Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,6 +56,7 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 	 * @ordered
 	 */
 	protected static final String STATION_NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getStationName() <em>Station Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -3,6 +3,7 @@
 	<name>org.mdse.pts.timetable</name>
 	<comment></comment>
 	<projects>
+		<project>org.mdse.pts.shared</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -3,6 +3,7 @@
 package org.mdse.pts.timetable;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Timetable extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Station Trains</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mdse.pts.timetable.StationTrain}.
@@ -57,4 +57,5 @@ public interface Timetable extends EObject {
 	 * @generated
 	 */
 	void setStationName(String value);
+
 } // Timetable

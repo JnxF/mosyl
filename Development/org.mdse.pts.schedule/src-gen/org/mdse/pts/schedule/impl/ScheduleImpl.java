@@ -2,11 +2,7 @@
  */
 package org.mdse.pts.schedule.impl;
 
-import depot.Depot;
-
 import java.util.Collection;
-
-import network.Network;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,6 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.mdse.pts.depot.Depot;
+
+import org.mdse.pts.network.Network;
 
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;

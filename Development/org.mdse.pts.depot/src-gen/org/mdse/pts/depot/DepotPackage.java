@@ -571,6 +571,7 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEPOT__NAME = eINSTANCE.getDepot_Name();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.TrainImpl <em>Train</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -604,6 +605,7 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRAIN__TRAIN_TYPE = eINSTANCE.getTrain_TrainType();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.CoachImpl <em>Coach</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -659,6 +661,7 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PASSENGER_COACH__PASSENGER_CLASS = eINSTANCE.getPassengerCoach_PassengerClass();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.DiningCoachImpl <em>Dining Coach</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -668,6 +671,7 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DINING_COACH = eINSTANCE.getDiningCoach();
+
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.TrainType <em>Train Type</em>}' enum.
 		 * <!-- begin-user-doc -->

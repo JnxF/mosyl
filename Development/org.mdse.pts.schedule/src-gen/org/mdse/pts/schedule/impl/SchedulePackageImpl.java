@@ -2,20 +2,16 @@
  */
 package org.mdse.pts.schedule.impl;
 
-import depot.DepotPackage;
-
-import depot.impl.DepotPackageImpl;
-
-import network.NetworkPackage;
-
-import network.impl.NetworkPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.mdse.pts.depot.DepotPackage;
+
+import org.mdse.pts.network.NetworkPackage;
 
 import org.mdse.pts.schedule.DateTime;
 import org.mdse.pts.schedule.Route;
@@ -26,9 +22,7 @@ import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TimeDescription;
 import org.mdse.pts.schedule.TrainSchedule;
 
-import shared.SharedPackage;
-
-import shared.impl.SharedPackageImpl;
+import org.mdse.pts.shared.SharedPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,25 +120,16 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
-		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(registeredPackage instanceof NetworkPackageImpl ? registeredPackage : NetworkPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DepotPackage.eNS_URI);
-		DepotPackageImpl theDepotPackage = (DepotPackageImpl)(registeredPackage instanceof DepotPackageImpl ? registeredPackage : DepotPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SharedPackage.eNS_URI);
-		SharedPackageImpl theSharedPackage = (SharedPackageImpl)(registeredPackage instanceof SharedPackageImpl ? registeredPackage : SharedPackage.eINSTANCE);
+		// Initialize simple dependencies
+		DepotPackage.eINSTANCE.eClass();
+		NetworkPackage.eINSTANCE.eClass();
+		SharedPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSchedulePackage.createPackageContents();
-		theNetworkPackage.createPackageContents();
-		theDepotPackage.createPackageContents();
-		theSharedPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSchedulePackage.initializePackageContents();
-		theNetworkPackage.initializePackageContents();
-		theDepotPackage.initializePackageContents();
-		theSharedPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSchedulePackage.freeze();

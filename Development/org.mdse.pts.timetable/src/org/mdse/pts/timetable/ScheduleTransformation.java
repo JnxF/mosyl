@@ -1,22 +1,20 @@
 package org.mdse.pts.timetable;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import depot.Train;
-import network.Leg;
-
+import org.mdse.pts.depot.Train;
+import org.mdse.pts.network.Leg;
 import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TrainSchedule;
-
-import shared.DaysOfTheWeek;
-import shared.SharedFactory;
-import shared.Time;
+import org.mdse.pts.shared.DaysOfTheWeek;
+import org.mdse.pts.shared.SharedFactory;
+import org.mdse.pts.shared.Time;
 
 public class ScheduleTransformation {
 	Map<String, Timetable> timetables = new HashMap<>();

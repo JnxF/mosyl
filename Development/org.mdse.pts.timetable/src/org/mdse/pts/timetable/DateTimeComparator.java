@@ -2,7 +2,7 @@ package org.mdse.pts.timetable;
 
 import java.util.Comparator;
 
-import shared.Time;
+import org.mdse.pts.shared.Time;
 
 public class DateTimeComparator implements Comparator<DateTime> {
 	@Override
