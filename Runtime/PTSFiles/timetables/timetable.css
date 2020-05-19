@@ -43,6 +43,10 @@ header, footer {
 	padding: 2.5rem 0;
 }
 
+header {
+	text-align: center;
+}
+
 article {
 	padding: 2.5rem 0;
 	padding-bottom: 0;

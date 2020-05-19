@@ -13,18 +13,19 @@
       .sorted(departureComparator).collect(Collectors.toList());%>
 
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-	<title><%=timetable.getStationName()%> &mdash; Timetable</title>
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<title><%=timetable.getStationName()%> &ndash; Timetable</title>
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="timetable.css">
 </head>
 <body>
 	<header>
 		<div class="container">
-		<img src="logo.png">
+		<img src="logo.png" alt="Public Transport System logo">
 		</div>
 	</header>
 
