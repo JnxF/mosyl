@@ -28,11 +28,11 @@ public class ScheduleTransformation {
 					DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
 					dateTime.setTime(scheduleDateTime.getTime());
 					dateTime.setDay(day);
-					
+
 					String prevStationName = null;
 					Leg prevLeg = null;
 					DateTime prevDateTime = dateTime;
-					
+
 					Timetable timetable = null;
 					StationTrain stationTrain = null;
 
@@ -44,7 +44,7 @@ public class ScheduleTransformation {
 						Spot spot = spots.get(i);
 						String currentStationName = spot.getStation().getName();
 						if (i != 0) {
-							departure.setNextPrevStation(currentStationName);
+							departure.setNextPrevStation(currentStationName.replace("_", " "));
 						}
 
 						timetable = getTimetable(currentStationName);
@@ -54,17 +54,17 @@ public class ScheduleTransformation {
 						stationTrain.setPlatform(spot.getPlatform());
 
 						if (i != 0) {
- 							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
-							
+							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
+
 							arrival = TimetableFactory.eINSTANCE.createTimeAndStation();
 							stationTrain.setArrival(arrival);
 							arrival.setArrDepTime(prevDateTime);
-							arrival.setNextPrevStation(prevStationName);
+							arrival.setNextPrevStation(prevStationName.replace("_", " "));
 						}
-						if (i != spots.size()-1) {
+						if (i != spots.size() - 1) {
 							prevStationName = currentStationName;
 							prevLeg = (Leg) spot.getLeg();
-							if (prevLeg== null) {
+							if (prevLeg == null) {
 								// go to the network to grab it
 							}
 							if (i == 0) {
@@ -72,7 +72,7 @@ public class ScheduleTransformation {
 							} else {
 								prevDateTime = calculateDateTime(prevDateTime, spot.getWaitingTime());
 							}
-	
+
 							departure = TimetableFactory.eINSTANCE.createTimeAndStation();
 							stationTrain.setDeparture(departure);
 							departure.setArrDepTime(prevDateTime);
@@ -136,14 +136,14 @@ public class ScheduleTransformation {
 	public Timetable getTimetable(String station) {
 		if (!timetables.containsKey(station)) {
 			Timetable timetable = TimetableFactory.eINSTANCE.createTimetable();
-			timetable.setStationName(station);
+			timetable.setStationName(station.replace("_", " "));
 			timetables.put(station, timetable);
 			return timetable;
 		} else {
 			return timetables.get(station);
 		}
 	}
-	
+
 	public static Set<Timetable> staticScheduleToTimetables(Schedule schedule) {
 		ScheduleTransformation st = new ScheduleTransformation();
 		return st.interpret(schedule);

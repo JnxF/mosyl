@@ -48,7 +48,7 @@ MiddleSpot returns Spot:
 ;
 
 FinalSpot returns Spot:
-	"terminate" "at" station=[network::Station] ("on" "platform" platform=STRING)?
+	"terminate" "at" station=[network::Station] "on" "platform" platform=STRING
 ;
 
 enum WeekDay returns shared::DaysOfTheWeek:

@@ -74,25 +74,54 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 		EList<Leg> legs = network.getLegs();
 		
 		boolean first = true;
-		Station previous = null;
+		Station previousStation = null;
+		Leg previousLeg = null;
 		for (Spot spot : route.getSpots()) {
 			if (first) {
 				first = false;
 			} else {
-				Station current = spot.getStation();
-				// Check that previous--current exists
-				// in the existing legs
-				for (Leg a : legs) {
-					Station s1 = a.getStations().get(0);
-					Station s2 = a.getStations().get(1);
+				Station currentStation = spot.getStation();
+				
+				// If let was defined previously,
+				// check that we are using both of the 
+				// ends of the leg
+				if (previousLeg != null) {
+					Station s1 = previousLeg.getStations().get(0);
+					Station s2 = previousLeg.getStations().get(1);
 					
-					if (!(s1.equals(current) && s2.equals(previous)) &&
-						!(s1.equals(previous) && s2.equals(current))) {
-						return constraintViolated(spot, "This leg doesn't exist in the provided network");
+					if (s1.equals(previousStation) && s2.equals(currentStation)) {
+						// OK
+					} else if (s1.equals(currentStation) && s2.equals(previousStation)) {
+						// OK
+					} else {
+						return constraintViolated(spot, "Leg " + previousLeg.getName() + " doesn't connect " + s1.getName() + " and " + s2.getName());
+					}
+				}
+				
+				// Else, check that exists any leg
+				// that connects the previous and the current
+				else {
+					int goodLegs = 0;
+					for (Leg a : legs) {
+						Station s1 = a.getStations().get(0);
+						Station s2 = a.getStations().get(1);
+						if ((s1.equals(currentStation) && s2.equals(previousStation)) ||
+							(s1.equals(previousStation) && s2.equals(currentStation))) {
+							++goodLegs;
+						}
+					}
+					
+					if (goodLegs == 0) {
+						return constraintViolated(spot, "There is no leg connecting " + previousStation.getName() + " and " + currentStation.getName());
+					} else if (goodLegs == 1) {
+						// OK
+					} else {
+						return constraintViolated(spot, "There are multiple legs connecting " + previousStation.getName() + " and " + currentStation.getName() + ". Please specify which one to use");
 					}
 				}
 			}
-			previous = spot.getStation();
+			previousStation = spot.getStation();
+			previousLeg = spot.getLeg();
 		}
 		return false;
 	}
@@ -130,11 +159,9 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 		for (org.mdse.pts.depot.Depot d : schedule.getDepots()) {
 			uniqueNames.add(d.getName());
 		}
-		
 		if (uniqueNames.size() != schedule.getDepots().size()) {
 			constraintViolated(schedule, "There are repeated depots");
 		}
-		
 		return true;
 	}
 
