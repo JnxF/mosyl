@@ -1,4 +1,4 @@
-<%@ jet package="org.mdse.pts.timetable" imports="org.mdse.pts.timetable.* java.util.* java.util.stream.*" class="Timetable2HTML" %>
+<%@ jet package="org.mdse.pts.timetable" imports="java.util.* java.util.stream.*" class="Timetable2HTML" %>
 
  <% Timetable timetable = (Timetable) argument;
  	StationTrainComparator arrivalComparator = new StationTrainComparator(true);
