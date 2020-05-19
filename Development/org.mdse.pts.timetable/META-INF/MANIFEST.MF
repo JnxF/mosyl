@@ -10,18 +10,15 @@ Automatic-Module-Name: org.mdse.pts.timetable
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.mdse.pts.timetable,
  org.mdse.pts.timetable.impl,
- org.mdse.pts.timetable.util,
- shared,
- shared.impl,
- shared.util
+ org.mdse.pts.timetable.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.mdse.pts.shared;visibility:=reexport,
  org.mdse.pts.common;visibility:=reexport,
  org.mdse.pts.depot;visibility:=reexport,
  org.mdse.pts.network;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: com.google.inject;version="1.3.0",
- depot,
- network,
  org.eclipse.xtext.resource,
- org.mdse.pts.schedule
+ org.mdse.pts.schedule,
+ org.mdse.pts.shared

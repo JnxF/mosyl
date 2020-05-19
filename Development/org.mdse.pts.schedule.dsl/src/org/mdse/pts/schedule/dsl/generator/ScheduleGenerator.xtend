@@ -8,8 +8,8 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.mdse.pts.schedule.Schedule
-import org.mdse.pts.timetable.ScheduleTransformation
 import org.mdse.pts.timetable.edit.Timetable2HTML
+import org.mdse.pts.timetable.ScheduleTransformation
 
 /**
  * Generates code from your model files on save.
@@ -25,7 +25,7 @@ class ScheduleGenerator extends AbstractGenerator {
 		for (timetable : timetables) {
 			var name = timetable.getStationName();
 			var htmlString = timetable2html.generate(timetable);
-			fsa.generateFile("../../Runtime/PTSFiles/timetables/" + name + ".html",htmlString);
+			fsa.generateFile("../../Runtime/PTSFiles/timetables/" + name + ".html", htmlString);
 		}
 	}
 }
