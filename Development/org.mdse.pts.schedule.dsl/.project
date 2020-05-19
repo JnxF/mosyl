@@ -5,6 +5,8 @@
 	<projects>
 		<project>org.mdse.pts.shared</project>
 		<project>org.mdse.pts.common</project>
+		<project>org.mdse.pts.depot</project>
+		<project>org.mdse.pts.schedule</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
