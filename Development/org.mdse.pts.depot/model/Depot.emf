@@ -1,5 +1,3 @@
-@"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore")
-@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
 @namespace(uri="http://mdse.org/pts/depot", prefix="depot")
 package depot;
 
@@ -8,36 +6,6 @@ class Depot {
 	attr String[1] name;
 }
 
-@Ecore(constraints="IntercityRequiresFirstClassPassengerCoach OtherConstraintTest SecondClassesAreOrdered")
-@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(IntercityRequiresFirstClassPassengerCoach="Tuple {
-	message : String = 'A intercity train needs at least one first class passenger coach',
-	status : Boolean = 
-				(trainType = TrainType::INTERCITY) 
-					implies 
-						coaches->exists(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)
-}.status", OtherConstraintTest="Tuple {
-	message : String = 'Whoa',
-	status : Boolean = 
-				coaches->select(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)->size() > 1
-					implies coaches->forAll(c | 
-						not (c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)
-							or (coaches->at(coaches->indexOf(c)+1).oclIsTypeOf(PassengerCoach) 
-								and coaches->at(coaches->indexOf(c)+1).oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST
-							)
-					)
-}.status", SecondClassesAreOrdered="Tuple {
-	message : String = 'Whoa',
-	status : Boolean = 
-				coaches->select(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND)->size() > 1
-					implies coaches->forAll(c | 
-						not (c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND)
-							or (coaches->at(coaches->indexOf(c)+1).oclIsUndefined() 
-								or (coaches->at(coaches->indexOf(c)+1).oclIsTypeOf(PassengerCoach) 
-									and coaches->at(coaches->indexOf(c)+1).oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND
-								)
-							)
-					)
-}.status")
 class Train {
 	attr String[1] name;
 	val Coach[+] coaches;
@@ -51,12 +19,6 @@ abstract class InnerCoach extends Coach {
 	attr int[1] number;
 }
 
-@Ecore(constraints="MustBeFirstOrLast")
-@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(MustBeFirstOrLast="Tuple {
-	message : String = 'Locotmotive has to be first or last coach in the train',
-	status : Boolean = self.oclContainer().oclAsType(Train).coaches->first() = self
-				or self.oclContainer().oclAsType(Train).coaches->last() = self
-}.status")
 class Locomotive extends Coach {
 }
 

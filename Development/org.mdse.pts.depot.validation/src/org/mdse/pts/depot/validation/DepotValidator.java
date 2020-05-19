@@ -104,14 +104,16 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		}
 		
 		if (train.getTrainType() == TrainType.INTERCITY && diningCoachCount < 1) {
-			isValid &= constraintViolated(train, "Intercity train requies 1 dining coach");
+			isValid &= constraintViolated(train, "Intercity train requries one dining coach");
 		}
 		
-		if (firstClassCount > 0 && secondClassCount > 0) {
+		if (firstClassCount > 0 && secondClassCount > 0 && diningCoachCount == 1) {
 			boolean notValid = false;
 			int diningCoachIndex = 0;
+			DiningCoach diningCoach = null;
 			for (Coach c : train.getCoaches()) {
 				if (c instanceof DiningCoach) {
+					diningCoach = (DiningCoach) c;
 					diningCoachIndex = train.getCoaches().indexOf(c);
 					break;
 				}
@@ -137,7 +139,7 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 			}
 			
 			if (notValid)
-				isValid &= constraintViolated(train, "The Dining coach should be in the middle of first and second class");
+				isValid &= constraintViolated(diningCoach, "The Dining coach should be in the middle of first and second class");
 			
 		}
 		
