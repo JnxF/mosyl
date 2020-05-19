@@ -19,6 +19,7 @@ import org.mdse.pts.timetable.edit.Timetable2HTML
 class ScheduleGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		System.out.println("Does it generate?")
 		var schedule = resource.contents.get(0) as Schedule;
 		var timetables = ScheduleTransformation.staticScheduleToTimetables(schedule);
 		var timetable2html = Timetable2HTML.create("");
