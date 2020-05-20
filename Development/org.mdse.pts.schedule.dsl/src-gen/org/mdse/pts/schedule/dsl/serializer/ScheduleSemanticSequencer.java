@@ -117,7 +117,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     MiddleSpot returns Spot
 	 *
 	 * Constraint:
-	 *     (station=[Station|ID] platform=STRING? waitingTime=INT turnStation?='turn'? leg=[Leg|ID]?)
+	 *     (station=[Station|ID] platform=STRING waitingTime=INT turnStation?='turn'? leg=[Leg|ID]?)
 	 */
 	protected void sequence_MiddleSpot(ISerializationContext context, Spot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -153,7 +153,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     StartSpot returns Spot
 	 *
 	 * Constraint:
-	 *     (station=[Station|ID] platform=STRING? leg=[Leg|ID]?)
+	 *     (station=[Station|ID] platform=STRING leg=[Leg|ID]?)
 	 */
 	protected void sequence_StartSpot(ISerializationContext context, Spot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

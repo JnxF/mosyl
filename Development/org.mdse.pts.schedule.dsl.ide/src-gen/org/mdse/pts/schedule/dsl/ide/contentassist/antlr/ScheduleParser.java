@@ -43,12 +43,10 @@ public class ScheduleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTimeAccess().getGroup(), "rule__Time__Group__0");
 			builder.put(grammarAccess.getRouteAccess().getGroup(), "rule__Route__Group__0");
 			builder.put(grammarAccess.getStartSpotAccess().getGroup(), "rule__StartSpot__Group__0");
-			builder.put(grammarAccess.getStartSpotAccess().getGroup_3(), "rule__StartSpot__Group_3__0");
-			builder.put(grammarAccess.getStartSpotAccess().getGroup_4(), "rule__StartSpot__Group_4__0");
+			builder.put(grammarAccess.getStartSpotAccess().getGroup_6(), "rule__StartSpot__Group_6__0");
 			builder.put(grammarAccess.getMiddleSpotAccess().getGroup(), "rule__MiddleSpot__Group__0");
-			builder.put(grammarAccess.getMiddleSpotAccess().getGroup_3(), "rule__MiddleSpot__Group_3__0");
-			builder.put(grammarAccess.getMiddleSpotAccess().getGroup_7(), "rule__MiddleSpot__Group_7__0");
-			builder.put(grammarAccess.getMiddleSpotAccess().getGroup_8(), "rule__MiddleSpot__Group_8__0");
+			builder.put(grammarAccess.getMiddleSpotAccess().getGroup_9(), "rule__MiddleSpot__Group_9__0");
+			builder.put(grammarAccess.getMiddleSpotAccess().getGroup_10(), "rule__MiddleSpot__Group_10__0");
 			builder.put(grammarAccess.getFinalSpotAccess().getGroup(), "rule__FinalSpot__Group__0");
 			builder.put(grammarAccess.getScheduleAccess().getNetworkAssignment_2(), "rule__Schedule__NetworkAssignment_2");
 			builder.put(grammarAccess.getScheduleAccess().getDepotsAssignment_4(), "rule__Schedule__DepotsAssignment_4");
@@ -69,13 +67,13 @@ public class ScheduleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRouteAccess().getSpotsAssignment_1(), "rule__Route__SpotsAssignment_1");
 			builder.put(grammarAccess.getRouteAccess().getSpotsAssignment_2(), "rule__Route__SpotsAssignment_2");
 			builder.put(grammarAccess.getStartSpotAccess().getStationAssignment_2(), "rule__StartSpot__StationAssignment_2");
-			builder.put(grammarAccess.getStartSpotAccess().getPlatformAssignment_3_2(), "rule__StartSpot__PlatformAssignment_3_2");
-			builder.put(grammarAccess.getStartSpotAccess().getLegAssignment_4_2(), "rule__StartSpot__LegAssignment_4_2");
+			builder.put(grammarAccess.getStartSpotAccess().getPlatformAssignment_5(), "rule__StartSpot__PlatformAssignment_5");
+			builder.put(grammarAccess.getStartSpotAccess().getLegAssignment_6_2(), "rule__StartSpot__LegAssignment_6_2");
 			builder.put(grammarAccess.getMiddleSpotAccess().getStationAssignment_2(), "rule__MiddleSpot__StationAssignment_2");
-			builder.put(grammarAccess.getMiddleSpotAccess().getPlatformAssignment_3_2(), "rule__MiddleSpot__PlatformAssignment_3_2");
-			builder.put(grammarAccess.getMiddleSpotAccess().getWaitingTimeAssignment_5(), "rule__MiddleSpot__WaitingTimeAssignment_5");
-			builder.put(grammarAccess.getMiddleSpotAccess().getTurnStationAssignment_7_1(), "rule__MiddleSpot__TurnStationAssignment_7_1");
-			builder.put(grammarAccess.getMiddleSpotAccess().getLegAssignment_8_2(), "rule__MiddleSpot__LegAssignment_8_2");
+			builder.put(grammarAccess.getMiddleSpotAccess().getPlatformAssignment_5(), "rule__MiddleSpot__PlatformAssignment_5");
+			builder.put(grammarAccess.getMiddleSpotAccess().getWaitingTimeAssignment_7(), "rule__MiddleSpot__WaitingTimeAssignment_7");
+			builder.put(grammarAccess.getMiddleSpotAccess().getTurnStationAssignment_9_1(), "rule__MiddleSpot__TurnStationAssignment_9_1");
+			builder.put(grammarAccess.getMiddleSpotAccess().getLegAssignment_10_2(), "rule__MiddleSpot__LegAssignment_10_2");
 			builder.put(grammarAccess.getFinalSpotAccess().getStationAssignment_2(), "rule__FinalSpot__StationAssignment_2");
 			builder.put(grammarAccess.getFinalSpotAccess().getPlatformAssignment_5(), "rule__FinalSpot__PlatformAssignment_5");
 		}
