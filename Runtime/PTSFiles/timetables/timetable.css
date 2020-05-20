@@ -48,6 +48,11 @@ header, footer {
 
 header {
 	text-align: center;
+	border-bottom: 5px solid rgba(220, 61, 35, 0.1);
+}
+
+footer {
+	border-top: 5px solid rgba(220, 61, 35, 0.1);
 }
 
 article {
