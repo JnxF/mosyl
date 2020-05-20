@@ -18,7 +18,6 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -518,17 +517,16 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStationAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cStationStationCrossReference_2_0 = (CrossReference)cStationAssignment_2.eContents().get(0);
 		private final RuleCall cStationStationIDTerminalRuleCall_2_0_1 = (RuleCall)cStationStationCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cOnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cPlatformKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cPlatformAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cPlatformSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cPlatformAssignment_3_2.eContents().get(0);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cPlatformKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPlatformAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
 		
 		//FinalSpot Spot:
-		//	"terminate" "at" station=[network::Station] ("on" "platform" platform=STRING)?;
+		//	"terminate" "at" station=[network::Station] "on" "platform" platform=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"terminate" "at" station=[network::Station] ("on" "platform" platform=STRING)?
+		//"terminate" "at" station=[network::Station] "on" "platform" platform=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//"terminate"
@@ -546,20 +544,17 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getStationStationIDTerminalRuleCall_2_0_1() { return cStationStationIDTerminalRuleCall_2_0_1; }
 		
-		//("on" "platform" platform=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
-		
 		//"on"
-		public Keyword getOnKeyword_3_0() { return cOnKeyword_3_0; }
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
 		
 		//"platform"
-		public Keyword getPlatformKeyword_3_1() { return cPlatformKeyword_3_1; }
+		public Keyword getPlatformKeyword_4() { return cPlatformKeyword_4; }
 		
 		//platform=STRING
-		public Assignment getPlatformAssignment_3_2() { return cPlatformAssignment_3_2; }
+		public Assignment getPlatformAssignment_5() { return cPlatformAssignment_5; }
 		
 		//STRING
-		public RuleCall getPlatformSTRINGTerminalRuleCall_3_2_0() { return cPlatformSTRINGTerminalRuleCall_3_2_0; }
+		public RuleCall getPlatformSTRINGTerminalRuleCall_5_0() { return cPlatformSTRINGTerminalRuleCall_5_0; }
 	}
 	
 	public class WeekDayElements extends AbstractEnumRuleElementFinder {
@@ -787,7 +782,7 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//FinalSpot Spot:
-	//	"terminate" "at" station=[network::Station] ("on" "platform" platform=STRING)?;
+	//	"terminate" "at" station=[network::Station] "on" "platform" platform=STRING;
 	public FinalSpotElements getFinalSpotAccess() {
 		return pFinalSpot;
 	}

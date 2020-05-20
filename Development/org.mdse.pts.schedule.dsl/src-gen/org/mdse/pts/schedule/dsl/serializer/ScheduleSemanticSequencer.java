@@ -96,10 +96,19 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     FinalSpot returns Spot
 	 *
 	 * Constraint:
-	 *     (station=[Station|ID] platform=STRING?)
+	 *     (station=[Station|ID] platform=STRING)
 	 */
 	protected void sequence_FinalSpot(ISerializationContext context, Spot semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.SPOT__STATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.SPOT__STATION));
+			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.SPOT__PLATFORM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.SPOT__PLATFORM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFinalSpotAccess().getStationStationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.SPOT__STATION, false));
+		feeder.accept(grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0(), semanticObject.getPlatform());
+		feeder.finish();
 	}
 	
 	

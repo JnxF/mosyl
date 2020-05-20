@@ -21,8 +21,8 @@
         upperBound="-1" eType="#//DateTime" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateTime">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekdays" lowerBound="1"
-        upperBound="-1" eType="ecore:EEnum ../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekdays" unique="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EEnum ../../org.mdse.pts.shared/model/Shared.ecore#//DaysOfTheWeek"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="ecore:EClass ../../org.mdse.pts.shared/model/Shared.ecore#//Time"
         containment="true"/>
   </eClassifiers>

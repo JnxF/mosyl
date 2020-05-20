@@ -6432,17 +6432,22 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FinalSpot__Group__3"
-    // InternalSchedule.g:2126:1: rule__FinalSpot__Group__3 : rule__FinalSpot__Group__3__Impl ;
+    // InternalSchedule.g:2126:1: rule__FinalSpot__Group__3 : rule__FinalSpot__Group__3__Impl rule__FinalSpot__Group__4 ;
     public final void rule__FinalSpot__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2130:1: ( rule__FinalSpot__Group__3__Impl )
-            // InternalSchedule.g:2131:2: rule__FinalSpot__Group__3__Impl
+            // InternalSchedule.g:2130:1: ( rule__FinalSpot__Group__3__Impl rule__FinalSpot__Group__4 )
+            // InternalSchedule.g:2131:2: rule__FinalSpot__Group__3__Impl rule__FinalSpot__Group__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_21);
             rule__FinalSpot__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__FinalSpot__Group__4();
 
             state._fsp--;
 
@@ -6465,42 +6470,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FinalSpot__Group__3__Impl"
-    // InternalSchedule.g:2137:1: rule__FinalSpot__Group__3__Impl : ( ( rule__FinalSpot__Group_3__0 )? ) ;
+    // InternalSchedule.g:2138:1: rule__FinalSpot__Group__3__Impl : ( 'on' ) ;
     public final void rule__FinalSpot__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2141:1: ( ( ( rule__FinalSpot__Group_3__0 )? ) )
-            // InternalSchedule.g:2142:1: ( ( rule__FinalSpot__Group_3__0 )? )
+            // InternalSchedule.g:2142:1: ( ( 'on' ) )
+            // InternalSchedule.g:2143:1: ( 'on' )
             {
-            // InternalSchedule.g:2142:1: ( ( rule__FinalSpot__Group_3__0 )? )
-            // InternalSchedule.g:2143:2: ( rule__FinalSpot__Group_3__0 )?
+            // InternalSchedule.g:2143:1: ( 'on' )
+            // InternalSchedule.g:2144:2: 'on'
             {
-             before(grammarAccess.getFinalSpotAccess().getGroup_3()); 
-            // InternalSchedule.g:2144:2: ( rule__FinalSpot__Group_3__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==25) ) {
-                alt13=1;
-            }
-            switch (alt13) {
-                case 1 :
-                    // InternalSchedule.g:2144:3: rule__FinalSpot__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__FinalSpot__Group_3__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getFinalSpotAccess().getGroup_3()); 
+             before(grammarAccess.getFinalSpotAccess().getOnKeyword_3()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getFinalSpotAccess().getOnKeyword_3()); 
 
             }
 
@@ -6522,98 +6506,23 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__FinalSpot__Group__3__Impl"
 
 
-    // $ANTLR start "rule__FinalSpot__Group_3__0"
-    // InternalSchedule.g:2153:1: rule__FinalSpot__Group_3__0 : rule__FinalSpot__Group_3__0__Impl rule__FinalSpot__Group_3__1 ;
-    public final void rule__FinalSpot__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__FinalSpot__Group__4"
+    // InternalSchedule.g:2153:1: rule__FinalSpot__Group__4 : rule__FinalSpot__Group__4__Impl rule__FinalSpot__Group__5 ;
+    public final void rule__FinalSpot__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2157:1: ( rule__FinalSpot__Group_3__0__Impl rule__FinalSpot__Group_3__1 )
-            // InternalSchedule.g:2158:2: rule__FinalSpot__Group_3__0__Impl rule__FinalSpot__Group_3__1
-            {
-            pushFollow(FOLLOW_21);
-            rule__FinalSpot__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__FinalSpot__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FinalSpot__Group_3__0"
-
-
-    // $ANTLR start "rule__FinalSpot__Group_3__0__Impl"
-    // InternalSchedule.g:2165:1: rule__FinalSpot__Group_3__0__Impl : ( 'on' ) ;
-    public final void rule__FinalSpot__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSchedule.g:2169:1: ( ( 'on' ) )
-            // InternalSchedule.g:2170:1: ( 'on' )
-            {
-            // InternalSchedule.g:2170:1: ( 'on' )
-            // InternalSchedule.g:2171:2: 'on'
-            {
-             before(grammarAccess.getFinalSpotAccess().getOnKeyword_3_0()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getFinalSpotAccess().getOnKeyword_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FinalSpot__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__FinalSpot__Group_3__1"
-    // InternalSchedule.g:2180:1: rule__FinalSpot__Group_3__1 : rule__FinalSpot__Group_3__1__Impl rule__FinalSpot__Group_3__2 ;
-    public final void rule__FinalSpot__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSchedule.g:2184:1: ( rule__FinalSpot__Group_3__1__Impl rule__FinalSpot__Group_3__2 )
-            // InternalSchedule.g:2185:2: rule__FinalSpot__Group_3__1__Impl rule__FinalSpot__Group_3__2
+            // InternalSchedule.g:2157:1: ( rule__FinalSpot__Group__4__Impl rule__FinalSpot__Group__5 )
+            // InternalSchedule.g:2158:2: rule__FinalSpot__Group__4__Impl rule__FinalSpot__Group__5
             {
             pushFollow(FOLLOW_22);
-            rule__FinalSpot__Group_3__1__Impl();
+            rule__FinalSpot__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__FinalSpot__Group_3__2();
+            rule__FinalSpot__Group__5();
 
             state._fsp--;
 
@@ -6632,25 +6541,25 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__FinalSpot__Group_3__1"
+    // $ANTLR end "rule__FinalSpot__Group__4"
 
 
-    // $ANTLR start "rule__FinalSpot__Group_3__1__Impl"
-    // InternalSchedule.g:2192:1: rule__FinalSpot__Group_3__1__Impl : ( 'platform' ) ;
-    public final void rule__FinalSpot__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FinalSpot__Group__4__Impl"
+    // InternalSchedule.g:2165:1: rule__FinalSpot__Group__4__Impl : ( 'platform' ) ;
+    public final void rule__FinalSpot__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2196:1: ( ( 'platform' ) )
-            // InternalSchedule.g:2197:1: ( 'platform' )
+            // InternalSchedule.g:2169:1: ( ( 'platform' ) )
+            // InternalSchedule.g:2170:1: ( 'platform' )
             {
-            // InternalSchedule.g:2197:1: ( 'platform' )
-            // InternalSchedule.g:2198:2: 'platform'
+            // InternalSchedule.g:2170:1: ( 'platform' )
+            // InternalSchedule.g:2171:2: 'platform'
             {
-             before(grammarAccess.getFinalSpotAccess().getPlatformKeyword_3_1()); 
+             before(grammarAccess.getFinalSpotAccess().getPlatformKeyword_4()); 
             match(input,29,FOLLOW_2); 
-             after(grammarAccess.getFinalSpotAccess().getPlatformKeyword_3_1()); 
+             after(grammarAccess.getFinalSpotAccess().getPlatformKeyword_4()); 
 
             }
 
@@ -6669,21 +6578,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__FinalSpot__Group_3__1__Impl"
+    // $ANTLR end "rule__FinalSpot__Group__4__Impl"
 
 
-    // $ANTLR start "rule__FinalSpot__Group_3__2"
-    // InternalSchedule.g:2207:1: rule__FinalSpot__Group_3__2 : rule__FinalSpot__Group_3__2__Impl ;
-    public final void rule__FinalSpot__Group_3__2() throws RecognitionException {
+    // $ANTLR start "rule__FinalSpot__Group__5"
+    // InternalSchedule.g:2180:1: rule__FinalSpot__Group__5 : rule__FinalSpot__Group__5__Impl ;
+    public final void rule__FinalSpot__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2211:1: ( rule__FinalSpot__Group_3__2__Impl )
-            // InternalSchedule.g:2212:2: rule__FinalSpot__Group_3__2__Impl
+            // InternalSchedule.g:2184:1: ( rule__FinalSpot__Group__5__Impl )
+            // InternalSchedule.g:2185:2: rule__FinalSpot__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__FinalSpot__Group_3__2__Impl();
+            rule__FinalSpot__Group__5__Impl();
 
             state._fsp--;
 
@@ -6702,35 +6611,35 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__FinalSpot__Group_3__2"
+    // $ANTLR end "rule__FinalSpot__Group__5"
 
 
-    // $ANTLR start "rule__FinalSpot__Group_3__2__Impl"
-    // InternalSchedule.g:2218:1: rule__FinalSpot__Group_3__2__Impl : ( ( rule__FinalSpot__PlatformAssignment_3_2 ) ) ;
-    public final void rule__FinalSpot__Group_3__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FinalSpot__Group__5__Impl"
+    // InternalSchedule.g:2191:1: rule__FinalSpot__Group__5__Impl : ( ( rule__FinalSpot__PlatformAssignment_5 ) ) ;
+    public final void rule__FinalSpot__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2222:1: ( ( ( rule__FinalSpot__PlatformAssignment_3_2 ) ) )
-            // InternalSchedule.g:2223:1: ( ( rule__FinalSpot__PlatformAssignment_3_2 ) )
+            // InternalSchedule.g:2195:1: ( ( ( rule__FinalSpot__PlatformAssignment_5 ) ) )
+            // InternalSchedule.g:2196:1: ( ( rule__FinalSpot__PlatformAssignment_5 ) )
             {
-            // InternalSchedule.g:2223:1: ( ( rule__FinalSpot__PlatformAssignment_3_2 ) )
-            // InternalSchedule.g:2224:2: ( rule__FinalSpot__PlatformAssignment_3_2 )
+            // InternalSchedule.g:2196:1: ( ( rule__FinalSpot__PlatformAssignment_5 ) )
+            // InternalSchedule.g:2197:2: ( rule__FinalSpot__PlatformAssignment_5 )
             {
-             before(grammarAccess.getFinalSpotAccess().getPlatformAssignment_3_2()); 
-            // InternalSchedule.g:2225:2: ( rule__FinalSpot__PlatformAssignment_3_2 )
-            // InternalSchedule.g:2225:3: rule__FinalSpot__PlatformAssignment_3_2
+             before(grammarAccess.getFinalSpotAccess().getPlatformAssignment_5()); 
+            // InternalSchedule.g:2198:2: ( rule__FinalSpot__PlatformAssignment_5 )
+            // InternalSchedule.g:2198:3: rule__FinalSpot__PlatformAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__FinalSpot__PlatformAssignment_3_2();
+            rule__FinalSpot__PlatformAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFinalSpotAccess().getPlatformAssignment_3_2()); 
+             after(grammarAccess.getFinalSpotAccess().getPlatformAssignment_5()); 
 
             }
 
@@ -6749,25 +6658,25 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__FinalSpot__Group_3__2__Impl"
+    // $ANTLR end "rule__FinalSpot__Group__5__Impl"
 
 
     // $ANTLR start "rule__Schedule__NetworkAssignment_2"
-    // InternalSchedule.g:2234:1: rule__Schedule__NetworkAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2207:1: rule__Schedule__NetworkAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__Schedule__NetworkAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2238:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2239:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2211:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2212:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2239:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2240:3: ( RULE_ID )
+            // InternalSchedule.g:2212:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2213:3: ( RULE_ID )
             {
              before(grammarAccess.getScheduleAccess().getNetworkNetworkCrossReference_2_0()); 
-            // InternalSchedule.g:2241:3: ( RULE_ID )
-            // InternalSchedule.g:2242:4: RULE_ID
+            // InternalSchedule.g:2214:3: ( RULE_ID )
+            // InternalSchedule.g:2215:4: RULE_ID
             {
              before(grammarAccess.getScheduleAccess().getNetworkNetworkIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6798,21 +6707,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Schedule__DepotsAssignment_4"
-    // InternalSchedule.g:2253:1: rule__Schedule__DepotsAssignment_4 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2226:1: rule__Schedule__DepotsAssignment_4 : ( ( RULE_ID ) ) ;
     public final void rule__Schedule__DepotsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2257:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2258:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2230:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2231:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2258:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2259:3: ( RULE_ID )
+            // InternalSchedule.g:2231:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2232:3: ( RULE_ID )
             {
              before(grammarAccess.getScheduleAccess().getDepotsDepotCrossReference_4_0()); 
-            // InternalSchedule.g:2260:3: ( RULE_ID )
-            // InternalSchedule.g:2261:4: RULE_ID
+            // InternalSchedule.g:2233:3: ( RULE_ID )
+            // InternalSchedule.g:2234:4: RULE_ID
             {
              before(grammarAccess.getScheduleAccess().getDepotsDepotIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6843,21 +6752,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Schedule__DepotsAssignment_5_1"
-    // InternalSchedule.g:2272:1: rule__Schedule__DepotsAssignment_5_1 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2245:1: rule__Schedule__DepotsAssignment_5_1 : ( ( RULE_ID ) ) ;
     public final void rule__Schedule__DepotsAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2276:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2277:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2249:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2250:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2277:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2278:3: ( RULE_ID )
+            // InternalSchedule.g:2250:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2251:3: ( RULE_ID )
             {
              before(grammarAccess.getScheduleAccess().getDepotsDepotCrossReference_5_1_0()); 
-            // InternalSchedule.g:2279:3: ( RULE_ID )
-            // InternalSchedule.g:2280:4: RULE_ID
+            // InternalSchedule.g:2252:3: ( RULE_ID )
+            // InternalSchedule.g:2253:4: RULE_ID
             {
              before(grammarAccess.getScheduleAccess().getDepotsDepotIDTerminalRuleCall_5_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6888,17 +6797,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Schedule__TrainSchedulesAssignment_7"
-    // InternalSchedule.g:2291:1: rule__Schedule__TrainSchedulesAssignment_7 : ( ruleTrainSchedule ) ;
+    // InternalSchedule.g:2264:1: rule__Schedule__TrainSchedulesAssignment_7 : ( ruleTrainSchedule ) ;
     public final void rule__Schedule__TrainSchedulesAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2295:1: ( ( ruleTrainSchedule ) )
-            // InternalSchedule.g:2296:2: ( ruleTrainSchedule )
+            // InternalSchedule.g:2268:1: ( ( ruleTrainSchedule ) )
+            // InternalSchedule.g:2269:2: ( ruleTrainSchedule )
             {
-            // InternalSchedule.g:2296:2: ( ruleTrainSchedule )
-            // InternalSchedule.g:2297:3: ruleTrainSchedule
+            // InternalSchedule.g:2269:2: ( ruleTrainSchedule )
+            // InternalSchedule.g:2270:3: ruleTrainSchedule
             {
              before(grammarAccess.getScheduleAccess().getTrainSchedulesTrainScheduleParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -6929,21 +6838,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrainSchedule__TrainAssignment_1"
-    // InternalSchedule.g:2306:1: rule__TrainSchedule__TrainAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2279:1: rule__TrainSchedule__TrainAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__TrainSchedule__TrainAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2310:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2311:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2283:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2284:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2311:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2312:3: ( RULE_ID )
+            // InternalSchedule.g:2284:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2285:3: ( RULE_ID )
             {
              before(grammarAccess.getTrainScheduleAccess().getTrainTrainCrossReference_1_0()); 
-            // InternalSchedule.g:2313:3: ( RULE_ID )
-            // InternalSchedule.g:2314:4: RULE_ID
+            // InternalSchedule.g:2286:3: ( RULE_ID )
+            // InternalSchedule.g:2287:4: RULE_ID
             {
              before(grammarAccess.getTrainScheduleAccess().getTrainTrainIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6974,17 +6883,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrainSchedule__TimeDescriptionAssignment_3"
-    // InternalSchedule.g:2325:1: rule__TrainSchedule__TimeDescriptionAssignment_3 : ( ruleTimeDescription ) ;
+    // InternalSchedule.g:2298:1: rule__TrainSchedule__TimeDescriptionAssignment_3 : ( ruleTimeDescription ) ;
     public final void rule__TrainSchedule__TimeDescriptionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2329:1: ( ( ruleTimeDescription ) )
-            // InternalSchedule.g:2330:2: ( ruleTimeDescription )
+            // InternalSchedule.g:2302:1: ( ( ruleTimeDescription ) )
+            // InternalSchedule.g:2303:2: ( ruleTimeDescription )
             {
-            // InternalSchedule.g:2330:2: ( ruleTimeDescription )
-            // InternalSchedule.g:2331:3: ruleTimeDescription
+            // InternalSchedule.g:2303:2: ( ruleTimeDescription )
+            // InternalSchedule.g:2304:3: ruleTimeDescription
             {
              before(grammarAccess.getTrainScheduleAccess().getTimeDescriptionTimeDescriptionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7015,17 +6924,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrainSchedule__RouteAssignment_5"
-    // InternalSchedule.g:2340:1: rule__TrainSchedule__RouteAssignment_5 : ( ruleRoute ) ;
+    // InternalSchedule.g:2313:1: rule__TrainSchedule__RouteAssignment_5 : ( ruleRoute ) ;
     public final void rule__TrainSchedule__RouteAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2344:1: ( ( ruleRoute ) )
-            // InternalSchedule.g:2345:2: ( ruleRoute )
+            // InternalSchedule.g:2317:1: ( ( ruleRoute ) )
+            // InternalSchedule.g:2318:2: ( ruleRoute )
             {
-            // InternalSchedule.g:2345:2: ( ruleRoute )
-            // InternalSchedule.g:2346:3: ruleRoute
+            // InternalSchedule.g:2318:2: ( ruleRoute )
+            // InternalSchedule.g:2319:3: ruleRoute
             {
              before(grammarAccess.getTrainScheduleAccess().getRouteRouteParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -7056,17 +6965,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TimeDescription__DateTimesAssignment_0"
-    // InternalSchedule.g:2355:1: rule__TimeDescription__DateTimesAssignment_0 : ( ruleDateTime ) ;
+    // InternalSchedule.g:2328:1: rule__TimeDescription__DateTimesAssignment_0 : ( ruleDateTime ) ;
     public final void rule__TimeDescription__DateTimesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2359:1: ( ( ruleDateTime ) )
-            // InternalSchedule.g:2360:2: ( ruleDateTime )
+            // InternalSchedule.g:2332:1: ( ( ruleDateTime ) )
+            // InternalSchedule.g:2333:2: ( ruleDateTime )
             {
-            // InternalSchedule.g:2360:2: ( ruleDateTime )
-            // InternalSchedule.g:2361:3: ruleDateTime
+            // InternalSchedule.g:2333:2: ( ruleDateTime )
+            // InternalSchedule.g:2334:3: ruleDateTime
             {
              before(grammarAccess.getTimeDescriptionAccess().getDateTimesDateTimeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7097,17 +7006,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TimeDescription__DateTimesAssignment_1_0_1"
-    // InternalSchedule.g:2370:1: rule__TimeDescription__DateTimesAssignment_1_0_1 : ( ruleDateTime ) ;
+    // InternalSchedule.g:2343:1: rule__TimeDescription__DateTimesAssignment_1_0_1 : ( ruleDateTime ) ;
     public final void rule__TimeDescription__DateTimesAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2374:1: ( ( ruleDateTime ) )
-            // InternalSchedule.g:2375:2: ( ruleDateTime )
+            // InternalSchedule.g:2347:1: ( ( ruleDateTime ) )
+            // InternalSchedule.g:2348:2: ( ruleDateTime )
             {
-            // InternalSchedule.g:2375:2: ( ruleDateTime )
-            // InternalSchedule.g:2376:3: ruleDateTime
+            // InternalSchedule.g:2348:2: ( ruleDateTime )
+            // InternalSchedule.g:2349:3: ruleDateTime
             {
              before(grammarAccess.getTimeDescriptionAccess().getDateTimesDateTimeParserRuleCall_1_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7138,17 +7047,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TimeDescription__DateTimesAssignment_1_2"
-    // InternalSchedule.g:2385:1: rule__TimeDescription__DateTimesAssignment_1_2 : ( ruleDateTime ) ;
+    // InternalSchedule.g:2358:1: rule__TimeDescription__DateTimesAssignment_1_2 : ( ruleDateTime ) ;
     public final void rule__TimeDescription__DateTimesAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2389:1: ( ( ruleDateTime ) )
-            // InternalSchedule.g:2390:2: ( ruleDateTime )
+            // InternalSchedule.g:2362:1: ( ( ruleDateTime ) )
+            // InternalSchedule.g:2363:2: ( ruleDateTime )
             {
-            // InternalSchedule.g:2390:2: ( ruleDateTime )
-            // InternalSchedule.g:2391:3: ruleDateTime
+            // InternalSchedule.g:2363:2: ( ruleDateTime )
+            // InternalSchedule.g:2364:3: ruleDateTime
             {
              before(grammarAccess.getTimeDescriptionAccess().getDateTimesDateTimeParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7179,17 +7088,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DateTime__WeekdaysAssignment_0"
-    // InternalSchedule.g:2400:1: rule__DateTime__WeekdaysAssignment_0 : ( ruleWeekDay ) ;
+    // InternalSchedule.g:2373:1: rule__DateTime__WeekdaysAssignment_0 : ( ruleWeekDay ) ;
     public final void rule__DateTime__WeekdaysAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2404:1: ( ( ruleWeekDay ) )
-            // InternalSchedule.g:2405:2: ( ruleWeekDay )
+            // InternalSchedule.g:2377:1: ( ( ruleWeekDay ) )
+            // InternalSchedule.g:2378:2: ( ruleWeekDay )
             {
-            // InternalSchedule.g:2405:2: ( ruleWeekDay )
-            // InternalSchedule.g:2406:3: ruleWeekDay
+            // InternalSchedule.g:2378:2: ( ruleWeekDay )
+            // InternalSchedule.g:2379:3: ruleWeekDay
             {
              before(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7220,17 +7129,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DateTime__WeekdaysAssignment_1_1"
-    // InternalSchedule.g:2415:1: rule__DateTime__WeekdaysAssignment_1_1 : ( ruleWeekDay ) ;
+    // InternalSchedule.g:2388:1: rule__DateTime__WeekdaysAssignment_1_1 : ( ruleWeekDay ) ;
     public final void rule__DateTime__WeekdaysAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2419:1: ( ( ruleWeekDay ) )
-            // InternalSchedule.g:2420:2: ( ruleWeekDay )
+            // InternalSchedule.g:2392:1: ( ( ruleWeekDay ) )
+            // InternalSchedule.g:2393:2: ( ruleWeekDay )
             {
-            // InternalSchedule.g:2420:2: ( ruleWeekDay )
-            // InternalSchedule.g:2421:3: ruleWeekDay
+            // InternalSchedule.g:2393:2: ( ruleWeekDay )
+            // InternalSchedule.g:2394:3: ruleWeekDay
             {
              before(grammarAccess.getDateTimeAccess().getWeekdaysWeekDayEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7261,17 +7170,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DateTime__TimeAssignment_3"
-    // InternalSchedule.g:2430:1: rule__DateTime__TimeAssignment_3 : ( ruleTime ) ;
+    // InternalSchedule.g:2403:1: rule__DateTime__TimeAssignment_3 : ( ruleTime ) ;
     public final void rule__DateTime__TimeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2434:1: ( ( ruleTime ) )
-            // InternalSchedule.g:2435:2: ( ruleTime )
+            // InternalSchedule.g:2407:1: ( ( ruleTime ) )
+            // InternalSchedule.g:2408:2: ( ruleTime )
             {
-            // InternalSchedule.g:2435:2: ( ruleTime )
-            // InternalSchedule.g:2436:3: ruleTime
+            // InternalSchedule.g:2408:2: ( ruleTime )
+            // InternalSchedule.g:2409:3: ruleTime
             {
              before(grammarAccess.getDateTimeAccess().getTimeTimeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7302,17 +7211,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Time__HoursAssignment_0"
-    // InternalSchedule.g:2445:1: rule__Time__HoursAssignment_0 : ( RULE_INT ) ;
+    // InternalSchedule.g:2418:1: rule__Time__HoursAssignment_0 : ( RULE_INT ) ;
     public final void rule__Time__HoursAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2449:1: ( ( RULE_INT ) )
-            // InternalSchedule.g:2450:2: ( RULE_INT )
+            // InternalSchedule.g:2422:1: ( ( RULE_INT ) )
+            // InternalSchedule.g:2423:2: ( RULE_INT )
             {
-            // InternalSchedule.g:2450:2: ( RULE_INT )
-            // InternalSchedule.g:2451:3: RULE_INT
+            // InternalSchedule.g:2423:2: ( RULE_INT )
+            // InternalSchedule.g:2424:3: RULE_INT
             {
              before(grammarAccess.getTimeAccess().getHoursINTTerminalRuleCall_0_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -7339,17 +7248,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Time__MinutesAssignment_2"
-    // InternalSchedule.g:2460:1: rule__Time__MinutesAssignment_2 : ( RULE_INT ) ;
+    // InternalSchedule.g:2433:1: rule__Time__MinutesAssignment_2 : ( RULE_INT ) ;
     public final void rule__Time__MinutesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2464:1: ( ( RULE_INT ) )
-            // InternalSchedule.g:2465:2: ( RULE_INT )
+            // InternalSchedule.g:2437:1: ( ( RULE_INT ) )
+            // InternalSchedule.g:2438:2: ( RULE_INT )
             {
-            // InternalSchedule.g:2465:2: ( RULE_INT )
-            // InternalSchedule.g:2466:3: RULE_INT
+            // InternalSchedule.g:2438:2: ( RULE_INT )
+            // InternalSchedule.g:2439:3: RULE_INT
             {
              before(grammarAccess.getTimeAccess().getMinutesINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -7376,17 +7285,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Route__SpotsAssignment_0"
-    // InternalSchedule.g:2475:1: rule__Route__SpotsAssignment_0 : ( ruleStartSpot ) ;
+    // InternalSchedule.g:2448:1: rule__Route__SpotsAssignment_0 : ( ruleStartSpot ) ;
     public final void rule__Route__SpotsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2479:1: ( ( ruleStartSpot ) )
-            // InternalSchedule.g:2480:2: ( ruleStartSpot )
+            // InternalSchedule.g:2452:1: ( ( ruleStartSpot ) )
+            // InternalSchedule.g:2453:2: ( ruleStartSpot )
             {
-            // InternalSchedule.g:2480:2: ( ruleStartSpot )
-            // InternalSchedule.g:2481:3: ruleStartSpot
+            // InternalSchedule.g:2453:2: ( ruleStartSpot )
+            // InternalSchedule.g:2454:3: ruleStartSpot
             {
              before(grammarAccess.getRouteAccess().getSpotsStartSpotParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7417,17 +7326,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Route__SpotsAssignment_1"
-    // InternalSchedule.g:2490:1: rule__Route__SpotsAssignment_1 : ( ruleMiddleSpot ) ;
+    // InternalSchedule.g:2463:1: rule__Route__SpotsAssignment_1 : ( ruleMiddleSpot ) ;
     public final void rule__Route__SpotsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2494:1: ( ( ruleMiddleSpot ) )
-            // InternalSchedule.g:2495:2: ( ruleMiddleSpot )
+            // InternalSchedule.g:2467:1: ( ( ruleMiddleSpot ) )
+            // InternalSchedule.g:2468:2: ( ruleMiddleSpot )
             {
-            // InternalSchedule.g:2495:2: ( ruleMiddleSpot )
-            // InternalSchedule.g:2496:3: ruleMiddleSpot
+            // InternalSchedule.g:2468:2: ( ruleMiddleSpot )
+            // InternalSchedule.g:2469:3: ruleMiddleSpot
             {
              before(grammarAccess.getRouteAccess().getSpotsMiddleSpotParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7458,17 +7367,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Route__SpotsAssignment_2"
-    // InternalSchedule.g:2505:1: rule__Route__SpotsAssignment_2 : ( ruleFinalSpot ) ;
+    // InternalSchedule.g:2478:1: rule__Route__SpotsAssignment_2 : ( ruleFinalSpot ) ;
     public final void rule__Route__SpotsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2509:1: ( ( ruleFinalSpot ) )
-            // InternalSchedule.g:2510:2: ( ruleFinalSpot )
+            // InternalSchedule.g:2482:1: ( ( ruleFinalSpot ) )
+            // InternalSchedule.g:2483:2: ( ruleFinalSpot )
             {
-            // InternalSchedule.g:2510:2: ( ruleFinalSpot )
-            // InternalSchedule.g:2511:3: ruleFinalSpot
+            // InternalSchedule.g:2483:2: ( ruleFinalSpot )
+            // InternalSchedule.g:2484:3: ruleFinalSpot
             {
              before(grammarAccess.getRouteAccess().getSpotsFinalSpotParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7499,21 +7408,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StartSpot__StationAssignment_2"
-    // InternalSchedule.g:2520:1: rule__StartSpot__StationAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2493:1: rule__StartSpot__StationAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__StartSpot__StationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2524:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2525:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2497:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2498:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2525:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2526:3: ( RULE_ID )
+            // InternalSchedule.g:2498:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2499:3: ( RULE_ID )
             {
              before(grammarAccess.getStartSpotAccess().getStationStationCrossReference_2_0()); 
-            // InternalSchedule.g:2527:3: ( RULE_ID )
-            // InternalSchedule.g:2528:4: RULE_ID
+            // InternalSchedule.g:2500:3: ( RULE_ID )
+            // InternalSchedule.g:2501:4: RULE_ID
             {
              before(grammarAccess.getStartSpotAccess().getStationStationIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7544,17 +7453,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StartSpot__PlatformAssignment_3_2"
-    // InternalSchedule.g:2539:1: rule__StartSpot__PlatformAssignment_3_2 : ( RULE_STRING ) ;
+    // InternalSchedule.g:2512:1: rule__StartSpot__PlatformAssignment_3_2 : ( RULE_STRING ) ;
     public final void rule__StartSpot__PlatformAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2543:1: ( ( RULE_STRING ) )
-            // InternalSchedule.g:2544:2: ( RULE_STRING )
+            // InternalSchedule.g:2516:1: ( ( RULE_STRING ) )
+            // InternalSchedule.g:2517:2: ( RULE_STRING )
             {
-            // InternalSchedule.g:2544:2: ( RULE_STRING )
-            // InternalSchedule.g:2545:3: RULE_STRING
+            // InternalSchedule.g:2517:2: ( RULE_STRING )
+            // InternalSchedule.g:2518:3: RULE_STRING
             {
              before(grammarAccess.getStartSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7581,21 +7490,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StartSpot__LegAssignment_4_2"
-    // InternalSchedule.g:2554:1: rule__StartSpot__LegAssignment_4_2 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2527:1: rule__StartSpot__LegAssignment_4_2 : ( ( RULE_ID ) ) ;
     public final void rule__StartSpot__LegAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2558:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2559:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2531:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2532:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2559:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2560:3: ( RULE_ID )
+            // InternalSchedule.g:2532:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2533:3: ( RULE_ID )
             {
              before(grammarAccess.getStartSpotAccess().getLegLegCrossReference_4_2_0()); 
-            // InternalSchedule.g:2561:3: ( RULE_ID )
-            // InternalSchedule.g:2562:4: RULE_ID
+            // InternalSchedule.g:2534:3: ( RULE_ID )
+            // InternalSchedule.g:2535:4: RULE_ID
             {
              before(grammarAccess.getStartSpotAccess().getLegLegIDTerminalRuleCall_4_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7626,21 +7535,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MiddleSpot__StationAssignment_2"
-    // InternalSchedule.g:2573:1: rule__MiddleSpot__StationAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2546:1: rule__MiddleSpot__StationAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__MiddleSpot__StationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2577:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2578:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2550:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2551:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2578:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2579:3: ( RULE_ID )
+            // InternalSchedule.g:2551:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2552:3: ( RULE_ID )
             {
              before(grammarAccess.getMiddleSpotAccess().getStationStationCrossReference_2_0()); 
-            // InternalSchedule.g:2580:3: ( RULE_ID )
-            // InternalSchedule.g:2581:4: RULE_ID
+            // InternalSchedule.g:2553:3: ( RULE_ID )
+            // InternalSchedule.g:2554:4: RULE_ID
             {
              before(grammarAccess.getMiddleSpotAccess().getStationStationIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7671,17 +7580,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MiddleSpot__PlatformAssignment_3_2"
-    // InternalSchedule.g:2592:1: rule__MiddleSpot__PlatformAssignment_3_2 : ( RULE_STRING ) ;
+    // InternalSchedule.g:2565:1: rule__MiddleSpot__PlatformAssignment_3_2 : ( RULE_STRING ) ;
     public final void rule__MiddleSpot__PlatformAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2596:1: ( ( RULE_STRING ) )
-            // InternalSchedule.g:2597:2: ( RULE_STRING )
+            // InternalSchedule.g:2569:1: ( ( RULE_STRING ) )
+            // InternalSchedule.g:2570:2: ( RULE_STRING )
             {
-            // InternalSchedule.g:2597:2: ( RULE_STRING )
-            // InternalSchedule.g:2598:3: RULE_STRING
+            // InternalSchedule.g:2570:2: ( RULE_STRING )
+            // InternalSchedule.g:2571:3: RULE_STRING
             {
              before(grammarAccess.getMiddleSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7708,17 +7617,17 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MiddleSpot__WaitingTimeAssignment_5"
-    // InternalSchedule.g:2607:1: rule__MiddleSpot__WaitingTimeAssignment_5 : ( RULE_INT ) ;
+    // InternalSchedule.g:2580:1: rule__MiddleSpot__WaitingTimeAssignment_5 : ( RULE_INT ) ;
     public final void rule__MiddleSpot__WaitingTimeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2611:1: ( ( RULE_INT ) )
-            // InternalSchedule.g:2612:2: ( RULE_INT )
+            // InternalSchedule.g:2584:1: ( ( RULE_INT ) )
+            // InternalSchedule.g:2585:2: ( RULE_INT )
             {
-            // InternalSchedule.g:2612:2: ( RULE_INT )
-            // InternalSchedule.g:2613:3: RULE_INT
+            // InternalSchedule.g:2585:2: ( RULE_INT )
+            // InternalSchedule.g:2586:3: RULE_INT
             {
              before(grammarAccess.getMiddleSpotAccess().getWaitingTimeINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -7745,21 +7654,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MiddleSpot__TurnStationAssignment_7_1"
-    // InternalSchedule.g:2622:1: rule__MiddleSpot__TurnStationAssignment_7_1 : ( ( 'turn' ) ) ;
+    // InternalSchedule.g:2595:1: rule__MiddleSpot__TurnStationAssignment_7_1 : ( ( 'turn' ) ) ;
     public final void rule__MiddleSpot__TurnStationAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2626:1: ( ( ( 'turn' ) ) )
-            // InternalSchedule.g:2627:2: ( ( 'turn' ) )
+            // InternalSchedule.g:2599:1: ( ( ( 'turn' ) ) )
+            // InternalSchedule.g:2600:2: ( ( 'turn' ) )
             {
-            // InternalSchedule.g:2627:2: ( ( 'turn' ) )
-            // InternalSchedule.g:2628:3: ( 'turn' )
+            // InternalSchedule.g:2600:2: ( ( 'turn' ) )
+            // InternalSchedule.g:2601:3: ( 'turn' )
             {
              before(grammarAccess.getMiddleSpotAccess().getTurnStationTurnKeyword_7_1_0()); 
-            // InternalSchedule.g:2629:3: ( 'turn' )
-            // InternalSchedule.g:2630:4: 'turn'
+            // InternalSchedule.g:2602:3: ( 'turn' )
+            // InternalSchedule.g:2603:4: 'turn'
             {
              before(grammarAccess.getMiddleSpotAccess().getTurnStationTurnKeyword_7_1_0()); 
             match(input,35,FOLLOW_2); 
@@ -7790,21 +7699,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MiddleSpot__LegAssignment_8_2"
-    // InternalSchedule.g:2641:1: rule__MiddleSpot__LegAssignment_8_2 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2614:1: rule__MiddleSpot__LegAssignment_8_2 : ( ( RULE_ID ) ) ;
     public final void rule__MiddleSpot__LegAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2645:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2646:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2618:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2619:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2646:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2647:3: ( RULE_ID )
+            // InternalSchedule.g:2619:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2620:3: ( RULE_ID )
             {
              before(grammarAccess.getMiddleSpotAccess().getLegLegCrossReference_8_2_0()); 
-            // InternalSchedule.g:2648:3: ( RULE_ID )
-            // InternalSchedule.g:2649:4: RULE_ID
+            // InternalSchedule.g:2621:3: ( RULE_ID )
+            // InternalSchedule.g:2622:4: RULE_ID
             {
              before(grammarAccess.getMiddleSpotAccess().getLegLegIDTerminalRuleCall_8_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7835,21 +7744,21 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FinalSpot__StationAssignment_2"
-    // InternalSchedule.g:2660:1: rule__FinalSpot__StationAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSchedule.g:2633:1: rule__FinalSpot__StationAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__FinalSpot__StationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2664:1: ( ( ( RULE_ID ) ) )
-            // InternalSchedule.g:2665:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2637:1: ( ( ( RULE_ID ) ) )
+            // InternalSchedule.g:2638:2: ( ( RULE_ID ) )
             {
-            // InternalSchedule.g:2665:2: ( ( RULE_ID ) )
-            // InternalSchedule.g:2666:3: ( RULE_ID )
+            // InternalSchedule.g:2638:2: ( ( RULE_ID ) )
+            // InternalSchedule.g:2639:3: ( RULE_ID )
             {
              before(grammarAccess.getFinalSpotAccess().getStationStationCrossReference_2_0()); 
-            // InternalSchedule.g:2667:3: ( RULE_ID )
-            // InternalSchedule.g:2668:4: RULE_ID
+            // InternalSchedule.g:2640:3: ( RULE_ID )
+            // InternalSchedule.g:2641:4: RULE_ID
             {
              before(grammarAccess.getFinalSpotAccess().getStationStationIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7879,22 +7788,22 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__FinalSpot__StationAssignment_2"
 
 
-    // $ANTLR start "rule__FinalSpot__PlatformAssignment_3_2"
-    // InternalSchedule.g:2679:1: rule__FinalSpot__PlatformAssignment_3_2 : ( RULE_STRING ) ;
-    public final void rule__FinalSpot__PlatformAssignment_3_2() throws RecognitionException {
+    // $ANTLR start "rule__FinalSpot__PlatformAssignment_5"
+    // InternalSchedule.g:2652:1: rule__FinalSpot__PlatformAssignment_5 : ( RULE_STRING ) ;
+    public final void rule__FinalSpot__PlatformAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSchedule.g:2683:1: ( ( RULE_STRING ) )
-            // InternalSchedule.g:2684:2: ( RULE_STRING )
+            // InternalSchedule.g:2656:1: ( ( RULE_STRING ) )
+            // InternalSchedule.g:2657:2: ( RULE_STRING )
             {
-            // InternalSchedule.g:2684:2: ( RULE_STRING )
-            // InternalSchedule.g:2685:3: RULE_STRING
+            // InternalSchedule.g:2657:2: ( RULE_STRING )
+            // InternalSchedule.g:2658:3: RULE_STRING
             {
-             before(grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0()); 
+             before(grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0()); 
+             after(grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0()); 
 
             }
 
@@ -7913,7 +7822,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__FinalSpot__PlatformAssignment_3_2"
+    // $ANTLR end "rule__FinalSpot__PlatformAssignment_5"
 
     // Delegated rules
 

@@ -1806,7 +1806,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFinalSpot"
-    // InternalSchedule.g:790:1: ruleFinalSpot returns [EObject current=null] : (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )? ) ;
+    // InternalSchedule.g:790:1: ruleFinalSpot returns [EObject current=null] : (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) ) ;
     public final EObject ruleFinalSpot() throws RecognitionException {
         EObject current = null;
 
@@ -1821,11 +1821,11 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSchedule.g:796:2: ( (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )? ) )
-            // InternalSchedule.g:797:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )? )
+            // InternalSchedule.g:796:2: ( (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) ) )
+            // InternalSchedule.g:797:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )
             {
-            // InternalSchedule.g:797:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )? )
-            // InternalSchedule.g:798:3: otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )?
+            // InternalSchedule.g:797:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )
+            // InternalSchedule.g:798:3: otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,28,FOLLOW_17); 
 
@@ -1846,7 +1846,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
             						current = createModelElement(grammarAccess.getFinalSpotRule());
             					}
             				
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_27); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_8); 
 
             					newLeafNode(otherlv_2, grammarAccess.getFinalSpotAccess().getStationStationCrossReference_2_0());
             				
@@ -1856,54 +1856,37 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSchedule.g:819:3: (otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            otherlv_3=(Token)match(input,18,FOLLOW_19); 
 
-            if ( (LA12_0==18) ) {
-                alt12=1;
+            			newLeafNode(otherlv_3, grammarAccess.getFinalSpotAccess().getOnKeyword_3());
+            		
+            otherlv_4=(Token)match(input,22,FOLLOW_20); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getFinalSpotAccess().getPlatformKeyword_4());
+            		
+            // InternalSchedule.g:827:3: ( (lv_platform_5_0= RULE_STRING ) )
+            // InternalSchedule.g:828:4: (lv_platform_5_0= RULE_STRING )
+            {
+            // InternalSchedule.g:828:4: (lv_platform_5_0= RULE_STRING )
+            // InternalSchedule.g:829:5: lv_platform_5_0= RULE_STRING
+            {
+            lv_platform_5_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            					newLeafNode(lv_platform_5_0, grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getFinalSpotRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"platform",
+            						lv_platform_5_0,
+            						"org.mdse.pts.schedule.dsl.Schedule.STRING");
+            				
+
             }
-            switch (alt12) {
-                case 1 :
-                    // InternalSchedule.g:820:4: otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_STRING ) )
-                    {
-                    otherlv_3=(Token)match(input,18,FOLLOW_19); 
 
-                    				newLeafNode(otherlv_3, grammarAccess.getFinalSpotAccess().getOnKeyword_3_0());
-                    			
-                    otherlv_4=(Token)match(input,22,FOLLOW_20); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getFinalSpotAccess().getPlatformKeyword_3_1());
-                    			
-                    // InternalSchedule.g:828:4: ( (lv_platform_5_0= RULE_STRING ) )
-                    // InternalSchedule.g:829:5: (lv_platform_5_0= RULE_STRING )
-                    {
-                    // InternalSchedule.g:829:5: (lv_platform_5_0= RULE_STRING )
-                    // InternalSchedule.g:830:6: lv_platform_5_0= RULE_STRING
-                    {
-                    lv_platform_5_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-                    						newLeafNode(lv_platform_5_0, grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getFinalSpotRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"platform",
-                    							lv_platform_5_0,
-                    							"org.mdse.pts.schedule.dsl.Schedule.STRING");
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -1930,7 +1913,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWeekDay"
-    // InternalSchedule.g:851:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) ) ;
+    // InternalSchedule.g:849:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) ) ;
     public final Enumerator ruleWeekDay() throws RecognitionException {
         Enumerator current = null;
 
@@ -1946,60 +1929,60 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSchedule.g:857:2: ( ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) ) )
-            // InternalSchedule.g:858:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) )
+            // InternalSchedule.g:855:2: ( ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) ) )
+            // InternalSchedule.g:856:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) )
             {
-            // InternalSchedule.g:858:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) )
-            int alt13=7;
+            // InternalSchedule.g:856:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) | (enumLiteral_2= 'Wednesday' ) | (enumLiteral_3= 'Thursday' ) | (enumLiteral_4= 'Friday' ) | (enumLiteral_5= 'Saturday' ) | (enumLiteral_6= 'Sunday' ) )
+            int alt12=7;
             switch ( input.LA(1) ) {
             case 29:
                 {
-                alt13=1;
+                alt12=1;
                 }
                 break;
             case 30:
                 {
-                alt13=2;
+                alt12=2;
                 }
                 break;
             case 31:
                 {
-                alt13=3;
+                alt12=3;
                 }
                 break;
             case 32:
                 {
-                alt13=4;
+                alt12=4;
                 }
                 break;
             case 33:
                 {
-                alt13=5;
+                alt12=5;
                 }
                 break;
             case 34:
                 {
-                alt13=6;
+                alt12=6;
                 }
                 break;
             case 35:
                 {
-                alt13=7;
+                alt12=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
-                    // InternalSchedule.g:859:3: (enumLiteral_0= 'Monday' )
+                    // InternalSchedule.g:857:3: (enumLiteral_0= 'Monday' )
                     {
-                    // InternalSchedule.g:859:3: (enumLiteral_0= 'Monday' )
-                    // InternalSchedule.g:860:4: enumLiteral_0= 'Monday'
+                    // InternalSchedule.g:857:3: (enumLiteral_0= 'Monday' )
+                    // InternalSchedule.g:858:4: enumLiteral_0= 'Monday'
                     {
                     enumLiteral_0=(Token)match(input,29,FOLLOW_2); 
 
@@ -2013,10 +1996,10 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSchedule.g:867:3: (enumLiteral_1= 'Tuesday' )
+                    // InternalSchedule.g:865:3: (enumLiteral_1= 'Tuesday' )
                     {
-                    // InternalSchedule.g:867:3: (enumLiteral_1= 'Tuesday' )
-                    // InternalSchedule.g:868:4: enumLiteral_1= 'Tuesday'
+                    // InternalSchedule.g:865:3: (enumLiteral_1= 'Tuesday' )
+                    // InternalSchedule.g:866:4: enumLiteral_1= 'Tuesday'
                     {
                     enumLiteral_1=(Token)match(input,30,FOLLOW_2); 
 
@@ -2030,10 +2013,10 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSchedule.g:875:3: (enumLiteral_2= 'Wednesday' )
+                    // InternalSchedule.g:873:3: (enumLiteral_2= 'Wednesday' )
                     {
-                    // InternalSchedule.g:875:3: (enumLiteral_2= 'Wednesday' )
-                    // InternalSchedule.g:876:4: enumLiteral_2= 'Wednesday'
+                    // InternalSchedule.g:873:3: (enumLiteral_2= 'Wednesday' )
+                    // InternalSchedule.g:874:4: enumLiteral_2= 'Wednesday'
                     {
                     enumLiteral_2=(Token)match(input,31,FOLLOW_2); 
 
@@ -2047,10 +2030,10 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSchedule.g:883:3: (enumLiteral_3= 'Thursday' )
+                    // InternalSchedule.g:881:3: (enumLiteral_3= 'Thursday' )
                     {
-                    // InternalSchedule.g:883:3: (enumLiteral_3= 'Thursday' )
-                    // InternalSchedule.g:884:4: enumLiteral_3= 'Thursday'
+                    // InternalSchedule.g:881:3: (enumLiteral_3= 'Thursday' )
+                    // InternalSchedule.g:882:4: enumLiteral_3= 'Thursday'
                     {
                     enumLiteral_3=(Token)match(input,32,FOLLOW_2); 
 
@@ -2064,10 +2047,10 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSchedule.g:891:3: (enumLiteral_4= 'Friday' )
+                    // InternalSchedule.g:889:3: (enumLiteral_4= 'Friday' )
                     {
-                    // InternalSchedule.g:891:3: (enumLiteral_4= 'Friday' )
-                    // InternalSchedule.g:892:4: enumLiteral_4= 'Friday'
+                    // InternalSchedule.g:889:3: (enumLiteral_4= 'Friday' )
+                    // InternalSchedule.g:890:4: enumLiteral_4= 'Friday'
                     {
                     enumLiteral_4=(Token)match(input,33,FOLLOW_2); 
 
@@ -2081,10 +2064,10 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSchedule.g:899:3: (enumLiteral_5= 'Saturday' )
+                    // InternalSchedule.g:897:3: (enumLiteral_5= 'Saturday' )
                     {
-                    // InternalSchedule.g:899:3: (enumLiteral_5= 'Saturday' )
-                    // InternalSchedule.g:900:4: enumLiteral_5= 'Saturday'
+                    // InternalSchedule.g:897:3: (enumLiteral_5= 'Saturday' )
+                    // InternalSchedule.g:898:4: enumLiteral_5= 'Saturday'
                     {
                     enumLiteral_5=(Token)match(input,34,FOLLOW_2); 
 
@@ -2098,10 +2081,10 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSchedule.g:907:3: (enumLiteral_6= 'Sunday' )
+                    // InternalSchedule.g:905:3: (enumLiteral_6= 'Sunday' )
                     {
-                    // InternalSchedule.g:907:3: (enumLiteral_6= 'Sunday' )
-                    // InternalSchedule.g:908:4: enumLiteral_6= 'Sunday'
+                    // InternalSchedule.g:905:3: (enumLiteral_6= 'Sunday' )
+                    // InternalSchedule.g:906:4: enumLiteral_6= 'Sunday'
                     {
                     enumLiteral_6=(Token)match(input,35,FOLLOW_2); 
 
@@ -2166,6 +2149,5 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000880002L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000040002L});
 
 }

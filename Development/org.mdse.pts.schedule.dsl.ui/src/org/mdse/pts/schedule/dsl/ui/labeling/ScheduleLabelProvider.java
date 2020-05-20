@@ -3,18 +3,14 @@
  */
 package org.mdse.pts.schedule.dsl.ui.labeling;
 
-import com.google.inject.Inject;
-
-import java.net.URI;
-
-import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
-import org.mdse.pts.common.util.EcoreIOUtil;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.Spot;
 import org.mdse.pts.schedule.TrainSchedule;
 import org.mdse.pts.shared.Time;
+
+import com.google.inject.Inject;
 
 /**
  * Provides labels for EObjects.

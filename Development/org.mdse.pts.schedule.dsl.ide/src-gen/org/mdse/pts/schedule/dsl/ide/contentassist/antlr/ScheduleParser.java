@@ -50,7 +50,6 @@ public class ScheduleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMiddleSpotAccess().getGroup_7(), "rule__MiddleSpot__Group_7__0");
 			builder.put(grammarAccess.getMiddleSpotAccess().getGroup_8(), "rule__MiddleSpot__Group_8__0");
 			builder.put(grammarAccess.getFinalSpotAccess().getGroup(), "rule__FinalSpot__Group__0");
-			builder.put(grammarAccess.getFinalSpotAccess().getGroup_3(), "rule__FinalSpot__Group_3__0");
 			builder.put(grammarAccess.getScheduleAccess().getNetworkAssignment_2(), "rule__Schedule__NetworkAssignment_2");
 			builder.put(grammarAccess.getScheduleAccess().getDepotsAssignment_4(), "rule__Schedule__DepotsAssignment_4");
 			builder.put(grammarAccess.getScheduleAccess().getDepotsAssignment_5_1(), "rule__Schedule__DepotsAssignment_5_1");
@@ -78,7 +77,7 @@ public class ScheduleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMiddleSpotAccess().getTurnStationAssignment_7_1(), "rule__MiddleSpot__TurnStationAssignment_7_1");
 			builder.put(grammarAccess.getMiddleSpotAccess().getLegAssignment_8_2(), "rule__MiddleSpot__LegAssignment_8_2");
 			builder.put(grammarAccess.getFinalSpotAccess().getStationAssignment_2(), "rule__FinalSpot__StationAssignment_2");
-			builder.put(grammarAccess.getFinalSpotAccess().getPlatformAssignment_3_2(), "rule__FinalSpot__PlatformAssignment_3_2");
+			builder.put(grammarAccess.getFinalSpotAccess().getPlatformAssignment_5(), "rule__FinalSpot__PlatformAssignment_5");
 		}
 	}
 	

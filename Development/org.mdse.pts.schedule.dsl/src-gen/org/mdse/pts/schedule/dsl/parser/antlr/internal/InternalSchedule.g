@@ -816,34 +816,32 @@ ruleFinalSpot returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getFinalSpotAccess().getOnKeyword_3());
+		}
+		otherlv_4='platform'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getFinalSpotAccess().getPlatformKeyword_4());
+		}
 		(
-			otherlv_3='on'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getFinalSpotAccess().getOnKeyword_3_0());
-			}
-			otherlv_4='platform'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getFinalSpotAccess().getPlatformKeyword_3_1());
-			}
 			(
-				(
-					lv_platform_5_0=RULE_STRING
-					{
-						newLeafNode(lv_platform_5_0, grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0());
+				lv_platform_5_0=RULE_STRING
+				{
+					newLeafNode(lv_platform_5_0, grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFinalSpotRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getFinalSpotRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"platform",
-							lv_platform_5_0,
-							"org.mdse.pts.schedule.dsl.Schedule.STRING");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"platform",
+						lv_platform_5_0,
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
+				}
 			)
-		)?
+		)
 	)
 ;
 
