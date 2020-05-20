@@ -36,11 +36,14 @@ h1 {
 
 img {
 	width: 20rem;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 header, footer {
 	background: #F2F2F2;
-	padding: 2.5rem 0;
+	padding: 3rem 0;
 }
 
 header {
@@ -66,3 +69,7 @@ h3 {
 	letter-spacing: 1pt;
 	margin: 2rem 0 1rem 0;
 } 
+
+::selection {
+  background: rgba(220, 61, 35, 0.2);
+}
