@@ -91,8 +91,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 	// Validate Time Description
 
 	/**
-	 * Two time descriptions cannot have
-	 * the same pair (weekday, hour and minutes)
+	 * Two time descriptions cannot have the same pair (weekday, hour and minutes)
 	 */
 	private boolean validateTimeDescriptionNoRepeatedDateTime(TimeDescription timeDescription) {
 		boolean res = true;
@@ -130,7 +129,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 	private boolean validateTimeDescriptionNoRepeatedWeekDay(TimeDescription timeDescription) {
 		boolean res = true;
 		List<DateTime> dateTimes = timeDescription.getDateTimes();
-		
+
 		for (DateTime datetime : dateTimes) {
 			List<DaysOfTheWeek> daysOfTheWeek = datetime.getWeekdays();
 			HashSet<DaysOfTheWeek> daysOfTheWeekUnique = new HashSet<>(daysOfTheWeek);
@@ -161,10 +160,9 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 	// Validate Route
 
 	/**
-	 * A route should have existing legs in the network
-	 * for all the stations it connects,
-	 * and should have exactly one leg connecting two
-	 * stations if no leg to drive through is specified
+	 * A route should have existing legs in the network for all the stations it
+	 * connects, and should have exactly one leg connecting two stations if no leg
+	 * to drive through is specified
 	 */
 	private boolean validateRoute(Route route) {
 		boolean res = true;
