@@ -56,7 +56,7 @@
 						<tbody>
 				 	<%}%>
 					<tr>
-						<th><%=dt.getTime().getHours()%>:<%=dt.getTime().getMinutes()%></th>
+						<th><%if (dt.getTime().getHours() < 10) {%>0<% }%><%=dt.getTime().getHours()%>:<%if (dt.getTime().getMinutes() < 10) {%>0<% }%><%=dt.getTime().getMinutes()%></th>
 						<th><%=st.getArrival().getNextPrevStation()%></th>
 						<td><%=st.getPlatform()%></td>
 						<td><%=st.getTrainName()%></td>
@@ -91,7 +91,7 @@
 						<tbody>
 				 	<%}%>
 					<tr>
-						<th><%=dt.getTime().getHours()%>:<%=dt.getTime().getMinutes()%></th>
+						<th><%if (dt.getTime().getHours() < 10) {%>0<% }%><%=dt.getTime().getHours()%>:<%if (dt.getTime().getMinutes() < 10) {%>0<% }%><%=dt.getTime().getMinutes()%></th>
 						<th><%=st.getDeparture().getNextPrevStation()%></th>
 						<td><%=st.getPlatform()%></td>
 						<td><%=st.getTrainName()%></td>
