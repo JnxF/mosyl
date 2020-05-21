@@ -84,7 +84,7 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 			}
 			Network network = ((Schedule) root).getNetwork();
 			for (Leg leg : network.getLegs()) {
-				if (leg.getName().equalsIgnoreCase(crossRefNode)) {
+				if (leg.getName() != null && leg.getName().equalsIgnoreCase(crossRefNode)) {
 					return Collections.singletonList(leg);
 				}
 			}
