@@ -8,8 +8,8 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Schedule returns Schedule:
 	"schedule"
-	"for" network=[network::Network]
-	"with" depots+=[depot::Depot] ("," depots+=[depot::Depot])* ":"
+	"for" network=[network::Network|STRING]
+	"with" depots+=[depot::Depot|STRING] ("," depots+=[depot::Depot|STRING])* ":"
 	(trainSchedules+=TrainSchedule)*;
 
 TrainSchedule returns TrainSchedule:
@@ -33,19 +33,19 @@ Route returns Route:
 	spots+=FinalSpot;
 
 StartSpot returns Spot:
-	"start" "at" station=[network::Station]
+	"start" "at" station=[network::Station|STRING]
 	"on" "platform" platform=STRING
 	("drive" "via" leg=[network::Leg])?;
 
 MiddleSpot returns Spot:
-	"stop" "at" station=[network::Station]
+	"stop" "at" station=[network::Station|STRING]
 	"on" "platform" platform=STRING
 	"for" waitingTime=INT "min"
 	("and" turnStation?="turn")?
 	("drive" "via" leg=[network::Leg])?;
 
 FinalSpot returns Spot:
-	"terminate" "at" station=[network::Station]
+	"terminate" "at" station=[network::Station|STRING]
 	"on" "platform" platform=STRING;
 
 enum WeekDay returns shared::DaysOfTheWeek:
