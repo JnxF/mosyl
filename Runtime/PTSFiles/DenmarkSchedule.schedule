@@ -1,15 +1,15 @@
-schedule for DenmarkNetwork with Depotia, AnotherDepot:
+schedule for "DenmarkNetwork" with "Depotia", "AnotherDepot":
 	train Oresundtag on Monday, Wednesday at 13:21
 	and Thursday at 14:41:
-		start at Copenhagen_Central on platform "A1"
+		start at "Copenhagen Central" on platform "A1"
 		drive via E501
-		stop at Aarhus_Central on platform "T1" for 5 min drive via E45
-		terminate at Odense_Central on platform "T3"
+		stop at "Aarhus Central" on platform "T1" for 5 min drive via E45
+		terminate at "Odense Central" on platform "T3"
 		
 	train Regionalido on Monday, Tuesday at 18:05
 	and Saturday at 20:01: 
-		start at Odense_Central on platform "A1"
+		start at "Odense Central" on platform "A1"
 		drive via E20
-		stop at Copenhagen_Central on platform "T2" for 5 min and turn
+		stop at "Copenhagen Central" on platform "T2" for 5 min and turn
 		drive via S21
-		terminate at Aarhus_Central on platform "T3"
+		terminate at "Aarhus Central" on platform "T3" 
