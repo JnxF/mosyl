@@ -92,7 +92,7 @@ ruleSchedule returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getScheduleRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getScheduleAccess().getNetworkNetworkCrossReference_2_0());
 				}
@@ -109,7 +109,7 @@ ruleSchedule returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getScheduleRule());
 					}
 				}
-				otherlv_4=RULE_ID
+				otherlv_4=RULE_STRING
 				{
 					newLeafNode(otherlv_4, grammarAccess.getScheduleAccess().getDepotsDepotCrossReference_4_0());
 				}
@@ -127,7 +127,7 @@ ruleSchedule returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getScheduleRule());
 						}
 					}
-					otherlv_6=RULE_ID
+					otherlv_6=RULE_STRING
 					{
 						newLeafNode(otherlv_6, grammarAccess.getScheduleAccess().getDepotsDepotCrossReference_5_1_0());
 					}
@@ -582,7 +582,7 @@ ruleStartSpot returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getStartSpotRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getStartSpotAccess().getStationStationCrossReference_2_0());
 				}
@@ -671,7 +671,7 @@ ruleMiddleSpot returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getMiddleSpotRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getMiddleSpotAccess().getStationStationCrossReference_2_0());
 				}
@@ -806,7 +806,7 @@ ruleFinalSpot returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFinalSpotRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getFinalSpotAccess().getStationStationCrossReference_2_0());
 				}
