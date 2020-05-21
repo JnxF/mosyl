@@ -1,111 +1,45 @@
-<%@jet package="org.mdse.pts.timetable" class="Timetable2HTML" imports="java.util.* java.util.stream.*"%>
+<%@ jet package="org.mdse.pts.timetable" imports="java.util.* java.util.stream.*" class="Timetable2HTML" %>
 
-<%Timetable timetable = (Timetable) argument;
-
-  StationTrainComparator arrivalComparator = new StationTrainComparator(true);
-
-  StationTrainComparator departureComparator = new StationTrainComparator(false);
-
-  List<StationTrain> trainArrivalList = timetable.getStationTrains().stream().filter(x -> x.getArrival() != null)
-      .sorted(arrivalComparator).collect(Collectors.toList());
-
-  List<StationTrain> trainDepartureList = timetable.getStationTrains().stream().filter(x -> x.getDeparture() != null)
-      .sorted(departureComparator).collect(Collectors.toList());%>
-
-<!DOCTYPE HTML>
-<html lang="en">
+<% Timetable timetable = (Timetable) argument;
+ 	StationTrainComparator arrivalComparator = new StationTrainComparator(true);
+ 	StationTrainComparator departureComparator = new StationTrainComparator(false);
+	List<StationTrain> trainArrivalList = timetable.getStationTrains().stream().filter(x -> x.getArrival() != null).sorted(arrivalComparator).collect(Collectors.toList());
+	List<StationTrain> trainDepartureList = timetable.getStationTrains().stream().filter(x -> x.getDeparture() != null).sorted(departureComparator).collect(Collectors.toList());
+%>
 <head>
-	<meta charset="utf-8">
-	<title><%=timetable.getStationName()%> &ndash; Timetable</title>
-
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="timetable.css">
+<title>Timetable for <%= timetable.getStationName() %></title>
+<link rel="stylesheet" type="text/css" href="timetable.css">
 </head>
 <body>
-	<header>
-		<div class="container">
-		<img src="logo.png" alt="Public Transport System logo">
-		</div>
-	</header>
-
-	<article class="container">
-		<h1><%=timetable.getStationName()%></h1>
-		<div class="row">
-			<!-- Arrivals -->
- 			<div class="col-md-6">
-				<h2>Arrivals</h2>
-				<%int previousDay = -1;%>
-				<%for (StationTrain st : trainArrivalList) {%>
-					<%DateTime dt = st.getArrival().getArrDepTime();%>
-					<%if (previousDay < dt.getDay().getValue()) {%>
-						<%if (previousDay != -1) {%>
-							</table>
-						<%}%>
-						<%previousDay = dt.getDay().getValue();%>
-				 		<h3><%=dt.getDay().getName()%></h3>
-						<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Time</th>
-								<th>From</th>
-								<th>Platform</th>
-								<th>Train</th>
-							</tr>
-						</thead>
-						<tbody>
-				 	<%}%>
-					<tr>
-						<th><%if (dt.getTime().getHours() < 10) {%>0<% }%><%=dt.getTime().getHours()%>:<%if (dt.getTime().getMinutes() < 10) {%>0<% }%><%=dt.getTime().getMinutes()%></th>
-						<th><%=st.getArrival().getNextPrevStation()%></th>
-						<td><%=st.getPlatform()%></td>
-						<td><%=st.getTrainName()%></td>
-					</tr>
-				<%}%>
-					</tbody>
-				</table>
-			</div>
-
-
-			<!-- Departures -->
- 			<div class="col-md-6">
-				<h2>Departures</h2>
-				<%previousDay = -1;%>
-				<%for (StationTrain st : trainDepartureList) {%>
-					<%DateTime dt = st.getDeparture().getArrDepTime();%>
-					<%if (previousDay < dt.getDay().getValue()) {%>
-						<%if (previousDay != -1) {%>
-							</table>
-						<%}%>
-						<%previousDay = dt.getDay().getValue();%>
-				 		<h3><%=dt.getDay().getName()%></h3>
-						<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Time</th>
-								<th>To</th>
-								<th>Platform</th>
-								<th>Train</th>
-							</tr>
-						</thead>
-						<tbody>
-				 	<%}%>
-					<tr>
-						<th><%if (dt.getTime().getHours() < 10) {%>0<% }%><%=dt.getTime().getHours()%>:<%if (dt.getTime().getMinutes() < 10) {%>0<% }%><%=dt.getTime().getMinutes()%></th>
-						<th><%=st.getDeparture().getNextPrevStation()%></th>
-						<td><%=st.getPlatform()%></td>
-						<td><%=st.getTrainName()%></td>
-					</tr>
-				<%}%>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</article>
-	<footer>
-		<div class="container">
-			&copy; 2020. Modelling Systems and Languages
-		</div>
-	</footer>
+<h1><%= timetable.getStationName() %></h1> 
+<table width="100%">
+<tr>
+<td width="50%"><h2>Arrivals</h2></td>
+<td width="50%"><h2>Departures</h2></td>
+</tr>
+<tr>
+<td>
+<% int previousDay = 0;
+ 	for (StationTrain st : trainArrivalList) {
+ 		DateTime dt = st.getArrival().getArrDepTime();
+ 		if (previousDay < dt.getDay().getValue()) {
+ 			previousDay = dt.getDay().getValue();%>
+<h3><%= dt.getDay().getName().charAt(0)%><%= dt.getDay().getName().toLowerCase().substring(1) %></h3>
+ 		<%}%>
+<%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getArrival().getNextPrevStation()%> on platform <%= st.getPlatform()%>
+ 	<%}%>
+</td>
+<td>
+<% previousDay = 0;
+ 	for (StationTrain st : trainDepartureList) {
+ 		DateTime dt = st.getDeparture().getArrDepTime();
+ 		if (previousDay < dt.getDay().getValue()) {
+ 			previousDay = dt.getDay().getValue();%>
+<h3><%= dt.getDay().getName().charAt(0)%><%= dt.getDay().getName().toLowerCase().substring(1) %></h3>
+ 		<%}%>
+<%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getDeparture().getNextPrevStation()%> on platform <%= st.getPlatform()%>
+ 	<%}%>
+</td>
+</tr>
+</table>
 </body>
-</html>
