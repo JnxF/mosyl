@@ -26,7 +26,7 @@
  			previousDay = dt.getDay().getValue();%>
 <h3><%= dt.getDay().getName().charAt(0)%><%= dt.getDay().getName().toLowerCase().substring(1) %></h3>
  		<%}%>
-<%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getArrival().getNextPrevStation()%> on platform <%= st.getPlatform()%>
+<%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getArrival().getNextPrevStation()%> on platform <%= st.getPlatform()%><br>
  	<%}%>
 </td>
 <td>
@@ -37,7 +37,7 @@
  			previousDay = dt.getDay().getValue();%>
 <h3><%= dt.getDay().getName().charAt(0)%><%= dt.getDay().getName().toLowerCase().substring(1) %></h3>
  		<%}%>
-<%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getDeparture().getNextPrevStation()%> on platform <%= st.getPlatform()%>
+<%= dt.getTime().getHours()%>:<%= dt.getTime().getMinutes()%> <%= st.getTrainName()%> from <%= st.getDeparture().getNextPrevStation()%> on platform <%= st.getPlatform()%><br>
  	<%}%>
 </td>
 </tr>

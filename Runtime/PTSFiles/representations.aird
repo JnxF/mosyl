@@ -10,6 +10,7 @@
     <semanticResources>FixedExample.depot</semanticResources>
     <semanticResources>DenmarkNetwork.network</semanticResources>
     <semanticResources>CopenhagenSchedule.schedule</semanticResources>
+    <semanticResources>DenmarkSchedule.schedule</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_IjLjoIVbEeqnoZDKzwfE6w">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Jev0AIVbEeqnoZDKzwfE6w" name="Example Depot Diagram Representation" repPath="#_Jb9lwIVbEeqnoZDKzwfE6w" changeId="a628f776-71bf-40d6-9356-a1b229c2f7cc">
