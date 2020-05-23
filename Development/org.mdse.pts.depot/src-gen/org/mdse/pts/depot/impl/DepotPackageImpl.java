@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.mdse.pts.depot.Coach;
@@ -21,7 +20,6 @@ import org.mdse.pts.depot.PassengerClass;
 import org.mdse.pts.depot.PassengerCoach;
 import org.mdse.pts.depot.Train;
 import org.mdse.pts.depot.TrainType;
-import org.mdse.pts.depot.util.DepotValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,16 +143,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 
 		// Initialize created meta-data
 		theDepotPackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theDepotPackage,
-			 new EValidator.Descriptor() {
-				 @Override
-				 public EValidator getEValidator() {
-					 return DepotValidator.INSTANCE;
-				 }
-			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theDepotPackage.freeze();
@@ -449,10 +437,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		// Create annotations
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore
-		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
-		createPivotAnnotations();
 	}
 
 	/**
@@ -468,40 +452,6 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		   source,
 		   new String[] {
 			   "ecore", "http://www.eclipse.org/emf/2002/Ecore"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation
-		  (trainEClass,
-		   source,
-		   new String[] {
-			   "constraints", "IntercityRequiresFirstClassPassengerCoach OtherConstraintTest SecondClassesAreOrdered"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation
-		  (trainEClass,
-		   source,
-		   new String[] {
-			   "IntercityRequiresFirstClassPassengerCoach", "Tuple {\n\tmessage : String = \'A intercity train needs at least one first class passenger coach\',\n\tstatus : Boolean = \n\t\t\t\t(trainType = TrainType::INTERCITY) \n\t\t\t\t\timplies \n\t\t\t\t\t\tcoaches->exists(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)\n}.status",
-			   "OtherConstraintTest", "Tuple {\n\tmessage : String = \'Whoa\',\n\tstatus : Boolean = \n\t\t\t\tcoaches->select(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)->size() > 1\n\t\t\t\t\timplies coaches->forAll(c | \n\t\t\t\t\t\tnot (c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST)\n\t\t\t\t\t\t\tor (coaches->at(coaches->indexOf(c)+1).oclIsTypeOf(PassengerCoach) \n\t\t\t\t\t\t\t\tand coaches->at(coaches->indexOf(c)+1).oclAsType(PassengerCoach).passengerClass = PassengerClass::FIRST\n\t\t\t\t\t\t\t)\n\t\t\t\t\t)\n}.status",
-			   "SecondClassesAreOrdered", "Tuple {\n\tmessage : String = \'Whoa\',\n\tstatus : Boolean = \n\t\t\t\tcoaches->select(c | c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND)->size() > 1\n\t\t\t\t\timplies coaches->forAll(c | \n\t\t\t\t\t\tnot (c.oclIsTypeOf(PassengerCoach) and c.oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND)\n\t\t\t\t\t\t\tor (coaches->at(coaches->indexOf(c)+1).oclIsUndefined() \n\t\t\t\t\t\t\t\tor (coaches->at(coaches->indexOf(c)+1).oclIsTypeOf(PassengerCoach) \n\t\t\t\t\t\t\t\t\tand coaches->at(coaches->indexOf(c)+1).oclAsType(PassengerCoach).passengerClass = PassengerClass::SECOND\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t)\n\t\t\t\t\t)\n}.status"
 		   });
 	}
 

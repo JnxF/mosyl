@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import org.mdse.pts.depot.Train;
 import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Station;
 import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.Spot;
@@ -17,7 +19,7 @@ import org.mdse.pts.shared.SharedFactory;
 import org.mdse.pts.shared.Time;
 
 public class ScheduleTransformation {
-	Map<String, Timetable> timetables = new HashMap<>();
+	Map<Station, Timetable> timetables = new HashMap<>();
 
 	public Set<Timetable> interpret(Schedule schedule) {
 		for (TrainSchedule trainSchedule : schedule.getTrainSchedules()) {
@@ -28,11 +30,11 @@ public class ScheduleTransformation {
 					DateTime dateTime = TimetableFactory.eINSTANCE.createDateTime();
 					dateTime.setTime(scheduleDateTime.getTime());
 					dateTime.setDay(day);
-					
-					String prevStationName = null;
+
+					Station prevStation = null;
 					Leg prevLeg = null;
 					DateTime prevDateTime = dateTime;
-					
+
 					Timetable timetable = null;
 					StationTrain stationTrain = null;
 
@@ -42,37 +44,42 @@ public class ScheduleTransformation {
 					List<Spot> spots = route.getSpots();
 					for (int i = 0; i < spots.size(); i++) {
 						Spot spot = spots.get(i);
-						String currentStationName = spot.getStation().getName();
+						Station currentStation = spot.getStation();
 						if (i != 0) {
-							departure.setNextPrevStation(currentStationName);
+							departure.setNextPrevStation(currentStation.getName());
 						}
 
-						timetable = getTimetable(currentStationName);
+						timetable = getTimetable(currentStation);
 						stationTrain = TimetableFactory.eINSTANCE.createStationTrain();
 						timetable.getStationTrains().add(stationTrain);
 						stationTrain.setTrainName(train.getName());
 						stationTrain.setPlatform(spot.getPlatform());
 
 						if (i != 0) {
- 							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
-							
+							if (prevLeg == null) {
+								final Station s = prevStation;
+								Optional<Station> stationOption = schedule.getNetwork().getStations().stream().filter(x -> x == s).findFirst();
+								Station station = stationOption.get();
+								Optional<Leg> legOption = station.getLegs().stream().filter(x -> x.getStations().contains(currentStation)).findFirst();
+								Leg leg = legOption.get();
+								prevLeg = leg;
+							}
+							prevDateTime = calculateArrival(prevDateTime, prevLeg, train);
+
 							arrival = TimetableFactory.eINSTANCE.createTimeAndStation();
 							stationTrain.setArrival(arrival);
 							arrival.setArrDepTime(prevDateTime);
-							arrival.setNextPrevStation(prevStationName);
+							arrival.setNextPrevStation(prevStation.getName());
 						}
-						if (i != spots.size()-1) {
-							prevStationName = currentStationName;
+						if (i != spots.size() - 1) {
+							prevStation = currentStation;
 							prevLeg = (Leg) spot.getLeg();
-							if (prevLeg== null) {
-								// go to the network to grab it
-							}
 							if (i == 0) {
 								prevDateTime = dateTime;
 							} else {
 								prevDateTime = calculateDateTime(prevDateTime, spot.getWaitingTime());
 							}
-	
+
 							departure = TimetableFactory.eINSTANCE.createTimeAndStation();
 							stationTrain.setDeparture(departure);
 							departure.setArrDepTime(prevDateTime);
@@ -133,17 +140,17 @@ public class ScheduleTransformation {
 		return newDateTime;
 	}
 
-	public Timetable getTimetable(String station) {
+	public Timetable getTimetable(Station station) {
 		if (!timetables.containsKey(station)) {
 			Timetable timetable = TimetableFactory.eINSTANCE.createTimetable();
-			timetable.setStationName(station);
+			timetable.setStationName(station.getName());
 			timetables.put(station, timetable);
 			return timetable;
 		} else {
 			return timetables.get(station);
 		}
 	}
-	
+
 	public static Set<Timetable> staticScheduleToTimetables(Schedule schedule) {
 		ScheduleTransformation st = new ScheduleTransformation();
 		return st.interpret(schedule);

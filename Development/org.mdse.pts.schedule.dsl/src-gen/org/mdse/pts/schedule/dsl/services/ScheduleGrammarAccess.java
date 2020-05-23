@@ -32,27 +32,29 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cForKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNetworkAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cNetworkNetworkCrossReference_2_0 = (CrossReference)cNetworkAssignment_2.eContents().get(0);
-		private final RuleCall cNetworkNetworkIDTerminalRuleCall_2_0_1 = (RuleCall)cNetworkNetworkCrossReference_2_0.eContents().get(1);
+		private final RuleCall cNetworkNetworkSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNetworkNetworkCrossReference_2_0.eContents().get(1);
 		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cDepotsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cDepotsDepotCrossReference_4_0 = (CrossReference)cDepotsAssignment_4.eContents().get(0);
-		private final RuleCall cDepotsDepotIDTerminalRuleCall_4_0_1 = (RuleCall)cDepotsDepotCrossReference_4_0.eContents().get(1);
+		private final RuleCall cDepotsDepotSTRINGTerminalRuleCall_4_0_1 = (RuleCall)cDepotsDepotCrossReference_4_0.eContents().get(1);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cDepotsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final CrossReference cDepotsDepotCrossReference_5_1_0 = (CrossReference)cDepotsAssignment_5_1.eContents().get(0);
-		private final RuleCall cDepotsDepotIDTerminalRuleCall_5_1_0_1 = (RuleCall)cDepotsDepotCrossReference_5_1_0.eContents().get(1);
+		private final RuleCall cDepotsDepotSTRINGTerminalRuleCall_5_1_0_1 = (RuleCall)cDepotsDepotCrossReference_5_1_0.eContents().get(1);
 		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cTrainSchedulesAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cTrainSchedulesTrainScheduleParserRuleCall_7_0 = (RuleCall)cTrainSchedulesAssignment_7.eContents().get(0);
 		
 		//Schedule:
-		//	"schedule" "for" network=[network::Network] "with" depots+=[depot::Depot] ("," depots+=[depot::Depot])* ":"
+		//	"schedule"
+		//	"for" network=[network::Network|STRING]
+		//	"with" depots+=[depot::Depot|STRING] ("," depots+=[depot::Depot|STRING])* ":"
 		//	trainSchedules+=TrainSchedule*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"schedule" "for" network=[network::Network] "with" depots+=[depot::Depot] ("," depots+=[depot::Depot])* ":"
-		//trainSchedules+=TrainSchedule*
+		//"schedule" "for" network=[network::Network|STRING] "with" depots+=[depot::Depot|STRING] (","
+		//depots+=[depot::Depot|STRING])* ":" trainSchedules+=TrainSchedule*
 		public Group getGroup() { return cGroup; }
 		
 		//"schedule"
@@ -61,41 +63,41 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		//"for"
 		public Keyword getForKeyword_1() { return cForKeyword_1; }
 		
-		//network=[network::Network]
+		//network=[network::Network|STRING]
 		public Assignment getNetworkAssignment_2() { return cNetworkAssignment_2; }
 		
-		//[network::Network]
+		//[network::Network|STRING]
 		public CrossReference getNetworkNetworkCrossReference_2_0() { return cNetworkNetworkCrossReference_2_0; }
 		
-		//ID
-		public RuleCall getNetworkNetworkIDTerminalRuleCall_2_0_1() { return cNetworkNetworkIDTerminalRuleCall_2_0_1; }
+		//STRING
+		public RuleCall getNetworkNetworkSTRINGTerminalRuleCall_2_0_1() { return cNetworkNetworkSTRINGTerminalRuleCall_2_0_1; }
 		
 		//"with"
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
 		
-		//depots+=[depot::Depot]
+		//depots+=[depot::Depot|STRING]
 		public Assignment getDepotsAssignment_4() { return cDepotsAssignment_4; }
 		
-		//[depot::Depot]
+		//[depot::Depot|STRING]
 		public CrossReference getDepotsDepotCrossReference_4_0() { return cDepotsDepotCrossReference_4_0; }
 		
-		//ID
-		public RuleCall getDepotsDepotIDTerminalRuleCall_4_0_1() { return cDepotsDepotIDTerminalRuleCall_4_0_1; }
+		//STRING
+		public RuleCall getDepotsDepotSTRINGTerminalRuleCall_4_0_1() { return cDepotsDepotSTRINGTerminalRuleCall_4_0_1; }
 		
-		//("," depots+=[depot::Depot])*
+		//("," depots+=[depot::Depot|STRING])*
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//","
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//depots+=[depot::Depot]
+		//depots+=[depot::Depot|STRING]
 		public Assignment getDepotsAssignment_5_1() { return cDepotsAssignment_5_1; }
 		
-		//[depot::Depot]
+		//[depot::Depot|STRING]
 		public CrossReference getDepotsDepotCrossReference_5_1_0() { return cDepotsDepotCrossReference_5_1_0; }
 		
-		//ID
-		public RuleCall getDepotsDepotIDTerminalRuleCall_5_1_0_1() { return cDepotsDepotIDTerminalRuleCall_5_1_0_1; }
+		//STRING
+		public RuleCall getDepotsDepotSTRINGTerminalRuleCall_5_1_0_1() { return cDepotsDepotSTRINGTerminalRuleCall_5_1_0_1; }
 		
 		//":"
 		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
@@ -333,24 +335,24 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cStationAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cStationStationCrossReference_2_0 = (CrossReference)cStationAssignment_2.eContents().get(0);
-		private final RuleCall cStationStationIDTerminalRuleCall_2_0_1 = (RuleCall)cStationStationCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cOnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cPlatformKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cPlatformAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cPlatformSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cPlatformAssignment_3_2.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDriveKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cViaKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cLegAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final CrossReference cLegLegCrossReference_4_2_0 = (CrossReference)cLegAssignment_4_2.eContents().get(0);
-		private final RuleCall cLegLegIDTerminalRuleCall_4_2_0_1 = (RuleCall)cLegLegCrossReference_4_2_0.eContents().get(1);
+		private final RuleCall cStationStationSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cStationStationCrossReference_2_0.eContents().get(1);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cPlatformKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPlatformAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cDriveKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cViaKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cLegAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final CrossReference cLegLegCrossReference_6_2_0 = (CrossReference)cLegAssignment_6_2.eContents().get(0);
+		private final RuleCall cLegLegIDTerminalRuleCall_6_2_0_1 = (RuleCall)cLegLegCrossReference_6_2_0.eContents().get(1);
 		
 		//StartSpot Spot:
-		//	"start" "at" station=[network::Station] ("on" "platform" platform=STRING)? ("drive" "via" leg=[network::Leg])?;
+		//	"start" "at" station=[network::Station|STRING]
+		//	"on" "platform" platform=STRING ("drive" "via" leg=[network::Leg])?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"start" "at" station=[network::Station] ("on" "platform" platform=STRING)? ("drive" "via" leg=[network::Leg])?
+		//"start" "at" station=[network::Station|STRING] "on" "platform" platform=STRING ("drive" "via" leg=[network::Leg])?
 		public Group getGroup() { return cGroup; }
 		
 		//"start"
@@ -359,47 +361,44 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		//"at"
 		public Keyword getAtKeyword_1() { return cAtKeyword_1; }
 		
-		//station=[network::Station]
+		//station=[network::Station|STRING]
 		public Assignment getStationAssignment_2() { return cStationAssignment_2; }
 		
-		//[network::Station]
+		//[network::Station|STRING]
 		public CrossReference getStationStationCrossReference_2_0() { return cStationStationCrossReference_2_0; }
 		
-		//ID
-		public RuleCall getStationStationIDTerminalRuleCall_2_0_1() { return cStationStationIDTerminalRuleCall_2_0_1; }
-		
-		//("on" "platform" platform=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
+		//STRING
+		public RuleCall getStationStationSTRINGTerminalRuleCall_2_0_1() { return cStationStationSTRINGTerminalRuleCall_2_0_1; }
 		
 		//"on"
-		public Keyword getOnKeyword_3_0() { return cOnKeyword_3_0; }
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
 		
 		//"platform"
-		public Keyword getPlatformKeyword_3_1() { return cPlatformKeyword_3_1; }
+		public Keyword getPlatformKeyword_4() { return cPlatformKeyword_4; }
 		
 		//platform=STRING
-		public Assignment getPlatformAssignment_3_2() { return cPlatformAssignment_3_2; }
+		public Assignment getPlatformAssignment_5() { return cPlatformAssignment_5; }
 		
 		//STRING
-		public RuleCall getPlatformSTRINGTerminalRuleCall_3_2_0() { return cPlatformSTRINGTerminalRuleCall_3_2_0; }
+		public RuleCall getPlatformSTRINGTerminalRuleCall_5_0() { return cPlatformSTRINGTerminalRuleCall_5_0; }
 		
 		//("drive" "via" leg=[network::Leg])?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//"drive"
-		public Keyword getDriveKeyword_4_0() { return cDriveKeyword_4_0; }
+		public Keyword getDriveKeyword_6_0() { return cDriveKeyword_6_0; }
 		
 		//"via"
-		public Keyword getViaKeyword_4_1() { return cViaKeyword_4_1; }
+		public Keyword getViaKeyword_6_1() { return cViaKeyword_6_1; }
 		
 		//leg=[network::Leg]
-		public Assignment getLegAssignment_4_2() { return cLegAssignment_4_2; }
+		public Assignment getLegAssignment_6_2() { return cLegAssignment_6_2; }
 		
 		//[network::Leg]
-		public CrossReference getLegLegCrossReference_4_2_0() { return cLegLegCrossReference_4_2_0; }
+		public CrossReference getLegLegCrossReference_6_2_0() { return cLegLegCrossReference_6_2_0; }
 		
 		//ID
-		public RuleCall getLegLegIDTerminalRuleCall_4_2_0_1() { return cLegLegIDTerminalRuleCall_4_2_0_1; }
+		public RuleCall getLegLegIDTerminalRuleCall_6_2_0_1() { return cLegLegIDTerminalRuleCall_6_2_0_1; }
 	}
 	public class MiddleSpotElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.MiddleSpot");
@@ -408,33 +407,33 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cStationAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cStationStationCrossReference_2_0 = (CrossReference)cStationAssignment_2.eContents().get(0);
-		private final RuleCall cStationStationIDTerminalRuleCall_2_0_1 = (RuleCall)cStationStationCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cOnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cPlatformKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cPlatformAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cPlatformSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cPlatformAssignment_3_2.eContents().get(0);
-		private final Keyword cForKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cWaitingTimeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cWaitingTimeINTTerminalRuleCall_5_0 = (RuleCall)cWaitingTimeAssignment_5.eContents().get(0);
-		private final Keyword cMinKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cAndKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cTurnStationAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final Keyword cTurnStationTurnKeyword_7_1_0 = (Keyword)cTurnStationAssignment_7_1.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cDriveKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cViaKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cLegAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final CrossReference cLegLegCrossReference_8_2_0 = (CrossReference)cLegAssignment_8_2.eContents().get(0);
-		private final RuleCall cLegLegIDTerminalRuleCall_8_2_0_1 = (RuleCall)cLegLegCrossReference_8_2_0.eContents().get(1);
+		private final RuleCall cStationStationSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cStationStationCrossReference_2_0.eContents().get(1);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cPlatformKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPlatformAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
+		private final Keyword cForKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cWaitingTimeAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cWaitingTimeINTTerminalRuleCall_7_0 = (RuleCall)cWaitingTimeAssignment_7.eContents().get(0);
+		private final Keyword cMinKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cAndKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cTurnStationAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final Keyword cTurnStationTurnKeyword_9_1_0 = (Keyword)cTurnStationAssignment_9_1.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cDriveKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cViaKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Assignment cLegAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final CrossReference cLegLegCrossReference_10_2_0 = (CrossReference)cLegAssignment_10_2.eContents().get(0);
+		private final RuleCall cLegLegIDTerminalRuleCall_10_2_0_1 = (RuleCall)cLegLegCrossReference_10_2_0.eContents().get(1);
 		
 		//MiddleSpot Spot:
-		//	"stop" "at" station=[network::Station] ("on" "platform" platform=STRING)?
+		//	"stop" "at" station=[network::Station|STRING]
+		//	"on" "platform" platform=STRING
 		//	"for" waitingTime=INT "min" ("and" turnStation?="turn")? ("drive" "via" leg=[network::Leg])?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"stop" "at" station=[network::Station] ("on" "platform" platform=STRING)? "for" waitingTime=INT "min" ("and"
+		//"stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" waitingTime=INT "min" ("and"
 		//turnStation?="turn")? ("drive" "via" leg=[network::Leg])?
 		public Group getGroup() { return cGroup; }
 		
@@ -444,71 +443,68 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		//"at"
 		public Keyword getAtKeyword_1() { return cAtKeyword_1; }
 		
-		//station=[network::Station]
+		//station=[network::Station|STRING]
 		public Assignment getStationAssignment_2() { return cStationAssignment_2; }
 		
-		//[network::Station]
+		//[network::Station|STRING]
 		public CrossReference getStationStationCrossReference_2_0() { return cStationStationCrossReference_2_0; }
 		
-		//ID
-		public RuleCall getStationStationIDTerminalRuleCall_2_0_1() { return cStationStationIDTerminalRuleCall_2_0_1; }
-		
-		//("on" "platform" platform=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
+		//STRING
+		public RuleCall getStationStationSTRINGTerminalRuleCall_2_0_1() { return cStationStationSTRINGTerminalRuleCall_2_0_1; }
 		
 		//"on"
-		public Keyword getOnKeyword_3_0() { return cOnKeyword_3_0; }
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
 		
 		//"platform"
-		public Keyword getPlatformKeyword_3_1() { return cPlatformKeyword_3_1; }
+		public Keyword getPlatformKeyword_4() { return cPlatformKeyword_4; }
 		
 		//platform=STRING
-		public Assignment getPlatformAssignment_3_2() { return cPlatformAssignment_3_2; }
+		public Assignment getPlatformAssignment_5() { return cPlatformAssignment_5; }
 		
 		//STRING
-		public RuleCall getPlatformSTRINGTerminalRuleCall_3_2_0() { return cPlatformSTRINGTerminalRuleCall_3_2_0; }
+		public RuleCall getPlatformSTRINGTerminalRuleCall_5_0() { return cPlatformSTRINGTerminalRuleCall_5_0; }
 		
 		//"for"
-		public Keyword getForKeyword_4() { return cForKeyword_4; }
+		public Keyword getForKeyword_6() { return cForKeyword_6; }
 		
 		//waitingTime=INT
-		public Assignment getWaitingTimeAssignment_5() { return cWaitingTimeAssignment_5; }
+		public Assignment getWaitingTimeAssignment_7() { return cWaitingTimeAssignment_7; }
 		
 		//INT
-		public RuleCall getWaitingTimeINTTerminalRuleCall_5_0() { return cWaitingTimeINTTerminalRuleCall_5_0; }
+		public RuleCall getWaitingTimeINTTerminalRuleCall_7_0() { return cWaitingTimeINTTerminalRuleCall_7_0; }
 		
 		//"min"
-		public Keyword getMinKeyword_6() { return cMinKeyword_6; }
+		public Keyword getMinKeyword_8() { return cMinKeyword_8; }
 		
 		//("and" turnStation?="turn")?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//"and"
-		public Keyword getAndKeyword_7_0() { return cAndKeyword_7_0; }
+		public Keyword getAndKeyword_9_0() { return cAndKeyword_9_0; }
 		
 		//turnStation?="turn"
-		public Assignment getTurnStationAssignment_7_1() { return cTurnStationAssignment_7_1; }
+		public Assignment getTurnStationAssignment_9_1() { return cTurnStationAssignment_9_1; }
 		
 		//"turn"
-		public Keyword getTurnStationTurnKeyword_7_1_0() { return cTurnStationTurnKeyword_7_1_0; }
+		public Keyword getTurnStationTurnKeyword_9_1_0() { return cTurnStationTurnKeyword_9_1_0; }
 		
 		//("drive" "via" leg=[network::Leg])?
-		public Group getGroup_8() { return cGroup_8; }
+		public Group getGroup_10() { return cGroup_10; }
 		
 		//"drive"
-		public Keyword getDriveKeyword_8_0() { return cDriveKeyword_8_0; }
+		public Keyword getDriveKeyword_10_0() { return cDriveKeyword_10_0; }
 		
 		//"via"
-		public Keyword getViaKeyword_8_1() { return cViaKeyword_8_1; }
+		public Keyword getViaKeyword_10_1() { return cViaKeyword_10_1; }
 		
 		//leg=[network::Leg]
-		public Assignment getLegAssignment_8_2() { return cLegAssignment_8_2; }
+		public Assignment getLegAssignment_10_2() { return cLegAssignment_10_2; }
 		
 		//[network::Leg]
-		public CrossReference getLegLegCrossReference_8_2_0() { return cLegLegCrossReference_8_2_0; }
+		public CrossReference getLegLegCrossReference_10_2_0() { return cLegLegCrossReference_10_2_0; }
 		
 		//ID
-		public RuleCall getLegLegIDTerminalRuleCall_8_2_0_1() { return cLegLegIDTerminalRuleCall_8_2_0_1; }
+		public RuleCall getLegLegIDTerminalRuleCall_10_2_0_1() { return cLegLegIDTerminalRuleCall_10_2_0_1; }
 	}
 	public class FinalSpotElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.FinalSpot");
@@ -517,18 +513,18 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cStationAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cStationStationCrossReference_2_0 = (CrossReference)cStationAssignment_2.eContents().get(0);
-		private final RuleCall cStationStationIDTerminalRuleCall_2_0_1 = (RuleCall)cStationStationCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cOnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cPlatformKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cPlatformAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cPlatformSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cPlatformAssignment_3_2.eContents().get(0);
+		private final RuleCall cStationStationSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cStationStationCrossReference_2_0.eContents().get(1);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cPlatformKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPlatformAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
 		
 		//FinalSpot Spot:
-		//	"terminate" "at" station=[network::Station] ("on" "platform" platform=STRING)?;
+		//	"terminate" "at" station=[network::Station|STRING]
+		//	"on" "platform" platform=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"terminate" "at" station=[network::Station] ("on" "platform" platform=STRING)?
+		//"terminate" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//"terminate"
@@ -537,29 +533,26 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		//"at"
 		public Keyword getAtKeyword_1() { return cAtKeyword_1; }
 		
-		//station=[network::Station]
+		//station=[network::Station|STRING]
 		public Assignment getStationAssignment_2() { return cStationAssignment_2; }
 		
-		//[network::Station]
+		//[network::Station|STRING]
 		public CrossReference getStationStationCrossReference_2_0() { return cStationStationCrossReference_2_0; }
 		
-		//ID
-		public RuleCall getStationStationIDTerminalRuleCall_2_0_1() { return cStationStationIDTerminalRuleCall_2_0_1; }
-		
-		//("on" "platform" platform=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
+		//STRING
+		public RuleCall getStationStationSTRINGTerminalRuleCall_2_0_1() { return cStationStationSTRINGTerminalRuleCall_2_0_1; }
 		
 		//"on"
-		public Keyword getOnKeyword_3_0() { return cOnKeyword_3_0; }
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
 		
 		//"platform"
-		public Keyword getPlatformKeyword_3_1() { return cPlatformKeyword_3_1; }
+		public Keyword getPlatformKeyword_4() { return cPlatformKeyword_4; }
 		
 		//platform=STRING
-		public Assignment getPlatformAssignment_3_2() { return cPlatformAssignment_3_2; }
+		public Assignment getPlatformAssignment_5() { return cPlatformAssignment_5; }
 		
 		//STRING
-		public RuleCall getPlatformSTRINGTerminalRuleCall_3_2_0() { return cPlatformSTRINGTerminalRuleCall_3_2_0; }
+		public RuleCall getPlatformSTRINGTerminalRuleCall_5_0() { return cPlatformSTRINGTerminalRuleCall_5_0; }
 	}
 	
 	public class WeekDayElements extends AbstractEnumRuleElementFinder {
@@ -581,8 +574,13 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSUNDAYSundayKeyword_6_0 = (Keyword)cSUNDAYEnumLiteralDeclaration_6.eContents().get(0);
 		
 		//enum WeekDay returns shared::DaysOfTheWeek:
-		//	MONDAY="Monday" | TUESDAY="Tuesday" | WEDNESDAY="Wednesday" | THURSDAY="Thursday" |
-		//	FRIDAY="Friday" | SATURDAY="Saturday" | SUNDAY="Sunday";
+		//	MONDAY="Monday"
+		//	| TUESDAY="Tuesday"
+		//	| WEDNESDAY="Wednesday"
+		//	| THURSDAY="Thursday"
+		//	| FRIDAY="Friday"
+		//	| SATURDAY="Saturday"
+		//	| SUNDAY="Sunday";
 		public EnumRule getRule() { return rule; }
 		
 		//MONDAY="Monday" | TUESDAY="Tuesday" | WEDNESDAY="Wednesday" | THURSDAY="Thursday" | FRIDAY="Friday" |
@@ -700,7 +698,9 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Schedule:
-	//	"schedule" "for" network=[network::Network] "with" depots+=[depot::Depot] ("," depots+=[depot::Depot])* ":"
+	//	"schedule"
+	//	"for" network=[network::Network|STRING]
+	//	"with" depots+=[depot::Depot|STRING] ("," depots+=[depot::Depot|STRING])* ":"
 	//	trainSchedules+=TrainSchedule*;
 	public ScheduleElements getScheduleAccess() {
 		return pSchedule;
@@ -766,7 +766,8 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//StartSpot Spot:
-	//	"start" "at" station=[network::Station] ("on" "platform" platform=STRING)? ("drive" "via" leg=[network::Leg])?;
+	//	"start" "at" station=[network::Station|STRING]
+	//	"on" "platform" platform=STRING ("drive" "via" leg=[network::Leg])?;
 	public StartSpotElements getStartSpotAccess() {
 		return pStartSpot;
 	}
@@ -776,7 +777,8 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MiddleSpot Spot:
-	//	"stop" "at" station=[network::Station] ("on" "platform" platform=STRING)?
+	//	"stop" "at" station=[network::Station|STRING]
+	//	"on" "platform" platform=STRING
 	//	"for" waitingTime=INT "min" ("and" turnStation?="turn")? ("drive" "via" leg=[network::Leg])?;
 	public MiddleSpotElements getMiddleSpotAccess() {
 		return pMiddleSpot;
@@ -787,7 +789,8 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//FinalSpot Spot:
-	//	"terminate" "at" station=[network::Station] ("on" "platform" platform=STRING)?;
+	//	"terminate" "at" station=[network::Station|STRING]
+	//	"on" "platform" platform=STRING;
 	public FinalSpotElements getFinalSpotAccess() {
 		return pFinalSpot;
 	}
@@ -797,8 +800,13 @@ public class ScheduleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum WeekDay returns shared::DaysOfTheWeek:
-	//	MONDAY="Monday" | TUESDAY="Tuesday" | WEDNESDAY="Wednesday" | THURSDAY="Thursday" |
-	//	FRIDAY="Friday" | SATURDAY="Saturday" | SUNDAY="Sunday";
+	//	MONDAY="Monday"
+	//	| TUESDAY="Tuesday"
+	//	| WEDNESDAY="Wednesday"
+	//	| THURSDAY="Thursday"
+	//	| FRIDAY="Friday"
+	//	| SATURDAY="Saturday"
+	//	| SUNDAY="Sunday";
 	public WeekDayElements getWeekDayAccess() {
 		return eWeekDay;
 	}

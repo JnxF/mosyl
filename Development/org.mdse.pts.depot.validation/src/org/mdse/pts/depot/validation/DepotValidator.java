@@ -107,6 +107,7 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 			isValid &= constraintViolated(train, "Intercity train requries one dining coach");
 		}
 		
+		// Dining coach is placed between first and second class
 		if (firstClassCount > 0 && secondClassCount > 0 && diningCoachCount == 1) {
 			boolean notValid = false;
 			int diningCoachIndex = 0;
@@ -126,13 +127,10 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 				Coach nextCoach = train.getCoaches().get(diningCoachIndex+1);
 				
 				if (prevCoach instanceof PassengerCoach && nextCoach instanceof PassengerCoach) {
-					PassengerCoach prevPC = (PassengerCoach) prevCoach;
-					PassengerCoach nextPC = (PassengerCoach) nextCoach;
+					PassengerClass prevPCClass = ((PassengerCoach) prevCoach).getPassengerClass();
+					PassengerClass nextPCClass = ((PassengerCoach) nextCoach).getPassengerClass();
 					
-					if (!((prevPC.getPassengerClass() == PassengerClass.FIRST && nextPC.getPassengerClass() == PassengerClass.SECOND) 
-							|| (prevPC.getPassengerClass() == PassengerClass.SECOND && nextPC.getPassengerClass() == PassengerClass.FIRST))) {
-						notValid = true;
-					}
+					notValid = prevPCClass == nextPCClass;
 				} else {
 					notValid = true;
 				}
@@ -180,6 +178,7 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		return isValid;
 	}
 		
+	// Helper methods
 	private <T> int count(EList<T> objects, Predicate<T> pred) {
 		int count = 0;
 		for (T object : objects) {

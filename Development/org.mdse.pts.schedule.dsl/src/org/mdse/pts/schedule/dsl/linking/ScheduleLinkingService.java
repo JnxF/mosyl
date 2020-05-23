@@ -26,7 +26,7 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 
 	@Override
 	public List<EObject> getLinkedObjects(EObject context, EReference reference, INode node) throws IllegalNodeException {
-		final String crossRefNode = getCrossRefNodeAsString(node);
+		final String crossRefNode = getCrossRefNodeAsString(node).replaceAll("\"", "");
 
 		// Network
 		if (reference.equals(SchedulePackage.eINSTANCE.getSchedule_Network())) {
@@ -84,7 +84,7 @@ public class ScheduleLinkingService extends DefaultLinkingService {
 			}
 			Network network = ((Schedule) root).getNetwork();
 			for (Leg leg : network.getLegs()) {
-				if (leg.getName().equalsIgnoreCase(crossRefNode)) {
+				if (leg.getName() != null && leg.getName().equalsIgnoreCase(crossRefNode)) {
 					return Collections.singletonList(leg);
 				}
 			}
