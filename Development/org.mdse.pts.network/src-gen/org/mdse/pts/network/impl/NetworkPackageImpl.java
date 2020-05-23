@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.mdse.pts.network.Leg;
@@ -14,6 +15,7 @@ import org.mdse.pts.network.Network;
 import org.mdse.pts.network.NetworkFactory;
 import org.mdse.pts.network.NetworkPackage;
 import org.mdse.pts.network.Station;
+import org.mdse.pts.network.util.NetworkValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,6 +97,16 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 
 		// Initialize created meta-data
 		theNetworkPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theNetworkPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return NetworkValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theNetworkPackage.freeze();
@@ -304,6 +316,70 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "ecore", "http://www.eclipse.org/emf/2002/Ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });
+		addAnnotation
+		  (legEClass,
+		   source,
+		   new String[] {
+			   "constraints", "NoNegativeDistance"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation
+		  (legEClass,
+		   source,
+		   new String[] {
+			   "NoNegativeDistance", "Tuple {\n\tmessage : String = name + \' can not be less than 0 km.\',\n\tstatus : Boolean = distance > 0\n}.status"
+		   });
 	}
 
 } //NetworkPackageImpl

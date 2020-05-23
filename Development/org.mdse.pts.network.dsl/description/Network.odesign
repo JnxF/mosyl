@@ -51,16 +51,6 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription">
-            <element name="Station"/>
-            <elementView name="elementView"/>
-            <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:legs">
-                <subModelOperations xsi:type="tool_1:DeleteView"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
