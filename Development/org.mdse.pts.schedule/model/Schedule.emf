@@ -22,7 +22,7 @@ class TimeDescription {
 }
 
 class DateTime {
-	attr shared.DaysOfTheWeek[+] weekdays;
+	!unique attr shared.DaysOfTheWeek[+] weekdays;
 	val shared.Time[1] time;
 }
 

@@ -1,5 +1,4 @@
 @"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore")
-@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
 @namespace(uri="http://mdse.org/pts/shared", prefix="shared")
 package shared;
 
@@ -13,14 +12,6 @@ enum DaysOfTheWeek {
 	SUNDAY = 7;
 }
 
-@Ecore(constraints="InvalidHours InvalidMinutes")
-@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(InvalidHours="Tuple {
-	message : String = 'Hours (set to ' + hours.toString() + ') must be between 0 and 23 inclusive',
-	status : Boolean = hours >= 0 and hours < 24
-}.status", InvalidMinutes="Tuple {
-	message : String = 'Minutes (set to ' + minutes.toString() + ') must be between 0 and 59 inclusive',
-	status : Boolean = minutes >= 0 and minutes < 60
-}.status")
 class Time {
 	attr Integer[1] hours;
 	attr Integer[1] minutes;

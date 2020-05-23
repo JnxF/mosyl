@@ -3,14 +3,20 @@
  */
 package org.mdse.pts.schedule.dsl.ui.labeling;
 
-import com.google.inject.Inject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+import org.mdse.pts.schedule.Schedule;
+import org.mdse.pts.schedule.Spot;
+import org.mdse.pts.schedule.TrainSchedule;
+import org.mdse.pts.shared.Time;
+
+import com.google.inject.Inject;
 
 /**
  * Provides labels for EObjects.
  * 
- * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#label-provider
+ * See
+ * https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#label-provider
  */
 public class ScheduleLabelProvider extends DefaultEObjectLabelProvider {
 
@@ -19,13 +25,24 @@ public class ScheduleLabelProvider extends DefaultEObjectLabelProvider {
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
-	
-//	String text(Greeting ele) {
-//		return "A greeting to " + ele.getName();
-//	}
-//
-//	String image(Greeting ele) {
-//		return "Greeting.gif";
-//	}
+	public String text(Schedule schedule) {
+		String filename = schedule.eResource().getURI().lastSegment();
+		return filename.substring(0, filename.lastIndexOf('.')) + " Schedule";
+	}
+
+	public String text(Spot spot) {
+		if (spot.getLeg() == null) {
+			return spot.getStation().getName().replace("_", " ");
+		}
+		return spot.getStation().getName().replace("_", " ") + " via " + spot.getLeg().getName();
+	}
+
+	public String text(Time time) {
+		return (time.getHours() < 10 ? "0" : "") + time.getHours() + ":" + (time.getMinutes() < 10 ? "0" : "")
+				+ time.getMinutes();
+	}
+
+	public String text(TrainSchedule trainSchedule) {
+		return trainSchedule.getTrain().getName();
+	}
 }

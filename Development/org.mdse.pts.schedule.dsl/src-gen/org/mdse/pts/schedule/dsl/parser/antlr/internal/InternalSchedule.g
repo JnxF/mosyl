@@ -92,7 +92,7 @@ ruleSchedule returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getScheduleRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getScheduleAccess().getNetworkNetworkCrossReference_2_0());
 				}
@@ -109,7 +109,7 @@ ruleSchedule returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getScheduleRule());
 					}
 				}
-				otherlv_4=RULE_ID
+				otherlv_4=RULE_STRING
 				{
 					newLeafNode(otherlv_4, grammarAccess.getScheduleAccess().getDepotsDepotCrossReference_4_0());
 				}
@@ -127,7 +127,7 @@ ruleSchedule returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getScheduleRule());
 						}
 					}
-					otherlv_6=RULE_ID
+					otherlv_6=RULE_STRING
 					{
 						newLeafNode(otherlv_6, grammarAccess.getScheduleAccess().getDepotsDepotCrossReference_5_1_0());
 					}
@@ -582,48 +582,46 @@ ruleStartSpot returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getStartSpotRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getStartSpotAccess().getStationStationCrossReference_2_0());
 				}
 			)
 		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getStartSpotAccess().getOnKeyword_3());
+		}
+		otherlv_4='platform'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getStartSpotAccess().getPlatformKeyword_4());
+		}
 		(
-			otherlv_3='on'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getStartSpotAccess().getOnKeyword_3_0());
-			}
-			otherlv_4='platform'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getStartSpotAccess().getPlatformKeyword_3_1());
-			}
 			(
-				(
-					lv_platform_5_0=RULE_STRING
-					{
-						newLeafNode(lv_platform_5_0, grammarAccess.getStartSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0());
+				lv_platform_5_0=RULE_STRING
+				{
+					newLeafNode(lv_platform_5_0, grammarAccess.getStartSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStartSpotRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getStartSpotRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"platform",
-							lv_platform_5_0,
-							"org.mdse.pts.schedule.dsl.Schedule.STRING");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"platform",
+						lv_platform_5_0,
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
+				}
 			)
-		)?
+		)
 		(
 			otherlv_6='drive'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getStartSpotAccess().getDriveKeyword_4_0());
+				newLeafNode(otherlv_6, grammarAccess.getStartSpotAccess().getDriveKeyword_6_0());
 			}
 			otherlv_7='via'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getStartSpotAccess().getViaKeyword_4_1());
+				newLeafNode(otherlv_7, grammarAccess.getStartSpotAccess().getViaKeyword_6_1());
 			}
 			(
 				(
@@ -634,7 +632,7 @@ ruleStartSpot returns [EObject current=null]
 					}
 					otherlv_8=RULE_ID
 					{
-						newLeafNode(otherlv_8, grammarAccess.getStartSpotAccess().getLegLegCrossReference_4_2_0());
+						newLeafNode(otherlv_8, grammarAccess.getStartSpotAccess().getLegLegCrossReference_6_2_0());
 					}
 				)
 			)
@@ -673,49 +671,47 @@ ruleMiddleSpot returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getMiddleSpotRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getMiddleSpotAccess().getStationStationCrossReference_2_0());
 				}
 			)
 		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getMiddleSpotAccess().getOnKeyword_3());
+		}
+		otherlv_4='platform'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getMiddleSpotAccess().getPlatformKeyword_4());
+		}
 		(
-			otherlv_3='on'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getMiddleSpotAccess().getOnKeyword_3_0());
-			}
-			otherlv_4='platform'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getMiddleSpotAccess().getPlatformKeyword_3_1());
-			}
 			(
-				(
-					lv_platform_5_0=RULE_STRING
-					{
-						newLeafNode(lv_platform_5_0, grammarAccess.getMiddleSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0());
+				lv_platform_5_0=RULE_STRING
+				{
+					newLeafNode(lv_platform_5_0, grammarAccess.getMiddleSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMiddleSpotRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getMiddleSpotRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"platform",
-							lv_platform_5_0,
-							"org.mdse.pts.schedule.dsl.Schedule.STRING");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"platform",
+						lv_platform_5_0,
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
+				}
 			)
-		)?
+		)
 		otherlv_6='for'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getMiddleSpotAccess().getForKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getMiddleSpotAccess().getForKeyword_6());
 		}
 		(
 			(
 				lv_waitingTime_7_0=RULE_INT
 				{
-					newLeafNode(lv_waitingTime_7_0, grammarAccess.getMiddleSpotAccess().getWaitingTimeINTTerminalRuleCall_5_0());
+					newLeafNode(lv_waitingTime_7_0, grammarAccess.getMiddleSpotAccess().getWaitingTimeINTTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -731,18 +727,18 @@ ruleMiddleSpot returns [EObject current=null]
 		)
 		otherlv_8='min'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMiddleSpotAccess().getMinKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getMiddleSpotAccess().getMinKeyword_8());
 		}
 		(
 			otherlv_9='and'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getMiddleSpotAccess().getAndKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getMiddleSpotAccess().getAndKeyword_9_0());
 			}
 			(
 				(
 					lv_turnStation_10_0='turn'
 					{
-						newLeafNode(lv_turnStation_10_0, grammarAccess.getMiddleSpotAccess().getTurnStationTurnKeyword_7_1_0());
+						newLeafNode(lv_turnStation_10_0, grammarAccess.getMiddleSpotAccess().getTurnStationTurnKeyword_9_1_0());
 					}
 					{
 						if ($current==null) {
@@ -756,11 +752,11 @@ ruleMiddleSpot returns [EObject current=null]
 		(
 			otherlv_11='drive'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getMiddleSpotAccess().getDriveKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getMiddleSpotAccess().getDriveKeyword_10_0());
 			}
 			otherlv_12='via'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getMiddleSpotAccess().getViaKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getMiddleSpotAccess().getViaKeyword_10_1());
 			}
 			(
 				(
@@ -771,7 +767,7 @@ ruleMiddleSpot returns [EObject current=null]
 					}
 					otherlv_13=RULE_ID
 					{
-						newLeafNode(otherlv_13, grammarAccess.getMiddleSpotAccess().getLegLegCrossReference_8_2_0());
+						newLeafNode(otherlv_13, grammarAccess.getMiddleSpotAccess().getLegLegCrossReference_10_2_0());
 					}
 				)
 			)
@@ -810,40 +806,38 @@ ruleFinalSpot returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFinalSpotRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getFinalSpotAccess().getStationStationCrossReference_2_0());
 				}
 			)
 		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getFinalSpotAccess().getOnKeyword_3());
+		}
+		otherlv_4='platform'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getFinalSpotAccess().getPlatformKeyword_4());
+		}
 		(
-			otherlv_3='on'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getFinalSpotAccess().getOnKeyword_3_0());
-			}
-			otherlv_4='platform'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getFinalSpotAccess().getPlatformKeyword_3_1());
-			}
 			(
-				(
-					lv_platform_5_0=RULE_STRING
-					{
-						newLeafNode(lv_platform_5_0, grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_3_2_0());
+				lv_platform_5_0=RULE_STRING
+				{
+					newLeafNode(lv_platform_5_0, grammarAccess.getFinalSpotAccess().getPlatformSTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFinalSpotRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getFinalSpotRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"platform",
-							lv_platform_5_0,
-							"org.mdse.pts.schedule.dsl.Schedule.STRING");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"platform",
+						lv_platform_5_0,
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
+				}
 			)
-		)?
+		)
 	)
 ;
 

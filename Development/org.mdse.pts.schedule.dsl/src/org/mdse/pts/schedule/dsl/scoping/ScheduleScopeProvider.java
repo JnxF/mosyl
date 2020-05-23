@@ -3,10 +3,32 @@
  */
 package org.mdse.pts.schedule.dsl.scoping;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.scoping.IScope;
-
+import org.eclipse.xtext.scoping.Scopes;
+import org.mdse.pts.common.util.EcoreIOUtil;
+import org.mdse.pts.depot.Depot;
+import org.mdse.pts.depot.Train;
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Network;
+import org.mdse.pts.network.Station;
+import org.mdse.pts.schedule.Schedule;
+import org.mdse.pts.schedule.SchedulePackage;
+import org.mdse.pts.schedule.Spot;
+import org.mdse.pts.schedule.TrainSchedule;
 
 /**
  * This class contains custom scoping description.
@@ -17,6 +39,113 @@ import org.eclipse.xtext.scoping.IScope;
 public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
+		// Network in Schedule
+		if (context instanceof Schedule && reference == SchedulePackage.eINSTANCE.getSchedule_Network()) {
+			return getNetworkScope((Schedule) context);
+		}
+		
+		// Depots in Schedule
+		if (context instanceof Schedule && reference == SchedulePackage.eINSTANCE.getSchedule_Depots()) {
+			return getDepotsScope((Schedule) context);
+		}
+		
+		// Train reference
+		if (context instanceof TrainSchedule && reference == SchedulePackage.eINSTANCE.getTrainSchedule_Train()) {
+			return getTrainScope((TrainSchedule) context);
+		}
+		
+		// Station reference on Spots
+		if (context instanceof Spot && reference == SchedulePackage.eINSTANCE.getSpot_Station()) {
+			return getStationScope((Spot) context);
+		}
+		
+		// Leg reference
+		if (context instanceof Spot && reference == SchedulePackage.eINSTANCE.getSpot_Leg()) {
+			return getSpotLeg((Spot) context);
+		}
+	
 		return super.getScope(context, reference);
+	}
+	
+	private static Schedule extractSchedule(EObject object) {
+		EObject root = EcoreUtil.getRootContainer(object);
+		if (!(root instanceof Schedule)) {
+			System.err.println("Root element is not a Schedule");
+			return null;
+		} 
+		return (Schedule) root;
+	}
+
+	private static IScope getSpotLeg(Spot spot) {
+		Schedule schedule = extractSchedule(spot);
+		ArrayList<EObject> result = new ArrayList<>();
+		for (Leg s : schedule.getNetwork().getLegs()) {
+			if (s.getStations().get(0).equals(spot.getStation()) ||
+				s.getStations().get(1).equals(spot.getStation())) {
+				result.add(s);
+			}
+		}
+		
+		return Scopes.scopeFor(result);
+	}
+
+	private static IScope getStationScope(Spot spot) {
+		Schedule schedule = extractSchedule(spot);
+		ArrayList<EObject> result = new ArrayList<>();
+		Network network = schedule.getNetwork();
+		for (Station station : network.getStations()) {
+			result.add(station);
+		}
+		return Scopes.scopeFor(result);
+	}
+
+	private static IScope getTrainScope(TrainSchedule trainSchedule) {
+		Schedule schedule = extractSchedule(trainSchedule);
+		EList<Depot> depots = schedule.getDepots();
+		ArrayList<EObject> result = new ArrayList<>();
+		for (Depot depot : depots) {
+			for (Train train : depot.getTrains()) {
+				result.add(train);
+			}
+		}
+		return Scopes.scopeFor(result);
+	}
+
+	private static IScope getDepotsScope(Schedule schedule) {
+		List<EObject> objects = getSiblingObjectsOfExtension(schedule, "depot");
+		return Scopes.scopeFor(objects);
+	}
+
+	private static IScope getNetworkScope(Schedule schedule) {
+		List<EObject> objects = getSiblingObjectsOfExtension(schedule, "network");
+		return Scopes.scopeFor(objects);
+	}
+	
+	private static List<EObject> getSiblingObjectsOfExtension(EObject obj, String extension) {
+		IResource[] siblingFiles = getSiblingFiles(obj);
+		ArrayList<EObject> objects = new ArrayList<>();
+		for (IResource resource : siblingFiles) {
+			if (resource.getType() == IResource.FILE) {
+				IFile file = (IFile) resource;
+				if (file.getFileExtension().equalsIgnoreCase(extension)) {
+					EObject net = EcoreIOUtil.loadModel(file);
+					objects.add(net);
+				}
+			}
+		}
+		return objects;
+	}
+	
+	private static IResource[] getSiblingFiles(EObject obj) {
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IWorkspaceRoot workspaceRoot = workspace.getRoot();
+		IFile myFile = workspaceRoot.getFile(new Path(obj.eResource().getURI().toPlatformString(true)));
+		IContainer folder = myFile.getParent();
+		try {
+			return folder.members();
+		}
+		catch (Exception e) {
+			return new IResource[0];
+		}
 	}
 }
