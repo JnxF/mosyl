@@ -21,7 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.mdse.pts.network.NetworkPackage#getLeg()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoNegativeDistance'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NoNegativeDistance='Tuple {\n\tmessage : String = name + \' can not be less than 0 km.\',\n\tstatus : Boolean = distance &gt; 0\n}.status'"
  * @generated
  */
 public interface Leg extends EObject {

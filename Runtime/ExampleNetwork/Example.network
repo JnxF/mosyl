@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<network:Network xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:network="http://mdse.org/pts/network">
-  <stations name="Aarhus Central" legs="//@legs.0 //@legs.2 //@legs.3"/>
+<network:Network xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:network="http://mdse.org/pts/network" name="Imported Network">
+  <stations name="Aarhus Central" legs="//@legs.0 //@legs.1 //@legs.2"/>
   <stations name="Copenhagen Central" legs="//@legs.1 //@legs.2 //@legs.3"/>
-  <stations name="Odense Central" legs="//@legs.0 //@legs.1"/>
+  <stations name="Odense Central" legs="//@legs.0 //@legs.3"/>
   <legs name="E45" distance="146" stations="//@stations.2 //@stations.0"/>
-  <legs name="E20" distance="168" stations="//@stations.2 //@stations.1"/>
-  <legs name="S21" distance="187" stations="//@stations.1 //@stations.0"/>
-  <legs name="E501" distance="307" stations="//@stations.1 //@stations.0"/>
+  <legs name="E501" distance="307" stations="//@stations.0 //@stations.1"/>
+  <legs name="S21" distance="187" stations="//@stations.0 //@stations.1"/>
+  <legs name="E20" distance="168" stations="//@stations.1 //@stations.2"/>
 </network:Network>
