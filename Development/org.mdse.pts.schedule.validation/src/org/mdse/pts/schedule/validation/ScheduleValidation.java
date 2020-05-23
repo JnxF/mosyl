@@ -76,16 +76,16 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 	 */
 	private boolean validateScheduleNoRepeatedDepots(Schedule schedule) {
 		// Non repeated
-		boolean res = true;
+		boolean isValid = true;
 		Set<String> uniqueNames = new HashSet<>();
 		List<Depot> depots = schedule.getDepots();
 		for (Depot depot : depots) {
 			uniqueNames.add(depot.getName());
 		}
 		if (uniqueNames.size() != depots.size()) {
-			res &= constraintViolated(schedule, "There cannot be repeated depots.");
+			isValid &= constraintViolated(schedule, "There cannot be repeated depots.");
 		}
-		return res;
+		return isValid;
 	}
 
 	// Validate Time Description
@@ -94,7 +94,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 	 * Two time descriptions cannot have the same pair (weekday, hour and minutes)
 	 */
 	private boolean validateTimeDescriptionNoRepeatedDateTime(TimeDescription timeDescription) {
-		boolean res = true;
+		boolean isValid = true;
 		List<DateTime> dateTimes = timeDescription.getDateTimes();
 		// Two date times cannot share the same hour
 		// and the same day of the week
@@ -110,7 +110,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 					for (DaysOfTheWeek dw1 : datetime1.getWeekdays()) {
 						for (DaysOfTheWeek dw2 : datetime2.getWeekdays()) {
 							if (dw1.equals(dw2)) {
-								res &= constraintViolated(datetime1,
+								isValid &= constraintViolated(datetime1,
 										"Schedule on " + dw1.toString() + " at "
 												+ datetime1.getTime().getHours().toString() + ":"
 												+ datetime1.getTime().getMinutes() + "h is repeated.");
@@ -120,41 +120,41 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 				}
 			}
 		}
-		return res;
+		return isValid;
 	}
 
 	/**
 	 * A date time cannot have repeated days of the week
 	 */
 	private boolean validateTimeDescriptionNoRepeatedWeekDay(TimeDescription timeDescription) {
-		boolean res = true;
+		boolean isValid = true;
 		List<DateTime> dateTimes = timeDescription.getDateTimes();
 
 		for (DateTime datetime : dateTimes) {
 			List<DaysOfTheWeek> daysOfTheWeek = datetime.getWeekdays();
 			HashSet<DaysOfTheWeek> daysOfTheWeekUnique = new HashSet<>(daysOfTheWeek);
 			if (daysOfTheWeek.size() != daysOfTheWeekUnique.size()) {
-				res &= constraintViolated(datetime, "There cannot be repeated days of the week");
+				isValid &= constraintViolated(datetime, "There cannot be repeated days of the week");
 			}
 		}
-		return res;
+		return isValid;
 	}
 
 	/**
 	 * A date time should have correct 24-hours time format
 	 */
 	private boolean validateTimeDescriptionCorrectTimeFormat(TimeDescription timeDescription) {
-		boolean res = true;
+		boolean isValid = true;
 		List<DateTime> dateTimes = timeDescription.getDateTimes();
 		for (DateTime datetime : dateTimes) {
 			Time time = datetime.getTime();
 			int hours = time.getHours();
 			int minutes = time.getMinutes();
 			if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
-				res &= constraintViolated(datetime, "Time has to be expressed from 00:00 to 23:59");
+				isValid &= constraintViolated(datetime, "Time has to be expressed from 00:00 to 23:59");
 			}
 		}
-		return res;
+		return isValid;
 	}
 
 	// Validate Route
@@ -165,7 +165,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 	 * to drive through is specified
 	 */
 	private boolean validateRoute(Route route) {
-		boolean res = true;
+		boolean isValid = true;
 
 		EObject root = EcoreUtil.getRootContainer(route);
 		if (!(root instanceof Schedule)) {
@@ -196,7 +196,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 					} else if (s1.equals(currentStation) && s2.equals(previousStation)) {
 						// OK
 					} else {
-						res &= constraintViolated(spot, "Leg " + previousLeg.getName() + " doesn't connect "
+						isValid &= constraintViolated(spot, "Leg " + previousLeg.getName() + " doesn't connect "
 								+ s1.getName() + " and " + s2.getName());
 					}
 				}
@@ -215,12 +215,12 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 					}
 
 					if (connectingLegs == 0) {
-						res &= constraintViolated(spot, "There is no leg connecting " + previousStation.getName()
+						isValid &= constraintViolated(spot, "There is no leg connecting " + previousStation.getName()
 								+ " and " + currentStation.getName() + ".");
 					} else if (connectingLegs == 1) {
 						// OK
 					} else {
-						res &= constraintViolated(spot,
+						isValid &= constraintViolated(spot,
 								"There are multiple legs connecting " + previousStation.getName() + " and "
 										+ currentStation.getName() + ". Please specify which one to use.");
 					}
@@ -229,7 +229,7 @@ public class ScheduleValidation extends EObjectValidator implements IStartup {
 			previousStation = spot.getStation();
 			previousLeg = spot.getLeg();
 		}
-		return res;
+		return isValid;
 	}
 
 	// Utility method
