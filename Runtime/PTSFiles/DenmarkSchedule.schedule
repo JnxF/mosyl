@@ -1,12 +1,12 @@
-schedule for "DenmarkNetwork" with "Depotia", "AnotherDepot":
-	train Oresundtag on Monday, Wednesday at 13:21
+schedule for "PTS Network" with "PTS Trains":
+	train ICE120 on Monday, Wednesday at 13:21
 	and Thursday at 14:41:
 		start at "Copenhagen Central" on platform "A1"
 		drive via E501
 		stop at "Aarhus Central" on platform "T1" for 5 min drive via E45
 		terminate at "Odense Central" on platform "T3"
 		
-	train Regionalido on Monday, Tuesday at 18:05
+	train RE47 on Monday, Tuesday at 18:05
 	and Saturday at 20:01: 
 		start at "Odense Central" on platform "A1"
 		drive via E20
