@@ -4,8 +4,8 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Depot Diagram Representation" domainClass="depot::Depot" enablePopupBars="true">
       <metamodel href="file:/C:/Users/jroyg/MOSCode/mosyl/Development/org.mdse.pts.depot/model/Depot.ecore#/"/>
       <defaultLayer name="Default">
-        <containerMappings name="DepotContainer" semanticCandidatesExpression="var:self" domainClass="depot::Depot" childrenPresentation="VerticalStack">
-          <subContainerMappings name="Train" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Train%20Name%20Label%20Tool']" semanticCandidatesExpression="feature:trains" domainClass="depot::Train" dropDescriptions="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Coach']" childrenPresentation="HorizontalStack">
+        <containerMappings name="DepotContainer" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Depot%20Name']" semanticCandidatesExpression="var:self" domainClass="depot::Depot" childrenPresentation="VerticalStack">
+          <subContainerMappings name="Train" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Train%20Name%20Label%20Tool']" semanticCandidatesExpression="feature:trains" domainClass="depot::Train" childrenPresentation="HorizontalStack">
             <subContainerMappings name="CoachContainer" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Coach%20Number%20Tool']" semanticCandidatesExpression="feature:coaches" domainClass="depot::Coach">
               <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="[''/]" workspacePath="/org.mdse.pts.depot.dsl/symbols/DefaultCoach.png">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -106,17 +106,6 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerDropDescription" name="Coach" forceRefresh="true" mappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']">
-            <oldContainer name="oldSemanticContainer"/>
-            <newContainer name="newSemanticContainer"/>
-            <element name="element"/>
-            <newViewContainer name="newContainerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="coaches" valueExpression="aql:element"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Coach Number Tool" precondition="aql:self.oclIsKindOf(depot::InnerCoach)" forceRefresh="true">
             <mask mask="{0}"/>
             <initialOperation>
@@ -124,6 +113,12 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Train Name Label Tool">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Depot Name">
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>

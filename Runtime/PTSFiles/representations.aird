@@ -17,7 +17,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_g6pZkIViEeqyBLFM3gcD9Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iCi1wIViEeqyBLFM3gcD9Q" name="Example Runtime Depot Diagram Representation" repPath="#_iCWogIViEeqyBLFM3gcD9Q" changeId="c935b2fc-1562-4c22-af38-1e879c2c18f0">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iCi1wIViEeqyBLFM3gcD9Q" name="Example Runtime Depot Diagram Representation" repPath="#_iCWogIViEeqyBLFM3gcD9Q" changeId="3d68b647-c8ac-471b-94fc-a5ed46d46dda">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']"/>
         <target xmi:type="depot:Depot" href="Example.depot#/"/>
       </ownedRepresentationDescriptors>
@@ -210,24 +210,18 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_04xWoZIgEeqpadsQK0wM1w" name="15">
-        <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.2"/>
-        <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.2"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_04x9sJIgEeqpadsQK0wM1w" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_04ykwZIgEeqpadsQK0wM1w" name="16">
-        <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.3"/>
-        <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.3"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_040Z8JIgEeqpadsQK0wM1w" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_041BAJIgEeqpadsQK0wM1w">
-        <target xmi:type="depot:Locomotive" href="Example.depot#//@trains.0/@coaches.4"/>
-        <semanticElements xmi:type="depot:Locomotive" href="Example.depot#//@trains.0/@coaches.4"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_041oEJIgEeqpadsQK0wM1w" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.0/@style"/>
         </ownedStyle>
@@ -261,16 +255,12 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_046gkpIgEeqpadsQK0wM1w" name="2">
-        <target xmi:type="depot:DiningCoach" href="Example.depot#//@trains.1/@coaches.2"/>
-        <semanticElements xmi:type="depot:DiningCoach" href="Example.depot#//@trains.1/@coaches.2"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_05a24JIgEeqpadsQK0wM1w" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.4/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_05a24pIgEeqpadsQK0wM1w" name="0">
-        <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.3"/>
-        <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.3"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_05cFAJIgEeqpadsQK0wM1w" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
         </ownedStyle>
@@ -293,16 +283,14 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_05dTIZIgEeqpadsQK0wM1w" name="1">
-        <target xmi:type="depot:DiningCoach" href="Example.depot#//@trains.2/@coaches.1"/>
-        <semanticElements xmi:type="depot:DiningCoach" href="Example.depot#//@trains.2/@coaches.1"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_05fvYJIgEeqpadsQK0wM1w" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.4/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_05gWcZIgEeqpadsQK0wM1w" name="1">
-        <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.2"/>
-        <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.2"/>
+        <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.1"/>
+        <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.1"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_05g9gJIgEeqpadsQK0wM1w" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
@@ -357,37 +345,67 @@
                     <styles xmi:type="notation:DrawerStyle" xmi:id="_bFya95naEeqd4rHvIO0z9g"/>
                   </children>
                   <styles xmi:type="notation:ShapeStyle" xmi:id="_bFya8ZnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFya8pnaEeqd4rHvIO0z9g" x="40"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFya8pnaEeqd4rHvIO0z9g" x="174"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_bFya-JnaEeqd4rHvIO0z9g" type="3008" element="_bE5qIZnaEeqd4rHvIO0z9g">
-                  <children xmi:type="notation:Node" xmi:id="_bFzCAJnaEeqd4rHvIO0z9g" type="5005"/>
-                  <children xmi:type="notation:Node" xmi:id="_bFzCAZnaEeqd4rHvIO0z9g" type="7002">
-                    <styles xmi:type="notation:SortingStyle" xmi:id="_bFzCApnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:FilteringStyle" xmi:id="_bFzCA5naEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:DrawerStyle" xmi:id="_bFzCBJnaEeqd4rHvIO0z9g"/>
+                <children xmi:type="notation:Node" xmi:id="_zIG8YJwHEeq4nvAX_Tqysg" type="3008" element="_zG5bcJwHEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_zIHjcJwHEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_zIHjcZwHEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_zIHjcpwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_zIHjc5wHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_zIHjdJwHEeq4nvAX_Tqysg"/>
                   </children>
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_bFya-ZnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFya-pnaEeqd4rHvIO0z9g" x="80"/>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_zIG8YZwHEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zIG8YpwHEeq4nvAX_Tqysg" x="341"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_bFzCBZnaEeqd4rHvIO0z9g" type="3008" element="_bE-ioZnaEeqd4rHvIO0z9g">
-                  <children xmi:type="notation:Node" xmi:id="_bFzCCJnaEeqd4rHvIO0z9g" type="5005"/>
-                  <children xmi:type="notation:Node" xmi:id="_bFzpEJnaEeqd4rHvIO0z9g" type="7002">
-                    <styles xmi:type="notation:SortingStyle" xmi:id="_bFzpEZnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:FilteringStyle" xmi:id="_bFzpEpnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:DrawerStyle" xmi:id="_bFzpE5naEeqd4rHvIO0z9g"/>
+                <children xmi:type="notation:Node" xmi:id="_z852YJwHEeq4nvAX_Tqysg" type="3008" element="_z8wscJwHEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_z852Y5wHEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_z86dcJwHEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_z86dcZwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_z86dcpwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_z86dc5wHEeq4nvAX_Tqysg"/>
                   </children>
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_bFzCBpnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFzCB5naEeqd4rHvIO0z9g" x="120"/>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_z852YZwHEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z852YpwHEeq4nvAX_Tqysg" x="508"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_bF0QIJnaEeqd4rHvIO0z9g" type="3008" element="_bE_JspnaEeqd4rHvIO0z9g">
-                  <children xmi:type="notation:Node" xmi:id="_bF03MJnaEeqd4rHvIO0z9g" type="5005"/>
-                  <children xmi:type="notation:Node" xmi:id="_bF03MZnaEeqd4rHvIO0z9g" type="7002">
-                    <styles xmi:type="notation:SortingStyle" xmi:id="_bF03MpnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:FilteringStyle" xmi:id="_bF03M5naEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:DrawerStyle" xmi:id="_bF03NJnaEeqd4rHvIO0z9g"/>
+                <children xmi:type="notation:Node" xmi:id="_0Js8QJwHEeq4nvAX_Tqysg" type="3008" element="_0Je50JwHEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_0Js8Q5wHEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_0Js8RJwHEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_0Js8RZwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_0Js8RpwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_0Js8R5wHEeq4nvAX_Tqysg"/>
                   </children>
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_bF0QIZnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF0QIpnaEeqd4rHvIO0z9g" x="160"/>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_0Js8QZwHEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Js8QpwHEeq4nvAX_Tqysg" x="675"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_0al38JwHEeq4nvAX_Tqysg" type="3008" element="_0ZrR8JwHEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_0al385wHEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_0al39JwHEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_0al39ZwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_0al39pwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_0al395wHEeq4nvAX_Tqysg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_0al38ZwHEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0al38pwHEeq4nvAX_Tqysg" x="842"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_0swmAJwHEeq4nvAX_Tqysg" type="3008" element="_0sm1AJwHEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_0swmA5wHEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_0swmBJwHEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_0swmBZwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_0swmBpwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_0swmB5wHEeq4nvAX_Tqysg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_0swmAZwHEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0swmApwHEeq4nvAX_Tqysg" x="1009"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_09iM8JwHEeq4nvAX_Tqysg" type="3008" element="_09UKgJwHEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_09i0AJwHEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_09i0AZwHEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_09i0ApwHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_09i0A5wHEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_09i0BJwHEeq4nvAX_Tqysg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_09iM8ZwHEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_09iM8pwHEeq4nvAX_Tqysg" x="1176"/>
                 </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_bFs7YZnaEeqd4rHvIO0z9g"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_bFs7YpnaEeqd4rHvIO0z9g"/>
@@ -417,34 +435,44 @@
                     <styles xmi:type="notation:DrawerStyle" xmi:id="_bF2FU5naEeqd4rHvIO0z9g"/>
                   </children>
                   <styles xmi:type="notation:ShapeStyle" xmi:id="_bF1eRpnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF1eR5naEeqd4rHvIO0z9g" x="40"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF1eR5naEeqd4rHvIO0z9g" x="174"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_bF2FVJnaEeqd4rHvIO0z9g" type="3008" element="_bFCNAJnaEeqd4rHvIO0z9g">
-                  <children xmi:type="notation:Node" xmi:id="_bF2FV5naEeqd4rHvIO0z9g" type="5005"/>
-                  <children xmi:type="notation:Node" xmi:id="_bF2FWJnaEeqd4rHvIO0z9g" type="7002">
-                    <styles xmi:type="notation:SortingStyle" xmi:id="_bF2FWZnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:FilteringStyle" xmi:id="_bF2FWpnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:DrawerStyle" xmi:id="_bF2FW5naEeqd4rHvIO0z9g"/>
+                <children xmi:type="notation:Node" xmi:id="_NnFRoJtwEeq75rjn0XLcUg" type="3008" element="_Nm3PMJtwEeq75rjn0XLcUg">
+                  <children xmi:type="notation:Node" xmi:id="_NnF4sJtwEeq75rjn0XLcUg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_NnF4sZtwEeq75rjn0XLcUg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_NnF4sptwEeq75rjn0XLcUg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_NnF4s5twEeq75rjn0XLcUg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_NnF4tJtwEeq75rjn0XLcUg"/>
                   </children>
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_bF2FVZnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF2FVpnaEeqd4rHvIO0z9g" x="80"/>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_NnFRoZtwEeq75rjn0XLcUg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NnFRoptwEeq75rjn0XLcUg" x="341"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_bF2sYJnaEeqd4rHvIO0z9g" type="3008" element="_bFb1oJnaEeqd4rHvIO0z9g">
-                  <children xmi:type="notation:Node" xmi:id="_bF2sY5naEeqd4rHvIO0z9g" type="5005"/>
-                  <children xmi:type="notation:Node" xmi:id="_bF2sZJnaEeqd4rHvIO0z9g" type="7002">
-                    <styles xmi:type="notation:SortingStyle" xmi:id="_bF2sZZnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:FilteringStyle" xmi:id="_bF2sZpnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:DrawerStyle" xmi:id="_bF3TcJnaEeqd4rHvIO0z9g"/>
+                <children xmi:type="notation:Node" xmi:id="_QdrEQJtwEeq75rjn0XLcUg" type="3008" element="_Qde3AJtwEeq75rjn0XLcUg">
+                  <children xmi:type="notation:Node" xmi:id="_QdrEQ5twEeq75rjn0XLcUg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_QdrERJtwEeq75rjn0XLcUg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_QdrERZtwEeq75rjn0XLcUg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_QdrERptwEeq75rjn0XLcUg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_QdrER5twEeq75rjn0XLcUg"/>
                   </children>
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_bF2sYZnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF2sYpnaEeqd4rHvIO0z9g" x="120"/>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_QdrEQZtwEeq75rjn0XLcUg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QdrEQptwEeq75rjn0XLcUg" x="508"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ZphMsJwIEeq4nvAX_Tqysg" type="3008" element="_ZosGQJwIEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_ZphMs5wIEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_ZphzwJwIEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_ZphzwZwIEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_ZphzwpwIEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_Zphzw5wIEeq4nvAX_Tqysg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ZphMsZwIEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZphMspwIEeq4nvAX_Tqysg" x="675"/>
                 </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_bFticpnaEeqd4rHvIO0z9g"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_bFtic5naEeqd4rHvIO0z9g"/>
                 <styles xmi:type="notation:DrawerStyle" xmi:id="_bFtidJnaEeqd4rHvIO0z9g"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_bFs7ZZnaEeqd4rHvIO0z9g" fontColor="13606770" fontName="Segoe UI" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFs7ZpnaEeqd4rHvIO0z9g" y="40"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFs7ZpnaEeqd4rHvIO0z9g" y="112"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_bFtidZnaEeqd4rHvIO0z9g" type="3008" element="_bEXeo5naEeqd4rHvIO0z9g">
               <children xmi:type="notation:Node" xmi:id="_bFtieJnaEeqd4rHvIO0z9g" type="5005"/>
@@ -459,16 +487,6 @@
                   <styles xmi:type="notation:ShapeStyle" xmi:id="_bF3TcpnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF3Tc5naEeqd4rHvIO0z9g"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_bF36gJnaEeqd4rHvIO0z9g" type="3008" element="_bFeR4pnaEeqd4rHvIO0z9g">
-                  <children xmi:type="notation:Node" xmi:id="_bF36g5naEeqd4rHvIO0z9g" type="5005"/>
-                  <children xmi:type="notation:Node" xmi:id="_bF36hJnaEeqd4rHvIO0z9g" type="7002">
-                    <styles xmi:type="notation:SortingStyle" xmi:id="_bF36hZnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:FilteringStyle" xmi:id="_bF36hpnaEeqd4rHvIO0z9g"/>
-                    <styles xmi:type="notation:DrawerStyle" xmi:id="_bF36h5naEeqd4rHvIO0z9g"/>
-                  </children>
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_bF36gZnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF36gpnaEeqd4rHvIO0z9g" x="40"/>
-                </children>
                 <children xmi:type="notation:Node" xmi:id="_bF36iJnaEeqd4rHvIO0z9g" type="3008" element="_bFfgApnaEeqd4rHvIO0z9g">
                   <children xmi:type="notation:Node" xmi:id="_bF5IoJnaEeqd4rHvIO0z9g" type="5005"/>
                   <children xmi:type="notation:Node" xmi:id="_bF5IoZnaEeqd4rHvIO0z9g" type="7002">
@@ -477,14 +495,34 @@
                     <styles xmi:type="notation:DrawerStyle" xmi:id="_bF5IpJnaEeqd4rHvIO0z9g"/>
                   </children>
                   <styles xmi:type="notation:ShapeStyle" xmi:id="_bF36iZnaEeqd4rHvIO0z9g" fontName="Segoe UI" fontHeight="12"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF36ipnaEeqd4rHvIO0z9g" x="80"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bF36ipnaEeqd4rHvIO0z9g" x="174"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_fWxqcJwIEeq4nvAX_Tqysg" type="3008" element="_fWrj0JwIEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_fWxqc5wIEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_fWxqdJwIEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_fWxqdZwIEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_fWxqdpwIEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_fWxqd5wIEeq4nvAX_Tqysg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_fWxqcZwIEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fWxqcpwIEeq4nvAX_Tqysg" x="341"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_gAJ-oJwIEeq4nvAX_Tqysg" type="3008" element="_gAD4AJwIEeq4nvAX_Tqysg">
+                  <children xmi:type="notation:Node" xmi:id="_gAKlsJwIEeq4nvAX_Tqysg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_gAKlsZwIEeq4nvAX_Tqysg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_gAKlspwIEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_gAKls5wIEeq4nvAX_Tqysg"/>
+                    <styles xmi:type="notation:DrawerStyle" xmi:id="_gAKltJwIEeq4nvAX_Tqysg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_gAJ-oZwIEeq4nvAX_Tqysg" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gAJ-opwIEeq4nvAX_Tqysg" x="508"/>
                 </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_bFtiepnaEeqd4rHvIO0z9g"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_bFtie5naEeqd4rHvIO0z9g"/>
                 <styles xmi:type="notation:DrawerStyle" xmi:id="_bFtifJnaEeqd4rHvIO0z9g"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_bFtidpnaEeqd4rHvIO0z9g" fontColor="13606770" fontName="Segoe UI" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFtid5naEeqd4rHvIO0z9g" y="80"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFtid5naEeqd4rHvIO0z9g" y="225"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_bFqfIZnaEeqd4rHvIO0z9g"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_bFqfIpnaEeqd4rHvIO0z9g"/>
@@ -502,10 +540,10 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bEKDQZnaEeqd4rHvIO0z9g" name="RE47" childrenPresentation="HorizontalStack">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bEKDQZnaEeqd4rHvIO0z9g" name="ICE120" childrenPresentation="HorizontalStack">
         <target xmi:type="depot:Train" href="Example.depot#//@trains.0"/>
         <semanticElements xmi:type="depot:Train" href="Example.depot#//@trains.0"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_bEWQgZnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" labelColor="138,226,52" labelAlignment="LEFT" description="_bEWQgJnaEeqd4rHvIO0z9g" borderSize="1" borderSizeComputationExpression="1" borderColor="255,255,255" backgroundStyle="Liquid" foregroundColor="255,255,255"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_wFzpAZwHEeq4nvAX_Tqysg" labelSize="12" showIcon="false" labelColor="114,159,207" labelAlignment="LEFT" description="_bEXeoJnaEeqd4rHvIO0z9g" borderSize="1" borderSizeComputationExpression="1" borderColor="255,255,255" backgroundStyle="Liquid" foregroundColor="255,255,255"/>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bEZT0JnaEeqd4rHvIO0z9g">
           <target xmi:type="depot:Locomotive" href="Example.depot#//@trains.0/@coaches.0"/>
@@ -515,7 +553,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bEnWQpnaEeqd4rHvIO0z9g" name="14">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bEnWQpnaEeqd4rHvIO0z9g" name="101">
           <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.1"/>
           <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.1"/>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bE5DEJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
@@ -523,35 +561,59 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bE5qIZnaEeqd4rHvIO0z9g" name="15">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_zG5bcJwHEeq4nvAX_Tqysg" name="102">
           <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.2"/>
           <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.2"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bE97kJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
-            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
-        </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bE-ioZnaEeqd4rHvIO0z9g" name="16">
-          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.3"/>
-          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.3"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bE_JsJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_zHTrIJwHEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.2/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bE_JspnaEeqd4rHvIO0z9g">
-          <target xmi:type="depot:Locomotive" href="Example.depot#//@trains.0/@coaches.4"/>
-          <semanticElements xmi:type="depot:Locomotive" href="Example.depot#//@trains.0/@coaches.4"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bE_wwJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
-            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.0/@style"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_z8wscJwHEeq4nvAX_Tqysg" name="103">
+          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.3"/>
+          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.3"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_z8xTgJwHEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.2/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_0Je50JwHEeq4nvAX_Tqysg" name="104">
+          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.4"/>
+          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.4"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_0JgvAJwHEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.2/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_0ZrR8JwHEeq4nvAX_Tqysg" name="105">
+          <target xmi:type="depot:DiningCoach" href="Example.depot#//@trains.0/@coaches.5"/>
+          <semanticElements xmi:type="depot:DiningCoach" href="Example.depot#//@trains.0/@coaches.5"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_0Z-z8JwHEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.4/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_0sm1AJwHEeq4nvAX_Tqysg" name="106">
+          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.6"/>
+          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.6"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_0sncEJwHEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_09UKgJwHEeq4nvAX_Tqysg" name="107">
+          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.7"/>
+          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.0/@coaches.7"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_09WmwJwHEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bEW3kZnaEeqd4rHvIO0z9g" name="ICE55" childrenPresentation="HorizontalStack">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bEW3kZnaEeqd4rHvIO0z9g" name="RE47" childrenPresentation="HorizontalStack">
         <target xmi:type="depot:Train" href="Example.depot#//@trains.1"/>
         <semanticElements xmi:type="depot:Train" href="Example.depot#//@trains.1"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_bEXeoZnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" labelColor="114,159,207" labelAlignment="LEFT" description="_bEXeoJnaEeqd4rHvIO0z9g" borderSize="1" borderSizeComputationExpression="1" borderColor="255,255,255" backgroundStyle="Liquid" foregroundColor="255,255,255"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_APr2o5wIEeq4nvAX_Tqysg" labelSize="12" showIcon="false" labelColor="138,226,52" labelAlignment="LEFT" description="_bEWQgJnaEeqd4rHvIO0z9g" borderSize="1" borderSizeComputationExpression="1" borderColor="255,255,255" backgroundStyle="Liquid" foregroundColor="255,255,255"/>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFAX0JnaEeqd4rHvIO0z9g">
           <target xmi:type="depot:Locomotive" href="Example.depot#//@trains.1/@coaches.0"/>
@@ -561,27 +623,35 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFA-4ZnaEeqd4rHvIO0z9g" name="1">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFA-4ZnaEeqd4rHvIO0z9g" name="14">
           <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.1"/>
           <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.1"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bFBl8JnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
-            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.2/@style"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Xfm555wIEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFCNAJnaEeqd4rHvIO0z9g" name="2">
-          <target xmi:type="depot:DiningCoach" href="Example.depot#//@trains.1/@coaches.2"/>
-          <semanticElements xmi:type="depot:DiningCoach" href="Example.depot#//@trains.1/@coaches.2"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bFbOkJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
-            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.4/@style"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Nm3PMJtwEeq75rjn0XLcUg" name="15">
+          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.2"/>
+          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.2"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_XJNMFJwIEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFb1oJnaEeqd4rHvIO0z9g" name="0">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Qde3AJtwEeq75rjn0XLcUg" name="17">
           <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.3"/>
           <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.1/@coaches.3"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bFccsJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_QdgFIJtwEeq75rjn0XLcUg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_ZosGQJwIEeq4nvAX_Tqysg">
+          <target xmi:type="depot:Locomotive" href="Example.depot#//@trains.1/@coaches.4"/>
+          <semanticElements xmi:type="depot:Locomotive" href="Example.depot#//@trains.1/@coaches.4"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Zoxl0JwIEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.0/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
@@ -599,19 +669,27 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFeR4pnaEeqd4rHvIO0z9g" name="1">
-          <target xmi:type="depot:DiningCoach" href="Example.depot#//@trains.2/@coaches.1"/>
-          <semanticElements xmi:type="depot:DiningCoach" href="Example.depot#//@trains.2/@coaches.1"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bFfgAJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFfgApnaEeqd4rHvIO0z9g" name="1">
+          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.1"/>
+          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.1"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bFguIJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.2/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_fWrj0JwIEeq4nvAX_Tqysg" name="2">
+          <target xmi:type="depot:DiningCoach" href="Example.depot#//@trains.2/@coaches.2"/>
+          <semanticElements xmi:type="depot:DiningCoach" href="Example.depot#//@trains.2/@coaches.2"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_fWrj0ZwIEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/DiningCoach.png">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.4/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bFfgApnaEeqd4rHvIO0z9g" name="1">
-          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.2"/>
-          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.2"/>
-          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_bFguIJnaEeqd4rHvIO0z9g" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachFirstClass.png">
-            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.2/@style"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_gAD4AJwIEeq4nvAX_Tqysg" name="3">
+          <target xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.3"/>
+          <semanticElements xmi:type="depot:PassengerCoach" href="Example.depot#//@trains.2/@coaches.3"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gAEfEJwIEeq4nvAX_Tqysg" labelSize="12" showIcon="false" workspacePath="/org.mdse.pts.depot.dsl/symbols/PassengerCoachSecondClass.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']/@conditionnalStyles.3/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='DepotContainer']/@subContainerMappings[name='Train']/@subContainerMappings[name='CoachContainer']"/>
         </ownedDiagramElements>
